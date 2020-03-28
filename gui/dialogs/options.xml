@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>options</name>
+    <layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+
+        <empty>
+            <stretch>1</stretch>
+        </empty>
+
+        <text>
+            <label>Options</label>
+            <halign>center</halign>
+        </text>
+
+        <empty>
+            <stretch>1</stretch>
+        </empty>
+
+        <button>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <legend></legend>
+            <keynum>27</keynum>
+            <border>2</border>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>General</label>
+            <halign>center</halign>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Remove Rear Doors</label>
+        <property>sim/model/remove-doors</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Open/Lock tow-hook</label>
+        <property>sim/hitches/aerotow/open</property>
+        <live>true</live>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Show Garmin 196 GPS</label>
+        <property>sim/model/show-garmin-196</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>Rendering</label>
+            <halign>center</halign>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Show shadow</label>
+        <property>sim/rendering/show-shadow</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Enable engine spray on water</label>
+        <property>sim/model/effects/engine-spray-enabled</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <text>
+        <halign>center</halign>
+        <label>Warning: May have strong</label>
+        <color>
+            <red>   1.0 </red>
+            <green> 0.5 </green>
+            <blue>  0.3 </blue>
+        </color>
+    </text>
+
+    <text>
+        <halign>center</halign>
+        <label>effect on performance!</label>
+        <color>
+            <red>   1.0 </red>
+            <green> 0.5 </green>
+            <blue>  0.3 </blue>
+        </color>
+    </text>
+
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>Pilot options</label>
+            <halign>center</halign>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Enable pilots</label>
+        <property>sim/pilots/pilots-enabled</property>
+        <live>true</live>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <group>
+        <layout>table</layout>
+
+        <checkbox>
+            <col>0</col>
+            <row>0</row>
+            <halign>left</halign>
+            <label>Show pilot</label>
+            <enable>
+                <property>sim/pilots/pilots-enabled</property>
+            </enable>
+            <property>sim/pilots/show-pilot</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </checkbox>
+
+        <checkbox>
+            <col>1</col>
+            <row>0</row>
+            <halign>left</halign>
+            <label>Hide pilot in Pilot's view</label>
+            <enable>
+                <and>
+                    <property>sim/pilots/pilots-enabled</property>
+                    <property>sim/pilots/show-pilot</property>
+                </and>
+            </enable>
+            <property>sim/pilots/hide-pilot-cockpit-view</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </checkbox>
+
+        <checkbox>
+            <col>0</col>
+            <row>1</row>
+            <halign>left</halign>
+            <label>Show copilot</label>
+            <enable>
+                <property>sim/pilots/pilots-enabled</property>
+            </enable>
+            <property>sim/pilots/show-copilot</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </checkbox>
+
+        <checkbox>
+            <col>1</col>
+            <row>1</row>
+            <halign>left</halign>
+            <label>Hide copilot in Copilot's view</label>
+            <enable>
+                <and>
+                    <property>sim/pilots/pilots-enabled</property>
+                    <property>sim/pilots/show-copilot</property>
+                </and>
+            </enable>
+            <property>sim/pilots/hide-copilot-cockpit-view</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </checkbox>
+
+    </group>
+
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>Limits</label>
+            <halign>center</halign>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+
+    <checkbox>
+        <halign>center</halign>
+        <label>Show limit warnings (recommended)</label>
+        <property>limits/warnings-enabled</property>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+    </checkbox>
+
+    <hrule/>
+
+    <button>
+        <legend>Close</legend>
+        <default>true</default>
+        <key>Esc</key>
+        <binding>
+            <command>dialog-close</command>
+        </binding>
+    </button>
+
+</PropertyList>

@@ -1,0 +1,121 @@
+AC3Db
+MATERIAL "DefaultWhite.025" rgb 1 1 1 amb 1 1 1 emis 0.1 0.1 0.1 spec 0.5 0.5 0.5 shi 64 trans 0
+MATERIAL "Matériau" rgb 0.8 0.8 0.8 amb 1 1 1 emis 0 0 0 spec 1 1 1 shi 50 trans 0
+OBJECT world
+kids 1
+OBJECT poly
+name "Cone"
+loc -3.023211 0.523202 0.002423
+data 4
+Cone
+texrep 1 1
+crease 30.000001
+numvert 13
+-0.07708 0.440002 0.169549
+-0.40627 0.345494 0.169549
+-0.07708 0.440002 -0.169549
+-0.40627 0.345494 -0.169549
+0.157498 0.440002 0.169549
+0.157498 0.440002 -0.169549
+-0 0 0
+-0.048043 0.22901 0.133263
+0.136331 0.22901 0.133263
+0.136331 0.22901 -0.133263
+-0.048043 0.22901 -0.133263
+-0.306781 0.154729 -0.133263
+-0.306781 0.154729 0.133263
+numsurf 14
+SURF 0x10
+mat 1
+refs 4
+1 0 0
+0 0 0
+2 0 0
+3 0 0
+SURF 0x10
+mat 1
+refs 4
+2 0 0
+0 0 0
+4 0 0
+5 0 0
+SURF 0x10
+mat 1
+refs 3
+8 0 0
+7 0 0
+6 0 0
+SURF 0x10
+mat 1
+refs 3
+8 0 0
+6 0 0
+9 0 0
+SURF 0x10
+mat 1
+refs 3
+9 0 0
+6 0 0
+10 0 0
+SURF 0x10
+mat 1
+refs 3
+10 0 0
+6 0 0
+11 0 0
+SURF 0x10
+mat 1
+refs 3
+11 0 0
+6 0 0
+12 0 0
+SURF 0x10
+mat 1
+refs 4
+7 0 0
+0 0 0
+1 0 0
+12 0 0
+SURF 0x10
+mat 1
+refs 4
+4 0 0
+0 0 0
+7 0 0
+8 0 0
+SURF 0x10
+mat 1
+refs 4
+4 0 0
+8 0 0
+9 0 0
+5 0 0
+SURF 0x10
+mat 1
+refs 4
+5 0 0
+9 0 0
+10 0 0
+2 0 0
+SURF 0x10
+mat 1
+refs 4
+2 0 0
+10 0 0
+11 0 0
+3 0 0
+SURF 0x10
+mat 1
+refs 4
+3 0 0
+11 0 0
+12 0 0
+1 0 0
+SURF 0x10
+mat 1
+refs 3
+6 0 0
+7 0 0
+12 0 0
+kids 0
+numsurf 8

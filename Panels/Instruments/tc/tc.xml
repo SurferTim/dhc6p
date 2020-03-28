@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Turn Coordinator for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Turn Coordinator</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/tc/tc-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>35.4</w>
+            <h>248.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/tc/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/turn-indicator/indicated-turn-rate</property>
+                    <interpolation>
+                        <entry><ind> -5.0 </ind><dep> -30 </dep></entry>
+                        <entry><ind> -1.5 </ind><dep> -30 </dep></entry>
+                        <entry><ind>  1.5 </ind><dep>  30 </dep></entry>
+                        <entry><ind>  5.0 </ind><dep>  30 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>100</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Ball</name>
+            <w>78.88</w>
+            <h>73.66</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/tc/ball.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-68</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+                    <min>-0.3</min>
+                    <max>0.0</max>
+                    <scale>-8.0</scale>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+                    <min>0.0</min>
+                    <max>0.3</max>
+                    <scale>8.0</scale>
+                </transformation>
+                <transformation>
+                    <type>x-shift</type>
+                    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+                    <min>-15</min>
+                    <max>15</max>
+                    <scale>-30</scale>
+                    <interpolation>
+                        <entry><ind> -2.5 </ind><dep> -4.5 </dep></entry>
+                        <entry><ind>  2.5 </ind><dep>  4.5 </dep></entry>
+                    </interpolation>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Ref</name>
+            <w>102.08</w>
+            <h>74.24</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/tc/ref.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-68</offset>
+                </transformation>
+            </transformations>
+        </layer>
+    
+    </layers>
+
+</PropertyList>

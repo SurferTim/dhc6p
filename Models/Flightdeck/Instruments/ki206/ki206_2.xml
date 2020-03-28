@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    ##########################################
+     # From
+     # DR400-dauphin by PAF team
+     # April 2012 : Modified by PAF team
+     # http://equipe-flightgear.forumactif.com
+     # December 2013
+    ##########################################
+-->
+
+<!-- 
+    KI 206 
+    Bendix/King VOR / LOC / Glideslope Indicator
+    Syd Adams
+-->
+
+<PropertyList>
+
+    <path>ki206.ac</path>
+
+    <animation>
+        <type>scale</type>
+        <object-name>KI206.crsdn</object-name>
+        <object-name>KI206.crsup</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.knob</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>backlight</object-name>
+        <object-name>mount</object-name>
+        <object-name>vitre</object-name>
+        <x-offset>1.0</x-offset>
+        <y-offset>0.9</y-offset>
+        <z-offset>0.9</z-offset>
+    </animation>
+
+    <animation>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.knob</object-name>
+        <object-name>mount</object-name>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>KI206.crsdn</object-name>
+        <object-name>KI206.crsup</object-name>
+        <object-name>backlight</object-name>
+        <object-name>mount</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>KI206.knob</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/plt-eng-inst-emer-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>KI206.crsdn</object-name>
+        <object-name>KI206.crsup</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.knob</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>backlight</object-name>
+        <object-name>mount</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>KI206.crsdn</object-name>
+        <object-name>KI206.crsup</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.knob</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>backlight</object-name>
+        <object-name>mount</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <!--effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>vitre</object-name>
+        <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </condition>
+    </effect-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206card</object-name>
+        <object-name>KI206.face</object-name>
+        <visible>true</visible>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>selected-deg-2</tooltip-id>
+                <label>Selected radial: %3d deg</label>
+                <mapping>heading</mapping>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>KI206.gsflag</object-name>
+        <object-name>KI206.toflag</object-name>
+        <object-name>KI206.fromflag</object-name>
+        <object-name>KI206.navflag</object-name>
+        <object-name>KI206.face</object-name>
+        <object-name>KI206card</object-name>
+        <object-name>KI206.locneedle</object-name>
+        <object-name>KI206.gsneedle</object-name>
+        <object-name>KI206.knob</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
+            <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>KI206.navflag</object-name>
+        <condition>
+            <or>
+                <not>
+                    <property>instrumentation/nav[1]/data-is-valid</property>
+                </not>
+                <less-than>
+                    <property>systems/electrical/outputs/nav[1]</property>
+                    <value>0.1</value>
+                </less-than>
+                <not>
+                    <property>instrumentation/nav[1]/in-range</property>
+                </not>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>KI206.gsflag</object-name>
+        <condition>
+            <or>
+                <not>
+                    <property>instrumentation/nav[1]/has-gs</property>
+                </not>
+                <not>
+                    <property>instrumentation/nav[1]/gs-in-range</property>
+                </not>
+                <less-than>
+                    <property>systems/electrical/outputs/nav[1]</property>
+                    <value>8</value>
+                </less-than>
+                <greater-than>
+                    <property>instrumentation/nav[1]/in-range</property>
+                    <value>30000</value>
+                </greater-than>
+            </or>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>KI206.toflag</object-name>
+        <condition>
+            <property>instrumentation/nav[1]/to-flag</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>KI206.fromflag</object-name>
+        <condition>
+            <property>instrumentation/nav[1]/from-flag</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>KI206card</object-name>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>KI206.locneedle</object-name>
+        <property>instrumentation/nav[1]/heading-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-10.0</ind><dep>-0.0113</dep></entry>
+            <entry><ind>  0.0</ind><dep> 0.0   </dep></entry>
+            <entry><ind> 10.0</ind><dep> 0.0113</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>1.0</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+ 
+    <animation>
+        <type>translate</type>
+        <object-name>KI206.gsneedle</object-name>
+        <property>instrumentation/nav[1]/gs-needle-deflection</property>
+        <interpolation>
+            <entry><ind>-9999.0</ind><dep>-0.0113</dep></entry>
+            <entry><ind>   -3.5</ind><dep>-0.0113</dep></entry>
+            <entry><ind>    0.0</ind><dep> 0.0   </dep></entry>
+            <entry><ind>    3.5</ind><dep> 0.0113</dep></entry>
+            <entry><ind> 9999.0</ind><dep> 0.0113</dep></entry>
+        </interpolation>
+        <axis>
+            <x>0.0</x>
+            <y>0.0</y>
+            <z>1.0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>KI206.knob</object-name>
+        <property>instrumentation/nav[1]/radials/selected-deg</property>
+        <factor>5</factor>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>-0.03832 </y-m>
+            <z-m>-0.03749 </z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>KI206.knob</object-name>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <factor type="double">1</factor>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>hdg-2</tooltip-id>
+                <label>Selected radial: %d deg</label>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.crsdn</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>-10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+            <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>nav-display-2</tooltip-id>
+                <label>Selected radial: %d deg</label>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>KI206.crsup</object-name>
+        <visible>0</visible>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>10</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>ai-horizon-offset-2</tooltip-id>
+                <label>Selected radial: %d deg</label>
+                <property>instrumentation/nav[1]/radials/selected-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">NAV 2 Display</text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.005 </x-m>
+            <y-m>  0.000 </y-m>
+            <z-m>  0.000 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+    <!--########## Cone de lumière Rembrandt #############-->
+    <animation>
+        <name>BackLightAnimation</name>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <object-name>backlight</object-name>
+        <position>
+            <x> 0.02 </x>
+            <y> 0.00 </y>
+            <z>-0.05 </z>
+        </position>
+        <direction>
+            <x> -1.0 </x>
+            <y>  0.0 </y>
+            <z>  1.0 </z>
+        </direction>
+        <ambient>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </ambient>
+        <diffuse>
+            <r>  0.5 </r>
+            <g>  0.404 </g>
+            <b>  0.2 </b>
+            <a>  1.0 </a>
+        </diffuse>
+        <specular>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>systems/electrical/outputs/instrument-lights</property>
+            <!-- optional begin -->
+            <factor>0.04</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+            <!-- optional end -->
+        </dim-factor>
+        <attenuation>
+            <c>  0.2 </c>
+            <l>  0.2 </l>
+            <q>  0.4 </q>
+        </attenuation>
+        <exponent>  8.0 </exponent>
+        <cutoff>   48.0   </cutoff>
+        <near-m>    0.0   </near-m>
+        <far-m>     0.09 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>BackLightAnimation</object-name>
+        <condition>
+            <and>
+                <property>controls/electric/battery-switch</property>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </and>
+        </condition>
+    </animation>
+
+</PropertyList>

@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Input configuration for the DHC-6 Twin Otter -->
+
+<PropertyList>
+
+    <keyboard>
+
+        <key n="127">
+            <name>Delete</name>
+            <desc>Toggle Reversers</desc>
+            <!-- Yasim version -->
+            <binding>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>sim/flight-model</property>
+                            <value>yasim</value>
+                        </equals>
+                        <equals>
+                            <property>controls/engines/engine[0]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[0]/reverser</property>
+            </binding>
+            <binding>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>sim/flight-model</property>
+                            <value>yasim</value>
+                        </equals>
+                        <equals>
+                            <property>controls/engines/engine[1]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/engines/engine[1]/reverser</property>
+            </binding>
+            <!-- JSBSim version -->
+            <binding>
+                <condition>
+                    <equals>
+                        <property>sim/flight-model</property>
+                        <value>jsb</value>
+                    </equals>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Thrust reverse not yet implemented!"), 5);</script>
+            </binding>
+        </key>
+
+
+        <key n="79">
+            <name>O</name>
+            <desc>Open aerotow hook</desc>
+            <binding>
+                <command>property-assign</command>
+                <property>sim/hitches/aerotow/open</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Aerotow hook opened!")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="111">
+            <name>o</name>
+            <desc>Lock aerotow hook</desc>
+            <binding>
+                <command>property-assign</command>
+                <property>sim/hitches/aerotow/open</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Aerotow hook locked!")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="106">
+            <name>j</name>
+            <desc>Push the left condition</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/condition</property>
+                <value type="double">1</value>
+                <time>1</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Left condition ON", 5);</script>
+            </binding>
+        </key>
+
+        <key n="107">
+            <name>k</name>
+            <desc>Push the right condition</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[1]/condition</property>
+                <value type="double">1</value>
+                <time>1</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Right condition ON", 5);</script>
+            </binding>
+        </key>
+
+        <key n="74">
+            <name>J</name>
+            <desc>Pull the left condition</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[0]/condition</property>
+                <value type="double">0</value>
+                <time>1</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Left condition OFF", 5);</script>
+            </binding>
+        </key>
+
+        <key n="75">
+            <name>K</name>
+            <desc>Pull the right condition</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/engines/engine[1]/condition</property>
+                <value type="double">0</value>
+                <time>1</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Right condition OFF", 5);</script>
+            </binding>
+        </key>
+
+        <key n="76">
+            <name>L</name>
+            <desc>Toggle prop deice on/off</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/prop-heat</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Prop De-Ice: %i", getprop("/controls/anti-ice/prop-heat")), 5);</script>
+            </binding>
+        </key>
+
+        <!-- Disable the following two key bindings because of the walker:
+        <key n="115">
+            <name>s</name>
+            <desc>Set engine starter left</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/internal-engine-starter</property>
+                <step>1</step>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </key>
+
+        <key n="100">
+            <name>d</name>
+            <desc>Set engine starter right</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/engines/internal-engine-starter</property>
+                <step>-1</step>
+                <min>-1</min>
+                <max>1</max>
+            </binding>
+        </key> -->
+
+        <key n="102">
+            <name>f</name>
+            <desc>Toggle flashlight</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>dhc6.toggle_flashlight()</script>
+            </binding>
+        </key>
+
+        <key n="108">
+            <name>l</name>
+            <desc>Toggle pitot heat on/off</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/anti-ice/pitot-heat</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Pitot Heat: %i", getprop("/controls/anti-ice/pitot-heat")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="109">
+            <name>m</name>
+            <desc>Extend intake deflectors</desc>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                <value type="int">1</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Intake deflectors: %1.2f", getprop("/controls/engines/engine/intake-deflector")), 5);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                    <value type="int">0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                    <value type="int">0</value>
+                </binding>
+            </mod-up>
+        </key>
+
+        <key n="77">
+            <name>m</name>
+            <desc>Retract intake deflectors</desc>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                <value type="int">-1</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                <value type="int">-1</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Intake deflectors RETRACTED", 5);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                    <value type="int">0</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                    <value type="int">0</value>
+                </binding>
+            </mod-up>
+        </key>
+
+        <key n="121">
+            <name>y</name>
+            <desc>Show/hide yokes</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/yokes-visible</property>
+            </binding>
+        </key>
+
+        <key n="261">
+            <name>F5</name>
+            <desc>Aileron Trim left</desc>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/aileron-trim</property>
+                <step type="double">-0.01</step>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Aileron trim: %2.2f", getprop("/controls/flight/aileron-trim")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="262">
+            <name>F6</name>
+            <desc>Aileron Trim right</desc>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/aileron-trim</property>
+                <step type="double">0.01</step>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Aileron trim: %2.2f", getprop("/controls/flight/aileron-trim")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="263">
+            <name>F7</name>
+            <desc>Rudder Trim left</desc>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/rudder-trim</property>
+                <step type="double">-0.01</step>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Rudder trim: %2.2f", getprop("/controls/flight/rudder-trim")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="264">
+            <name>F8</name>
+            <desc>Rudder Trim right</desc>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/controls/flight/rudder-trim</property>
+                <step type="double">0.01</step>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Rudder trim: %2.2f", getprop("/controls/flight/rudder-trim")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="267">
+            <name>F11</name>
+            <desc>Autopilot Controls</desc>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "autopilot"}));</script>
+            </binding>
+        </key>
+
+        <key n="268">
+            <name>F12</name>
+            <desc>Radio Stack</desc>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "tranceivers"}));</script>
+            </binding>
+        </key>
+
+        <key n="66">
+            <name>Shift-B</name>
+            <desc>Parking Brakes</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>/controls/gear/parkingbrake-lever</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Parking brake: %i", getprop("/controls/gear/parkingbrake-lever")), 5);</script>
+            </binding>
+        </key>
+
+        <key n="89">
+            <name>Shift-Y</name>
+            <desc>Show/hide pilots</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/pilots/pilots-enabled</property>
+            </binding>
+        </key>
+
+        <key n="91">
+            <name>[</name>
+            <desc>Decrease flaps</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/flaplever</property>
+                <step>-0.01</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/flight/flaps-serviceable</property>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Flaps: %3.1f deg", 37.5*getprop("/controls/flight/flaps")));</script>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/flight/flaps-serviceable</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip("Flap operation requires hydraulic pressure!");</script>
+            </binding>
+        </key>
+
+        <key n="93">
+            <name>]</name>
+            <desc>Increase flaps</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>controls/flight/flaplever</property>
+                <step>0.01</step>
+                <min>0</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/flight/flaps-serviceable</property>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Flaps: %3.1f deg", 37.5*getprop("/controls/flight/flaps")));</script>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/flight/flaps-serviceable</property>
+                    </not>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip("Flap operation requires hydraulic pressure!");</script>
+            </binding>
+        </key>
+
+        <key n="113">
+            <name>q</name>
+            <desc>Nose wheel left</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/gear/tiller</property>
+                <step>-0.1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Nose wheel: %2.0f deg", 60*getprop("/controls/gear/tiller")));</script>
+            </binding>
+        </key>
+
+        <key n="23">
+            <name>Ctrl-w</name>
+            <desc>Center nose wheel</desc>
+            <repeatable type="bool">false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>property-interpolate</command>
+                <property>controls/gear/tiller</property>
+                <value type="double">0</value>
+                <time>0.25</time>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip("Nose wheel centered");</script>
+            </binding>
+        </key>
+
+        <key n="101">
+            <name>e</name>
+            <desc>Nose wheel right</desc>
+            <repeatable type="bool">true</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>property-adjust</command>
+                <property>controls/gear/tiller</property>
+                <step>0.1</step>
+                <min>-1</min>
+                <max>1</max>
+                <wrap>false</wrap>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/gear/tiller-enabled</property>
+                </condition>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Nose wheel: %2.0f deg", 60*getprop("/controls/gear/tiller")));</script>
+            </binding>
+        </key>
+
+        <key n="53">
+            <name>5</name>
+            <desc>Center aileron, elevator, rudder, and nose wheel</desc>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    interpolate("/controls/flight/aileron", 0, 0.25);
+                    interpolate("/controls/flight/elevator", 0, 0.25);
+                    interpolate("/controls/flight/rudder", 0, 0.25);
+                    interpolate("/controls/gear/tiller", 0, 0.25);
+                </script>
+            </binding>
+        </key>
+
+        <key n="309">
+            <name>Keypad 5</name>
+            <desc>Center aileron, elevator, rudder, and nose wheel</desc>
+            <binding>
+                <command>nasal</command>
+                <script>
+                    interpolate("/controls/flight/aileron", 0, 0.25);
+                    interpolate("/controls/flight/elevator", 0, 0.25);
+                    interpolate("/controls/flight/rudder", 0, 0.25);
+                    interpolate("/controls/gear/tiller", 0, 0.25);
+                </script>
+            </binding>
+        </key>
+
+        <key n="60">
+            <name>&gt;</name>
+            <desc>Center aileron trim</desc>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/flight/aileron-trim</property>
+                <value type="double">0</value>
+                <time>0.25</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Aileron trim centered");</script>
+            </binding>
+        </key>
+
+        <key n="62">
+            <name>&lt;</name>
+            <desc>Center rudder trim</desc>
+            <binding>
+                <command>property-interpolate</command>
+                <property>controls/flight/rudder-trim</property>
+                <value type="double">0</value>
+                <time>0.25</time>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip("Rudder trim centered");</script>
+            </binding>
+        </key>
+
+        <key n="5">
+            <name>Ctrl-E</name>
+            <desc>Toggle external power</desc>
+            <binding>
+                <command>property-toggle</command>
+                <property>sim/model/equipment/ground-services/external-power/enable</property>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("External power: %i", getprop("/sim/model/equipment/ground-services/external-power/enable")), 5);</script>
+            </binding>
+        </key>
+
+    </keyboard>
+
+    <mice include="dhc6-mice.xml"/>
+
+</PropertyList>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ************************************************************************
+    De Havilland Twin Otter
+    Jan 2008 Syd Adams
+    Dec 2013 http://equipe-flightgear.forumactif.com/t1195-dhc-6-300-twin-otter#21949
+    2014-2015 developers work in various countries around the world.
+    ************************************************************************
+-->
+
+<PropertyList include="dhc6-base.xml">
+
+    <sim>
+        <description>de Havilland Canada DHC-6-300+ Twin Otter (wheels)</description>
+        <long-description>The DHC-6 Twin Otter is a 20 seat, twin turboprop, high wing aircraft with STOL abilities and a fixed tricycle gear. Originally developed by de Haviland Canada (Series -100 to -300) nowadays Viking Air produces and distributes the Twin Otter series -400. Since it's first flight in 1996 there were built more then 900 Twin Otters and the aircraft still enjoys great popularity among skydivers and as a bush plane due to it's powerful engines and it's robustness and versatility. Moreover it can easily be equipped with floats and skis. This version for FlightGear is the DHC-6-300 series with PT6A-34 engines. Have fun!
+        </long-description>
+        <de>
+            <long-description>Die DHC-6 Twin Otter ist ein 20-sitziger Hochdecker mit zwei Turboprop-Triebwerken, einem festen Dreibeinfahrwerk und STOL-Fähigkeiten. Ursprünglich von de Havilland Canada entwickelt (Baureihen -100 bis -300), wird die Twin Otter heutzutage als Baureihe -400 von Viking Air produziert und vertrieben. Seit ihrem Erstflug 1996 wurden mehr als 900 Twin Otters gebaut und auch heute noch erfreut sie sich dank ihrer starken Treibwerke und ihrer Robustheit und Vielseitigkeit großer Beliebtheit bei Fallschirmspringern und als Buschflugzeug. Zudem kann sie einfach mit Schwimmern und Skiern ausgestattet werden. Diese Version für FlightGear stellt die Baureihe DHC-6-300 dar. Viel Spaß!
+            </long-description>
+        </de>
+        <author>Syd Adams (Initial model), Christian Thiriot (3D, Textures), Bo Lan (Nasal, FDM, Systems), Jonathan Schellhase (3D, Nasal, Systems, Sound, misc), Tim Dicus (Engine upgrade)</author>
+        <flight-model>yasim</flight-model>
+        <aero>dhc6p</aero>
+        <fuel-fraction>0.6</fuel-fraction>
+        <previews>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/wheels01.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/wheels02.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/wheels03.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/wheels04.jpg</path>
+                <splash type="bool">true</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/floats01.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/floats02.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/floats03.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/floats04.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/skis01.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/skis02.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/skis03.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>exterior</type>
+                <path>Pics/skis04.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>Pics/cockpit01.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>Pics/cockpit02.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+            <preview>
+                <type>cockpit</type>
+                <path>Pics/cockpit03.jpg</path>
+                <splash type="bool">false</splash>
+            </preview>
+        </previews>
+        <startup>
+            <splash-logo-image>Pics/logo.png</splash-logo-image>
+            <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash1.png</splash-texture>
+            <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash2.png</splash-texture>
+            <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash3.png</splash-texture>
+            <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash4.png</splash-texture>
+            <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash5.png</splash-texture>
+        </startup>
+        <model>
+            <path>Aircraft/dhc6p/Models/DHC6.xml</path>
+            <blunt-nose type="bool">0</blunt-nose>
+            <equipment>
+                <left-tiedown-wheels type="bool">1</left-tiedown-wheels>
+                <right-tiedown-wheels type="bool">1</right-tiedown-wheels>
+                <rear-tiedown-wheels type="bool">1</rear-tiedown-wheels>
+                <left-chock-fwd type="bool">1</left-chock-fwd>
+                <left-chock-aft type="bool">1</left-chock-aft>
+                <right-chock-fwd type="bool">1</right-chock-fwd>
+                <right-chock-aft type="bool">1</right-chock-aft>
+            </equipment>
+        </model>
+        <hitches>
+            <aerotow>
+                <tow>
+                    <length type="float">60</length>
+                    <elastic-constant type="float">10000</elastic-constant>
+                    <weight-per-m-kg-m type="float">1</weight-per-m-kg-m>
+                    <dist type="float">1</dist>
+                    <connected-to-property-node type="bool"></connected-to-property-node>
+                    <brake-force type="float">100000</brake-force>
+                    <connected-to-ai-or-mp-callsign type ="string">*</connected-to-ai-or-mp-callsign>
+                    <end-force-x type ="float">0</end-force-x>
+                    <end-force-y type ="float">0</end-force-y>
+                    <end-force-z type ="float">0</end-force-z>
+                </tow>
+                <speed-in-tow-direction type="float">0</speed-in-tow-direction>
+                <open type="bool">true</open>
+                <local-pos-x type="float">0</local-pos-x>
+                <local-pos-y type="float">0</local-pos-y>
+                <local-pos-z type="float">0</local-pos-z>
+                <is-slave type="bool">false</is-slave>
+            </aerotow>
+        </hitches>
+
+    </sim>
+
+    <controls>
+        <gear>
+            <brake-parking>1</brake-parking>
+        </gear>
+    </controls>
+
+
+    <hitch name="aerotow" x="-6.2" y="0" z="-0.12"  force-is-calculated-by-other="1">
+        <tow length="60" weight-per-meter="0.035" elastic-constant="9000" break-force="10000" mp-auto-connect-period="1.0"/>
+        <winch max-tow-length="1000" min-tow-length="60" initial-tow-length="60"/>
+    </hitch>
+
+</PropertyList>

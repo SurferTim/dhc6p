@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>throttles</name>
+    <layout>vbox</layout>
+
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>T-L T-R</label>
+            <halign>center</halign>
+        </text>
+
+    </group>
+
+    <group>
+       <layout>hbox</layout>
+
+        <slider>
+            <vertical>true</vertical>
+            <pref-height>200</pref-height>
+            <live>true</live>
+            <property>controls/engines/engine/throttle</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </slider>
+
+        <slider>
+            <vertical>true</vertical>
+            <pref-height>200</pref-height>
+            <live>true</live>
+            <property>controls/engines/engine[1]/throttle</property>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </slider>
+
+    </group>
+
+    <group>
+       <layout>hbox</layout>
+       <padding>2</padding>
+
+        <checkbox>
+            <width>30</width>
+            <pref-height>15</pref-height>
+            <property>controls/engines/engine[0]/reverser</property>
+            <live>true</live>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+        <text>
+            <label>RVRS</label>
+            <halign>center</halign>
+        </text>
+
+        <checkbox>
+            <width>30</width>
+            <pref-height>15</pref-height>
+            <property>controls/engines/engine[1]/reverser</property>
+            <live>true</live>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </checkbox>
+
+    </group>
+
+    <group>
+       <layout>hbox</layout>
+
+        <button>
+            <legend>X</legend>
+            <pref-width>20</pref-width>
+            <pref-height>15</pref-height>
+            <default>true</default>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+    </group>
+
+</PropertyList>

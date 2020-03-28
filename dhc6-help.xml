@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Help dialog window for the DHC-6 Twin Otter -->
+
+<PropertyList>
+
+    <title>de Havilland Canada DHC-6 Twin Otter</title>
+
+    <key>
+        <name>Del</name>
+        <desc>Toggle thrust reverse</desc>
+    </key>
+
+    <key>
+        <name>c</name>
+        <desc>Hide/show cockpit</desc>
+    </key>
+
+    <key>
+        <name>Ctrl-c</name>
+        <desc>Toggle clickable hotspots</desc>
+    </key>
+
+    <key>
+        <name>!</name>
+        <desc>Select left engine</desc>
+    </key>
+
+    <key>
+        <name>@</name>
+        <desc>Select right engine</desc>
+    </key>
+
+    <key>
+        <name>~</name>
+        <desc>Select both engines</desc>
+    </key>
+
+    <key>
+        <name>n/N</name>
+        <desc>Increase/decrease propeller</desc>
+    </key>
+
+    <key>
+        <name>j/J</name>
+        <desc>Increase/decrease left condition</desc>
+    </key>
+
+    <key>
+        <name>k/K</name>
+        <desc>Increase/decrease right condition</desc>
+    </key>
+
+    <key>
+        <name>l</name>
+        <desc>Toggle pitot heat on/off</desc>
+    </key>
+
+    <key>
+        <name>L</name>
+        <desc>Toggle prop deice on/off</desc>
+    </key>
+
+    <key>
+        <name>m</name>
+        <desc>Toggle intake deflectors on/off</desc>
+    </key>
+
+    <key>
+        <name>f</name>
+        <desc>Toggle flashlight</desc>
+    </key>
+
+    <key>
+        <name>y</name>
+        <desc>Show/hide yokes</desc>
+    </key>
+
+    <key>
+        <name>Y</name>
+        <desc>Show/hide pilots</desc>
+    </key>
+
+    <key>
+        <name>F5</name>
+        <desc>Aileron trim left</desc>
+    </key>
+
+    <key>
+        <name>F6</name>
+        <desc>Aileron trim right</desc>
+    </key>
+
+    <key>
+        <name>F7</name>
+        <desc>Rudder trim left</desc>
+    </key>
+
+    <key>
+        <name>F8</name>
+        <desc>Rudder trim right</desc>
+    </key>
+
+    <key>
+        <name>q/e</name>
+        <desc>Nose wheel left/right</desc>
+    </key>
+
+    <key>
+        <name>Ctrl-w</name>
+        <desc>Center nose wheel</desc>
+    </key>
+
+    <key>
+        <name>F11</name>
+        <desc>Autopilot controls</desc>
+    </key>
+
+    <key>
+        <name>F12</name>
+        <desc>Radio Stack</desc>
+    </key>
+
+    <key>
+        <name>&lt;/&gt;</name>
+        <desc>Center Aileron/Rudder trim</desc>
+    </key>
+
+    <line>Nose wheel steering is controlled by the lever behind the pilot's yoke.</line>
+    <line>If it's disabled in the menu dialog (DHC-6 -&gt; Nose wheel steering), the nose wheel is controlled via rudder</line>
+    <line/>
+    <line>To open/close the doors, just click on it.</line>
+    <line/>
+    <line>When not starting up the engines on asphalt, you have to switch on the intake deflectors. Otherwise the engines will fail.</line>
+    <line/>
+    <line>If the outside temperature is below 0 dec C, you have to switch on the pitot heat and the prop deice!</line>
+    <line/>
+    <line>The maximum speed is 170 knots, up to 6700 ft. Above that it decreases by 3 knots each 1000 ft.</line>
+    <line>____________________________________________________</line>
+    <line/>
+    <line>Technical data (DHC-6-300):</line>
+    <line>Length: 15.77 m/51 ft 9 in</line>
+    <line>Wingspan: 19.81 m/65 ft 0 in</line>
+    <line>Height: 5.91 m/19 ft 4 in</line>
+    <line>Service ceiling: 7620 m/25000 ft</line>
+    <line>Range with max fuel, no payload: aprox. 1430 km/775 nm</line>
+    <line>MTOW: 5,670 kg/12,500 lb</line>
+    <line>Maximum landing weight: 5,579 kg/12300 lb</line>
+    <line>Powerplant: 2x Pratt and Whitney Canada PT6A-27</line>
+    <line>Power: 2x 463 kW</line>
+    <line>Stall speed in landing config (Vs0): 58 KIAS</line>
+    <line>Stall speed in cruise config (Vs1): 80 KIAS</line>
+    <line>Maximum Operating Speed (Vmo) up to 6,700 ft: 170 KIAS</line>
+    <line>Maximum Operating Speed (Vmo) up to 10,000 ft MSL: 160 KIAS</line>
+    <line>Maximum Operating Speed (Vmo) up to 15,000 ft MSL: 145 KIAS</line>
+    <line>Maximum Operating Speed (Vmo) up to 20,000 ft MSL: 130 KIAS</line>
+    <line>Maximum Operating Speed (Vmo) up to 25,000 ft MSL: 115 KIAS</line>
+    <line>Typical Cruise Speed (up to 10000 ft MSL): around 150 KIAS</line>
+
+</PropertyList>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Right Oil Pressure gauge for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Left Oil Pressure</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/oilpsi/oilpsi-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>18</w>
+            <h>246</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/oilpsi/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[1]/n2</property>
+                    <min>0.0</min>
+                    <max>100.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind>   0 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  30 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  70 </ind><dep> 210 </dep></entry>
+                        <entry><ind> 100 </ind><dep> 250 </dep></entry>
+                    </interpolation>
+                    <offset>-75</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[1]/reverse</property>
+                    <min>0.0</min>
+                    <max>1.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind> 0 </ind><dep>  0 </dep></entry>
+                        <entry><ind> 1 </ind><dep> 50 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>80</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>wheels.ac</path>
+
+    <!-- GEAR -->
+    <animation>
+        <type>select</type>
+        <object-name>FrtSki</object-name>
+        <object-name>Lski</object-name>
+        <object-name>Rski</object-name>
+        <condition>
+            <equals>
+                <property>sim/multiplay/generic/string</property>
+                <value>dhc6S</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <model>
+        <name>TaxiLight</name>
+        <path>Aircraft/dhc6p/Models/Lights/TaxiLight-rembrandt.xml</path>
+        <offsets>
+           <x-m>-4.4422</x-m>
+           <y-m>-0.2040</y-m>
+           <z-m>-1.0681</z-m>
+           <roll-deg>0</roll-deg>
+           <pitch-deg>-8</pitch-deg>
+           <heading-deg>0</heading-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tyre-smoke-n</name>
+        <path>Aircraft/dhc6p/Models/Effects/tire-smoke-nose.xml</path>
+        <offsets>
+            <x-m>-4.280</x-m>
+            <y-m> 0.0</y-m>
+            <z-m>-1.784</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tyre-smoke-n</name>
+        <path>Aircraft/dhc6p/Models/Effects/tire-smoke-left.xml</path>
+        <offsets>
+            <x-m> 0.219</x-m>
+            <y-m>-1.871</y-m>
+            <z-m>-1.825</z-m>
+        </offsets>
+    </model>
+
+    <model>
+        <name>tyre-smoke-n</name>
+        <path>Aircraft/dhc6p/Models/Effects/tire-smoke-right.xml</path>
+        <offsets>
+            <x-m> 0.219</x-m>
+            <y-m> 1.871</y-m>
+            <z-m>-1.825</z-m>
+        </offsets>
+    </model>
+
+    <effect>
+       <inherits-from>Effects/model-transparent</inherits-from>
+            <object-name>taxilight.flare</object-name>
+       <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+      </condition>
+   </effect>
+
+   <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/skin-reflect</inherits-from>
+        <object-name>FrtSki</object-name>
+        <object-name>Lski</object-name>
+        <object-name>Rski</object-name>
+        <object-name>LHstrut</object-name>
+        <object-name>RHstrut</object-name>
+        <object-name>FrtStrut</object-name>
+    </effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>taxilight.flare</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/float[6]</property>
+                <value>9</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>flash</type>
+        <object-name>taxilight.flare</object-name>
+        <center>
+          <x-m>-4.4422</x-m>
+          <y-m>-0.2040</y-m>
+          <z-m>-1.0681</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>2</max>
+    </animation>
+
+    <!-- FRONT GEAR -->
+    <animation>
+        <type>translate</type>
+        <object-name>FrtStrut</object-name>
+        <object-name>FrtWheel</object-name>
+        <object-name>FrtSki</object-name>
+        <object-name>frt.d1</object-name>
+        <object-name>taxilight.flare</object-name>
+        <object-name>Cone</object-name>
+        <property>gear/gear[0]/compression-m</property>
+        <factor>1.0</factor>
+        <axis>
+            <x>0.087</x>
+            <y>0</y>
+            <z>0.996</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>frt.d1</object-name>
+        <property>gear/gear[0]/compression-m</property>
+        <factor>189.65</factor>
+        <center>
+            <x-m>-4.480</x-m>
+            <y-m>0</y-m>
+            <z-m>-1.036</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>-1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>frt.d2</object-name>
+        <property>gear/gear[0]/compression-m</property>
+        <factor>119.25</factor>
+        <center>
+            <x-m>-4.394</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.734</z-m>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>1</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>FrtStrut</object-name>
+        <object-name>FrtWheel</object-name>
+        <object-name>frt.d1</object-name>
+        <object-name>frt.d2</object-name>
+        <object-name>FrtSki</object-name>
+        <object-name>taxilight.flare</object-name>
+        <object-name>Cone</object-name>
+        <object-name>TaxiLight</object-name>
+        <property>controls/gear/tiller</property>
+        <factor>30.0</factor>
+        <center>
+            <x-m>-4.410</x-m>
+            <y-m>0</y-m>
+            <z-m>-0.744</z-m>
+        </center>
+        <axis>
+            <x>0.087</x>
+            <y>0</y>
+            <z>-0.996</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>FrtWheel</object-name>
+        <property>gear/gear[0]/rollspeed-ms</property>
+        <factor>20</factor>
+        <center>
+            <x-m>-4.468</x-m>
+            <y-m>0.0</y-m>
+            <z-m>-1.452</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-0.1</y>
+            <z>0.0</z>
+        </axis>
+    </animation>
+
+    <!-- RIGHT MAIN GEAR -->
+    <animation>
+        <type>rotate</type>
+        <object-name>Rwheel</object-name>
+        <object-name>Rski</object-name>
+        <object-name>RHstrut</object-name>
+        <property>gear/gear[2]/compression-m</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.5</ind><dep>25.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.134</x-m>
+            <y-m>0.923</y-m>
+            <z-m>-0.810</z-m>
+        </center>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>Rwheel</object-name>
+        <property>gear/gear[2]/rollspeed-ms</property>
+        <factor>-20</factor>
+        <center>
+            <x-m>0.0774</x-m>
+            <y-m>1.907</y-m>
+            <z-m>-1.408</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>0.337</y>
+            <z>-0.0295</z>
+        </axis>
+    </animation>
+
+    <!-- LEFT MAIN GEAR -->
+    <animation>
+        <type>rotate</type>
+        <object-name>Lwheel</object-name>
+        <object-name>Lski</object-name>
+        <object-name>LHstrut</object-name>
+        <property>gear/gear[1]/compression-m</property>
+        <interpolation>
+            <entry><ind>0.0</ind><dep>0.0</dep></entry>
+            <entry><ind>0.5</ind><dep>25.0</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>-0.134</x-m>
+            <y-m>-0.923</y-m>
+            <z-m>-0.810</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>spin</type>
+        <object-name>Lwheel</object-name>
+        <property>gear/gear[1]/rollspeed-ms</property>
+        <factor>20</factor>
+         <center>
+            <x-m>0.0774</x-m>
+            <y-m>-1.907</y-m>
+            <z-m>-1.408</z-m>
+        </center>
+        <axis>
+            <x>0.0</x>
+            <y>-0.337</y>
+            <z>-0.0295</z>
+        </axis>
+    </animation>
+
+</PropertyList>

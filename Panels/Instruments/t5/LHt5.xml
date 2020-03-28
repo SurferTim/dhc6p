@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Left T5 gauge for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Left T5</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/t5/t5-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>17</w>
+            <h>350</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/t5/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[0]/t5</property>
+                    <min>0.0</min>
+                    <max>1200.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind>    0 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  300 </ind><dep>  28 </dep></entry>
+                        <entry><ind>  400 </ind><dep>  36 </dep></entry>
+                        <entry><ind>  500 </ind><dep>  50 </dep></entry>
+                        <entry><ind>  600 </ind><dep>  92 </dep></entry>
+                        <entry><ind>  650 </ind><dep> 115 </dep></entry>
+                        <entry><ind>  720 </ind><dep> 150 </dep></entry>
+                        <entry><ind>  725 </ind><dep> 152 </dep></entry>
+                        <entry><ind>  800 </ind><dep> 188 </dep></entry>
+                        <entry><ind>  900 </ind><dep> 202 </dep></entry>
+                        <entry><ind> 1000 </ind><dep> 213 </dep></entry>
+                        <entry><ind> 1100 </ind><dep> 225 </dep></entry>
+                        <entry><ind> 1200 </ind><dep> 232 </dep></entry>
+                    </interpolation>
+                    <offset>30</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[0]/reverse</property>
+                    <min>0.0</min>
+                    <max>1.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind> 0 </ind><dep>   0 </dep></entry>
+                        <entry><ind> 1 </ind><dep> 100 </dep></entry>
+                    </interpolation>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

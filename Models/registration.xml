@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <text>
+        <name>RHreg</name>
+        <offsets>
+            <x-m>-0.310</x-m>
+            <y-m>5.5</y-m>
+            <z-m>1.09</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>-3</pitch-deg>
+            <heading-deg>90</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>reversed-xy-plane</axis-alignment>
+        <type>text-value</type>
+        <property>sim/multiplay/generic/string[1]</property>
+        <format>%0.6s</format>
+        <font>arial_black.txf</font>
+        <character-size>0.5</character-size>
+        <character-aspect-ratio >1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">128</width>
+            <height type="int">128</height>
+        </font-resolution>
+    </text>
+
+    <text>
+        <name>LHreg</name>
+        <offsets>
+            <x-m>-0.310</x-m>
+            <y-m>-5.5</y-m>
+            <z-m>1.09</z-m>
+            <roll-deg>0</roll-deg>
+            <pitch-deg>3</pitch-deg>
+            <heading-deg>90</heading-deg>
+        </offsets>
+        <alignment>center-center</alignment>
+        <axis-alignment>reversed-xy-plane</axis-alignment>
+        <type>text-value</type>
+        <property>sim/multiplay/generic/string[1]</property>
+        <format>%0.6s</format>
+        <font>arial_black.txf</font>
+        <character-size>0.5</character-size>
+        <character-aspect-ratio >1.3</character-aspect-ratio>
+        <font-resolution>
+            <width type="int">128</width>
+            <height type="int">128</height>
+        </font-resolution>
+    </text>
+
+    <animation>
+        <type>material</type>
+         <object-name>LHreg</object-name>
+         <object-name>RHreg</object-name>
+        <emission>
+            <red>0</red>
+            <green>0</green>
+            <blue>0</blue>
+        </emission>
+        <ambient>
+            <red-prop>sim/multiplay/generic/float[4]</red-prop>
+            <green-prop>sim/multiplay/generic/float[5]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[6]</blue-prop>
+        </ambient>
+        <diffuse>
+            <red-prop>sim/multiplay/generic/float[4]</red-prop>
+            <green-prop>sim/multiplay/generic/float[5]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[6]</blue-prop>
+        </diffuse>
+        <specular>
+            <red-prop>sim/multiplay/generic/float[4]</red-prop>
+            <green-prop>sim/multiplay/generic/float[5]</green-prop>
+            <blue-prop>sim/multiplay/generic/float[6]</blue-prop>
+        </specular>
+    </animation>
+
+</PropertyList>

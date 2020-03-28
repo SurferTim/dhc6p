@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>flap-gauge.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>FlapLever</object-name>
+        <object-name>Flapgauge</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/flap-cons-trim-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>FlapLever</object-name>
+        <object-name>Flapgauge</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
+            <factor-prop>systems/electrical/outputs/flap-cons-trim-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>FlapLever</object-name>
+        <property>surface-positions/flap-pos-norm</property>
+        <factor>0.1085</factor>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>FlapLever</object-name>
+        <object-name>Flapgauge</object-name>
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>FlapLever</object-name>
+        <object-name>Flapgauge</object-name>
+    </effect>
+
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">Flaps</text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.005 </x-m>
+            <y-m>  0.000 </y-m>
+            <z-m>  0.000 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+</PropertyList>

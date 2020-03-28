@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--2D Variometer for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Variometer</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/vsi/vsi-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>259</w>
+            <h>30.5</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/vsi/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/vertical-speed-indicator/indicated-speed-fpm</property>
+                    <min>-2000</min>
+                    <max>2000</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind> -2000 </ind><dep> -172 </dep></entry>
+                        <entry><ind> -1500 </ind><dep> -130 </dep></entry>
+                        <entry><ind> -1000 </ind><dep>  -79 </dep></entry>
+                        <entry><ind>  -500 </ind><dep>  -33 </dep></entry>
+                        <entry><ind>     0 </ind><dep>    0 </dep></entry>
+                        <entry><ind>   500 </ind><dep>   33 </dep></entry>
+                        <entry><ind>  1000 </ind><dep>   79 </dep></entry>
+                        <entry><ind>  1500 </ind><dep>  130 </dep></entry>
+                        <entry><ind>  2000 </ind><dep>  172 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-65</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

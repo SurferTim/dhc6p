@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Radio Magnetic Indicator (RMI) for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>RMI</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+    <layer>
+            <name>Background</name>
+            <w>142.4</w>
+            <h>345.6</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/navselect-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>NAV 1 light</name>
+            <condition>
+                <property>/controls/armament/station[5]/release-all</property>
+            </condition>
+            <w>84.8</w>
+            <h>22.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/light.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>110</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>NAV 2 light</name>
+            <condition>
+                <property>/controls/armament/station[6]/release-all</property>
+            </condition>
+            <w>84.8</w>
+            <h>22.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/light.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-40</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+        <action>
+            <name>Select NAV 1</name>
+            <button>0</button>
+            <x>-55</x>
+            <y>20</y>
+            <w>111.2</w>
+            <h>72</h>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/armament/station[5]/release-all</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/armament/station[6]/release-all</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+
+        <action>
+            <name>Select NAV 2</name>
+            <button>0</button>
+            <x>-55</x>
+            <y>-130</y>
+            <w>111.2</w>
+            <h>72</h>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/armament/station[6]/release-all</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>/controls/armament/station[5]/release-all</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+
+    </actions>
+
+</PropertyList>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    **********************************************************************
+    This file selects the instrumentation modules that should be available.
+    **********************************************************************
+-->
+
+<PropertyList>
+
+    <adf>
+        <name>adf</name>
+        <number>0</number>
+    </adf>
+
+    <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>0</number>
+        <total-pressure>systems/pitot/measured-total-pressure-inhg</total-pressure>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+     <airspeed-indicator>
+        <name>airspeed-indicator</name>
+        <number>1</number>
+        <total-pressure>systems/pitot[1]/measured-total-pressure-inhg</total-pressure>
+        <static-pressure>systems/static[1]/pressure-inhg</static-pressure>
+    </airspeed-indicator>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>0</number>
+        <static-pressure>systems/static[0]/pressure-inhg</static-pressure>
+    </altimeter>
+
+    <altimeter>
+        <name>altimeter</name>
+        <number>1</number>
+        <static-pressure>systems/static[1]/pressure-inhg</static-pressure>
+    </altimeter>
+
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>0</number>
+        <suction>systems/vacuum[0]/suction-inhg</suction>
+    </attitude-indicator>
+
+    <attitude-indicator>
+        <name>attitude-indicator</name>
+        <number>1</number>
+        <suction>systems/vacuum[1]/suction-inhg</suction>
+    </attitude-indicator>
+
+    <clock>
+        <name>clock</name>
+        <number>0</number>
+    </clock>
+
+    <heading-indicator>
+        <name>heading-indicator</name>
+        <number>0</number>
+        <suction>systems/vacuum/suction-inhg</suction>
+    </heading-indicator>
+
+    <heading-indicator-dg>
+      <name>heading-indicator-dg</name>
+      <suction>systems/vacuum/suction-inhg</suction>
+        <number>0</number>
+    </heading-indicator-dg>
+
+    <heading-indicator-real-dg>
+        <name>heading-indicator-real-dg</name>
+        <number>0</number>
+    </heading-indicator-real-dg>
+
+    <magnetic-compass>
+        <name>magnetic-compass</name>
+        <number>0</number>
+    </magnetic-compass>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>0</number>
+    </nav-radio>
+
+    <nav-radio>
+        <name>nav</name>
+        <number>1</number>
+    </nav-radio>
+
+    <slip-skid-ball>
+        <name>slip-skid-ball</name>
+        <number>0</number>
+    </slip-skid-ball>
+
+    <transponder>
+        <name>transponder</name>
+        <number>0</number>
+        <mode-c-altitude>instrumentation/encoder/mode-c-alt-ft</mode-c-altitude>
+    </transponder>
+
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>0</number>
+        <electrical>0</electrical>
+    </turn-indicator>
+
+    <turn-indicator>
+        <name>turn-indicator</name>
+        <number>1</number>
+        <electrical>1</electrical>
+    </turn-indicator>
+
+    <vertical-speed-indicator>
+        <name>vertical-speed-indicator</name>
+        <number>0</number>
+        <static-pressure>systems/static/pressure-inhg</static-pressure>
+    </vertical-speed-indicator>
+
+    <gps>
+        <name>gps</name>
+        <number>0</number>
+    </gps>
+
+    <encoder>
+        <name>encoder</name>
+        <number>0</number>
+    </encoder>
+
+    <radar>
+        <name>radar</name>
+        <number>0</number>
+    </radar>
+
+    <dme>
+        <name>dme</name>
+        <number>0</number>
+    </dme>
+    
+    <comm-radio>
+        <name>comm</name>
+        <number>0</number>
+    </comm-radio>
+
+    <comm-radio>
+        <name>comm</name>
+        <number>1</number>
+    </comm-radio>
+
+    <transponder>
+        <name type="string">transponder</name>
+        <number type="int">0</number>
+        <mode type="int">1</mode> <!-- 0 = Mode A, 1 = Mode C, 2 = Mode S -->
+        <bus-volts type="double">8.0</bus-volts>
+        <encoder-path type="string">/instrumentation/altimeter</encoder-path>
+        <kt70-compatibility type="bool">0</kt70-compatibility>
+    </transponder>
+    
+</PropertyList>

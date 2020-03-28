@@ -1,0 +1,629 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ##########################################
+    
+     # DR400-dauphin by PAF team
+     # April 2012 : Modified by PAF team
+     # http://equipe-flightgear.forumactif.com
+    
+    ##########################################
+-->
+
+<PropertyList>
+
+    <path>hi.ac</path>
+
+    <animation>
+        <object-name>fond</object-name>
+        <object-name>face</object-name>
+        <object-name>front</object-name>
+        <object-name>HdgBug</object-name>
+        <object-name>OBS-Knob</object-name>
+        <object-name>clic-offset-L</object-name>
+        <object-name>clic-offset-R</object-name>
+        <object-name>Hdg-Knob</object-name>
+        <object-name>clic-bug-L</object-name>
+        <object-name>clic-bug-R</object-name>
+        <object-name>mount.001</object-name>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>backlight</object-name>
+        <object-name>click-bug-L</object-name>
+        <object-name>click-bug-R</object-name>
+        <object-name>click-offset-l</object-name>
+        <object-name>click-offset-R</object-name>
+        <object-name>mount.001</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Hdg-Knob</object-name>
+        <object-name>OBS-Knob</object-name>
+        <object-name>HdgBug</object-name>
+        <object-name>face</object-name>
+        <object-name>front</object-name>
+        <object-name>robin</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/plt-eng-inst-emer-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>Hdg-Knob</object-name>
+        <object-name>HdgBug</object-name>
+        <object-name>OBS-Knob</object-name>
+        <object-name>backlight</object-name>
+        <object-name>click-bug-L</object-name>
+        <object-name>click-bug-R</object-name>
+        <object-name>click-offset-l</object-name>
+        <object-name>click-offset-R</object-name>
+        <object-name>face</object-name>
+        <object-name>front</object-name>
+        <object-name>mount.001</object-name>
+        <object-name>robin</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>Hdg-Knob</object-name>
+        <object-name>HdgBug</object-name>
+        <object-name>OBS-Knob</object-name>
+        <object-name>backlight</object-name>
+        <object-name>click-bug-L</object-name>
+        <object-name>click-bug-R</object-name>
+        <object-name>click-offset-l</object-name>
+        <object-name>click-offset-R</object-name>
+        <object-name>face</object-name>
+        <object-name>front</object-name>
+        <object-name>mount.001</object-name>
+        <object-name>robin</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <!--effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>vitre</object-name>
+        <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </condition>
+    </effect-->
+
+    <animation>
+        <type>pick</type>
+        <object-name>face</object-name>
+        <visible>true</visible>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>indicated-heading</tooltip-id>
+                <label>Heading: %3d deg</label>
+                <mapping>heading</mapping>
+                <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Hdg-Knob</object-name>
+        <object-name>OBS-Knob</object-name>
+        <object-name>front</object-name>
+        <object-name>HdgBug</object-name>
+        <object-name>face</object-name>
+        <object-name>mount</object-name>
+        <object-name>robin</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
+            <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>face</object-name>
+        <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+        <factor>-1</factor>
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HdgBug</object-name>
+        <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+        <factor>-1</factor>
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>HdgBug</object-name>
+        <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <!--     Heading Bug control    -->
+    <animation>
+        <type>knob</type>
+        <object-name>Hdg-Knob</object-name>  
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <!-- faster rate of change than the default -->
+        <drag-scale-px>4</drag-scale-px>
+        <shift-repeat type="int">5</shift-repeat>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-bug</tooltip-id>
+                <mapping>heading</mapping>
+                <label>Heading Bug: %3d deg</label>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+        </binding>
+        </hovered>
+    </animation>
+
+    <!--             Heading Offset             -->
+    <animation>
+        <type>knob</type>
+        <object-name>OBS-Knob</object-name>  
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <factor>1</factor>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <!-- faster rate of change than the default -->
+        <drag-scale-px>4</drag-scale-px>
+        <shift-repeat type="int">5</shift-repeat>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-offset</tooltip-id>
+                <label>Current Heading : %3d deg</label>
+                <mapping>heading</mapping>
+                <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+            </binding>
+        </hovered>
+        </animation>
+
+    <!--     Heading Bug control    -->
+    <animation>
+        <type>pick</type>
+        <object-name>click-bug-L</object-name>
+        <visible>false</visible>
+        <action>
+            <name>small decrease</name>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>large decrease</name>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>scrollwheel decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-bug</tooltip-id>
+                <mapping>heading</mapping>
+                <label>Heading Bug: %3d deg</label>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+            </binding>
+        </hovered>
+    </animation>   
+
+    <animation>
+        <type>pick</type>
+        <object-name>click-bug-R</object-name>
+        <visible>false</visible>
+        <action>
+            <name>small increase</name>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>large increase</name>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>scrollwheel decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-bug</tooltip-id>
+                <mapping>heading</mapping>
+                <label>Heading Bug: %3d deg</label>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+            </binding>
+        </hovered>
+    </animation>   
+
+    <!--             Heading Offset             -->
+    <animation>
+        <type>pick</type>
+        <object-name>click-offset-L</object-name>
+        <visible>false</visible>
+        <action>
+            <name>small decrease</name>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>large decrease</name>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>scrollwheel decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-offset</tooltip-id>
+                <label>Current Heading: %3d deg</label>
+                <mapping>heading</mapping>
+                <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>click-offset-R</object-name>
+        <visible>false</visible>
+        <action>
+            <name>small increase</name>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>large increase</name>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>5</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>scrollwheel increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>  
+        <action>
+            <name>scrollwheel decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-1</step>
+                <min>0</min>
+                <max>360</max>
+                <wrap>1</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>heading-offset</tooltip-id>
+                <label>Current Heading: %3d deg</label>
+                <mapping>heading</mapping>
+                <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+            </binding>
+        </hovered>
+    </animation>
+  
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">Heading Indicator</text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.005 </x-m>
+            <y-m>  0.000 </y-m>
+            <z-m>  0.000 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+    <!--########## Cone de lumière Rembrandt #############-->
+    <animation>
+        <name>BackLightAnimation</name>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <object-name>backlight</object-name>
+        <position>
+            <x> 0.02 </x>
+            <y> 0.00 </y>
+            <z>-0.05 </z>
+        </position>
+        <direction>
+            <x> -1.0 </x>
+            <y>  0.0 </y>
+            <z>  1.0 </z>
+        </direction>
+        <ambient>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </ambient>
+        <diffuse>
+            <r>  0.5 </r>
+            <g>  0.404 </g>
+            <b>  0.2 </b>
+            <a>  1.0 </a>
+        </diffuse>
+        <specular>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>systems/electrical/outputs/instrument-lights</property>
+            <!-- optional begin -->
+            <factor>0.04</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+            <!-- optional end -->
+        </dim-factor>
+        <attenuation>
+            <c>  0.2 </c>
+            <l>  0.2 </l>
+            <q>  0.4 </q>
+        </attenuation>
+        <exponent>  8.0 </exponent>
+        <cutoff>   48.0   </cutoff>
+        <near-m>    0.0   </near-m>
+        <far-m>     0.09 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>BackLightAnimation</object-name>
+        <condition>
+            <and>
+                <property>controls/electric/battery-switch</property>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </and>
+        </condition>
+    </animation>
+  
+</PropertyList>

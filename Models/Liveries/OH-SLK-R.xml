@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- Parachuting Club of Finland -->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Parachuting Club of Finland R</name>
+            <texture>Liveries/OH-SLK-R.png</texture>
+        </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

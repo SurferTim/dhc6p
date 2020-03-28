@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>fuel-truck</name>
+    <layout>vbox</layout>
+
+    <text>
+        <label>Fuel Truck Controls</label>
+    </text>
+
+    <hrule />
+
+    <group>
+        <layout>vbox</layout>
+    
+        <group>
+            <layout>table</layout>
+            
+            <text>
+                <label>Total fuel quantity (lbs) - fwd tank:</label>
+                <halign>right</halign>
+                <row>0</row>
+                <col>0</col>
+            </text>
+            
+            <text>
+                <label>Total fuel quantity (lbs) - aft tank:</label>
+                <halign>right</halign>
+                <row>1</row>
+                <col>0</col>
+            </text>
+
+            <text>
+                <label>Request fuel quantity (lbs):</label>
+                <halign>right</halign>
+                <row>2</row>
+                <col>0</col>
+            </text>
+            
+            <text>
+                <row>0</row>
+                <col>1</col>
+                <halign>left</halign>
+                <label>123</label>
+                <format>%.0f</format>
+                <live>true</live>
+                <property>consumables/fuel/tank[0]/level-lbs</property>
+                <color>
+                    <red>   0.3 </red>
+                    <green> 0.8 </green>
+                    <blue>  1.0 </blue>
+                </color>
+            </text>
+
+            <text>
+                <row>1</row>
+                <col>1</col>
+                <halign>left</halign>
+                <label>123</label>
+                <format>%.0f</format>
+                <live>true</live>
+                <property>consumables/fuel/tank[1]/level-lbs</property>
+                <color>
+                    <red>   0.3 </red>
+                    <green> 0.8 </green>
+                    <blue>  1.0 </blue>
+                </color>
+            </text>
+    
+            <input>
+                <row>2</row>
+                <col>1</col>
+                <pref-width>44</pref-width>
+                <pref-height>15</pref-height>
+                <property>sim/model/equipment/ground-services/fuel-truck/request-lbs</property>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </input>
+        
+        </group>
+        
+        <hrule />
+        
+        <checkbox>
+            <label>Enable fuel truck</label>
+            <property>sim/model/equipment/ground-services/fuel-truck/enable</property>
+            <enable>
+                <and>
+                    <property>sim/model/equipment/ground-services/fuel-truck/disconnect</property>
+                    <or>
+                        <and>
+                            <or>
+                                <property>gear/gear[6]/ground-is-solid</property>
+                                <property>fdm/jsbsim/ground/solid</property>
+                            </or>
+                            <property>gear/gear[6]/wow</property>
+                        </and>
+                        <and>
+                            <or>
+                                <property>gear/gear[1]/ground-is-solid</property>
+                                <property>fdm/jsbsim/ground/solid</property>
+                            </or>
+                            <property>gear/gear[1]/wow</property>
+                        </and>
+                    </or>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>1</value>
+                    </less-than>
+                </and>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <radio>
+            <label>Disconnect pipe</label>
+            <property>sim/model/equipment/ground-services/fuel-truck/disconnect</property>
+            <live>true</live>
+            <enable>
+                <and>
+                    <property>sim/model/equipment/ground-services/fuel-truck/enable</property>
+                    <equals>
+                        <property>sim/model/equipment/ground-services/fuel-truck/transfer</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>sim/model/equipment/ground-services/fuel-truck/clean</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd", 0);
+                        setprop("sim/model/equipment/ground-services/fuel-truck/connect-aft", 0);
+                        setprop("sim/model/equipment/ground-services/fuel-truck/disconnect", 1);
+                    </script>
+                </binding>
+            <live>true</live>
+        </radio>
+
+        <group>
+            <layout>hbox</layout>
+        
+            <radio>
+                <label>Connect fwd tank</label>
+                <property>sim/model/equipment/ground-services/fuel-truck/connect-fwd</property>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>sim/model/equipment/ground-services/fuel-truck/enable</property>
+                        <equals>
+                            <property>sim/model/equipment/ground-services/fuel-truck/transfer</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>sim/model/equipment/ground-services/fuel-truck/clean</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </enable>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                        <command>nasal</command>
+                        <script>
+                            setprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd", 1);
+                            setprop("sim/model/equipment/ground-services/fuel-truck/connect-aft", 0);
+                            setprop("sim/model/equipment/ground-services/fuel-truck/disconnect", 0);
+                        </script>
+                    </binding>
+                <live>true</live>
+            </radio>
+
+            <radio>
+                <label>Connect aft tank</label>
+                <property>sim/model/equipment/ground-services/fuel-truck/connect-aft</property>
+                <live>true</live>
+                <enable>
+                    <and>
+                        <property>sim/model/equipment/ground-services/fuel-truck/enable</property>
+                        <equals>
+                            <property>sim/model/equipment/ground-services/fuel-truck/transfer</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>sim/model/equipment/ground-services/fuel-truck/clean</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </enable>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd", 0);
+                        setprop("sim/model/equipment/ground-services/fuel-truck/connect-aft", 1);
+                        setprop("sim/model/equipment/ground-services/fuel-truck/disconnect", 0);
+                    </script>
+                </binding>
+                <live>true</live>
+            </radio>
+
+        </group>
+        
+        <hrule />
+        
+        <group>
+            <layout>hbox</layout>
+        
+            <button>
+                <legend>Refuel!</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if ((getprop("/sim/model/equipment/ground-services/fuel-truck/enable") == 1) and (getprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd") == 1) or (getprop("sim/model/equipment/ground-services/fuel-truck/connect-aft") == 1)) {
+
+                            if (getprop("/sim/model/equipment/ground-services/fuel-truck/clean") == 1)
+                                screen.log.write("You can't refuel the tank while draining!", 1, 0, 0);
+
+                            else {
+                            setprop("/sim/model/equipment/ground-services/fuel-truck/transfer", 1);
+                            screen.log.write("Re-fueling process started...", 0, 0.584, 1);
+                            }
+
+                        } else
+                            screen.log.write("Please enable and connect the fuel truck first!", 1, 0, 0);
+                    </script>
+                </binding>
+            </button>
+
+            <button>
+                <legend>Stop!</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        setprop("/sim/model/equipment/ground-services/fuel-truck/transfer", 0);
+                        setprop("/sim/model/equipment/ground-services/fuel-truck/clean", 0);
+                        screen.log.write("Operation stopped!", 1, 0.4, 0);
+                    </script>
+                </binding>
+            </button>
+            
+            <button>
+                <legend>Drain tank!</legend>
+                <padding>5</padding>
+                <binding>
+                    <command>nasal</command>
+                    <script>
+                        if ((getprop("sim/model/equipment/ground-services/fuel-truck/enable") == 1) and (getprop("sim/model/equipment/ground-services/fuel-truck/connect-fwd") == 1) or (getprop("sim/model/equipment/ground-services/fuel-truck/connect-aft") == 1)) {
+                        
+                            if (getprop("/sim/model/equipment/ground-services/fuel-truck/transfer") == 1)
+                                screen.log.write("You can't clean the tank while loading fuel!", 1, 0, 0);
+
+                            else {
+                                setprop("/sim/model/equipment/ground-services/fuel-truck/clean", 1);
+                                screen.log.write("Cleaning Fuel Tank...", 0, 0.584, 1);
+                            }
+
+                        } else
+                            screen.log.write("Please enable and connect the fuel truck first!", 1, 0, 0);
+                    </script>
+                </binding>
+            </button>
+
+        </group>
+    
+    </group>
+
+    <hrule />
+    
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>Back</legend>
+            <padding>5</padding>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "ground-services"}));</script>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>Close</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <padding>5</padding>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+        
+    </group>
+
+</PropertyList>

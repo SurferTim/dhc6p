@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    This simulates the hydraulic system of the DHC-6 Twin Otter in FlightGear.
+    The flaps, wheel brakes and nose wheel steering are driven by the hydraulic system.
+-->
+
+<PropertyList>
+
+    <!-- The hydraulic pump is depenent on the voltage of the electric system -->
+    <filter>
+        <type>gain</type>
+        <gain>53.571429</gain>
+        <input>
+            <property>systems/electrical/outputs/hydraulics</property>
+        </input>
+        <output>
+            <property>systems/hydraulic/pressure</property>
+        </output>
+    </filter>
+
+    <!-- Gauge indicates slow increase/decrease of hyd pressure. Just a fake, but looks nice. -->
+    <filter>
+        <name>Hydraulic pressure</name>
+        <type>exponential</type>
+        <filter-time>2.0</filter-time>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>/systems/electrical/volts</property>
+                    <value>18.0</value>
+                </greater-than>
+            </condition>
+            <property>systems/hydraulic/pressure</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>systems/hydraulic/indicated-pressure</property>
+        </output>
+    </filter>
+
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">FireFighter</name>
+            <texture>paint3-R.png</texture>
+        </livery>
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

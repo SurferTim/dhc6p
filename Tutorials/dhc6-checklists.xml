@@ -1,0 +1,3117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <checklist>
+
+        <title>Preflight inspection</title>
+
+            <item>
+                <name>Left pitot tube cover</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-4.1950</x-m>
+                    <y-m>-0.8785</y-m>
+                    <z-m>0.1562</z-m>
+                    <scale>3.4132</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/left-pitot-cover</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Left engine cover</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-2.4901</x-m>
+                    <y-m>-2.8719</y-m>
+                    <z-m>0.6124</z-m>
+                    <scale>8.0579</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/left-engine-cover</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Left tiedown</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-0.5231</x-m>
+                    <y-m>-4.8438</y-m>
+                    <z-m>1.0364</z-m>
+                    <scale>2.1570</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/left-tiedown-wheels</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward wheel chock</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-0.2529</x-m>
+                    <y-m>-1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/left-chock-fwd</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear wheel chock</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>0.4471</x-m>
+                    <y-m>-1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/left-chock-aft</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear tiedown</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>5.3802</x-m>
+                    <y-m>-0.0000</y-m>
+                    <z-m>-0.4488</z-m>
+                    <scale>2.3223</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/rear-tiedown-wheels</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear wheel chock</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>0.4471</x-m>
+                    <y-m>1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/right-chock-aft</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward wheel chock</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-0.2529</x-m>
+                    <y-m>1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/right-chock-fwd</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right tiedown</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-0.5231</x-m>
+                    <y-m>4.8438</y-m>
+                    <z-m>1.0364</z-m>
+                    <scale>2.1570</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/right-tiedown-wheels</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right engine cover</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-2.4901</x-m>
+                    <y-m>2.8719</y-m>
+                    <z-m>0.6124</z-m>
+                    <scale>8.0579</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/right-engine-cover</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right pitot tube cover</name>
+                <value>REMOVE</value>
+                <marker>
+                    <x-m>-4.1950</x-m>
+                    <y-m>0.8785</y-m>
+                    <z-m>0.1562</z-m>
+                    <scale>3.4132</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/sim/model/equipment/right-pitot-cover</property>
+                    </not>
+                </condition>
+            </item>A
+    </checklist>
+
+    <checklist>
+
+        <title>Before engines start (1/2)</title>
+        
+        <page>
+        
+            <item>
+                <name>Parking brake</name>
+                <value>SET</value>
+                    <marker>
+                        <x-m>-3.6752</x-m>
+                        <y-m>-0.4479</y-m>
+                        <z-m>0.0000</z-m>
+                        <scale>3.0000</scale>
+                    </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/gear/parkingbrake-lever</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+            
+            <item>
+                <name>Doors</name>
+                <value>CLOSED</value>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/doors/Baggage.door/open</property>
+                        </not>
+                        <not>
+                            <property>/controls/doors/LF-door/open</property>
+                        </not>
+                        <not>
+                            <property>/controls/doors/LR-door-F/open</property>
+                        </not>
+                        <not>
+                            <property>/controls/doors/LR-door-R/open</property>
+                        </not>
+                        <not>
+                            <property>/controls/doors/RF-door/open</property>
+                        </not>
+                        <not>
+                            <property>/controls/doors/RR-door/open</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fuel switches</name>
+                <value>NORMAL</value>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/engines/engine/cutoff</property>
+                        </not>
+                        <not>
+                            <property>/controls/engines/engine[1]/cutoff</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fuel selector</name>
+                <value>NORM</value>
+                    <marker>
+                        <x-m>-3.8992</x-m>
+                        <y-m>-0.1281</y-m>
+                        <z-m>0.1876</z-m>
+                        <scale>2.9339</scale>
+                    </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/fuel/tank-selector</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward boost pump</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.0702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/fwd-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear boost pump</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.1702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/aft-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Main Panel circuit breakers (on pilot's left side)</name>
+                <value>CHECK ALL IN</value>
+                <marker>
+                    <x-m>-3.0066</x-m>
+                    <y-m>-0.7868</y-m>
+                    <z-m>0.6099</z-m>
+                    <scale>9.3967</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <property>/controls/electric/circuit-breakers/main/invr-cont</property>
+                        <property>/controls/electric/circuit-breakers/main/va</property>
+                        <property>/controls/electric/circuit-breakers/main/wing-insp-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/c400-fail</property>
+                        <property>/controls/electric/circuit-breakers/main/beta-sys</property>
+                        <property>/controls/electric/circuit-breakers/main/start-l</property>
+                        <property>/controls/electric/circuit-breakers/main/start-r</property>
+                        <property>/controls/electric/circuit-breakers/main/r-gen-fail</property>
+                        <property>/controls/electric/circuit-breakers/main/l-gen-fail</property>
+                        <property>/controls/electric/circuit-breakers/main/ign-l</property>
+                        <property>/controls/electric/circuit-breakers/main/ign-r</property>
+                        <property>/controls/electric/circuit-breakers/main/l-t5-temp</property>
+                        <property>/controls/electric/circuit-breakers/main/r-t5-temp</property>
+                        <property>/controls/electric/circuit-breakers/main/bleed-air-l</property>
+                        <property>/controls/electric/circuit-breakers/main/bleed-air-r</property>
+                        <property>/controls/electric/circuit-breakers/main/ws-wiper</property>
+                        <property>/controls/electric/circuit-breakers/main/int-defl</property>
+                        <property>/controls/electric/circuit-breakers/main/prop-deice</property>
+                        <property>/controls/electric/circuit-breakers/main/over-speed-gov</property>
+                        <property>/controls/electric/circuit-breakers/main/pitot-htr-l</property>
+                        <property>/controls/electric/circuit-breakers/main/pitot-htr-r</property>
+                        <property>/controls/electric/circuit-breakers/main/hyd-oil-pump</property>
+                        <property>/controls/electric/circuit-breakers/main/fuel-xfeed</property>
+                        <property>/controls/electric/circuit-breakers/main/temp-comp-htr-l</property>
+                        <property>/controls/electric/circuit-breakers/main/temp-comp-htr-r</property>
+                        <property>/controls/electric/circuit-breakers/main/prop-auto-feath</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-fwd-1</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-fwd-2</property>
+                        <property>/controls/electric/circuit-breakers/main/fuel-sov-l</property>
+                        <property>/controls/electric/circuit-breakers/main/fuel-sov-r</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-aft-1</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-aft-2</property>
+                        <property>/controls/electric/circuit-breakers/main/fuel-l-level-aft</property>
+                        <property>/controls/electric/circuit-breakers/main/fuel-l-level-fwd</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-press-l</property>
+                        <property>/controls/electric/circuit-breakers/main/bst-pump-press-r</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-ext-l</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-ext-r</property>
+                        <property>/controls/electric/circuit-breakers/main/oil-temp-l</property>
+                        <property>/controls/electric/circuit-breakers/main/oil-temp-r</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-det-l</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-det-r</property>
+                        <property>/controls/electric/circuit-breakers/main/oil-low-press-l</property>
+                        <property>/controls/electric/circuit-breakers/main/oil-low-press-r</property>
+                        <property>/controls/electric/circuit-breakers/main/stall-warn</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-det-fault-ind-l</property>
+                        <property>/controls/electric/circuit-breakers/main/fire-det-fault-ind-r</property>
+                        <property>/controls/electric/circuit-breakers/main/posn-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/caut-lt-dim</property>
+                        <property>/controls/electric/circuit-breakers/main/anti-coll-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/flt-comp-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/pilot-eng-cons-trim-pnl-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/copilot-rad-va-pnl-lt</property>
+                        <property>/controls/electric/circuit-breakers/main/cabin-ht-vent</property>
+                        <property>/controls/electric/circuit-breakers/main/ldg-lt-l</property>
+                        <property>/controls/electric/circuit-breakers/main/ldg-lt-r</property>
+                        <property>/controls/electric/circuit-breakers/main/ail-trim-ind</property>
+                        <property>/controls/electric/circuit-breakers/main/ail-trim-act</property>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Center console circuit breakers</name>
+                <value>CHECK ALL IN</value>
+                <marker>
+                    <x-m>-3.9099</x-m>
+                    <y-m>0.0248</y-m>
+                    <z-m>-0.1595</z-m>
+                    <scale>8.7190</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <property>/controls/electric/circuit-breakers/center/lh-audio</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-com1</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-nav1</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-adf1</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-vor1</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-rmi1</property>
+                        <property>/controls/electric/circuit-breakers/center/lh-hsi1</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-audio</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-com2</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-nav2</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-adf2</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-vor2</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-rmi2</property>
+                        <property>/controls/electric/circuit-breakers/center/rh-hsi2</property>
+                        <property>/controls/electric/circuit-breakers/center/xpdr</property>
+                        <property>/controls/electric/circuit-breakers/center/tc1</property>
+                        <property>/controls/electric/circuit-breakers/center/tc2</property>
+                        <property>/controls/electric/circuit-breakers/center/dme</property>
+                        <property>/controls/electric/circuit-breakers/center/ralt</property>
+                        <property>/controls/electric/circuit-breakers/center/gps</property>
+                        <property>/controls/electric/circuit-breakers/center/ap</property>
+                        <property>/controls/electric/circuit-breakers/center/unused1</property>
+                        <property>/controls/electric/circuit-breakers/center/unused2</property>
+                        <property>/controls/electric/circuit-breakers/center/unused3</property>
+                        <property>/controls/electric/circuit-breakers/center/unused4</property>
+                        <property>/controls/electric/circuit-breakers/center/unused5</property>
+                        <property>/controls/electric/circuit-breakers/center/unused6</property>
+                        <property>/controls/electric/circuit-breakers/center/unused7</property>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Overhead panel circuit breakers</name>
+                <value>CHECK ALL IN</value>
+                <marker>
+                    <x-m>-2.9901</x-m>
+                    <y-m>0.2355</y-m>
+                    <z-m>0.9628</z-m>
+                    <scale>7.9091</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <property>/controls/electric/circuit-breakers/overhead/gen-control-l</property>
+                        <property>/controls/electric/circuit-breakers/overhead/gen-control-r</property>
+                        <property>/controls/electric/circuit-breakers/overhead/inverter-1</property>
+                        <property>/controls/electric/circuit-breakers/overhead/inverter-2</property>
+                        <property>/controls/electric/circuit-breakers/overhead/unused</property>
+                        <property>/controls/electric/circuit-breakers/overhead/ws-heat-l</property>
+                        <property>/controls/electric/circuit-breakers/overhead/ws-heat-r</property>
+                        <property>/controls/electric/circuit-breakers/overhead/doors-unlocked</property>
+                        <property>/controls/electric/circuit-breakers/overhead/reading</property>
+                        <property>/controls/electric/circuit-breakers/overhead/cabin-lts</property>
+                        <property>/controls/electric/circuit-breakers/overhead/general</property>
+                        <property>/controls/electric/circuit-breakers/overhead/emer-lts</property>
+                        <property>/controls/electric/circuit-breakers/overhead/cabin-vent-fan</property>
+                        <property>/controls/electric/circuit-breakers/overhead/pneumatic-press</property>
+                        <property>/controls/electric/circuit-breakers/overhead/cockpit-fans</property>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Generator switches</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.0620</x-m>
+                    <y-m>-0.1281</y-m>
+                    <z-m>0.9479</z-m>
+                   <scale>2.4876</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/electric/engine/generator</property>
+                        </not>
+                        <not>
+                            <property>/controls/electric/engine[1]/generator</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Flaps</name>
+                <value>UP</value>
+                <marker>
+                    <x-m>-3.8405</x-m>
+                    <y-m>-0.0165</y-m>
+                    <z-m>0.7694</z-m>
+                    <scale>1.6116</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/flight/flaps</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fuel levers</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.3149</x-m>
+                    <y-m>0.0826</y-m>
+                    <z-m>0.8694</z-m>
+                    <scale>2.1074</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/condition</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/condition</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Propeller levers</name>
+                <value>FEATHER</value>
+                <marker>
+                    <x-m>-3.3174</x-m>
+                    <y-m>-0.0132</y-m>
+                    <z-m>0.8612</z-m>
+                    <scale>2.5207</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/propeller-pitch</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/propeller-pitch</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Throttle levers</name>
+                <value>IDLE</value>
+                <marker>
+                    <x-m>-3.4157</x-m>
+                    <y-m>-0.1165</y-m>
+                    <z-m>0.8488</z-m>
+                    <scale>3.3471</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/throttle</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Lights</name>
+                <value>Anti Coll, Posn, Beacon,</value>
+                <value>Caution, Taxi, Landing</value>
+                <value>Cabin, Overhead, Instruments</value>
+                <value>OFF</value>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/lighting/beacon</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/cabin-lights</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/overhead-light</property>
+                        </not>
+                        <not-equals>
+                            <property>/controls/lighting/instrument-lights</property>
+                            <value>1</value>
+                        </not-equals>
+                        <not>
+                            <property>/controls/lighting/landing-light</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/landing-light[1]</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/nav-lights</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/strobe</property>
+                        </not>
+                        <not>
+                            <property>/controls/lighting/taxi-lights</property>
+                        </not>
+                        <not>
+                            <property>/controls/electric/caution-test</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Before engines start (2/2)</title>
+
+        <page>
+
+            <item>
+                <name>External Power</name>
+                <value>ENABLE</value>
+                <value>(via Menu -> DHC-6 -> Toggle external power)</value>
+                <condition>
+                    <property>/sim/model/equipment/ground-services/external-power/enable</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>External/Battery Selector</name>
+                <value>EXTERNAL</value>
+                <marker>
+                    <x-m>-3.5636</x-m>
+                    <y-m>-0.2132</y-m>
+                    <z-m>0.9190</z-m>
+                    <scale>1.9917</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/power-source</property>
+                        <value>-1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Master battery switch</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.5488</x-m>
+                    <y-m>-0.2793</y-m>
+                    <z-m>0.9132</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <property>/controls/electric/battery-switch</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Cabin lights</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-2.9372</x-m>
+                    <y-m>0.0826</y-m>
+                    <z-m>0.9421</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <property>/controls/lighting/cabin-lights</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Overhead light</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.1198</x-m>
+                    <y-m>0.2603</y-m>
+                    <z-m>0.9537</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <property>/controls/lighting/overhead-light</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Instrument lights</name>
+                <value>BRIGHT</value>
+                <marker>
+                    <x-m>-2.9372</x-m>
+                    <y-m>0.0240</y-m>
+                    <z-m>0.9438</z-m>
+                    <scale>1.5124</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/instrument-lights</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>IND select</name>
+                <value>BAT</value>
+                <marker>
+                    <x-m>-3.9223</x-m>
+                    <y-m>0.2008</y-m>
+                    <z-m>0.5289</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/electric/ammeter-switch</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Bus Voltage minimum 18 V, normally 24-25 V</name>
+                <value>CHECK</value>
+                <marker>
+                    <x-m>-3.9231</x-m>
+                    <y-m>0.0959</y-m>
+                    <z-m>0.5347</z-m>
+                    <scale>1.8595</scale>
+                </marker>
+                <condition>
+                    <greater-than>
+                        <property>/systems/electrical/batt-volts</property>
+                        <value>18</value>
+                    </greater-than>
+                </condition>
+            </item>
+
+            <item>
+                <name>"Fasten seatbelt"-warning</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-2.9785</x-m>
+                    <y-m>0.0091</y-m>
+                    <z-m>0.9488</z-m>
+                    <scale>1.0000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/seat-belt</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>"No smoking"-sign</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-2.9785</x-m>
+                    <y-m>-0.0174</y-m>
+                    <z-m>0.9488</z-m>
+                    <scale>1.0000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/no-smoking</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Caution Light</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.0231</x-m>
+                    <y-m>-0.0446</y-m>
+                    <z-m>0.9479</z-m>
+                    <scale>1.4463</scale>
+                </marker>
+                <condition>
+                    <property>/controls/electric/caution-test</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Lights on central warning panel</name>
+                <value>ILLUMINATE ALL</value>
+            </item>
+
+            <item>
+                <name>Caution Lt</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.0231</x-m>
+                    <y-m>-0.0446</y-m>
+                    <z-m>0.9479</z-m>
+                    <scale>1.4463</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/electric/caution-test</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fire Detection test</name>
+                <value>ACTIVATE</value>
+                <value>(two red lights at each fire pull handle</value>
+                <value>and a penetrating alarm bell)</value>
+                <marker>
+                    <x-m>-3.9000</x-m>
+                    <y-m>-0.1364</y-m>
+                    <z-m>0.5083</z-m>
+                    <scale>1.5124</scale>
+                </marker>
+                <condition>
+                    <property>/controls/engines/fire-test</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fire alarm bell</name>
+                <value>MUTE TEST</value>
+                <marker>
+                    <x-m>-3.9190</x-m>
+                    <y-m>-0.7000</y-m>
+                    <z-m>0.0347</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <property>/controls/switches/firebell-switch</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fire alarm bell</name>
+                <value>DISMUTE</value>
+                <marker>
+                    <x-m>-3.9190</x-m>
+                    <y-m>-0.7000</y-m>
+                    <z-m>0.0347</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/switches/firebell-switch</property>
+                        </not>
+                        <not>
+                            <property>controls/switches/firebell-switch-cover</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fire Detection test</name>
+                <value>DEACTIVATE</value>
+                <marker>
+                    <x-m>-3.9000</x-m>
+                    <y-m>-0.1364</y-m>
+                    <z-m>0.5083</z-m>
+                    <scale>1.5124</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/engines/fire-test</property>
+                    </not>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Fuel Quantity</name>
+                <value>CHECK enough for planned flight</value>
+            </item>
+
+            <item>
+                <name>Fuel quantity indicators</name>
+                <value>TEST</value>
+                <value>(Press and hold down the IND TEST button)</value>
+                <marker>
+                    <x-m>-3.9339</x-m>
+                    <y-m>-0.0240</y-m>
+                    <z-m>0.2298</z-m>
+                    <scale>1.4959</scale>
+                </marker>
+                <condition>
+                    <property>/controls/fuel/ind-test</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>FWD tank fuel gauge</name>
+                <value>INDICATE 0</value>
+                <marker>
+                    <x-m>-3.9430</x-m>
+                    <y-m>-0.2182</y-m>
+                    <z-m>0.1810</z-m>
+                    <scale>3.1653</scale>
+                </marker>
+                <condition>
+                    <less-than>
+                        <property>/consumables/fuel/tank[0]/indicated-level-lbs</property>
+                        <value>10</value>
+                    </less-than>
+                </condition>
+            </item>
+
+            <item>
+                <name>AFT tank fuel gauge</name>
+                <value>INDICATE 0</value>
+                <marker>
+                    <x-m>-3.9430</x-m>
+                    <y-m>-0.0025</y-m>
+                    <z-m>0.1810</z-m>
+                    <scale>3.1653</scale>
+                </marker>
+                <condition>
+                    <less-than>
+                        <property>/consumables/fuel/tank[1]/indicated-level-lbs</property>
+                        <value>10</value>
+                    </less-than>
+                </condition>
+            </item>
+
+            <item>
+                <name>FWD FUEL LOW LEVEL warning light</name>
+                <value>LIGHT UP</value>
+                <marker>
+                    <x-m>-3.9388</x-m>
+                    <y-m>-0.1231</y-m>
+                    <z-m>0.6182</z-m>
+                    <scale>1.8760</scale>
+                </marker>
+                <condition>
+                    <property>/instrumentation/caution-panel/low-fuel[0]</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>AFT FUEL LOW LEVEL warning light</name>
+                <value>LIGHT UP</value>
+                <marker>
+                    <x-m>-3.9388</x-m>
+                    <y-m>0.1091</y-m>
+                    <z-m>0.6182</z-m>
+                    <scale>1.8760</scale>
+                </marker>
+                <condition>
+                    <property>/instrumentation/caution-panel/low-fuel[1]</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>IND TEST button</name>
+                <value>RELEASE</value>
+                <marker>
+                    <x-m>-3.9339</x-m>
+                    <y-m>-0.0240</y-m>
+                    <z-m>0.2298</z-m>
+                    <scale>1.4959</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/fuel/ind-test</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Fuel indicators</name>
+                <value>RETURN TO PREV. VALUE</value>
+                <condition>
+                    <and>
+                        <greater-than>
+                            <property>/consumables/fuel/tank[0]/indicated-level-lbs</property>
+                            <value>10</value>
+                        </greater-than>
+                        <greater-than>
+                            <property>/consumables/fuel/tank[1]/indicated-level-lbs</property>
+                            <value>10</value>
+                        </greater-than>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>LOW FUEL warning lights</name>
+                <value>EXTIGUISHED</value>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/instrumentation/caution-panel/low-fuel[0]</property>
+                        </not>
+                        <not>
+                            <property>/instrumentation/caution-panel/low-fuel[1]</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Hydraulic pressure</name>
+                <value>BETWEEN 1300 AND 1600 PSI</value>
+                <marker>
+                    <x-m>-3.9273</x-m>
+                    <y-m>-0.1843</y-m>
+                    <z-m>0.0744</z-m>
+                    <scale>2.7521</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <greater-than>
+                            <property>/systems/hydraulic/indicated-pressure</property>
+                            <value>1300</value>
+                        </greater-than>
+                        <less-than>
+                            <property>/systems/hydraulic/indicated-pressure</property>
+                            <value>1600</value>
+                        </less-than>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Engines start procedure</title>
+
+        <page>
+
+            <item>
+                <name>Beacon</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-2.9884</x-m>
+                    <y-m>0.0174</y-m>
+                    <z-m>0.9397</z-m>
+                    <scale>1.2810</scale>
+                </marker>
+                <condition>
+                    <property>/controls/lighting/beacon</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Throttles</name>
+                <value>VERIFY IDLE</value>
+                <marker>
+                    <x-m>-3.4157</x-m>
+                    <y-m>-0.1165</y-m>
+                    <z-m>0.8488</z-m>
+                    <scale>3.3471</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/throttle</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Only if NOT starting up on asphalt</name>
+                <value>Intake deflectors ON</value>
+                <marker>
+                    <x-m>-2.9207</x-m>
+                    <y-m>-0.0636</y-m>
+                    <z-m>0.9306</z-m>
+                    <scale>2.0248</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <property>controls/engines/engine[0]/intake-deflector</property>
+                        <property>controls/engines/engine[1]/intake-deflector</property>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward boost pump</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.0702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/fwd-boost-pump</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear boost pump</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.1702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/aft-boost-pump</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>If outside temperature</name>
+                <value>Below 0 deg C</value>
+                <marker>
+                    <x-m>-3.3430</x-m>
+                    <y-m>-0.4215</y-m>
+                    <z-m>0.9926</z-m>
+                    <scale>3.6281</scale>
+                </marker>
+                <condition>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <value>0</value>
+                    </less-than-equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Pitot heat...</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-3.0347</x-m>
+                    <y-m>0.0149</y-m>
+                    <z-m>0.9355</z-m>
+                    <scale>1.6281</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <less-than-equals>
+                            <property>/environment/temperature-degc</property>
+                            <value>0</value>
+                        </less-than-equals>
+                        <property>/controls/anti-ice/pitot-heat</property>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>...and prop deice</name>
+                <value>ON</value>
+                <marker>
+                    <x-m>-2.9041</x-m>
+                    <y-m>-0.1132</y-m>
+                    <z-m>0.9446</z-m>
+                    <scale>1.7273</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <less-than-equals>
+                            <property>/environment/temperature-degc</property>
+                            <value>0</value>
+                        </less-than-equals>
+                        <property>/controls/anti-ice/prop-heat</property>
+                        <value>1</value>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Captain: Left propeller area</name>
+                <value>CLEAR</value>
+            </item>
+
+            <item>
+                <name>Pick starter switch</name>
+                <value>LEFT</value>
+                <value>(use LMB)</value>
+                <marker>
+                    <x-m>-3.6124</x-m>
+                    <y-m>-0.2686</y-m>
+                    <z-m>0.8992</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/engines/internal-engine-starter</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>When ng (GG) >12%</name>
+                <value>PUSH LEFT CONDITION FORWARD</value>
+                <value>"j" several times</value>
+                <marker>
+                    <x-m>-3.9339</x-m>
+                    <y-m>-0.1537</y-m>
+                    <z-m>0.2314</z-m>
+                    <scale>2.8347</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/engines/engine/condition</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name></name>
+                <value>---wait for the left</value>
+                <value>engine to spool up---</value>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>First Officer: Right propeller area</name>
+                <value>CLEAR</value>
+            </item>
+
+            <item>
+                <name>Pick starter switch</name>
+                <value>RIGHT</value>
+                <value>(use MMB)</value>
+                <marker>
+                    <x-m>-3.6124</x-m>
+                    <y-m>-0.2686</y-m>
+                    <z-m>0.8992</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/engines/internal-engine-starter</property>
+                        <value>-1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>When ng (GG) >12%</name>
+                <value>PUSH RIGHT CONDITION FORWARD</value>
+                <value>"k" several times</value>
+                <marker>
+                    <x-m>-3.9264</x-m>
+                    <y-m>-0.0793</y-m>
+                    <z-m>0.2347</z-m>
+                    <scale>2.7851</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/engines/engine[1]/condition</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name></name>
+                <value>---wait for the right</value>
+                <value>engine to spool up---</value>
+            </item>
+
+            <item>
+                <name>Starter switch</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.6124</x-m>
+                    <y-m>-0.2686</y-m>
+                    <z-m>0.8992</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/engines/internal-engine-starter</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Propeller levers</name>
+                <value>FULL FORWARD (hold "n")</value>
+                <marker>
+                    <x-m>-3.3174</x-m>
+                    <y-m>-0.0132</y-m>
+                    <z-m>0.8612</z-m>
+                    <scale>2.5207</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/propeller-pitch</property>
+                            <value>1</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/propeller-pitch</property>
+                            <value>1</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+    </checklist>
+
+    <checklist>
+
+        <title>After engines start</title>
+
+        <item>
+            <name>External/Battery Selector</name>
+            <value>BATTERY</value>
+            <marker>
+                <x-m>-3.5636</x-m>
+                <y-m>-0.2132</y-m>
+                <z-m>0.9190</z-m>
+                <scale>1.9917</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/electric/power-source</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>External Power</name>
+            <value>DISABLE</value>
+            <value>(via Menu -> DHC-6 -> Toggle external power)</value>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/ground-services/external-power/enable</property>
+                </not>
+            </condition>
+        </item>
+
+        <item>
+            <name>Posn Light</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-2.9818</x-m>
+                <y-m>-0.0463</y-m>
+                <z-m>0.9496</z-m>
+                <scale>1.4298</scale>
+            </marker>
+            <condition>
+                <property>/controls/lighting/nav-lights</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Generators</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.0620</x-m>
+                <y-m>-0.1281</y-m>
+                <z-m>0.9479</z-m>
+               <scale>2.4876</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>/controls/electric/engine/generator</property>
+                    <property>/controls/electric/engine[1]/generator</property>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>IND select</name>
+            <value>R GEN</value>
+            <marker>
+                <x-m>-3.9223</x-m>
+                <y-m>0.2008</y-m>
+                <z-m>0.5289</z-m>
+                <scale>1.4793</scale>
+            </marker>
+            <condition>
+                <property>/controls/electric/ammeter-switch</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Engine instruments</name>
+            <value>STABLE AND WITHIN LIMITS</value>
+        </item>
+
+        <item>
+            <name>Window heater (Right side of OH panel)</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.6174</x-m>
+                <y-m>0.2744</y-m>
+                <z-m>0.8777</z-m>
+                <scale>2.7025</scale>
+            </marker>
+            <condition>
+                <property>/controls/anti-ice/window-heat</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Warning lights</name>
+            <value>ALL OFF</value>
+            <condition>
+                <and>
+                    <not>
+                        <property>/instrumentation/caution-panel/aft-boost</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/aft-boost[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/cycle400</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/cycle400[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/doors</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/duct-oheat</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/fwd-boost</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/fwd-boost[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen-oheat</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen-oheat[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/hydr-press</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/low-fuel</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/low-fuel[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/oil</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/oil[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/prop-reset</property>
+                    </not>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+        <name>Radios</name>
+        <value>SET TO REQUIRED FREQUENCIES</value>
+        <value>CHECK ATIS (IF AVAILABLE)</value>
+        </item>
+
+        <item>
+            <name>Compass and Gyro</name>
+            <value>CHECK</value>
+        </item>
+
+        <item>
+            <name>Altimeter</name>
+            <value>SET TO QNH/FIELD ELEVATION</value>
+            <marker>
+                <x-m>-3.9248</x-m>
+                <y-m>-0.4331</y-m>
+                <z-m>0.3595</z-m>
+                <scale>3.0826</scale>
+            </marker>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+    <title>Taxi</title>
+
+        <item>
+            <name>Taxi Lights</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.0256</x-m>
+                <y-m>-0.0083</y-m>
+                <z-m>0.9471</z-m>
+                <scale>1.4298</scale>
+            </marker>
+            <condition>
+                <property>/controls/lighting/taxi-lights</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Parking brake</name>
+            <value>RELEASED</value>
+            <marker>
+                <x-m>-3.6752</x-m>
+                <y-m>-0.4479</y-m>
+                <z-m>0.0000</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Taxi speed</name>
+            <value>BELOW 20 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <less-than>
+                    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                    <value>20</value>
+                </less-than>
+            </condition>
+        </item>
+
+        <item>
+            <name>Brakes</name>
+            <value>TEST</value>
+            <value>(as A/C starts to move,</value>
+            <value>shortly apply brakes)</value>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/gear/brake-left</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/gear/brake-right</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Nose wheel steering</name>
+            <value>CHECKED IN EACH DIRECTION</value>
+            <marker>
+                <x-m>-3.6579</x-m>
+                <y-m>-0.5967</y-m>
+                <z-m>0.2702</z-m>
+                <scale>1.8099</scale>
+            </marker>
+        </item>
+
+        <item>
+            <name>Gyro and turn needles</name>
+            <value>CHECK FOR CORRECT</value>
+            <value>MOVEMENT IN TURNS</value>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Line up/Before take off</title>
+
+        <item>
+            <name>Parking brake</name>
+            <value>SET</value>
+            <marker>
+                <x-m>-3.6752</x-m>
+                <y-m>-0.4479</y-m>
+                <z-m>0.0000</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Elevator trim</name>
+            <value>SET FOR TAKE OFF</value>
+            <value>(that's a bit nose up)</value>
+            <marker>
+                <x-m>-3.0810</x-m>
+                <y-m>-0.1926</y-m>
+                <z-m>-0.0157</z-m>
+                <scale>0.4380</scale>
+            </marker>
+            <condition>
+                <and>
+                    <less-than>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.19</value>
+                    </less-than>
+                    <greater-than>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.21</value>
+                    </greater-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Rudder trim</name>
+            <value>SET FOR TAKE OFF</value>
+            <value>(that's a bit right)</value>
+            <marker>
+                <x-m>-3.0405</x-m>
+                <y-m>-0.2041</y-m>
+                <z-m>-0.0157</z-m>
+                <scale>0.4380</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>0.11</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>0.13</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Flaps</name>
+            <value>DOWN 10 deg</value>
+            <marker>
+                <x-m>-3.8562</x-m>
+                <y-m>-0.0289</y-m>
+                <z-m>0.7413</z-m>
+                <scale>2.1570</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/flight/flaps</property>
+                    <value>0.25</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Flight instruments</name>
+            <value>CHECK</value>
+        </item>
+
+        <item>
+            <name>Flight controls</name>
+            <value>FREE AND CORRECT</value>
+        </item>
+
+        <item>
+            <name>Nose wheel steering</name>
+            <value>CENTERED</value>
+            <marker>
+                <x-m>-3.6579</x-m>
+                <y-m>-0.5116</y-m>
+                <z-m>0.3240</z-m>
+                <scale>1.0165</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/tiller</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Anti-Coll lights</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-2.9876</x-m>
+                <y-m>-0.0802</y-m>
+                <z-m>0.9455</z-m>
+                <scale>1.5289</scale>
+            </marker>
+            <condition>
+                <property>/controls/lighting/strobe</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Landing lights</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.6355</x-m>
+                <y-m>-0.2702</y-m>
+                <z-m>0.8736</z-m>
+                <scale>2.0083</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>/controls/lighting/landing-light</property>
+                    <property>/controls/lighting/landing-light[1]</property>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Taxi lights</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-3.0256</x-m>
+                <y-m>-0.0083</y-m>
+                <z-m>0.9471</z-m>
+                <scale>1.4298</scale>
+            </marker>
+            <condition>
+                <not>
+                    <property>/controls/lighting/taxi-lights</property>
+                </not>
+            </condition>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Take off</title>
+
+        <item>
+            <name>Parking brake</name>
+            <value>RELEASED</value>
+            <marker>
+                <x-m>-3.6752</x-m>
+                <y-m>-0.4479</y-m>
+                <z-m>0.0000</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Auto Feather</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.9395</x-m>
+                <y-m>-0.481471</y-m>
+                <z-m>0.456843</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>controls/engines/auto-feather</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Throttle</name>
+            <value>FULL POWER</value>
+            <marker>
+                <x-m>-3.4157</x-m>
+                <y-m>-0.1165</y-m>
+                <z-m>0.8488</z-m>
+                <scale>3.3471</scale>
+            </marker>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/throttle</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>V1</name>
+            <value>80 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <greater-than>
+                    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                    <value>80</value>
+                </greater-than>
+            </condition>
+        </item>
+
+        <item>
+            <name>Vr</name>
+            <value>95 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <greater-than>
+                    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                    <value>95</value>
+                </greater-than>
+            </condition>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Climb</title>
+
+        <item>
+            <name>Throttle</name>
+            <value>SET TO CLIMB POWER</value>
+            <marker>
+                <x-m>-3.4157</x-m>
+                <y-m>-0.1165</y-m>
+                <z-m>0.8488</z-m>
+                <scale>3.3471</scale>
+            </marker>
+        </item>
+
+        <item>
+            <name>Flaps</name>
+            <value>UP AT 500 FT</value>
+            <marker>
+                <x-m>-3.8405</x-m>
+                <y-m>-0.0165</y-m>
+                <z-m>0.7694</z-m>
+                <scale>1.6116</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/flight/flaps</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Airspeed</name>
+            <value>100-110 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>100</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>110</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Elevator trim</name>
+            <value>AS DESIRED</value>
+        </item>
+
+        <item>
+            <name>Engine instruments</name>
+            <value>CHECK</value>
+        </item>
+
+        <item>
+            <name>Intake deflectors</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-2.9207</x-m>
+                <y-m>-0.0636</y-m>
+                <z-m>0.9306</z-m>
+                <scale>2.0248</scale>
+            </marker>
+            <condition>
+                <and>
+                    <not>
+                        <property>controls/engines/engine[0]/intake-deflector</property>
+                    </not>
+                    <not>
+                        <property>controls/engines/engine[1]/intake-deflector</property>
+                    </not>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Auto Feather</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-3.9395</x-m>
+                <y-m>-0.481471</y-m>
+                <z-m>0.456843</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>controls/engines/auto-feather</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Landing lights</name>
+            <value>OFF AT 2000 FT</value>
+            <marker>
+                <x-m>-3.6355</x-m>
+                <y-m>-0.2702</y-m>
+                <z-m>0.8736</z-m>
+                <scale>2.0083</scale>
+            </marker>
+            <condition>
+                <and>
+                    <not>
+                        <property>/controls/lighting/landing-light</property>
+                    </not>
+                    <not>
+                        <property>/controls/lighting/landing-light[1]</property>
+                    </not>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>At transition level</name>
+            <value>SET ALTIMETER TO 29.92</value>
+            <marker>
+                <x-m>-3.9248</x-m>
+                <y-m>-0.4331</y-m>
+                <z-m>0.3595</z-m>
+                <scale>3.0826</scale>
+            </marker>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Cruise</title>
+
+        <item>
+            <name>Airspeed</name>
+            <value>around 150 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>140</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>160</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name></name>
+            <value>=== Note that the cruise speed MUST be below the Maximum</value>
+            <value>Operating Speed,which depends on your altitude!! ===</value>
+            <value>See the Aircraft help menu for details</value>
+        </item>
+
+        <item>
+            <name>Warning lights</name>
+            <value>OFF</value>
+            <condition>
+                <and>
+                    <not>
+                        <property>/instrumentation/caution-panel/aft-boost</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/aft-boost[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/cycle400</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/cycle400[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/doors</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/duct-oheat</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/fwd-boost</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/fwd-boost[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen-oheat</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/gen-oheat[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/hydr-press</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/low-fuel</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/low-fuel[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/oil</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/oil[1]</property>
+                    </not>
+                    <not>
+                        <property>/instrumentation/caution-panel/prop-reset</property>
+                    </not>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>"Fasten seatbelt"-warning</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-2.9785</x-m>
+                <y-m>0.0091</y-m>
+                <z-m>0.9488</z-m>
+                <scale>1.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/lighting/seat-belt</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Radios</name>
+            <value>SET TO REQUIRED FREQUENCIES</value>
+        </item>
+
+        <item>
+            <name>Engine temperature</name>
+            <value>WITHIN LIMITS</value>
+        </item>
+
+        <item>
+            <name>Elevator trim</name>
+            <value>AS DESIRED</value>
+        </item>
+
+        <item>
+            <name>If outside temperature</name>
+            <value>Below 0 deg C</value>
+            <marker>
+                <x-m>-3.3430</x-m>
+                <y-m>-0.4215</y-m>
+                <z-m>0.9926</z-m>
+                <scale>3.6281</scale>
+            </marker>
+            <!--condition>
+                <less-than-equals>
+                    <property>/environment/temperature-degc</property>
+                    <value>0</value>
+                </less-than-equals>
+            </condition-->
+        </item>
+
+        <item>
+            <name>Pitot heat</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.0347</x-m>
+                <y-m>0.0149</y-m>
+                <z-m>0.9355</z-m>
+                <scale>1.6281</scale>
+            </marker>
+            <condition>
+                <and>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <value>0</value>
+                    </less-than-equals>
+                    <property>/controls/anti-ice/pitot-heat</property>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>and prop deice</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-2.9041</x-m>
+                <y-m>-0.1132</y-m>
+                <z-m>0.9446</z-m>
+                <scale>1.7273</scale>
+            </marker>
+            <condition>
+                <and>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <value>0</value>
+                    </less-than-equals>
+                    <property>/controls/anti-ice/prop-heat</property>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Fuel quantity</name>
+            <value>CHECK</value>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Descent</title>
+
+        <item>
+            <name>ATIS</name>
+            <value>CHECK</value>
+        </item>
+
+        <item>
+            <name>Airspeed</name>
+            <value>110-120 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>110</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>120</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>"Fasten seatbelt"-warning</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-2.9785</x-m>
+                <y-m>0.0091</y-m>
+                <z-m>0.9488</z-m>
+                <scale>1.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/lighting/seat-belt</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Hydraulic pressure</name>
+            <value>BETWEEN 1300 AND 1600 PSI</value>
+            <marker>
+                <x-m>-3.9273</x-m>
+                <y-m>-0.1843</y-m>
+                <z-m>0.0744</z-m>
+                <scale>2.7521</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/systems/hydraulic/indicated-pressure</property>
+                        <value>1300</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/systems/hydraulic/indicated-pressure</property>
+                        <value>1600</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Altimeter</name>
+            <value>SET TO QNH AT TRANSITION LEVEL</value>
+            <marker>
+                <x-m>-3.9248</x-m>
+                <y-m>-0.4331</y-m>
+                <z-m>0.3595</z-m>
+                <scale>3.0826</scale>
+            </marker>
+        </item>
+
+        <item>
+            <name>Radios</name>
+            <value>SET TO REQUIRED FREQUENCIES</value>
+        </item>
+
+        <item>
+            <name>Landing lights</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.6355</x-m>
+                <y-m>-0.2702</y-m>
+                <z-m>0.8736</z-m>
+                <scale>2.0083</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>/controls/lighting/landing-light</property>
+                    <property>/controls/lighting/landing-light[1]</property>
+                </and>
+            </condition>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Approach</title>
+
+        <item>
+            <name>Nose wheel steering</name>
+            <value>CENTERED</value>
+            <marker>
+                <x-m>-3.6579</x-m>
+                <y-m>-0.5116</y-m>
+                <z-m>0.3240</z-m>
+                <scale>1.0165</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/tiller</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Propeller levers</name>
+            <value>FULL FORWARD</value>
+            <marker>
+                <x-m>-3.6116</x-m>
+                <y-m>0.0116</y-m>
+                <z-m>0.8446</z-m>
+                <scale>2.7025</scale>
+            </marker>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/propeller-pitch</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/propeller-pitch</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Condition levers</name>
+            <value>FULL FORWARD</value>
+            <marker>
+                <x-m>-3.6116</x-m>
+                <y-m>0.1132</y-m>
+                <z-m>0.8446</z-m>
+                <scale>2.6198</scale>
+            </marker>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/condition</property>
+                        <value>1</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/condition</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Flaps</name>
+            <value>SET STEP BY STEP</value>
+            <marker>
+                <x-m>-3.8405</x-m>
+                <y-m>-0.0165</y-m>
+                <z-m>0.7694</z-m>
+                <scale>1.6116</scale>
+            </marker>
+        </item>
+
+        <item>
+            <name>Airspeed</name>
+            <value>SLOWLY DECREASE TO 90 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>80</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>95</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Elevator trim</name>
+            <value>AS DESIRED</value>
+        </item>
+
+        <item>
+            <name>Only if NOT landing on asphalt</name>
+            <value>Intake deflectors ON</value>
+            <marker>
+                <x-m>-2.9207</x-m>
+                <y-m>-0.0636</y-m>
+                <z-m>0.9306</z-m>
+                <scale>2.0248</scale>
+            </marker>
+            <condition>
+                <and>
+                    <property>controls/engines/engine[0]/intake-deflector</property>
+                    <property>controls/engines/engine[1]/intake-deflector</property>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Parking brake</name>
+            <value>VERIFY OFF</value>
+            <marker>
+                <x-m>-3.6752</x-m>
+                <y-m>-0.4479</y-m>
+                <z-m>0.0000</z-m>
+                <scale>3.0000</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Landing</title>
+
+        <item>
+            <name>Landing speed</name>
+            <value>60-70 KIAS</value>
+            <marker>
+                <x-m>-3.9256</x-m>
+                <y-m>-0.6281</y-m>
+                <z-m>0.3702</z-m>
+                <scale>4.3388</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>55</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                        <value>75</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>After touch down</name>
+            <value>APPLY REVERSE THRUST ("DEL"-KEY)</value>
+            <value>CANCEL AT 30 KTS</value>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>After landing</title>
+
+        <item>
+            <name>Flaps</name>
+            <value>RETRACT</value>
+            <marker>
+                <x-m>-3.8405</x-m>
+                <y-m>-0.0165</y-m>
+                <z-m>0.7694</z-m>
+                <scale>1.6116</scale>
+            </marker>
+            <condition>
+                <equals>
+                    <property>/controls/flight/flaps</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </item>
+
+        <item>
+            <name>Anti-Coll lights</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-2.9876</x-m>
+                <y-m>-0.0802</y-m>
+                <z-m>0.9455</z-m>
+                <scale>1.5289</scale>
+            </marker>
+            <condition>
+                <not>
+                    <property>/controls/lighting/strobe</property>
+                </not>
+            </condition>
+        </item>
+
+        <item>
+            <name>Taxi light</name>
+            <value>ON</value>
+            <marker>
+                <x-m>-3.0256</x-m>
+                <y-m>-0.0083</y-m>
+                <z-m>0.9471</z-m>
+                <scale>1.4298</scale>
+            </marker>
+            <condition>
+                <property>/controls/lighting/taxi-lights</property>
+            </condition>
+        </item>
+
+        <item>
+            <name>Landing light</name>
+            <value>OFF</value>
+            <marker>
+                <x-m>-3.6355</x-m>
+                <y-m>-0.2702</y-m>
+                <z-m>0.8736</z-m>
+                <scale>2.0083</scale>
+            </marker>
+            <condition>
+                <and>
+                    <not>
+                        <property>/controls/lighting/landing-light</property>
+                    </not>
+                    <not>
+                        <property>/controls/lighting/landing-light[1]</property>
+                    </not>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Elevator trim</name>
+            <value>RESET FOR TAKE OFF</value>
+            <marker>
+                <x-m>-3.0810</x-m>
+                <y-m>-0.1926</y-m>
+                <z-m>-0.0157</z-m>
+                <scale>0.4380</scale>
+            </marker>
+            <condition>
+                <and>
+                    <less-than>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.19</value>
+                    </less-than>
+                    <greater-than>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.21</value>
+                    </greater-than>
+                </and>
+            </condition>
+        </item>
+
+        <item>
+            <name>Rudder trim</name>
+            <value>RESET FOR TAKE OFF</value>
+            <marker>
+                <x-m>-3.0405</x-m>
+                <y-m>-0.2041</y-m>
+                <z-m>-0.0157</z-m>
+                <scale>0.4380</scale>
+            </marker>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>0.11</value>
+                    </greater-than>
+                    <less-than>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>-0.13</value>
+                    </less-than>
+                </and>
+            </condition>
+        </item>
+
+    </checklist>
+
+    <checklist>
+
+        <title>Securing aircraft</title>
+
+        <page>
+
+            <item>
+                <name>Parking brake</name>
+                <value>SET</value>
+                <marker>
+                    <x-m>-3.6752</x-m>
+                    <y-m>-0.4479</y-m>
+                    <z-m>0.0000</z-m>
+                    <scale>3.0000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/gear/parkingbrake-lever</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Throttle</name>
+                <value>IDLE</value>
+                <marker>
+                    <x-m>-3.4157</x-m>
+                    <y-m>-0.1165</y-m>
+                    <z-m>0.8488</z-m>
+                    <scale>3.3471</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/throttle</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/throttle</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Propeller</name>
+                <value>FEATHER</value>
+                <marker>
+                    <x-m>-3.3174</x-m>
+                    <y-m>-0.0132</y-m>
+                    <z-m>0.8612</z-m>
+                    <scale>2.5207</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/propeller-pitch</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/propeller-pitch</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>"Fasten seatbelt"-warning</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9785</x-m>
+                    <y-m>0.0091</y-m>
+                    <z-m>0.9488</z-m>
+                    <scale>1.0000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/seat-belt</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>"No smoking"-sign</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9785</x-m>
+                    <y-m>-0.0174</y-m>
+                    <z-m>0.9488</z-m>
+                    <scale>1.0000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/no-smoking</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Taxi lights</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.0256</x-m>
+                    <y-m>-0.0083</y-m>
+                    <z-m>0.9471</z-m>
+                    <scale>1.4298</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/lighting/taxi-lights</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Posn lights</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9818</x-m>
+                    <y-m>-0.0463</y-m>
+                    <z-m>0.9496</z-m>
+                    <scale>1.4298</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/lighting/nav-lights</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Generators</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.0620</x-m>
+                    <y-m>-0.1281</y-m>
+                    <z-m>0.9479</z-m>
+                    <scale>2.4876</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <not>
+                            <property>/controls/electric/engine/generator</property>
+                        </not>
+                        <not>
+                            <property>/controls/electric/engine[1]/generator</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Condition levers</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.6116</x-m>
+                    <y-m>0.1132</y-m>
+                    <z-m>0.8446</z-m>
+                    <scale>2.6198</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <equals>
+                            <property>/controls/engines/engine/condition</property>
+                            <value>0</value>
+                        </equals>
+                        <equals>
+                            <property>/controls/engines/engine[1]/condition</property>
+                            <value>0</value>
+                        </equals>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward boost pump</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.0702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/fwd-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear boost pump</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.9107</x-m>
+                    <y-m>-0.1702</y-m>
+                    <z-m>0.1653</z-m>
+                    <scale>1.6000</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/aft-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Intake deflectors</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9207</x-m>
+                    <y-m>-0.0636</y-m>
+                    <z-m>0.9306</z-m>
+                    <scale>2.0248</scale>
+                </marker>
+                <condition>
+                    <and>
+                        <not>
+                            <property>controls/engines/engine[0]/intake-deflector</property>
+                        </not>
+                        <not>
+                            <property>controls/engines/engine[1]/intake-deflector</property>
+                        </not>
+                    </and>
+                </condition>
+            </item>
+
+            <item>
+                <name>Beacon</name>
+                <value>OFF WHEN PROPS STOPPED</value>
+                <marker>
+                    <x-m>-2.9884</x-m>
+                    <y-m>0.0174</y-m>
+                    <z-m>0.9397</z-m>
+                    <scale>1.2810</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/lighting/beacon</property>
+                    </not>
+                    <less-than>
+                        <property>/engines/engine/n2</property>
+                        <value>1</value>
+                    </less-than>
+                    <less-than>
+                        <property>/engines/engine[1]/n2</property>
+                        <value>1</value>
+                    </less-than>
+                </condition>
+            </item>
+
+            <item>
+                <name>Window heater (Right side of OH panel)</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.6174</x-m>
+                    <y-m>0.2744</y-m>
+                    <z-m>0.8777</z-m>
+                    <scale>2.7025</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/anti-ice/window-heat</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Instrument lights</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9372</x-m>
+                    <y-m>0.0240</y-m>
+                    <z-m>0.9438</z-m>
+                    <scale>1.5124</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/lighting/instrument-lights</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+            <item>
+                <name>Overhead light</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.1198</x-m>
+                    <y-m>0.2603</y-m>
+                    <z-m>0.9537</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/lighting/overhead-light</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Cabin lights</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-2.9372</x-m>
+                    <y-m>0.0826</y-m>
+                    <z-m>0.9421</z-m>
+                    <scale>1.3802</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/lighting/cabin-lights</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>Master battery switch</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.5488</x-m>
+                    <y-m>-0.2793</y-m>
+                    <z-m>0.9132</z-m>
+                    <scale>1.4793</scale>
+                </marker>
+                <condition>
+                    <not>
+                        <property>/controls/electric/battery-switch</property>
+                    </not>
+                </condition>
+            </item>
+
+            <item>
+                <name>External/Battery selector</name>
+                <value>OFF</value>
+                <marker>
+                    <x-m>-3.5636</x-m>
+                    <y-m>-0.2132</y-m>
+                    <z-m>0.9190</z-m>
+                    <scale>1.9917</scale>
+                </marker>
+                <condition>
+                    <equals>
+                        <property>/controls/electric/power-source</property>
+                        <value>0</value>
+                    </equals>
+                </condition>
+            </item>
+
+        </page>
+
+        <page>
+
+            <item>
+                <name>Left pitot tube</name>
+                <value>COVER</value>
+                <marker>
+                    <x-m>-4.1950</x-m>
+                    <y-m>-0.8785</y-m>
+                    <z-m>0.1562</z-m>
+                    <scale>3.4132</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/left-pitot-cover</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Left engine </name>
+                <value>COVER</value>
+                <marker>
+                    <x-m>-2.4901</x-m>
+                    <y-m>-2.8719</y-m>
+                    <z-m>0.6124</z-m>
+                    <scale>8.0579</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/left-engine-cover</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Left tiedown</name>
+                <value>ATTACH</value>
+                <marker>
+                    <x-m>-0.5231</x-m>
+                    <y-m>-4.8438</y-m>
+                    <z-m>1.0364</z-m>
+                    <scale>2.1570</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/left-tiedown-wheels</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward wheel chock</name>
+                <value>PLACE</value>
+                <marker>
+                    <x-m>-0.2529</x-m>
+                    <y-m>-1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/left-chock-fwd</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear wheel chock</name>
+                <value>PLACE</value>
+                <marker>
+                    <x-m>0.4471</x-m>
+                    <y-m>-1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/left-chock-aft</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear tiedown</name>
+                <value>ATTACH</value>
+                <marker>
+                    <x-m>5.3802</x-m>
+                    <y-m>-0.0000</y-m>
+                    <z-m>-0.4488</z-m>
+                    <scale>2.3223</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/rear-tiedown-wheels</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Rear wheel chock</name>
+                <value>PLACE</value>
+                <marker>
+                    <x-m>0.4471</x-m>
+                    <y-m>1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/right-chock-aft</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Forward wheel chock</name>
+                <value>PLACE</value>
+                <marker>
+                    <x-m>-0.2529</x-m>
+                    <y-m>1.9843</y-m>
+                    <z-m>-1.5942</z-m>
+                    <scale>19.3636</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/right-chock-fwd</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right tiedown</name>
+                <value>ATTACH</value>
+                <marker>
+                    <x-m>-0.5231</x-m>
+                    <y-m>4.8438</y-m>
+                    <z-m>1.0364</z-m>
+                    <scale>2.1570</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/right-tiedown-wheels</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right engine </name>
+                <value>COVER</value>
+                <marker>
+                    <x-m>-2.4901</x-m>
+                    <y-m>2.8719</y-m>
+                    <z-m>0.6124</z-m>
+                    <scale>8.0579</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/right-engine-cover</property>
+                </condition>
+            </item>
+
+            <item>
+                <name>Right pitot tube</name>
+                <value>COVER</value>
+                <marker>
+                    <x-m>-4.1950</x-m>
+                    <y-m>0.8785</y-m>
+                    <z-m>0.1562</z-m>
+                    <scale>3.4132</scale>
+                </marker>
+                <condition>
+                    <property>/sim/model/equipment/right-pitot-cover</property>
+                </condition>
+            </item>
+
+        </page>
+
+    </checklist>
+
+</PropertyList>

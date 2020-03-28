@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">440 Squadron, Canadian Forces R</name>
+            <texture>Liveries/RCAF_SAR-R.png</texture>
+        </livery>
+        <floats>
+		<texture>floats.png</texture>
+        </floats>   
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

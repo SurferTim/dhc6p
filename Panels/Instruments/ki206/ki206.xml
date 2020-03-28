@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D KI 206 for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>KI 206</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/ki206-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Card</name>
+            <w>430</w>
+            <h>430</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/card.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/nav/radials/selected-deg</property>
+                    <scale>-1.0</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>knob</name>
+            <w>70</w>
+            <h>70</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/knob.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-200</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-180</offset>
+                </transformation>
+            </transformations>
+            <transformation>
+                <type>rotation</type>
+                <property>/instrumentation/nav/radials/selected-deg</property>
+                <scale>-1.0</scale>
+                <offset>0</offset>
+                </transformation>
+        </layer>
+
+        <layer>
+            <name>TO VOR-FLAG</name>
+            <condition>
+                <property>instrumentation/nav/to-flag</property>
+            </condition>
+            <w>34.3</w>
+            <h>29.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/arrow.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>70</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>55</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>FROM VOR-FLAG</name>
+            <condition>
+                <property>instrumentation/nav/from-flag</property>
+            </condition>
+            <w>34.3</w>
+            <h>29.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/arrow.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>70</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-20</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <scale>1</scale>
+                    <offset>180</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>GS FLAG</name>
+            <condition>
+                <or>
+                    <not>
+                        <property>instrumentation/nav/has-gs</property>
+                    </not>
+                    <less-than>
+                        <property>systems/electrical/outputs/nav</property>
+                        <value>8</value>
+                    </less-than>
+                    <greater-than>
+                        <property>instrumentation/nav/in-range</property>
+                        <value>30000</value>
+                    </greater-than>
+                </or>
+            </condition>
+            <w>55</w>
+            <h>27</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/gs.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-60</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>35</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>NAV FLAG</name>
+            <condition>
+                <or>
+                    <not>
+                        <property>instrumentation/nav/data-is-valid</property>
+                    </not>
+                    <less-than>
+                        <property>systems/electrical/outputs/nav</property>
+                        <value>8</value>
+                    </less-than>
+                    <not>
+                        <property>instrumentation/nav/in-range</property>
+                    </not>
+                </or>
+            </condition>
+            <w>27.7</w>
+            <h>54</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/nav.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>25</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>80</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Localizer</name>
+            <w>6</w>
+            <h>240</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <property>/instrumentation/nav/heading-needle-deflection</property>
+                    <min>-60</min>
+                    <max>60</max>
+                    <interpolation>
+                        <entry><ind> -10 </ind><dep> -60 </dep></entry>
+                        <entry><ind>   0 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  10 </ind><dep>  60 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Glideslope</name>
+            <w>6</w>
+            <h>240</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/ki206/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <property>/instrumentation/nav/gs-needle-deflection</property>
+                    <min>-60</min>
+                    <max>60</max>
+                    <interpolation>
+                        <entry><ind> -9999 </ind><dep> -60 </dep></entry>
+                        <entry><ind>   -10 </ind><dep> -60 </dep></entry>
+                        <entry><ind>     0 </ind><dep>   0 </dep></entry>
+                        <entry><ind>    10 </ind><dep>  60 </dep></entry>
+                        <entry><ind>  9999 </ind><dep>  60 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <scale>1</scale>
+                    <offset>90</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+        <action>
+            <name>increase selected radial coarse</name>
+            <button>1</button>
+            <x>-200</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/nav/radials/selected-deg</property>
+                <step>5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase selected radial fine</name>
+            <button>0</button>
+            <x>-200</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/nav/radials/selected-deg</property>
+                <step>1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease selected radial fine</name>
+            <button>0</button>
+            <x>-235</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/nav/radials/selected-deg</property>
+                <step>-1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease selected radial coarse</name>
+            <button>1</button>
+            <x>-235</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/nav/radials/selected-deg</property>
+                <step>-5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+    </actions>
+
+</PropertyList>

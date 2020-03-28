@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>AP-board.ac</path>
+
+    <animation>
+        <type>material</type>
+        <object-name>ALT-on</object-name>
+        <object-name>AP-ALT</object-name>
+        <object-name>AP-HDG</object-name>
+        <object-name>AP-IAS</object-name>
+        <object-name>AP-ONOFF</object-name>
+        <object-name>GS-on</object-name>
+        <object-name>HDG-on</object-name>
+        <object-name>NAV-on</object-name>
+        <object-name>VS-on</object-name>
+        <emission>
+            <red>0.7</red>
+            <green>0.7</green>
+            <blue>0.7</blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>ALT-toggle</object-name>
+        <object-name>AP-altoff</object-name>
+        <object-name>AP-hdgoff</object-name>
+        <object-name>AP-iasoff</object-name>
+        <object-name>AP-onoff</object-name>
+        <object-name>AP-toggle.001</object-name>
+        <object-name>GS-toggle</object-name>
+        <object-name>HDG-toggle</object-name>
+        <object-name>NAV-toggle</object-name>
+        <object-name>VS-toggle</object-name>
+        <object-name>cadre</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>ALT-onM</object-name>
+        <object-name>AP-ALT-M</object-name>
+        <object-name>AP-HDG-M</object-name>
+        <object-name>AP-IAS-M</object-name>
+        <object-name>AP-onoff-M</object-name>
+        <object-name>GS-onM</object-name>
+        <object-name>HDG-onM</object-name>
+        <object-name>NAV-onM</object-name>
+        <object-name>VS-onM</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/plt-eng-inst-emer-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>ALT-on</object-name>
+        <object-name>ALT-onM</object-name>
+        <object-name>ALT-toggle</object-name>
+        <object-name>AP-ALT</object-name>
+        <object-name>AP-ALT-M</object-name>
+        <object-name>AP-HDG</object-name>
+        <object-name>AP-HDG-M</object-name>
+        <object-name>AP-IAS</object-name>
+        <object-name>AP-IAS-M</object-name>
+        <object-name>AP-ONOFF</object-name>
+        <object-name>AP-altoff</object-name>
+        <object-name>AP-hdgoff</object-name>
+        <object-name>AP-iasoff</object-name>
+        <object-name>AP-onoff</object-name>
+        <object-name>AP-onoff-M</object-name>
+        <object-name>AP-toggle.001</object-name>
+        <object-name>GS-on</object-name>
+        <object-name>GS-onM</object-name>
+        <object-name>GS-toggle</object-name>
+        <object-name>HDG-on</object-name>
+        <object-name>HDG-onM</object-name>
+        <object-name>HDG-toggle</object-name>
+        <object-name>NAV-on</object-name>
+        <object-name>NAV-onM</object-name>
+        <object-name>NAV-toggle</object-name>
+        <object-name>VS-on</object-name>
+        <object-name>VS-onM</object-name>
+        <object-name>VS-toggle</object-name>
+        <object-name>cadre</object-name>
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>ALT-on</object-name>
+        <object-name>ALT-onM</object-name>
+        <object-name>ALT-toggle</object-name>
+        <object-name>AP-ALT</object-name>
+        <object-name>AP-ALT-M</object-name>
+        <object-name>AP-HDG</object-name>
+        <object-name>AP-HDG-M</object-name>
+        <object-name>AP-IAS</object-name>
+        <object-name>AP-IAS-M</object-name>
+        <object-name>AP-ONOFF</object-name>
+        <object-name>AP-altoff</object-name>
+        <object-name>AP-hdgoff</object-name>
+        <object-name>AP-iasoff</object-name>
+        <object-name>AP-onoff</object-name>
+        <object-name>AP-onoff-M</object-name>
+        <object-name>AP-toggle.001</object-name>
+        <object-name>GS-on</object-name>
+        <object-name>GS-onM</object-name>
+        <object-name>GS-toggle</object-name>
+        <object-name>HDG-on</object-name>
+        <object-name>HDG-onM</object-name>
+        <object-name>HDG-toggle</object-name>
+        <object-name>NAV-on</object-name>
+        <object-name>NAV-onM</object-name>
+        <object-name>NAV-toggle</object-name>
+        <object-name>VS-on</object-name>
+        <object-name>VS-onM</object-name>
+        <object-name>VS-toggle</object-name>
+        <object-name>cadre</object-name>
+    </effect>
+
+    <animation>
+        <type>material</type>
+        <object-name>NAV-onM</object-name>
+        <object-name>AP-HDG-M</object-name>
+        <object-name>HDG-onM</object-name>
+        <object-name>AP-onoff-M</object-name>
+        <object-name>AP-IAS-M</object-name>
+        <object-name>AP-ALT-M</object-name>
+        <object-name>ALT-onM</object-name>
+        <object-name>GS-onM</object-name>
+        <object-name>VS-onM</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
+            <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+    
+    <!--******************SWITCHS*********************-->
+    <!-- AP-Onoff -->
+    <animation>
+        <type>pick</type>
+        <object-name>AP-onoff</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/apflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/locks/altitude</property>
+                <value type="string"></value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/locks/speed</property>
+                <value type="string"></value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string"></value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/iasflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/hdgflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/navsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--AP-on light-->
+    <animation>
+        <type>select</type>
+        <object-name>AP-ONOFF</object-name>
+        <condition>
+            <property>controls/autopilot/settings/apflag</property>
+        </condition> 
+    </animation>
+
+    <!-- AP-Altitude -->
+    <animation>
+        <type>pick</type>
+        <object-name>AP-altoff</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/apflag</property>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/altflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/autopilot/settings/iasflag</property>
+                    </not>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/locks/altitude</property>
+                <value type="string"></value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <!-- sp DHC6 -->
+            <binding>
+                <command>property-assign</command>
+                <property>/autopilot/locks/passive-mode/</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--AP-alt light-->
+    <animation>
+        <type>select</type>
+        <object-name>AP-ALT</object-name>
+        <condition>
+            <property>controls/autopilot/settings/altflag</property>
+        </condition>
+    </animation>
+
+    <!-- Alt-set  mode-->
+    <animation>
+        <type>pick</type>
+        <object-name>ALT-toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/altflag</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/iasflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/altflag</property>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/locks/altitude</property>
+                <value type="string">altitude-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--alt-set light-->
+    <animation>
+        <type>select</type>
+        <object-name>ALT-on</object-name>
+        <condition>
+            <property>controls/autopilot/settings/altsetflag</property>
+        </condition>
+    </animation>
+
+    <!-- Vs-set  mode-->
+    <animation>
+        <type>pick</type>
+        <object-name>VS-toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/altflag</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/iasflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/altflag</property>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/locks/altitude</property>
+                <value type="string">vertical-speed-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--vs-set light-->
+    <animation>
+        <type>select</type>
+        <object-name>VS-on</object-name>
+        <condition>
+            <property>controls/autopilot/settings/vssetflag</property>
+        </condition>
+    </animation>
+
+    <!-- Gs-set  mode-->
+    <animation>
+        <type>pick</type>
+        <object-name>GS-toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <and>
+                        <property>instrumentation/nav[0]/gs-in-range</property>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </and>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/nav[0]/gs-catched</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/nav[0]/gs-catched</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/iasflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/nav[0]/gs-catched</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/altflag</property>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/locks/altitude</property>
+                <value type="string">gs1-hold</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--gs-set light-->
+    <animation>
+        <type>select</type>
+        <object-name>GS-on</object-name>
+        <condition>
+            <property>controls/autopilot/settings/gssetflag</property>
+        </condition>
+    </animation>
+  
+    <!-- AP-Speed -->
+    <animation>
+        <type>pick</type>
+        <object-name>AP-iasoff</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <and>
+                        <property>controls/autopilot/settings/apflag</property>
+                        <greater-than>
+                            <property>position/altitude-agl-ft</property>
+                            <value type="double">100</value>
+                        </greater-than>
+                    </and>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/iasflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <!-- sp DHC6 -->
+            <binding>
+                <command>property-cycle</command>
+                <property>/autopilot/locks/passive-mode/</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--AP-speed light-->
+    <animation>
+        <type>select</type>
+        <object-name>AP-IAS</object-name>
+        <condition>
+            <property>controls/autopilot/settings/iasflag</property>
+        </condition>
+        <condition>
+            <greater-than>
+                <property>position/altitude-agl-ft</property>
+                <value type="double">100</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+    <!-- AP-HDG -->
+    <animation>
+        <type>pick</type>
+        <object-name>AP-hdgoff</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/apflag</property>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/hdgflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string">wing-leveler</value>
+            </binding>
+            <binding>
+                <condition>
+                    <not>
+                        <property>controls/autopilot/settings/hdgflag</property>
+                    </not>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string"></value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/navsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <!-- sp DHC6 -->
+            <binding>
+                <command>property-assign</command>
+                <property>/autopilot/locks/passive-mode/</property>
+                <value type="bool">false</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--AP-hdg light-->
+    <animation>
+        <type>select</type>
+        <object-name>AP-HDG</object-name>
+        <condition>
+            <property>controls/autopilot/settings/hdgflag</property>
+        </condition>
+    </animation>
+
+    <!-- HDG-set  mode-->
+    <animation>
+        <type>pick</type>
+        <object-name>HDG-toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <value type="bool">true</value>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/navsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                </condition>
+                <command>property-cycle</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string">dg-heading-hold</value>
+                <value type="string">wing-leveler</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--Hdg-set light-->
+    <animation>
+        <type>select</type>
+        <object-name>HDG-on</object-name>
+        <condition>
+            <property>controls/autopilot/settings/hdgsetflag</property>
+        </condition>
+    </animation>
+
+    <!-- Nav-set  mode-->
+    <animation>
+        <type>pick</type>
+        <object-name>NAV-toggle</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/navsetflag</property>
+            </binding>
+            <binding>
+                <condition>
+                    <property>instrumentation/nav[0]/crs-catched</property>
+                </condition>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                </condition>
+                <command>property-cycle</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string">nav1-hold</value>
+                <value type="string">wing-leveler</value>
+            </binding>
+        </action>
+    </animation>
+
+    <!--Nav-set light-->
+    <animation>
+        <type>select</type>
+        <object-name>NAV-on</object-name>
+        <condition>
+            <property>controls/autopilot/settings/navsetflag</property>
+        </condition>
+    </animation>
+
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">AP comm </text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.025 </x-m>
+            <y-m>  0.013 </y-m>
+            <z-m>  0.040 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+ </PropertyList>

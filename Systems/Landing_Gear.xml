@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+
+<system name="Landing Gear">
+
+    <channel name="Landing Gear">
+
+        <switch name="fcs/gear-no-wow">
+            <default value="1"/>
+            <test logic="AND" value="0">
+                gear/unit[1]/WOW eq 1
+                gear/unit[2]/WOW eq 1
+            </test>
+        </switch>
+
+        <switch name="/controls/gear/tiller-disabled">
+            <default value="0"/>
+            <test logic="AND" value="1">
+                /controls/gear/tiller-enabled == 0
+            </test>
+        </switch>
+
+        <fcs_function name="Nose Wheel Steering 0">
+            <function name="fcs/steer-nose-deg[0]">
+                <description>Steering command for nose gear</description>
+                <sum>
+                    <product>
+                        <table>
+                            <independentVar lookup="row">/controls/gear/tiller</independentVar>
+                            <tableData>
+                                -1 -60
+                                 0   0
+                                 1  60
+                            </tableData>
+                        </table>
+                        <property>/controls/gear/tiller-enabled</property>
+                    </product>
+                    <product>
+                        <product>
+                            <property>/controls/flight/rudder</property>
+                            <value>6</value>
+                        </product>
+                        <property>/controls/gear/tiller-disabled</property>
+                    </product>
+                </sum>
+            </function>
+        </fcs_function>
+
+        <!-- simulate rotational friction -->
+        <actuator name="Gear Nose Actuator">
+          <input>fcs/steer-nose-deg[0]</input>
+          <rate_limit>90</rate_limit>
+          <output>fcs/steer-pos-deg[0]</output>
+        </actuator>
+
+        <!-- Convert compression from ft to m -->
+        <pure_gain name="compression-nose-gear">
+            <input>gear/unit[0]/compression-ft</input>
+            <gain>0.3048</gain>
+            <output>/gear/gear[0]/compression-m</output>
+        </pure_gain>
+
+        <pure_gain name="compression-left-main-gear">
+            <input>gear/unit[1]/compression-ft</input>
+            <gain>0.3048</gain>
+            <output>/gear/gear[1]/compression-m</output>
+        </pure_gain>
+
+        <pure_gain name="compression-right-main-gear">
+            <input>gear/unit[2]/compression-ft</input>
+            <gain>0.3048</gain>
+            <output>/gear/gear[2]/compression-m</output>
+        </pure_gain>
+
+    </channel>
+
+</system>

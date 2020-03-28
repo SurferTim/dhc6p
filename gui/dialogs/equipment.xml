@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>equipment</name>
+    <layout>vbox</layout>
+
+    <text>
+        <label>Equipment for securing aircraft</label>
+    </text>
+
+    <hrule/>
+
+    <text>
+        <label>Pitot covers</label>
+    </text>
+
+    <group>
+        <layout>hbox</layout>
+
+        <checkbox>
+            <label>Left pitot cover</label>
+            <property>/sim/model/equipment/left-pitot-cover</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Right pitot cover</label>
+            <property>/sim/model/equipment/right-pitot-cover</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+    </group>
+
+    <hrule/>
+
+    <text>
+        <label>Engine covers</label>
+    </text>
+
+    <group>
+        <layout>hbox</layout>
+
+        <checkbox>
+            <label>Left engine cover</label>
+            <property>/sim/model/equipment/left-engine-cover</property>
+            <enable>
+                <and>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </and>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Right engine cover</label>
+            <property>/sim/model/equipment/right-engine-cover</property>
+            <enable>
+                <and>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine[1]/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </and>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+    </group>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <group>
+        <layout>vbox</layout>
+
+        <text>
+            <label>Left wheel chocks</label>
+        </text>
+
+        <checkbox>
+            <label>Forward</label>
+            <property>/sim/model/equipment/left-chock-fwd</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Rear</label>
+            <property>/sim/model/equipment/left-chock-aft</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        </group>
+
+        <group>
+            <layout>vbox</layout>
+
+            <text>
+                <label>Right wheel chocks</label>
+            </text>
+
+            <checkbox>
+                <label>Forward</label>
+                <property>/sim/model/equipment/right-chock-fwd</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>1.0</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <live>true</live>
+            </checkbox>
+
+            <checkbox>
+                <label>Rear</label>
+                <property>/sim/model/equipment/right-chock-aft</property>
+                <enable>
+                    <less-than>
+                        <property>velocities/groundspeed-kt</property>
+                        <value>1.0</value>
+                    </less-than>
+                </enable>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <live>true</live>
+            </checkbox>
+
+        </group>
+
+    </group>
+
+    <hrule/>
+
+    <text>
+        <label>Tiedowns</label>
+    </text>
+
+    <group>
+        <layout>hbox</layout>
+
+        <checkbox>
+            <label>Left tiedown</label>
+            <property>/sim/model/equipment/left-tiedown-wheels</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+        <checkbox>
+            <label>Right tiedown</label>
+            <property>/sim/model/equipment/right-tiedown-wheels</property>
+            <enable>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </enable>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <live>true</live>
+        </checkbox>
+
+    </group>
+
+    <checkbox>
+        <label>Rear tiedown</label>
+        <property>/sim/model/equipment/rear-tiedown-wheels</property>
+        <enable>
+            <less-than>
+                <property>velocities/groundspeed-kt</property>
+                <value>1.0</value>
+            </less-than>
+        </enable>
+        <binding>
+            <command>dialog-apply</command>
+        </binding>
+        <live>true</live>
+    </checkbox>
+
+    <hrule/>
+
+    <group>
+        <layout>hbox</layout>
+
+        <button>
+            <legend>Back</legend>
+            <padding>5</padding>
+            <binding>
+                <command>nasal</command>
+                <script>fgcommand("dialog-show", props.Node.new({"dialog-name": "ground-services"}));</script>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+
+        <button>
+            <legend>Close</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <padding>5</padding>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+        
+    </group>
+
+</PropertyList>

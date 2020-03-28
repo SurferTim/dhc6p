@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Altimeter for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Altimeter</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Pressure</name>
+            <w>336</w>
+            <h>336</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/pressure.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <!--transformation>
+                    <type>x-shift</type>
+                    <offset>7</offset>
+                </transformation-->
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/altimeter/setting-hpa</property>
+                    <min>950</min>
+                    <max>1050</max>
+                    <scale>1.8</scale>
+                    <offset>-3.6</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/alt-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Knob</name>
+            <w>80</w>
+            <h>80</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/knob.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>x-shift</type>
+                    <offset>-200</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>-195</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/altimeter/setting-hpa</property>
+                    <min>-359</min>
+                    <max>359</max>
+                    <scale>1.0</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>needle10000</name>
+            <w>21.16</w>
+            <h>170.2</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+                    <max>100000.0</max>
+                    <scale>0.0036</scale>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>41.17</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>needle1000</name>
+            <w>27.6</w>
+            <h>222</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+                    <max>100000.0</max>
+                    <scale>0.036</scale>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>53.7</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>needle100</name>
+            <w>33.12</w>
+            <h>266.4</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/alt/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/altimeter/indicated-altitude-ft</property>
+                    <max>100000.0</max>
+                    <scale>0.36</scale>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>64.44</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+        <action>
+            <name>calibrate fine</name>
+            <button>0</button>
+            <x>-236</x>
+            <y>-236</y>
+            <w>43</w>
+            <h>86</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-hpa</property>
+                <step>-1</step>
+                <min>950</min>
+                <max>1050</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate coarse</name>
+            <button>1</button>
+            <x>-236</x>
+            <y>-236</y>
+            <w>43</w>
+            <h>86</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-hpa</property>
+                <step>-5</step>
+                <min>950</min>
+                <max>1050</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate fine</name>
+            <button>0</button>
+            <x>-194</x>
+            <y>-236</y>
+            <w>43</w>
+            <h>86</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-hpa</property>
+                <step>1</step>
+                <min>950</min>
+                <max>1050</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>calibrate coarse</name>
+            <button>1</button>
+            <x>-194</x>
+            <y>-236</y>
+            <w>43</w>
+            <h>86</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter/setting-hpa</property>
+                <step>5</step>
+                <min>950</min>
+                <max>1050</max>
+                <wrap>false</wrap>
+            </binding>
+        </action>
+
+    </actions>
+
+</PropertyList>

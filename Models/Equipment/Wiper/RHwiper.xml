@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!--###################################################################################
+February 2015
+#######################################################################################
+-->
+<PropertyList>
+
+    <path>RHwiper.ac</path>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>RHwiper</object-name>
+        <object-name>RHwiper.arm</object-name>
+        <object-name>RHwiper.blade</object-name>
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/skin-reflect</inherits-from>
+        <object-name>RHwiper</object-name>
+        <object-name>RHwiper.blade</object-name>
+        <object-name>RHwiper.arm</object-name>
+    </effect>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper</object-name>
+        <object-name>RHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>90.0</factor>
+        <center>
+            <x-m>-4.122</x-m>
+            <y-m>0.400</y-m>
+            <z-m>0.5225</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper.arm</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>90.0</factor>
+        <center>
+            <x-m>-4.140</x-m>
+            <y-m>0.360</y-m>
+            <z-m>0.540</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>RHwiper.blade</object-name>
+        <property>controls/electric/wipers/position-norm</property>
+        <factor>-90.0</factor>
+        <center>
+            <x-m>-3.939</x-m>
+            <y-m>0.171</y-m>
+            <z-m>0.737</z-m>
+        </center>
+        <axis>
+            <x>-0.688</x>
+            <y>0.235</y>
+            <z>0.687</z>
+        </axis>
+    </animation>
+
+</PropertyList>

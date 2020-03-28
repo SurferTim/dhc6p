@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+    <name>window-weather-effects</name>
+    <inherits-from>Effects/glass</inherits-from>
+    <parameters>
+    <texture n="2">
+        <image>Aircraft/dhc6/Models/Effects/windshield-mask.png</image>
+            <type>2d</type>
+            <filter>linear-mipmap-linear</filter>
+        <wrap-s>clamp</wrap-s>
+        <wrap-t>clamp</wrap-t>
+        <internal-format>normalized</internal-format>
+    </texture>
+        <use-mask type="int">1</use-mask>
+        <overlay-color type="vec3d" n="0">1.0 1.0 1.0</overlay-color>
+    </parameters>
+</PropertyList>

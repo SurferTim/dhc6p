@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>no-smoking.ac</path>
+
+    <animation>
+        <object-name>safety-signs-stand</object-name>
+        <object-name>nosmoking-lit</object-name>
+        <object-name>seatbelt-lit</object-name>         
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>nosmoking-lit</object-name>
+        <condition>
+            <and>
+                <property>controls/lighting/no-smoking</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+    
+    <animation>
+        <type>material</type>
+        <object-name>nosmoking-lit</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/lighting/no-smoking</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>seatbelt-lit</object-name>
+        <condition>
+            <and>
+                <property>controls/lighting/seat-belt</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>seatbelt-lit</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+            <and>
+                <property>controls/lighting/no-smoking</property>
+                <greater-than>
+                    <property>systems/electrical/volts</property>
+                    <value>5</value>
+                </greater-than>
+            </and>
+        </condition>
+        <emission>
+            <red>   0.7 </red>
+            <green> 0.6 </green>
+            <blue>  0.6 </blue>
+        </emission>
+    </animation>
+
+</PropertyList>

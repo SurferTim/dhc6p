@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>m877.ac</path>
+
+    <animation>
+        <type>material</type> 
+        <object-name>MN.002</object-name>
+        <object-name>MN.001</object-name>
+        <object-name>HR.002</object-name> 
+        <object-name>HR.001</object-name> 
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>CTL.btn</object-name>
+        <object-name>HR.001</object-name>
+        <object-name>HR.002</object-name>
+        <object-name>M877</object-name>
+        <object-name>M877.002</object-name>
+        <object-name>M877.colon</object-name>
+        <object-name>M877.display</object-name>
+        <object-name>MN.001</object-name>
+        <object-name>MN.002</object-name>
+        <object-name>SEL.btn</object-name>
+        <object-name>SET.btn</object-name>
+        <object-name>et</object-name>
+        <object-name>ft</object-name>
+        <object-name>gmt</object-name>
+        <object-name>lt</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>CTL.btn</object-name>
+        <object-name>HR.001</object-name>
+        <object-name>HR.002</object-name>
+        <object-name>M877</object-name>
+        <object-name>M877.002</object-name>
+        <object-name>M877.colon</object-name>
+        <object-name>M877.display</object-name>
+        <object-name>MN.001</object-name>
+        <object-name>MN.002</object-name>
+        <object-name>SEL.btn</object-name>
+        <object-name>SET.btn</object-name>
+        <object-name>et</object-name>
+        <object-name>ft</object-name>
+        <object-name>gmt</object-name>
+        <object-name>lt</object-name>
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>CTL.btn</object-name>
+        <object-name>HR.001</object-name>
+        <object-name>HR.002</object-name>
+        <object-name>M877</object-name>
+        <object-name>M877.002</object-name>
+        <object-name>M877.colon</object-name>
+        <object-name>M877.display</object-name>
+        <object-name>MN.001</object-name>
+        <object-name>MN.002</object-name>
+        <object-name>SEL.btn</object-name>
+        <object-name>SET.btn</object-name>
+        <object-name>et</object-name>
+        <object-name>ft</object-name>
+        <object-name>gmt</object-name>
+        <object-name>lt</object-name>
+    </effect>
+
+    <animation>
+        <type>select</type>
+        <object-name>M877.colon</object-name>
+        <condition>
+            <property>instrumentation/clock/m877/power</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>gmt</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/clock/m877/mode-string</property>
+                <value>GMT</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>lt</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/clock/m877/mode-string</property>
+                <value>LT</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>ft</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/clock/m877/mode-string</property>
+                <value>FT</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>et</object-name>
+        <condition>
+            <equals>
+                <property>instrumentation/clock/m877/mode-string</property>
+                <value>ET</value>
+            </equals>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>HR.001</object-name>
+        <condition>
+            <property>instrumentation/clock/m877/digit[3]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        
+
+        <condition>
+            <property>instrumentation/clock/m877/digit[2]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MN.001</object-name>
+        <condition>
+            <property>instrumentation/clock/m877/digit[1]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>MN.002</object-name>
+        <condition>
+            <property>instrumentation/clock/m877/digit[0]</property>
+        </condition>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>HR.001</object-name>
+        <property>instrumentation/clock/m877/indicated-hour</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>HR.002</object-name>
+        <property>instrumentation/clock/m877/indicated-hour</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MN.001</object-name>
+        <property>instrumentation/clock/m877/indicated-min</property>
+        <factor>0.01</factor>
+        <step>10</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>textranslate</type>
+        <object-name>MN.002</object-name>
+        <property>instrumentation/clock/m877/indicated-min</property>
+        <factor>0.1</factor>
+        <step>1</step>
+        <axis>
+            <x>1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <!-- -hotspots -->
+    <animation>
+        <type>pick</type>
+        <object-name>SEL.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>m877.davtron.select_display();</script>
+            </binding>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>CTL.btn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>m877.davtron.control_action(1);</script>
+            </binding>
+            <mod-up>
+                <binding>
+                    <command>nasal</command>
+                    <script>m877.davtron.control_action(0);</script>
+                </binding>
+            </mod-up>
+        </action>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>SET.btn</object-name>
+        <action>
+            <button>1</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>nasal</command>
+                <script>m877.davtron.set_time();</script>
+            </binding>
+        </action>
+    </animation>
+
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">Clock</text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.025 </x-m>
+            <y-m>  0.0 </y-m>
+            <z-m>  0.005 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+</PropertyList>

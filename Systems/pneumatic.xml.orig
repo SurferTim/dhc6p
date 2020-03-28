@@ -1,0 +1,399 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Pneumatic system:
+    Bleed air comes from the combustor of the engine.
+    Air pressure is directly linear to the turbine speed (Ng):
+    103 psi @ 100 percent Ng.
+
+    Bleed air is used for airframe deice (not simulated), cabin heat and intake deflectors.
+    To supply bleed air to the cabin heater and airframe deicer the 'BLEED AIR switches' on the overhead panel have to be on.
+    However the intake deflectors work independent from the bleed air switches
+-->
+
+<PropertyList>
+
+    <!-- Left engine bleed air -->
+    <filter>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[0]/n1</property>
+                    <entry><ind>   0.0 </ind><dep>   0.00000 </dep></entry>
+                    <entry><ind>   2.5 </ind><dep>   0.33937 </dep></entry>
+                    <entry><ind>   5.0 </ind><dep>   0.70792 </dep></entry>
+                    <entry><ind>   7.5 </ind><dep>   1.10816 </dep></entry>
+                    <entry><ind>  10.0 </ind><dep>   1.54281 </dep></entry>
+                    <entry><ind>  12.5 </ind><dep>   2.01484 </dep></entry>
+                    <entry><ind>  15.0 </ind><dep>   2.52745 </dep></entry>
+                    <entry><ind>  17.5 </ind><dep>   3.08414 </dep></entry>
+                    <entry><ind>  20.0 </ind><dep>   3.68869 </dep></entry>
+                    <entry><ind>  22.5 </ind><dep>   4.34522 </dep></entry>
+                    <entry><ind>  25.0 </ind><dep>   5.05821 </dep></entry>
+                    <entry><ind>  27.5 </ind><dep>   5.83249 </dep></entry>
+                    <entry><ind>  30.0 </ind><dep>   6.67336 </dep></entry>
+                    <entry><ind>  32.5 </ind><dep>   7.58652 </dep></entry>
+                    <entry><ind>  35.0 </ind><dep>   8.57820 </dep></entry>
+                    <entry><ind>  37.5 </ind><dep>   9.65514 </dep></entry>
+                    <entry><ind>  40.0 </ind><dep>  10.82468 </dep></entry>
+                    <entry><ind>  42.5 </ind><dep>  12.09479 </dep></entry>
+                    <entry><ind>  45.0 </ind><dep>  13.47410 </dep></entry>
+                    <entry><ind>  47.5 </ind><dep>  14.97200 </dep></entry>
+                    <entry><ind>  50.0 </ind><dep>  16.59870 </dep></entry>
+                    <entry><ind>  52.5 </ind><dep>  18.36527 </dep></entry>
+                    <entry><ind>  55.0 </ind><dep>  20.28373 </dep></entry>
+                    <entry><ind>  57.5 </ind><dep>  22.36714 </dep></entry>
+                    <entry><ind>  60.0 </ind><dep>  24.62969 </dep></entry>
+                    <entry><ind>  62.5 </ind><dep>  27.08678 </dep></entry>
+                    <entry><ind>  65.0 </ind><dep>  29.75514 </dep></entry>
+                    <entry><ind>  67.5 </ind><dep>  32.65293 </dep></entry>
+                    <entry><ind>  70.0 </ind><dep>  35.79988 </dep></entry>
+                    <entry><ind>  72.5 </ind><dep>  39.21740 </dep></entry>
+                    <entry><ind>  75.0 </ind><dep>  42.92878 </dep></entry>
+                    <entry><ind>  77.5 </ind><dep>  46.95927 </dep></entry>
+                    <entry><ind>  80.0 </ind><dep>  51.33631 </dep></entry>
+                    <entry><ind>  82.5 </ind><dep>  56.08970 </dep></entry>
+                    <entry><ind>  85.0 </ind><dep>  61.25180 </dep></entry>
+                    <entry><ind>  87.5 </ind><dep>  66.85774 </dep></entry>
+                    <entry><ind>  90.0 </ind><dep>  72.94570 </dep></entry>
+                    <entry><ind>  92.5 </ind><dep>  79.55712 </dep></entry>
+                    <entry><ind>  95.0 </ind><dep>  86.73700 </dep></entry>
+                    <entry><ind>  97.5 </ind><dep>  94.53423 </dep></entry>
+                    <entry><ind> 100.0 </ind><dep> 103.00187 </dep></entry>
+                    <entry><ind> 102.5 </ind><dep> 112.19759 </dep></entry>
+                    <entry><ind> 105.0 </ind><dep> 122.18398 </dep></entry>
+                </table>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[0]/n2</property>
+                    <entry><ind>   0.0 </ind><dep>   0.00000 </dep></entry>
+                    <entry><ind>   2.5 </ind><dep>   0.33937 </dep></entry>
+                    <entry><ind>   5.0 </ind><dep>   0.70792 </dep></entry>
+                    <entry><ind>   7.5 </ind><dep>   1.10816 </dep></entry>
+                    <entry><ind>  10.0 </ind><dep>   1.54281 </dep></entry>
+                    <entry><ind>  12.5 </ind><dep>   2.01484 </dep></entry>
+                    <entry><ind>  15.0 </ind><dep>   2.52745 </dep></entry>
+                    <entry><ind>  17.5 </ind><dep>   3.08414 </dep></entry>
+                    <entry><ind>  20.0 </ind><dep>   3.68869 </dep></entry>
+                    <entry><ind>  22.5 </ind><dep>   4.34522 </dep></entry>
+                    <entry><ind>  25.0 </ind><dep>   5.05821 </dep></entry>
+                    <entry><ind>  27.5 </ind><dep>   5.83249 </dep></entry>
+                    <entry><ind>  30.0 </ind><dep>   6.67336 </dep></entry>
+                    <entry><ind>  32.5 </ind><dep>   7.58652 </dep></entry>
+                    <entry><ind>  35.0 </ind><dep>   8.57820 </dep></entry>
+                    <entry><ind>  37.5 </ind><dep>   9.65514 </dep></entry>
+                    <entry><ind>  40.0 </ind><dep>  10.82468 </dep></entry>
+                    <entry><ind>  42.5 </ind><dep>  12.09479 </dep></entry>
+                    <entry><ind>  45.0 </ind><dep>  13.47410 </dep></entry>
+                    <entry><ind>  47.5 </ind><dep>  14.97200 </dep></entry>
+                    <entry><ind>  50.0 </ind><dep>  16.59870 </dep></entry>
+                    <entry><ind>  52.5 </ind><dep>  18.36527 </dep></entry>
+                    <entry><ind>  55.0 </ind><dep>  20.28373 </dep></entry>
+                    <entry><ind>  57.5 </ind><dep>  22.36714 </dep></entry>
+                    <entry><ind>  60.0 </ind><dep>  24.62969 </dep></entry>
+                    <entry><ind>  62.5 </ind><dep>  27.08678 </dep></entry>
+                    <entry><ind>  65.0 </ind><dep>  29.75514 </dep></entry>
+                    <entry><ind>  67.5 </ind><dep>  32.65293 </dep></entry>
+                    <entry><ind>  70.0 </ind><dep>  35.79988 </dep></entry>
+                    <entry><ind>  72.5 </ind><dep>  39.21740 </dep></entry>
+                    <entry><ind>  75.0 </ind><dep>  42.92878 </dep></entry>
+                    <entry><ind>  77.5 </ind><dep>  46.95927 </dep></entry>
+                    <entry><ind>  80.0 </ind><dep>  51.33631 </dep></entry>
+                    <entry><ind>  82.5 </ind><dep>  56.08970 </dep></entry>
+                    <entry><ind>  85.0 </ind><dep>  61.25180 </dep></entry>
+                    <entry><ind>  87.5 </ind><dep>  66.85774 </dep></entry>
+                    <entry><ind>  90.0 </ind><dep>  72.94570 </dep></entry>
+                    <entry><ind>  92.5 </ind><dep>  79.55712 </dep></entry>
+                    <entry><ind>  95.0 </ind><dep>  86.73700 </dep></entry>
+                    <entry><ind>  97.5 </ind><dep>  94.53423 </dep></entry>
+                    <entry><ind> 100.0 </ind><dep> 103.00187 </dep></entry>
+                    <entry><ind> 102.5 </ind><dep> 112.19759 </dep></entry>
+                    <entry><ind> 105.0 </ind><dep> 122.18398 </dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>
+            <property>systems/pneumatic/bleed-air-psi[0]</property>
+        </output>
+    </filter>
+
+    <!-- Right engine bleed air -->
+    <filter>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[1]/n1</property>
+                    <entry><ind>   0.0 </ind><dep>   0.00000 </dep></entry>
+                    <entry><ind>   2.5 </ind><dep>   0.33937 </dep></entry>
+                    <entry><ind>   5.0 </ind><dep>   0.70792 </dep></entry>
+                    <entry><ind>   7.5 </ind><dep>   1.10816 </dep></entry>
+                    <entry><ind>  10.0 </ind><dep>   1.54281 </dep></entry>
+                    <entry><ind>  12.5 </ind><dep>   2.01484 </dep></entry>
+                    <entry><ind>  15.0 </ind><dep>   2.52745 </dep></entry>
+                    <entry><ind>  17.5 </ind><dep>   3.08414 </dep></entry>
+                    <entry><ind>  20.0 </ind><dep>   3.68869 </dep></entry>
+                    <entry><ind>  22.5 </ind><dep>   4.34522 </dep></entry>
+                    <entry><ind>  25.0 </ind><dep>   5.05821 </dep></entry>
+                    <entry><ind>  27.5 </ind><dep>   5.83249 </dep></entry>
+                    <entry><ind>  30.0 </ind><dep>   6.67336 </dep></entry>
+                    <entry><ind>  32.5 </ind><dep>   7.58652 </dep></entry>
+                    <entry><ind>  35.0 </ind><dep>   8.57820 </dep></entry>
+                    <entry><ind>  37.5 </ind><dep>   9.65514 </dep></entry>
+                    <entry><ind>  40.0 </ind><dep>  10.82468 </dep></entry>
+                    <entry><ind>  42.5 </ind><dep>  12.09479 </dep></entry>
+                    <entry><ind>  45.0 </ind><dep>  13.47410 </dep></entry>
+                    <entry><ind>  47.5 </ind><dep>  14.97200 </dep></entry>
+                    <entry><ind>  50.0 </ind><dep>  16.59870 </dep></entry>
+                    <entry><ind>  52.5 </ind><dep>  18.36527 </dep></entry>
+                    <entry><ind>  55.0 </ind><dep>  20.28373 </dep></entry>
+                    <entry><ind>  57.5 </ind><dep>  22.36714 </dep></entry>
+                    <entry><ind>  60.0 </ind><dep>  24.62969 </dep></entry>
+                    <entry><ind>  62.5 </ind><dep>  27.08678 </dep></entry>
+                    <entry><ind>  65.0 </ind><dep>  29.75514 </dep></entry>
+                    <entry><ind>  67.5 </ind><dep>  32.65293 </dep></entry>
+                    <entry><ind>  70.0 </ind><dep>  35.79988 </dep></entry>
+                    <entry><ind>  72.5 </ind><dep>  39.21740 </dep></entry>
+                    <entry><ind>  75.0 </ind><dep>  42.92878 </dep></entry>
+                    <entry><ind>  77.5 </ind><dep>  46.95927 </dep></entry>
+                    <entry><ind>  80.0 </ind><dep>  51.33631 </dep></entry>
+                    <entry><ind>  82.5 </ind><dep>  56.08970 </dep></entry>
+                    <entry><ind>  85.0 </ind><dep>  61.25180 </dep></entry>
+                    <entry><ind>  87.5 </ind><dep>  66.85774 </dep></entry>
+                    <entry><ind>  90.0 </ind><dep>  72.94570 </dep></entry>
+                    <entry><ind>  92.5 </ind><dep>  79.55712 </dep></entry>
+                    <entry><ind>  95.0 </ind><dep>  86.73700 </dep></entry>
+                    <entry><ind>  97.5 </ind><dep>  94.53423 </dep></entry>
+                    <entry><ind> 100.0 </ind><dep> 103.00187 </dep></entry>
+                    <entry><ind> 102.5 </ind><dep> 112.19759 </dep></entry>
+                    <entry><ind> 105.0 </ind><dep> 122.18398 </dep></entry>
+                </table>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[1]/n2</property>
+                    <entry><ind>   0.0 </ind><dep>   0.00000 </dep></entry>
+                    <entry><ind>   2.5 </ind><dep>   0.33937 </dep></entry>
+                    <entry><ind>   5.0 </ind><dep>   0.70792 </dep></entry>
+                    <entry><ind>   7.5 </ind><dep>   1.10816 </dep></entry>
+                    <entry><ind>  10.0 </ind><dep>   1.54281 </dep></entry>
+                    <entry><ind>  12.5 </ind><dep>   2.01484 </dep></entry>
+                    <entry><ind>  15.0 </ind><dep>   2.52745 </dep></entry>
+                    <entry><ind>  17.5 </ind><dep>   3.08414 </dep></entry>
+                    <entry><ind>  20.0 </ind><dep>   3.68869 </dep></entry>
+                    <entry><ind>  22.5 </ind><dep>   4.34522 </dep></entry>
+                    <entry><ind>  25.0 </ind><dep>   5.05821 </dep></entry>
+                    <entry><ind>  27.5 </ind><dep>   5.83249 </dep></entry>
+                    <entry><ind>  30.0 </ind><dep>   6.67336 </dep></entry>
+                    <entry><ind>  32.5 </ind><dep>   7.58652 </dep></entry>
+                    <entry><ind>  35.0 </ind><dep>   8.57820 </dep></entry>
+                    <entry><ind>  37.5 </ind><dep>   9.65514 </dep></entry>
+                    <entry><ind>  40.0 </ind><dep>  10.82468 </dep></entry>
+                    <entry><ind>  42.5 </ind><dep>  12.09479 </dep></entry>
+                    <entry><ind>  45.0 </ind><dep>  13.47410 </dep></entry>
+                    <entry><ind>  47.5 </ind><dep>  14.97200 </dep></entry>
+                    <entry><ind>  50.0 </ind><dep>  16.59870 </dep></entry>
+                    <entry><ind>  52.5 </ind><dep>  18.36527 </dep></entry>
+                    <entry><ind>  55.0 </ind><dep>  20.28373 </dep></entry>
+                    <entry><ind>  57.5 </ind><dep>  22.36714 </dep></entry>
+                    <entry><ind>  60.0 </ind><dep>  24.62969 </dep></entry>
+                    <entry><ind>  62.5 </ind><dep>  27.08678 </dep></entry>
+                    <entry><ind>  65.0 </ind><dep>  29.75514 </dep></entry>
+                    <entry><ind>  67.5 </ind><dep>  32.65293 </dep></entry>
+                    <entry><ind>  70.0 </ind><dep>  35.79988 </dep></entry>
+                    <entry><ind>  72.5 </ind><dep>  39.21740 </dep></entry>
+                    <entry><ind>  75.0 </ind><dep>  42.92878 </dep></entry>
+                    <entry><ind>  77.5 </ind><dep>  46.95927 </dep></entry>
+                    <entry><ind>  80.0 </ind><dep>  51.33631 </dep></entry>
+                    <entry><ind>  82.5 </ind><dep>  56.08970 </dep></entry>
+                    <entry><ind>  85.0 </ind><dep>  61.25180 </dep></entry>
+                    <entry><ind>  87.5 </ind><dep>  66.85774 </dep></entry>
+                    <entry><ind>  90.0 </ind><dep>  72.94570 </dep></entry>
+                    <entry><ind>  92.5 </ind><dep>  79.55712 </dep></entry>
+                    <entry><ind>  95.0 </ind><dep>  86.73700 </dep></entry>
+                    <entry><ind>  97.5 </ind><dep>  94.53423 </dep></entry>
+                    <entry><ind> 100.0 </ind><dep> 103.00187 </dep></entry>
+                    <entry><ind> 102.5 </ind><dep> 112.19759 </dep></entry>
+                    <entry><ind> 105.0 </ind><dep> 122.18398 </dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>
+            <property>systems/pneumatic/bleed-air-psi[1]</property>
+        </output>
+    </filter>
+
+
+    <!-- Intake deflectors
+        Are extended pneumatically, retracted electromechanically.
+        Intake deflectors need at least 50 psi of bleed air to extend
+        When switch is held to 'EXTEND' intake deflectors need ca. 4 seconds to extend.
+        When switch is held to 'RETRACT' they need about 4 seconds to retract
+    -->
+    <!-- Left engine -->
+    <filter>
+        <name>Left intake deflector operation</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>0.25</max-rate-of-change>
+        <!-- Extend -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch held to 'EXTEND' -->
+                    <equals>
+                        <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                        <value>1</value>
+                    </equals>
+                    <!-- Left bleed air pressure more than 50 (15) psi -->
+                    <greater-than>
+                        <property>systems/pneumatic/bleed-air-psi[0]</property>
+                        <value>15</value>
+                    </greater-than>
+                    <!-- Electrical power available, to transmit signal from cockpit to engine -->
+                    <greater-than>
+                        <property>systems/electrical/outputs/intake-deflector-left</property>
+                        <value>0.1</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>1</value>
+        </input>
+        <!-- Held extended -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch to 'OFF' -->
+                    <equals>
+                        <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                        <value>0</value>
+                    </equals>
+                    <!-- Deflector fully extended to maintain position -->
+                    <greater-than>
+                        <property>controls/engines/engine[0]/intake-deflector</property>
+                        <value>0.99</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>1</value>
+        </input>
+        <!-- Retract -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch held to 'RETRACT' -->
+                    <equals>
+                        <property>controls/engines/engine[0]/intake-deflector-extend</property>
+                        <value>-1</value>
+                    </equals>
+                    <!-- Voltage higher than 8V (just a wild guess) to retract intake deflector electromechanically -->
+                    <greater-than>
+                        <property>systems/electrical/outputs/intake-deflector-left</property>
+                        <value>8</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>0</value>
+        </input>
+        <output>controls/engines/engine[0]/intake-deflector</output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <name>Right intake deflector operation</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>0.25</max-rate-of-change>
+        <!-- Extend -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch held to 'EXTEND' -->
+                    <equals>
+                        <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                        <value>1</value>
+                    </equals>
+                    <!-- Right bleed air pressure more than 50 (15) psi -->
+                    <greater-than>
+                        <property>systems/pneumatic/bleed-air-psi[1]</property>
+                        <value>15</value>
+                    </greater-than>
+                    <!-- Electrical power available, to transmit signal from cockpit to engine -->
+                    <greater-than>
+                        <property>systems/electrical/outputs/intake-deflector-right</property>
+                        <value>0.1</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>1</value>
+        </input>
+        <!-- Held extended -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch to 'OFF' -->
+                    <equals>
+                        <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                        <value>0</value>
+                    </equals>
+                    <!-- Deflector fully extended to maintain position -->
+                    <greater-than>
+                        <property>controls/engines/engine[1]/intake-deflector</property>
+                        <value>0.99</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>1</value>
+        </input>
+        <!-- Retract -->
+        <input>
+            <condition>
+                <and>
+                    <!-- Switch held to 'RETRACT' -->
+                    <equals>
+                        <property>controls/engines/engine[1]/intake-deflector-extend</property>
+                        <value>-1</value>
+                    </equals>
+                    <!-- Voltage higher than 8V (just a wild guess) to retract intake deflector electromechanically -->
+                    <greater-than>
+                        <property>systems/electrical/outputs/intake-deflector-right</property>
+                        <value>8</value>
+                    </greater-than>
+                </and>
+            </condition>
+            <value>0</value>
+        </input>
+        <output>controls/engines/engine[1]/intake-deflector</output>
+    </filter>
+
+</PropertyList>

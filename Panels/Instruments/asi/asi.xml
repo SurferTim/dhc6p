@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Airspeed Indicator for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Airspeed Indicator</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/asi/asi-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>27</w>
+            <h>230</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/asi/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/airspeed-indicator/indicated-speed-kt</property>
+                    <min>0.0</min>
+                    <max>240.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind>   0 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  20 </ind><dep>   0 </dep></entry>
+                        <entry><ind>  60 </ind><dep>  36 </dep></entry>
+                        <entry><ind>  80 </ind><dep>  72 </dep></entry>
+                        <entry><ind> 170 </ind><dep> 234 </dep></entry>
+                        <entry><ind> 200 </ind><dep> 288 </dep></entry>
+                        <entry><ind> 240 </ind><dep> 326 </dep></entry>
+                    </interpolation>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>57</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

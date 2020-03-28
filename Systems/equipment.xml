@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <!-- logic for pitot tube -->
+    <logic>
+        <name>Pitot cover and icing disable pitot[0] system</name>
+        <inverted>true</inverted>
+        <input>
+            <or>
+                <and>
+                    <property>/sim/model/equipment/left-pitot-cover</property>
+                    <greater-than>
+                        <property>/sim/time/elapsed-sec</property>
+                        <value>1.0</value>
+                    </greater-than>
+                </and>
+                <and>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <value>0</value>
+                    </less-than-equals>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <property>/environment/dewpoint-degc</property>
+                    </less-than-equals>
+                    <greater-than>
+                        <property>/environment/relative-humidity</property>
+                        <value>50</value>
+                    </greater-than>
+                    <greater-than>
+                        <property>/hazards/icing/pitot-icing-lvl</property>
+                        <value>0.1</value>
+                    </greater-than>
+                    <equals>
+                        <property>/hazards/icing/pitot</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </or>
+        </input>
+        <output>
+            <property>/systems/pitot[0]/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Pitot cover and icing disable pitot[1] system</name>
+        <inverted>true</inverted>
+        <input>
+            <or>
+                <and>
+                    <property>/sim/model/equipment/right-pitot-cover</property>
+                    <greater-than>
+                        <property>/sim/time/elapsed-sec</property>
+                        <value>1.0</value>
+                    </greater-than>
+                </and>
+                <and>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <value>0</value>
+                    </less-than-equals>
+                    <less-than-equals>
+                        <property>/environment/temperature-degc</property>
+                        <property>/environment/dewpoint-degc</property>
+                    </less-than-equals>
+                    <greater-than>
+                        <property>/environment/relative-humidity</property>
+                        <value>50</value>
+                    </greater-than>
+                    <greater-than>
+                        <property>/hazards/icing/pitot-icing-lvl</property>
+                        <value>0.1</value>
+                    </greater-than>
+                    <equals>
+                        <property>/hazards/icing/pitot</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </or>
+        </input>
+        <output>
+            <property>/systems/pitot[1]/serviceable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Left pitot cover addable</name>
+        <input>
+            <and>
+                <not>
+                    <property>sim/model/equipment/left-pitot-cover</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-pitot-cover-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Left pitot cover removable</name>
+        <input>
+            <and>
+                <property>sim/model/equipment/left-pitot-cover</property>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-pitot-cover-removable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right pitot cover addable</name>
+        <input>
+            <and>
+                <not>
+                    <property>sim/model/equipment/right-pitot-cover</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-pitot-cover-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right pitot cover removable</name>
+        <input>
+            <and>
+                <property>sim/model/equipment/right-pitot-cover</property>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-pitot-cover-removable</property>
+        </output>
+    </logic>
+
+    <!-- logic for securing aircraft -->   
+    <logic>
+        <name>Parking brake and chocks</name>
+        <input>
+            <or>
+                <!-- The actual parking brake controlled by the pilot -->
+                <property>/controls/gear/parkingbrake-lever</property>
+
+                <property>/sim/model/equipment/left-tiedown-wheels</property>
+                <property>/sim/model/equipment/right-tiedown-wheels</property>
+                <property>/sim/model/equipment/rear-tiedown-wheels</property>
+                <!--property>/sim/model/equipment/left-tiedown-floats</property>
+                <property>/sim/model/equipment/right-tiedown-floats</property>
+                <property>/sim/model/equipment/tail-tiedown-floats</property-->
+                <property>/sim/model/equipment/left-chock-fwd</property>
+                <property>/sim/model/equipment/left-chock-aft</property>
+                <property>/sim/model/equipment/right-chock-fwd</property>
+                <property>/sim/model/equipment/right-chock-aft</property>
+            </or>
+        </input>
+        <output>
+            <property>/controls/gear/brake-parking</property>
+        </output>
+    </logic>
+
+    <!-- logic for tiedowns -->
+    <logic>
+        <name>Left tiedown (wheels) addable</name>
+        <input>
+            <and>
+                <not-equals>
+                    <property>sim/multiplay/generic/string</property>
+                    <value>dhc6F</value>
+                </not-equals>
+                <not>
+                    <property>sim/model/equipment/left-tiedown-wheels</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-tiedown-wheels-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right tiedown (wheels) addable</name>
+        <input>
+            <and>
+                <not-equals>
+                    <property>sim/multiplay/generic/string</property>
+                    <value>dhc6F</value>
+                </not-equals>
+                <not>
+                    <property>sim/model/equipment/right-tiedown-wheels</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-tiedown-wheels-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Rear tiedown (wheels) addable</name>
+        <input>
+            <and>
+                <not-equals>
+                    <property>sim/multiplay/generic/string</property>
+                    <value>dhc6F</value>
+                </not-equals>
+                <not>
+                    <property>sim/model/equipment/rear-tiedown-wheels</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/rear-tiedown-wheels-addable</property>
+        </output>
+    </logic>
+
+    <!-- logic for engine covers -->
+    <logic>
+        <name>Left engine cover addable</name>
+        <input>
+            <and>
+                <not>
+                    <property>sim/model/equipment/left-engine-cover</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+                <or>
+                    <less-than>
+                        <property>engines/engine[0]/n1</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine[0]/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </or>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-engine-cover-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Left engine cover removable</name>
+        <input>
+            <and>
+                <property>sim/model/equipment/left-engine-cover</property>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+                <or>
+                    <less-than>
+                        <property>engines/engine[1]/n1</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine[1]/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </or>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-engine-cover-removable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right engine cover addable</name>
+        <input>
+            <and>
+                <not>
+                    <property>sim/model/equipment/right-engine-cover</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+                <or>
+                    <less-than>
+                        <property>engines/engine[0]/n1</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine[0]/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </or>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-engine-cover-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right engine cover removable</name>
+        <input>
+            <and>
+                <property>sim/model/equipment/right-engine-cover</property>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+                <or>
+                    <less-than>
+                        <property>engines/engine[0]/n1</property>
+                        <value>1.0</value>
+                    </less-than>
+                    <less-than>
+                        <property>engines/engine[0]/n2</property>
+                        <value>1.0</value>
+                    </less-than>
+                </or>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-engine-cover-removable</property>
+        </output>
+    </logic>
+
+    <!-- logic for chocks -->
+    <!-- Left -->
+    <logic>
+        <name>Left Forward Chock Addable</name>
+        <input>
+            <and>
+                <or>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6jsb</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>DHC6jsb_Erik</value>
+                    </equals>
+                </or>
+                <not>
+                    <property>sim/model/equipment/left-chock-fwd</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-chock-fwd-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Left Rear Chock Addable</name>
+        <input>
+            <and>
+                <or>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6jsb</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>DHC6jsb_Erik</value>
+                    </equals>
+                </or>
+                <not>
+                    <property>sim/model/equipment/left-chock-aft</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/left-chock-aft-addable</property>
+        </output>
+    </logic>
+
+    <!-- Right -->
+    <logic>
+        <name>Right Forward Chock Addable</name>
+        <input>
+            <and>
+                <or>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6jsb</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>DHC6jsb_Erik</value>
+                    </equals>
+                </or>
+                <not>
+                    <property>sim/model/equipment/right-chock-fwd</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-chock-fwd-addable</property>
+        </output>
+    </logic>
+
+    <logic>
+        <name>Right Rear Chock Addable</name>
+        <input>
+            <and>
+                <or>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>dhc6jsb</value>
+                    </equals>
+                    <equals>
+                        <property>sim/multiplay/generic/string</property>
+                        <value>DHC6jsb_Erik</value>
+                    </equals>
+                </or>
+                <not>
+                    <property>sim/model/equipment/right-chock-aft</property>
+                </not>
+                <less-than>
+                    <property>velocities/groundspeed-kt</property>
+                    <value>1.0</value>
+                </less-than>
+            </and>
+        </input>
+        <output>
+            <property>/sim/model/equipment/right-chock-aft-addable</property>
+        </output>
+    </logic>
+
+</PropertyList>

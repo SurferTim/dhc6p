@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Trans North</name>
+            <texture>paint1-R.png</texture>
+        </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>1</display-callsign>
+    </model>
+</sim>
+</PropertyList>

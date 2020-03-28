@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PropertyList>
+	<name>dhc6-lightmap1</name>
+	<inherits-from>/Effects/model-combined-deferred</inherits-from>
+	<parameters>	
+	  <lightmap-enabled type="int">1</lightmap-enabled>
+		<texture n="3">
+			<image>Aircraft/dhc6/Models/Effects/interior/lightmap3.png</image>
+		</texture>
+        <lightmap-factor type="float" n="0">
+	  <use>/systems/electrical/outputs/cabin-lights-dim-factor</use>
+        </lightmap-factor>
+	</parameters>
+</PropertyList>

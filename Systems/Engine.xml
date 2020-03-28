@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--PropertyList>
+
+    < Feather propellers at low oil pressure (guessed value) >
+    <filter>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <enable>
+            <condition>
+                <less-than>
+                    <property>engines/engine[0]/oil-pressure-real-psi</property>
+                    <value>10</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>
+            <value>87</value>
+        </input>
+        <output>
+            <property>fdm/jsbsim/propulsion/engine[0]/blade-angle</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <enable>
+            <condition>
+                <less-than>
+                    <property>engines/engine[1]/oil-pressure-real-psi</property>
+                    <value>10</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>
+            <value>87</value>
+        </input>
+        <output>
+            <property>fdm/jsbsim/propulsion/engine[1]/blade-angle</property>
+        </output>
+    </filter>
+
+    < Thrust reverse >
+    <filter>
+        <name>Toggle left thrust reverse</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <input>
+            <condition>
+                <and>
+                    <property>fdm/jsbsim/propulsion/engine[0]/reverser</property>
+                    <less-than>
+                        <property>controls/engines/engine[0]/throttle</property>
+                        <value>0.1</value>
+                    </less-than>
+                </and>
+            </condition>
+            <value>-2</value>
+        </input>
+        <input>11</input>
+        <output>fdm/jsbsim/propulsion/engine[0]/blade-angle</output>
+    </filter>
+
+    <filter>
+        <name>Toggle right thrust reverse</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <input>
+            <condition>
+                <and>
+                    <property>fdm/jsbsim/propulsion/engine[1]/reverser</property>
+                    <less-than>
+                        <property>controls/engines/engine[1]/throttle</property>
+                        <value>0.1</value>
+                    </less-than>
+                </and>
+            </condition>
+            <value>-2</value>
+        </input>
+        <input>-11</input>
+        <output>fdm/jsbsim/propulsion/engine[1]/blade-angle</output>
+    </filter>
+
+</PropertyList-->
+
+<system name="engine">
+
+    <!-- Thrust reverse -->
+    <channel name="Left reverse" execute="/fdm/jsbsim/propulsion/engine[0]/reverser">
+
+        <fcs_function name="blade-angle-l">
+        <function>
+            <description>In beta range blade angle is controlled by power levers</description>
+                <table>
+                    <independentVar lookup="row">/controls/engines/engine[0]/throttle</independentVar>
+                    <tableData>
+                        0   -2
+                        1   -15
+                    </tableData>
+                </table>
+            </function>
+            <output>/fdm/jsbsim/propulsion/engine[0]/blade-angle</output>
+        </fcs_function>
+
+    </channel>
+
+    <channel name="Right reverse" execute="/fdm/jsbsim/propulsion/engine[1]/reverser">
+
+        <fcs_function name="blade-angle-r">
+        <function>
+            <description>In beta range blade angle is controlled by power levers</description>
+                <table>
+                    <independentVar lookup="row">/controls/engines/engine[1]/throttle</independentVar>
+                    <tableData>
+                        0   -2
+                        1   -15
+                    </tableData>
+                </table>
+            </function>
+            <output>/fdm/jsbsim/propulsion/engine[1]/blade-angle</output>
+        </fcs_function>
+
+    </channel>
+
+    <!-- In reverse mode limit Propeller RPM to 91 percent Np (about 2000 RPM) -->
+    <channel name="Reverse RPM limit left" execute="/fdm/jsbsim/propulsion/engine[0]/reverser">
+        <pure_gain name="propulsion/limit-left-rpm">
+            <input>fcs/throttle-cmd-norm[0]</input>
+            <gain>1</gain>
+            <clipto>
+                <min>0</min>
+                <max>0.91</max>
+            </clipto>
+        </pure_gain>
+    </channel>
+
+    <channel name="Reverse RPM limit right" execute="/fdm/jsbsim/propulsion/engine[1]/reverser">
+        <pure_gain name="propulsion/limit-right-rpm">
+            <input>fcs/throttle-cmd-norm[1]</input>
+            <gain>1</gain>
+            <clipto>
+                <min>0</min>
+                <max>0.91</max>
+            </clipto>
+        </pure_gain>
+    </channel>
+
+    <channel name="Reverse RPM limit left">
+        <switch name="propulsion/throttle-factor[0]">
+            <default value="1.0"/>
+            <test value="0.37">
+                propulsion/engine[0]/reverser == 1
+            </test>
+        </switch>
+
+        <fcs_function name="propulsion/throttle-norm[0]">
+            <function>
+                <product>
+                    <property>fcs/throttle-pos-norm[0]</property>
+                    <property>propulsion/throttle-factor[0]</property>
+                </product>
+            </function>
+            <output>fcs/throttle-pos-norm[0]</output>
+        </fcs_function>
+    </channel>
+
+    <channel name="Reverse RPM limit right">
+        <switch name="propulsion/throttle-factor[1]">
+            <default value="1.0"/>
+            <test value="0.37">
+                propulsion/engine[1]/reverser == 1
+            </test>
+        </switch>
+
+        <fcs_function name="propulsion/throttle-norm[1]">
+            <function>
+                <product>
+                    <property>fcs/throttle-pos-norm[1]</property>
+                    <property>propulsion/throttle-factor[1]</property>
+                </product>
+            </function>
+            <output>fcs/throttle-pos-norm[1]</output>
+        </fcs_function>
+    </channel>
+
+</system>

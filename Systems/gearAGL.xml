@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <filter>
+        <type>gain</type>
+        <enable>
+            <equals>
+                <property>sim/flight-model</property>
+                <value>yasim</value>
+            </equals>
+        </enable>
+        <gain>0.3048</gain>
+        <input>/position/altitude-agl-ft</input>
+        <output>/position/gear-agl-m</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <enable>
+            <equals>
+                <property>sim/flight-model</property>
+                <value>jsb</value>
+            </equals>
+        </enable>
+        <gain>3.2808</gain>
+        <input>/position/altitude-agl-m</input>
+        <output>/position/gear-agl-ft</output>
+    </filter>
+
+</PropertyList>

@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ##########################################
+     # From
+     # DR400-dauphin by PAF team
+     # April 2012 : Modified by PAF team
+     # http://equipe-flightgear.forumactif.com
+     # December 2013
+    ##########################################
+-->
+
+<PropertyList>
+
+    <path>alt2.ac</path>
+
+    <animation>
+        <object-name>face</object-name>
+        <object-name>needle100</object-name>
+        <object-name>needle1000</object-name>
+        <object-name>needle10000</object-name>
+        <object-name>inhg</object-name>
+        <object-name>inhg.up</object-name>
+        <object-name>inhg.dn</object-name>
+        <object-name>inhgknob</object-name>
+        <object-name>scrollwheel-inhg</object-name>
+        <object-name>mount</object-name>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>backlight</object-name>
+        <object-name>mount</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>face</object-name>
+        <object-name>inhg</object-name>
+        <object-name>inhg.dn</object-name>
+        <object-name>inhg.up</object-name>
+        <object-name>inhgknob</object-name>
+        <object-name>needle100</object-name>
+        <object-name>needle1000</object-name>
+        <object-name>needle10000</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/coplt-radio-va-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+              <red>0.381924</red>
+              <green>0.30935844</green>
+              <blue>0.161171928</blue>
+              <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>backlight</object-name>
+        <object-name>face</object-name>
+        <object-name>inhg</object-name>
+        <object-name>inhg.dn</object-name>
+        <object-name>inhg.up</object-name>
+        <object-name>inhgknob</object-name>
+        <object-name>mount</object-name>
+        <object-name>needle100</object-name>
+        <object-name>needle1000</object-name>
+        <object-name>needle10000</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>backlight</object-name>
+        <object-name>face</object-name>
+        <object-name>inhg</object-name>
+        <object-name>inhg.dn</object-name>
+        <object-name>inhg.up</object-name>
+        <object-name>inhgknob</object-name>
+        <object-name>mount</object-name>
+        <object-name>needle100</object-name>
+        <object-name>needle1000</object-name>
+        <object-name>needle10000</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <!--effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>vitre</object-name>
+        <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </condition>
+    </effect--> 
+
+    <animation>
+        <type>material</type>
+        <object-name>face</object-name>
+        <object-name>needle100</object-name>
+        <object-name>needle1000</object-name>
+        <object-name>needle10000</object-name>
+        <object-name>inhg</object-name>
+        <object-name>inhg.up</object-name>
+        <object-name>inhg.dn</object-name>
+        <object-name>inhgknob</object-name>
+        <condition>
+            <not>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </not>
+        </condition>
+        <emission>
+             <red>   0.07 </red>
+             <green> 0.04 </green>
+             <blue>  0.04 </blue>
+             <factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle100</object-name>
+        <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
+        <factor>0.36</factor>
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <object-name>face</object-name>
+        <visible>true</visible>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>Altimeter1-ft</tooltip-id>
+                <label>Altitude: %3d ft</label>
+                <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle1000</object-name>
+        <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
+        <factor>0.036</factor>
+        <axis>
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>needle10000</object-name>
+        <property>instrumentation/altimeter[1]/indicated-altitude-ft</property>
+        <factor>0.0036</factor>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>rotate</type>
+        <object-name>inhgknob</object-name>
+        <property>instrumentation/altimeter[1]/setting-hpa</property>
+        <factor>5</factor>
+        <center>
+            <x-m>  0.00098 </x-m>
+            <y-m> -0.0352 </y-m>
+            <z-m> -0.0374 </z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>texrotate</type>
+        <object-name>inhg</object-name>
+        <property>instrumentation/altimeter[1]/setting-hpa</property>
+        <interpolation>
+            <entry><ind> 950.00</ind><dep> 90.0</dep></entry>
+            <entry><ind> 975.00</ind><dep> 45.0</dep></entry>
+            <entry><ind>1000.00</ind><dep>  0.0</dep></entry>
+            <entry><ind>1025.00</ind><dep>-45.0</dep></entry>
+            <entry><ind>1050.00</ind><dep>-90.0</dep></entry>
+        </interpolation>
+        <center>
+            <x>0.666</x>
+            <y>0.333</y>
+            <z>0.00</z>
+        </center>
+        <axis>
+            <x>0</x>
+            <y>0</y>
+            <z>-1</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>inhgknob</object-name>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/altimeter[1]/setting-hpa</property>
+                 <factor>1</factor>
+                 <min>950.0</min>
+                 <max>1050.0</max>
+                 <wrap>false</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt1-setting</tooltip-id>
+                <label>Altimeter QNH: %.0f hPa</label>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+            </binding>
+        </hovered>   
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>inhg.dn</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>-1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>-5</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>-1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-setting</tooltip-id>
+                <label>Altimeter QNH: %.0f</label>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+            </binding>
+        </hovered>   
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>false</visible>
+        <object-name>inhg.up</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <button>1</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>5</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>increase</name>
+            <button>4</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <action>
+            <name>decrease</name>
+            <button>3</button>
+            <repeatable>true</repeatable>
+            <binding>
+                <command>property-adjust</command>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+                <step>-1</step>
+                <min>950.0</min>
+                <max>1050.0</max>
+                <wrap>0</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>alt-setting</tooltip-id>
+                <label>Altimeter QNH: %.0f</label>
+                <property>instrumentation/altimeter[1]/setting-hpa</property>
+            </binding>
+        </hovered>
+    </animation>
+
+    <!-- TEXT OSG -->
+    <text>
+        <name>textosg</name>
+        <type type="string">literal</type>
+        <text type="string">Altimeter (ft/hPa)</text>
+        <draw-text type="bool">true</draw-text>
+        <font>Helvetica.txf</font>
+        <character-size type="double">0.014</character-size>
+        <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+        <axis-alignment>yz-plane</axis-alignment>
+        <max-height>0.06</max-height>
+        <max-width>0.05</max-width>
+        <font-resolution>
+            <width type="int">64</width>
+            <height type="int">64</height>
+        </font-resolution>
+        <alignment>center-center</alignment>
+        <offsets>
+            <x-m>  0.005 </x-m>
+            <y-m>  0.000 </y-m>
+            <z-m>  0.000 </z-m>
+        </offsets>
+    </text>
+
+    <animation>
+        <type>material</type>
+        <object-name>textosg</object-name>
+        <emission>
+            <red>   0.8 </red>
+            <green> 0.8 </green>
+            <blue>  0.0 </blue>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>textosg</object-name>
+        <condition>
+            <property>sim/panel-hotspots</property>
+        </condition>
+    </animation>
+
+    <!--########## Cone de lumière Rembrandt #############-->
+      
+    <animation>
+        <name>BackLightAnimation</name>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <object-name>backlight</object-name>
+        <position>
+            <x> 0.025 </x>
+            <y> 0.00 </y>
+            <z>-0.05 </z>
+        </position>
+        <direction>
+            <x> -1.0 </x>
+            <y>  0.0 </y>
+            <z>  1.0 </z>
+        </direction>
+        <ambient>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </ambient>
+        <diffuse>
+            <r>  0.5 </r>
+            <g>  0.404 </g>
+            <b>  0.2 </b>
+            <a>  1.0 </a>
+        </diffuse>
+        <specular>
+            <r>  0.0 </r>
+            <g>  0.0 </g>
+            <b>  0.0 </b>
+            <a>  1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>systems/electrical/outputs/instrument-lights</property>
+            <!-- optional begin -->
+            <factor>0.04</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+          <!-- optional end -->
+        </dim-factor>
+        <attenuation>
+            <c>  0.2 </c>
+            <l>  0.2 </l>
+            <q>  0.4 </q>
+        </attenuation>
+        <exponent>  8.0 </exponent>
+        <cutoff>   48.0   </cutoff>
+        <near-m>    0.0   </near-m>
+        <far-m>     0.09 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>BackLightAnimation</object-name>
+        <condition>
+            <and>
+                <property>controls/electric/battery-switch</property>
+                <property>sim/rendering/rembrandt/enabled</property>
+            </and>
+        </condition>
+    </animation>
+
+</PropertyList>

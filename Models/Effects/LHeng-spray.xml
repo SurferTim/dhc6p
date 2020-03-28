@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <particlesystem>
+        <name>left-engine-spray</name>
+        <texture>spray.png</texture>
+        <emissive>false</emissive>
+        <lighting>false</lighting>
+
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </offsets>
+
+        <condition>
+            <and>
+                <not>
+                    <property>gear/gear[6]/ground-is-solid</property>
+                </not>
+                <greater-than>
+                <property>engines/engine[0]/n2</property>
+                    <value>70</value>
+                </greater-than>
+                <less-than>
+                    <property>position/altitude-agl-ft</property>
+                    <value>10</value>
+                </less-than>
+                <not>
+                    <property>sim/crashed</property>
+                </not>
+                <property>sim/model/effects/engine-spray-enabled</property>
+            </and>
+        </condition>
+
+        <attach>world</attach>
+
+        <placer>
+            <type>sector</type>
+            <radius-min-m>0.5</radius-min-m>
+            <radius-max-m>2</radius-max-m>
+        </placer>
+
+        <shooter>
+            <theta-min-deg>0</theta-min-deg>
+            <theta-max-deg>0</theta-max-deg>
+            <phi-min-deg>-210</phi-min-deg>
+            <phi-max-deg>210</phi-max-deg>
+            <speed-mps>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.8</factor>
+            </speed-mps>
+            <rotation-speed>
+                <x-max-deg-sec>15</x-max-deg-sec>
+                <x-min-deg-sec>-15</x-min-deg-sec>
+                <y-max-deg-sec>15</y-max-deg-sec>
+                <y-min-deg-sec>-15</y-min-deg-sec>
+                <z-max-deg-sec>15</z-max-deg-sec>
+                <z-min-deg-sec>-15</z-min-deg-sec>
+            </rotation-speed>
+        </shooter>
+
+        <counter>
+            <particles-per-sec>
+                <property>engines/engine[0]/n2</property>
+                <factor>0.5</factor>
+            </particles-per-sec>
+        </counter>
+
+        <align>billboard</align>
+
+        <particle>
+        <start>
+            <color>
+                <red>
+                    <value>0.8</value>
+                </red>
+                <green>
+                    <value>0.8</value>
+                </green>
+                <blue>
+                    <value>0.8</value>
+                </blue>
+                <alpha>
+                    <value>0.1</value>
+                </alpha>
+            </color>
+            <size>
+                <value>2</value>
+            </size>
+        </start>
+        <end>
+            <color>
+                <red>
+                    <value>0.5</value>
+                </red>
+                <green>
+                    <value>0.5</value>
+                </green>
+                <blue>
+                    <value>0.5</value>
+                </blue>
+                <alpha>
+                    <value>0.0005</value>
+                </alpha>
+            </color>
+            <size>
+                <value>25</value>
+            </size>
+        </end>
+        <life-sec>
+            <value>3</value>
+        </life-sec>
+        <mass-kg>0.01</mass-kg>
+        <radius-m>0.175</radius-m>
+        </particle>
+
+        <program>
+            <fluid>water</fluid>
+            <gravity>true</gravity>
+            <wind>false</wind>
+        </program>
+
+    </particlesystem>
+
+</PropertyList>

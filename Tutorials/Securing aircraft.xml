@@ -1,0 +1,1005 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>Securing aircraft</name>
+
+    <description>You've landed the Twin Otter and you've taxied to the parking position following the checklists? Perfect. Now follow this tutorial to shut down the engines and secure the Twin Otter.</description>
+
+    <step>
+        <message>While you've taxied to the gate, I've searched for the shut down checklist, and now i found it. So now, before we can go having a beer, let's shut down the engines</message>
+        <wait>12</wait>
+    </step>
+
+    <step>
+        <message>Make sure, the parking brake is set</message>
+        
+        <view>
+            <heading-offset-deg>352</heading-offset-deg>
+            <pitch-offset-deg>-53.2</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>46.5</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.6752</x-m>
+            <y-m>-0.4479</y-m>
+            <z-m>0.0000</z-m>
+            <scale>3.0000</scale>
+        </marker>
+        <error>
+            <message>Set the parking brake</message>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/gear/parkingbrake-lever</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Set the throttles to idle</message>
+        <view>
+            <heading-offset-deg>305</heading-offset-deg>
+            <pitch-offset-deg>15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>43</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.4157</x-m>
+            <y-m>-0.1165</y-m>
+            <z-m>0.8488</z-m>
+            <scale>3.3471</scale>
+        </marker>
+        <error>
+            <message>Set the left throttle to idle</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine/throttle</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <error>
+            <message>Set the right throttle to idle</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine[1]/throttle</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/throttle</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/throttle</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Set the props to feather</message>
+        <view>
+            <heading-offset-deg>305</heading-offset-deg>
+            <pitch-offset-deg>15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>43</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.3174</x-m>
+            <y-m>-0.0132</y-m>
+            <z-m>0.8612</z-m>
+            <scale>2.5207</scale>
+        </marker>
+        <error>
+            <message>Set the left prop lever to feather</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine/propeller-pitch</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <error>
+            <message>Set the right prop lever to feather</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine[1]/propeller-pitch</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/propeller-pitch</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/propeller-pitch</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off the taxi lights</message>
+        <view>
+            <heading-offset-deg>251.6</heading-offset-deg>
+            <pitch-offset-deg>29</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.38</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>30</field-of-view>
+        </view>
+        <marker>
+                <x-m>-3.0256</x-m>
+                <y-m>-0.0083</y-m>
+                <z-m>0.9471</z-m>
+                <scale>1.4298</scale>
+            </marker>
+        <error>
+            <message>Now you have to switch the off Taxi light</message>
+            <condition>
+                <property>/controls/lighting/taxi-lights</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/lighting/taxi-lights</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off the posn lights</message>
+        <view>
+            <heading-offset-deg>240.5</heading-offset-deg>
+            <pitch-offset-deg>32</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.354</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>30</field-of-view>
+        </view>
+        <marker>
+               <x-m>-2.9818</x-m>
+            <y-m>-0.0463</y-m>
+            <z-m>0.9496</z-m>
+            <scale>1.4298</scale>
+        </marker>
+        <error>
+            <message>Now you have to switch the off posn light</message>
+            <condition>
+                <property>/controls/lighting/nav-lights</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/lighting/nav-lights</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off both generators</message>
+        <view>
+            <heading-offset-deg>249</heading-offset-deg>
+            <pitch-offset-deg>43.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.36</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>50</field-of-view>
+        </view>
+        <marker>
+               <x-m>-3.0620</x-m>
+                <y-m>-0.1281</y-m>
+               <z-m>0.9479</z-m>
+            <scale>2.4876</scale>
+        </marker>
+        <error>
+            <message>Switch off the left generator</message>
+            <condition>
+                    <property>/controls/electric/engine/generator</property>
+            </condition>
+        </error>
+        <error>
+            <message>Switch off the right generator</message>
+            <condition>
+                    <property>/controls/electric/engine[1]/generator</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <not>
+                        <property>/controls/electric/engine/generator</property>
+                    </not>
+                    <not>
+                        <property>/controls/electric/engine[1]/generator</property>
+                    </not>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn off fuel condition ("J" and "K")</message>
+        <view>
+            <heading-offset-deg>305</heading-offset-deg>
+            <pitch-offset-deg>15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>43</field-of-view>
+        </view>
+        <marker>
+              <x-m>-3.3149</x-m>
+            <y-m>0.0826</y-m>
+            <z-m>0.8694</z-m>
+            <scale>2.1074</scale>
+        </marker>
+        <error>
+            <message>Turn off left fuel condition (press "J" several times)</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine/condition</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <error>
+            <message>Turn off right fuel condition (press "K" several times)</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/engines/engine[1]/condition</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/engines/engine/condition</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/engines/engine[1]/condition</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off both boost pumps</message>
+        <view>
+            <heading-offset-deg>335</heading-offset-deg>
+            <pitch-offset-deg>-33</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>25</field-of-view>
+        </view>
+        <error>
+            <message>Turn off the AFT boost pump</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/electric/aft-boost-pump</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <error>
+            <message>Turn off the FWD boost pump</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/electric/fwd-boost-pump</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <equals>
+                        <property>/controls/electric/aft-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                    <equals>
+                        <property>/controls/electric/fwd-boost-pump</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>When both props stopped...</message>
+        <view>
+            <heading-offset-deg>336.7</heading-offset-deg>
+            <pitch-offset-deg>-24.3</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>42</field-of-view>
+        </view>
+        <exit>
+            <condition>
+                <and>
+                    <less-than>
+                        <property>/engines/engine/n2</property>
+                        <value>1</value>
+                    </less-than>
+                    <less-than>
+                        <property>/engines/engine[1]/n2</property>
+                        <value>1</value>
+                    </less-than>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>...switch off the beacon</message>
+        <view>
+            <heading-offset-deg>246.89</heading-offset-deg>
+            <pitch-offset-deg>27.46</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-0.36</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>25</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.9884</x-m>
+            <y-m>0.0174</y-m>
+            <z-m>0.9397</z-m>
+            <scale>1.2810</scale>
+        </marker>
+        <error>
+            <message>As the props are not rotating anymore, you now can switch off the beacon</message>
+            <condition>
+                    <property>/controls/lighting/beacon</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/lighting/beacon</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off the window heating.</message>
+        <view>
+        <heading-offset-deg>309.7</heading-offset-deg>
+        <pitch-offset-deg>33.3</pitch-offset-deg>
+        <roll-offset-deg>0.0</roll-offset-deg>
+        <x-offset-m>0.0</x-offset-m>
+        <y-offset-m>0.7</y-offset-m>
+        <z-offset-m>-3.4</z-offset-m>
+        <field-of-view>90.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.5793</x-m>
+            <y-m>0.2421</y-m>
+            <z-m>0.8653</z-m>
+            <scale>1.2810</scale>
+        </marker>
+        <error>
+            <message>We don't need the heating anymore, so you can switch it off now!</message>
+            <condition>
+                    <property>/controls/anti-ice/window-heat</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/anti-ice/window-heat</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off instrument lights</message>
+        <view>
+            <heading-offset-deg>238.25</heading-offset-deg>
+            <pitch-offset-deg>25.88</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.35</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>19.64</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.9372</x-m>
+            <y-m>0.0240</y-m>
+            <z-m>0.9438</z-m>
+            <scale>1.5124</scale>
+        </marker>
+        <error>
+            <message>We don't need the instrument lights anymore, so switch them off</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/lighting/instrument-lights</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/lighting/instrument-lights</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Also switch off the overhead light</message>
+        <view>
+            <heading-offset-deg>267.3</heading-offset-deg>
+            <pitch-offset-deg>26.2</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.2</x-offset-m>
+            <y-offset-m>0.8</y-offset-m>
+            <z-offset-m>-3.1</z-offset-m>
+            <field-of-view>30.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.1198</x-m>
+            <y-m>0.2603</y-m>
+            <z-m>0.9537</z-m>
+            <scale>1.3802</scale>
+        </marker>
+        <error>
+            <message>Switch off the overhead light</message>
+            <condition>
+                <property>/controls/lighting/overhead-light</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/lighting/overhead-light</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch off the cabin lights</message>
+        <view>
+            <heading-offset-deg>242.38</heading-offset-deg>
+            <pitch-offset-deg>22.72</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.36</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>19.64</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.9372</x-m>
+            <y-m>0.0826</y-m>
+            <z-m>0.9421</z-m>
+            <scale>1.3802</scale>
+        </marker>
+        <error>
+            <message>We don't longer need the cabin lights, so switch them off, too</message>
+            <condition>
+                    <property>/controls/lighting/cabin-lights</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/lighting/cabin-lights</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now switch off the battery master</message>
+        <view>
+            <heading-offset-deg>329</heading-offset-deg>
+            <pitch-offset-deg>20</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>40</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.5488</x-m>
+            <y-m>-0.2793</y-m>
+            <z-m>0.9132</z-m>
+            <scale>1.4793</scale>
+        </marker>
+        <error>
+            <message>Switch off the battery!</message>
+            <condition>
+                <property>/controls/electric/battery-switch</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/electric/battery-switch</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Now, switch the power source to off</message>
+        <view>
+            <heading-offset-deg>329</heading-offset-deg>
+            <pitch-offset-deg>20</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>40</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.5636</x-m>
+            <y-m>-0.2132</y-m>
+            <z-m>0.9190</z-m>
+            <scale>1.9917</scale>
+        </marker>
+        <error>
+            <message>As we don't have power anymore, you can switch off the external/battery switch</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/electric/power-source</property>
+                    <value>0</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/electric/power-source</property>
+                    <value>0</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Open the door.</message>
+        <view>
+            <heading-offset-deg>75.9</heading-offset-deg>
+            <pitch-offset-deg>-39.3</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.4</x-offset-m>
+            <y-offset-m>0.7</y-offset-m>
+            <z-offset-m>-3.1</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.1306</x-m>
+            <y-m>-0.8207</y-m>
+            <z-m>0.3066</z-m>
+            <scale>3.0000</scale>
+        </marker>
+        <error>
+            <message>Open the door!</message>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Close the door.</message>
+        <view>
+            <heading-offset-deg>318.2</heading-offset-deg>
+            <pitch-offset-deg>9.7</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-1.7</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>-3.2</z-offset-m>
+            <field-of-view>78.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2496</x-m>
+            <y-m>-1.4628</y-m>
+            <z-m>0.2711</z-m>
+            <scale>3.5124</scale>
+        </marker>
+        <error>
+            <message>Close the door!</message>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Put the left pitot tube cover.</message>
+        <view>
+            <heading-offset-deg>222.8</heading-offset-deg>
+            <pitch-offset-deg>10.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-1.4</x-offset-m>
+            <y-offset-m>-0.0</y-offset-m>
+            <z-offset-m>-4.8</z-offset-m>
+            <field-of-view>67.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2347</x-m>
+            <y-m>-0.9207</y-m>
+            <z-m>0.1405</z-m>
+            <scale>2.8512</scale>
+        </marker>
+        <error>
+            <message>To protect the pitot tube, you have to cover it!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-pitot-cover</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/left-pitot-cover</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Place the left engine cover.</message>
+        <view>
+            <heading-offset-deg>220.5</heading-offset-deg>
+            <pitch-offset-deg>15.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-3.8</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>-3.7</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.6000</x-m>
+            <y-m>-2.9182</y-m>
+            <z-m>0.5678</z-m>
+            <scale>6.1901</scale>
+        </marker>
+        <error>
+            <message>To protect the engine, you have to cover it!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-engine-cover</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/left-engine-cover</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Attach the left tiedown</message>
+        <view>
+            <heading-offset-deg>209.5</heading-offset-deg>
+            <pitch-offset-deg>18.0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-5.5</x-offset-m>
+            <y-offset-m>0.5</y-offset-m>
+            <z-offset-m>-1.8</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.6603</x-m>
+            <y-m>-4.9099</y-m>
+            <z-m>0.9851</z-m>
+            <scale>5.2314</scale>
+        </marker>
+        <error>
+            <message>You must secure the aircraft with the tiedowns</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-tiedown-wheels</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/left-tiedown-wheels</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Left landing gear: Place both wheel chocks.</message>
+        <view>
+            <heading-offset-deg>281.8</heading-offset-deg>
+            <pitch-offset-deg>-17.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-6.1</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>0.9</z-offset-m>
+            <field-of-view>55.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>0.1537</x-m>
+            <y-m>-2.3727</y-m>
+            <z-m>-1.4207</z-m>
+            <scale>33.5620</scale>
+        </marker>
+        <error>
+            <message>Place the forward chock!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-chock-fwd</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Place the rear chock!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-chock-aft</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <property>/sim/model/equipment/left-chock-fwd</property>
+                    <property>/sim/model/equipment/left-chock-aft</property>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Attach the rear tiedown.</message>
+        <view>
+            <heading-offset-deg>34.1</heading-offset-deg>
+            <pitch-offset-deg>-5.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.7</x-offset-m>
+            <y-offset-m>-0.3</y-offset-m>
+            <z-offset-m>6.5</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>5.5802</x-m>
+            <y-m>0.1190</y-m>
+            <z-m>-0.4248</z-m>
+            <scale>4.4876</scale>
+        </marker>
+        <error>
+            <message>You have to remove the tiedown, or you can't fly away!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/rear-tiedown-wheels</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/rear-tiedown-wheels</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Right landing gear: Place both wheel chocks.</message>
+        <view>
+            <heading-offset-deg>-281.8</heading-offset-deg>
+            <pitch-offset-deg>-17.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>6.1</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>0.9</z-offset-m>
+            <field-of-view>55.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>0.1537</x-m>
+            <y-m>2.3727</y-m>
+            <z-m>-1.4207</z-m>
+            <scale>33.5620</scale>
+        </marker>
+        <error>
+            <message>Place the forward chock!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-chock-fwd</property>
+                </not>
+            </condition>
+        </error>
+        <error>
+            <message>Place the rear chock!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-chock-aft</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <property>/sim/model/equipment/right-chock-fwd</property>
+                    <property>/sim/model/equipment/right-chock-aft</property>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Attach the right tiedown</message>
+        <view>
+            <heading-offset-deg>-209.5</heading-offset-deg>
+            <pitch-offset-deg>18.0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>5.5</x-offset-m>
+            <y-offset-m>0.5</y-offset-m>
+            <z-offset-m>-1.8</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.6603</x-m>
+            <y-m>4.9099</y-m>
+            <z-m>0.9851</z-m>
+            <scale>5.2314</scale>
+        </marker>
+        <error>
+            <message>You must secure the aircraft with the tiedowns</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-tiedown-wheels</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/right-tiedown-wheels</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Place the right engine cover.</message>
+        <view>
+            <heading-offset-deg>139.5</heading-offset-deg>
+            <pitch-offset-deg>5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>4.6</x-offset-m>
+            <y-offset-m>0.6</y-offset-m>
+            <z-offset-m>-4.0</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.6768</x-m>
+            <y-m>3.0628</y-m>
+            <z-m>0.6190</z-m>
+            <scale>7.2314</scale>
+        </marker>
+        <error>
+            <message>To protect the engine, you have to cover it!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-engine-cover</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/right-engine-cover</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Put the right pitot tube cover.</message>
+        <view>
+            <heading-offset-deg>-222.8</heading-offset-deg>
+            <pitch-offset-deg>10.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>1.4</x-offset-m>
+            <y-offset-m>-0.0</y-offset-m>
+            <z-offset-m>-4.8</z-offset-m>
+            <field-of-view>67.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2347</x-m>
+            <y-m>0.9207</y-m>
+            <z-m>0.1405</z-m>
+            <scale>2.8512</scale>
+        </marker>
+        <error>
+            <message>To protect the pitot tube, you have to cover it!</message>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-pitot-cover</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/sim/model/equipment/left-pitot-cover</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Finished. Thank you for flying this Twin Otter today. Goodbye and have a nice day :)</message>
+        <view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>85</field-of-view>
+        </view>
+    </step>
+
+    <end>
+    </end>
+
+</PropertyList>

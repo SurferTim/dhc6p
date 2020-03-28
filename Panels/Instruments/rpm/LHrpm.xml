@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Left RPM gauge for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Left RPM</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rpm/rpm-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Needle</name>
+            <w>15</w>
+            <h>252</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rpm/needle.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[0]/rpm</property>
+                    <min>0.0</min>
+                    <max>2200.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind>    0 </ind><dep>   0 </dep></entry>
+                        <entry><ind> 2200 </ind><dep> 270 </dep></entry>
+                    </interpolation>
+                    <offset>-80</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>engines/engine[0]/reverse</property>
+                    <min>0.0</min>
+                    <max>1.0</max>
+                    <scale>1.0</scale>
+                    <interpolation>
+                        <entry><ind> 0 </ind><dep>  0 </dep></entry>
+                        <entry><ind> 1 </ind><dep> 30 </dep></entry>
+                    </interpolation>
+                </transformation>
+                <transformation>
+                        <type>y-shift</type>
+                        <offset>80</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+</PropertyList>

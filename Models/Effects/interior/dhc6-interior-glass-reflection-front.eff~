@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+  <name>dhc6-interior-glass-reflection-front</name>
+  <inherits-from>Aircraft/dhc6/Models/Effects/window-weather-effects</inherits-from>
+  <parameters>
+	<texture n="3">
+	  <type>cubemap</type>
+	  <images>
+		 <positive-x>Aircraft/dhc6/Models/Effects/interior/default_px.png</positive-x>
+		 <negative-x>Aircraft/dhc6/Models/Effects/interior/default_nx.png</negative-x>
+		 <positive-y>Aircraft/dhc6/Models/Effects/interior/default_py.png</positive-y>
+		 <negative-y>Aircraft/dhc6/Models/Effects/interior/default_ny.png</negative-y>
+		 <positive-z>Aircraft/dhc6/Models/Effects/interior/default_pz.png</positive-z>
+		 <negative-z>Aircraft/dhc6/Models/Effects/interior/default_nz.png</negative-z>
+	  </images>
+	</texture>
+	<use-reflection type="int">1</use-reflection>
+    <reflection-strength type="float">1.0</reflection-strength>
+  </parameters>
+</PropertyList>

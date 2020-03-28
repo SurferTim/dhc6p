@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Copyright (C) 2015  Jonathan Schellhase (DG-505)
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, org
+    (at your option) any later version.
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see "http://www.gnu.org/licenses/"
+-->
+
+<PropertyList>
+    <name>autopilot</name>
+    <layout>vbox</layout>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <halign>right</halign>
+            <label>Autopilot Controls</label>
+        </text>
+        <button>
+            <halign>right</halign>
+            <legend/>
+            <key>Esc</key>
+            <pref-width>16</pref-width>
+            <pref-height>16</pref-height>
+            <border>2</border>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>Control Panel</label>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <group>
+            <layout>vbox</layout>
+            <button>
+                <valign>top</valign>
+                <legend>AP Master</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <command>property-toggle</command>
+                    <property>controls/autopilot/settings/apflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/altitude</property>
+                    <value type="string"></value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/speed</property>
+                    <value type="string"></value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/heading</property>
+                    <value type="string"></value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/iasflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/hdgsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/navsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+            </button>
+            <button>
+                <valign>center</valign>
+                <legend>Vertical Master</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/apflag</property>
+                    </condition>
+                    <command>property-toggle</command>
+                    <property>controls/autopilot/settings/altflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <not>
+                            <property>controls/autopilot/settings/iasflag</property>
+                        </not>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/altitude</property>
+                    <value type="string"></value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/autopilot/locks/passive-mode/</property>
+                    <value type="bool">false</value>
+                </binding>
+            </button>
+            <button>
+                <valign>bottom</valign>
+                <legend>IAS hold</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <and>
+                            <property>controls/autopilot/settings/apflag</property>
+                            <greater-than>
+                                <property>position/altitude-agl-ft</property>
+                                <value type="double">100</value>
+                            </greater-than>
+                        </and>
+                    </condition>
+                    <command>property-toggle</command>
+                    <property>controls/autopilot/settings/iasflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-cycle</command>
+                    <property>/autopilot/locks/passive-mode/</property>
+                    <value type="bool">false</value>
+                </binding>
+            </button>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <checkbox>
+            <valign>top</valign>
+                <property>controls/autopilot/settings/apflag</property>
+                <live>1</live>
+            </checkbox>
+            <checkbox>
+            <valign>bottom</valign>
+                <property>controls/autopilot/settings/iasflag</property>
+                <live>1</live>
+            </checkbox>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/altflag</property>
+                <live>1</live>
+            </checkbox>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <button>
+                <valign>top</valign>
+                <legend>ALT hold</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/iasflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/altitude</property>
+                    <value type="string">altitude-hold</value>
+                </binding>
+            </button>
+            <button>
+                <valign>center</valign>
+                <legend>GS hold</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/iasflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/altitude</property>
+                    <value type="string">gs1-hold</value>
+                </binding>
+            </button>
+            <button>
+                <valign>bottom</valign>
+                <legend>VS hold</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/vssetflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/altsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/gssetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/iasflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/altflag</property>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/altitude</property>
+                    <value type="string">vertical-speed-hold</value>
+                </binding>
+            </button>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/altsetflag</property>
+                <live>1</live>
+            </checkbox>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/gssetflag</property>
+                <live>1</live>
+            </checkbox>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/vssetflag</property>
+                <live>1</live>
+            </checkbox>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <button>
+                <valign>top</valign>
+                <legend>HDG hold</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/hdgflag</property>
+                    </condition>
+                    <command>property-toggle</command>
+                    <property>controls/autopilot/settings/hdgsetflag</property>
+                    <value type="bool">true</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/navsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <property>controls/autopilot/settings/hdgflag</property>
+                        </condition>
+                    <command>property-cycle</command>
+                    <property>autopilot/locks/heading</property>
+                    <value type="string">dg-heading-hold</value>
+                    <value type="string">wing-leveler</value>
+                </binding>
+            </button>
+            <button>
+                <valign>center</valign>
+                <legend>Lateral Master</legend>
+                <default>false</default>
+                <pref-height>25</pref-height>
+                <binding>
+                        <condition>
+                                <property>controls/autopilot/settings/apflag</property>
+                        </condition>
+                        <command>property-toggle</command>
+                        <property>controls/autopilot/settings/hdgflag</property>
+                        <value type="bool">true</value>
+                </binding>
+                <binding>
+                        <command>property-assign</command>
+                        <property>autopilot/locks/heading</property>
+                        <value type="string">wing-leveler</value>
+                </binding>
+                <binding>
+                    <condition>
+                        <not>
+                            <property>controls/autopilot/settings/hdgflag</property>
+                        </not>
+                    </condition>
+                    <command>property-assign</command>
+                    <property>autopilot/locks/heading</property>
+                    <value type="string"></value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/hdgsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>controls/autopilot/settings/navsetflag</property>
+                    <value type="bool">false</value>
+                </binding>
+                <binding>
+                    <command>property-assign</command>
+                    <property>/autopilot/locks/passive-mode/</property>
+                    <value type="bool">false</value>
+                </binding>
+            </button>
+            <button>
+            <valign>bottom</valign>
+            <legend>NAV hold</legend>
+            <default>false</default>
+            <pref-height>25</pref-height>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                    </condition>
+                <command>property-toggle</command>
+                <property>controls/autopilot/settings/navsetflag</property>
+            </binding>
+            <binding>
+                <command>property-assign</command>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <value type="bool">false</value>
+            </binding>
+            <binding>
+                <condition>
+                    <property>controls/autopilot/settings/hdgflag</property>
+                </condition>
+                <command>property-cycle</command>
+                <property>autopilot/locks/heading</property>
+                <value type="string">nav1-hold</value>
+                <value type="string">wing-leveler</value>
+            </binding>
+            </button>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/hdgsetflag</property>
+                <live>1</live>
+            </checkbox>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/hdgflag</property>
+                <live>1</live>
+            </checkbox>
+            <checkbox>
+            <valign>center</valign>
+                <property>controls/autopilot/settings/navsetflag</property>
+                <live>1</live>
+            </checkbox>
+        </group>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+        <text>
+            <label>Settings</label>
+        </text>
+        <hrule>
+            <stretch>true</stretch>
+        </hrule>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>Indicated Airspeed</label>
+        </text>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <button>
+            <legend>&lt;&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step type="double">-10.0</step>
+                <min>70</min>
+                <max>170</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step type="double">-1.0</step>
+                <min>70</min>
+                <max>170</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <input>
+            <label>kts</label>
+            <pref-width>60</pref-width>
+            <pref-height>20</pref-height>
+            <property>autopilot/settings/target-speed-kt</property>
+            <format>%03.0f</format>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </input>
+        <button>
+            <legend>&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step type="double">1.0</step>
+                <min>70</min>
+                <max>170</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&gt;&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-speed-kt</property>
+                <step type="double">10.0</step>
+                <min>70</min>
+                <max>170</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>Altitude</label>
+        </text>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <button>
+            <legend>&lt;&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step type="double">-1000.0</step>
+                <min>1000</min>
+                <max>30000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step type="double">-100.0</step>
+                <min>1000</min>
+                <max>30000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <input>
+            <label>ft</label>
+            <pref-width>60</pref-width>
+            <pref-height>20</pref-height>
+            <property>autopilot/settings/target-altitude-ft</property>
+            <format>%03.0f</format>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </input>
+        <button>
+            <legend>&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step type="double">100.0</step>
+                <min>1000</min>
+                <max>30000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&gt;&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/target-altitude-ft</property>
+                <step type="double">1000.0</step>
+                <min>1000</min>
+                <max>30000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <text>
+            <label>Vertical Speed</label>
+        </text>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <button>
+            <legend>&lt;&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step type="double">-1000.0</step>
+                <min>-6000</min>
+                <max>6000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&lt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step type="double">-100.0</step>
+                <min>-6000</min>
+                <max>6000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <input>
+            <label>ft/min</label>
+            <pref-width>60</pref-width>
+            <pref-height>20</pref-height>
+            <property>autopilot/settings/vertical-speed-fpm</property>
+            <format>%03.0f</format>
+            <live>true</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+        </input>
+        <button>
+            <legend>&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step type="double">100.0</step>
+                <min>-6000</min>
+                <max>6000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+        <button>
+            <legend>&gt;&gt;</legend>
+            <pref-height>25</pref-height>
+            <binding>
+                <command>property-adjust</command>
+                <property>autopilot/settings/vertical-speed-fpm</property>
+                <step type="double">1000.0</step>
+                <min>-6000</min>
+                <max>6000</max>
+                <wrap>false</wrap>
+            </binding>
+        </button>
+    </group>
+    <group>
+        <layout>hbox</layout>
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <label>HDG Offset (deg)</label>
+            </text>
+            <button>
+                <pref-height>20</pref-height>
+                <pref-width>20</pref-width>
+                <legend>@</legend>
+                <binding>
+                    <command>property-assign</command>
+                    <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                    <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </button>
+            <group>
+                <layout>hbox</layout>
+                <button>
+                    <pref-height>20</pref-height>
+                    <pref-width>20</pref-width>
+                    <legend>&lt;&lt;</legend>
+                    <binding>
+                        <command>property-adjust</command>
+                        <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                        <step type="double">-10.0</step>
+                        <min>0</min>
+                        <max>360</max>
+                        <wrap>true</wrap>
+                    </binding>
+                </button>
+                <button>
+                    <pref-height>20</pref-height>
+                    <pref-width>20</pref-width>
+                    <legend>&lt;</legend>
+                    <binding>
+                        <command>property-adjust</command>
+                        <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                        <step type="double">-1.0</step>
+                        <min>0</min>
+                        <max>360</max>
+                        <wrap>true</wrap>
+                    </binding>
+                </button>
+                <input>
+                    <pref-width>50</pref-width>
+                    <pref-height>20</pref-height>
+                    <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                    <format>%03.0f</format>
+                    <live>true</live>
+                    <binding>
+                        <command>dialog-apply</command>
+                    </binding>
+                </input>
+                <button>
+                    <pref-height>20</pref-height>
+                    <pref-width>20</pref-width>
+                    <legend>&gt;</legend>
+                    <binding>
+                        <command>property-adjust</command>
+                        <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                        <step type="double">1.0</step>
+                        <min>0</min>
+                        <max>360</max>
+                        <wrap>true</wrap>
+                    </binding>
+                </button>
+                <button>
+                    <pref-height>20</pref-height>
+                    <pref-width>20</pref-width>
+                    <legend>&gt;&gt;</legend>
+                    <binding>
+                        <command>property-adjust</command>
+                        <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                        <step type="double">10.0</step>
+                        <min>0</min>
+                        <max>360</max>
+                        <wrap>true</wrap>
+                    </binding>
+                </button>
+            </group>
+            <group>
+                <layout>hbox</layout>
+                <text>
+                    <label/>
+                </text>
+            </group>
+            <dial>
+                <pref-width>60</pref-width>
+                <pref-height>50</pref-height>
+                <live>1</live>
+                <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <resolution>1</resolution>
+                <min>0</min>
+                <max>360</max>
+                <wrap>true</wrap>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+                <binding>
+                    <command>dialog-update</command>
+                </binding>
+            </dial>
+        </group>
+        <group>
+            <layout>vbox</layout>
+            <text>
+                <legend/>
+            </text>
+        </group>
+        <group>
+        <layout>vbox</layout>
+        <text>
+            <label>NAV 1 Radial (deg)</label>
+        </text>
+        <button>
+            <pref-height>20</pref-height>
+            <pref-width>20</pref-width>
+            <legend>@</legend>
+            <binding>
+                <command>property-assign</command>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </button>
+        <group>
+            <layout>hbox</layout>
+            <button>
+                <pref-height>20</pref-height>
+                <pref-width>20</pref-width>
+                <legend>&lt;&lt;</legend>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <step type="double">-10.0</step>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>true</wrap>
+                </binding>
+            </button>
+            <button>
+                <pref-height>20</pref-height>
+                <pref-width>20</pref-width>
+                <legend>&lt;</legend>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <step type="double">-1.0</step>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>true</wrap>
+                </binding>
+            </button>
+            <input>
+                <pref-width>50</pref-width>
+                <pref-height>20</pref-height>
+                <property>instrumentation/nav/radials/selected-deg</property>
+                <format>%03.0f</format>
+                <live>true</live>
+                <binding>
+                    <command>dialog-apply</command>
+                </binding>
+            </input>
+            <button>
+                <pref-height>20</pref-height>
+                <pref-width>20</pref-width>
+                <legend>&gt;</legend>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <step type="double">1.0</step>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>true</wrap>
+                </binding>
+            </button>
+            <button>
+                <pref-height>20</pref-height>
+                <pref-width>20</pref-width>
+                <legend>&gt;&gt;</legend>
+                <binding>
+                    <command>property-adjust</command>
+                    <property>instrumentation/nav/radials/selected-deg</property>
+                    <step type="double">10.0</step>
+                    <min>0</min>
+                    <max>360</max>
+                    <wrap>true</wrap>
+                </binding>
+            </button>
+        </group>
+        <group>
+            <layout>hbox</layout>
+            <text>
+                <label/>
+            </text>
+        </group>
+        <dial>
+            <pref-width>60</pref-width>
+            <pref-height>50</pref-height>
+            <live>1</live>
+            <property>instrumentation/nav/radials/selected-deg</property>
+            <resolution>1</resolution>
+            <min>0</min>
+            <max>360</max>
+            <wrap>true</wrap>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
+            <binding>
+                <command>dialog-update</command>
+            </binding>
+        </dial>
+        </group>
+    </group>
+    <hrule/>
+    <group>
+        <layout>hbox</layout>
+        <button>
+            <halign>center</halign>
+            <legend>Close</legend>
+            <default>true</default>
+            <key>Esc</key>
+            <binding>
+                <command>dialog-close</command>
+            </binding>
+        </button>
+    </group>
+</PropertyList>

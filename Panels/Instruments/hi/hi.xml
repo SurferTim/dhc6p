@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Heading Indicator for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>Heading Indicator</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>435</w>
+            <h>435</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/hi/hi-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1.0</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Fixture</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/hi/fixture.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>Front</name>
+            <w>340</w>
+            <h>340</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/hi/front.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>HdgBug</name>
+            <w>435</w>
+            <h>435</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/hi/hdgbug.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1</scale>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                    <scale>1</scale>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+        <action>
+            <name>increase heading offset coarse</name>
+            <button>1</button>
+            <x>-200</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase heading offset fine</name>
+            <button>0</button>
+            <x>-200</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease heading offset fine</name>
+            <button>0</button>
+            <x>-235</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease heading offset coarse</name>
+            <button>1</button>
+            <x>-235</x>
+            <y>-212</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/offset-deg</property>
+                <step>-5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase heading bug coarse</name>
+            <button>1</button>
+            <x>195</x>
+            <y>-215</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase heading bug fine</name>
+            <button>0</button>
+            <x>195</x>
+            <y>-215</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease heading bug fine</name>
+            <button>0</button>
+            <x>160</x>
+            <y>-215</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease heading bug coarse</name>
+            <button>1</button>
+            <x>160</x>
+            <y>-215</y>
+            <w>35</w>
+            <h>70</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+    </actions>
+
+</PropertyList>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">BRT Virtual Regional R</name>
+            <texture>Liveries/brtregional-R.png</texture>
+        </livery>
+	    <floats>
+          <texture>floats.png</texture>
+        </floats>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>1</display-callsign>
+    </model>
+</sim>
+</PropertyList>

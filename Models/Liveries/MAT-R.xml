@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!--Livery by Robert Maheu   www.flightgearcanada.ca  -->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Maldivian Air Taxi R</name>
+            <texture>Liveries/MAT-R.png</texture>
+        </livery>
+        <floats>
+		<texture>floats.png</texture>
+        </floats>   
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

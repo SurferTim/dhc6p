@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--
+2014
+-->
+
+<PropertyList>
+
+    <path>lightcone-oh.ac</path>
+
+
+    <animation>
+        <type>select</type>
+        <condition>
+          <property>/sim/rendering/rembrandt/enabled</property>
+        </condition>
+    </animation>
+    
+    <!-- Spot lights -->
+    <animation>
+        <type>light</type>
+        <light-type>point</light-type>
+        <object-name>Cone</object-name>
+        <nopreview/>
+        <position>
+            <x>-3.02</x>
+            <y>0</y>
+            <z>0.52</z>
+        </position>
+        <direction>
+            <x>0</x>
+            <y>0</y>
+            <z>-0.8</z>
+        </direction>
+        <ambient>
+            <r>0.8</r>
+            <g>0.8</g>
+            <b>0.7</b>
+            <a>1.0</a>
+        </ambient>
+        <diffuse>
+            <r>0.7</r>
+            <g>0.7</g>
+            <b>0.6</b>
+            <a>1.0</a>
+        </diffuse>
+        <specular>
+            <r>0.7</r>
+            <g>0.7</g>
+            <b>0.7</b>
+            <a>1.0</a>
+        </specular>
+        <dim-factor>
+            <property>systems/electrical/outputs/cabin-lights</property>
+            <!-- optional begin -->
+            <factor>0.04</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+            <!-- optional end -->
+        </dim-factor>
+        <attenuation>
+            <c>5.0</c>
+            <l>0.002</l>
+            <q>0.00005</q>
+        </attenuation>
+        <exponent>8.0</exponent>
+        <near-m>0.5</near-m>
+        <far-m>0.55</far-m>
+        <cutoff>120</cutoff>
+    </animation>
+    
+    <effect>
+        <name>REMBRANDT transparency</name>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>Light</object-name>
+    </effect>
+
+</PropertyList>

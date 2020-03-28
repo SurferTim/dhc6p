@@ -1,0 +1,733 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <!-- Torque pressure gauges -->
+    <!-- Powered from 26V AC bus, spring loaded to 0 when power is lost -->
+    <!-- Left -->
+    <filter>
+        <name>Indicated left torque</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>1000</max-rate-of-change>
+        <input>
+            <condition>
+                <property>instrumentation/engine-instruments/torque[0]/serviceable</property>
+            </condition>
+            <property>engines/engine[0]/torque-ftlb</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>instrumentation/engine-instruments/torque[0]/indicated-torque-ftlb</output>
+    </filter>
+
+    <!-- Right -->
+    <filter>
+        <name>Indicated right torque</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>1000</max-rate-of-change>
+        <input>
+            <condition>
+                <property>instrumentation/engine-instruments/torque[1]/serviceable</property>
+            </condition>
+            <property>engines/engine[1]/torque-ftlb</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>instrumentation/engine-instruments/torque[1]/indicated-torque-ftlb</output>
+    </filter>
+
+    <!-- Fuel flow gauges -->
+    <!-- Powered from 26V AC bus, will stick in position when power is lost -->
+    <!-- Left engine -->
+    <filter>
+        <name>Indicated fuel flow</name>
+        <enable>
+            <condition>
+                <property>instrumentation/engine-instruments/fuel-flow[0]/serviceable</property>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <property>fdm/jsbsim/propulsion/engine[0]/fuel_pph</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <product>
+                    <property>engines/engine[0]/fuel-flow-gph</property>
+                    <value>6.74</value>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/engine-instruments/fuel-flow[0]/fuel-flow-pph</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated fuel flow filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>2000</max-rate-of-change>
+        <input>instrumentation/engine-instruments/fuel-flow[0]/fuel-flow-pph</input>
+        <output>instrumentation/engine-instruments/fuel-flow[0]/indicated-fuel-flow-pph</output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <name>Indicated fuel flow</name>
+        <enable>
+            <condition>
+                <property>instrumentation/engine-instruments/fuel-flow[1]/serviceable</property>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <property>fdm/jsbsim/propulsion/engine[1]/fuel_pph</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <product>
+                    <property>engines/engine[1]/fuel-flow-gph</property>
+                    <value>6.74</value>
+                </product>
+            </expression>
+        </input>
+        <output>instrumentation/engine-instruments/fuel-flow[1]/fuel-flow-pph</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated fuel flow filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>1000</max-rate-of-change>
+        <input>instrumentation/engine-instruments/fuel-flow[1]/fuel-flow-pph</input>
+        <output>instrumentation/engine-instruments/fuel-flow[1]/indicated-fuel-flow-pph</output>
+    </filter>
+
+    <!-- Convert oil temperature from degree Farenheit to degree Celsius -->
+    <!-- Left engine -->
+    <filter>
+        <type>gain</type>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <div>
+                    <difference>
+                        <property>engines/engine[0]/oil-temperature-degf</property>
+                        <value>32</value>
+                    </difference>
+                    <value>1.8</value>
+                </div>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/engine-instruments/t5[0]/indicated-t5-degc</property>
+                    <value>7</value>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[0]/oil-temp-degc</property>
+        </output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <type>gain</type>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <div>
+                    <difference>
+                        <property>engines/engine[1]/oil-temperature-degf</property>
+                        <value>32</value>
+                    </difference>
+                    <value>1.8</value>
+                </div>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <div>
+                    <property>instrumentation/engine-instruments/t5[1]/indicated-t5-degc</property>
+                    <value>7</value>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[1]/oil-temp-degc</property>
+        </output>
+    </filter>
+
+    <!-- Oil tempure gauges -->
+    <!-- Powered from Left/Right 28V DC bus, will fall to 0 when power is lost -->
+    <!-- Left -->
+    <filter>
+        <name>Indicated left oil temperature</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>150</max-rate-of-change>
+        <input>
+            <condition>
+                <property>instrumentation/engine-instruments/oil-temp[0]/serviceable</property>
+            </condition>
+            <property>engines/engine[0]/oil-temp-degc</property>
+        </input>
+        <input>
+            <value>-80.0</value>
+        </input>
+        <output>instrumentation/engine-instruments/oil-temp[0]/indicated-temp-degc</output>
+    </filter>
+
+    <!-- Right -->
+    <filter>
+        <name>Indicated right oil temperature</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>150</max-rate-of-change>
+        <input>
+            <condition>
+                <property>instrumentation/engine-instruments/oil-temp[1]/serviceable</property>
+            </condition>
+            <property>engines/engine[1]/oil-temp-degc</property>
+        </input>
+        <input>
+            <value>-80.0</value>
+        </input>
+        <output>instrumentation/engine-instruments/oil-temp[1]/indicated-temp-degc</output>
+    </filter>
+
+    <!-- Turbine temperature -->
+    <!-- Left engine -->
+    <filter>
+        <type>gain</type>
+        <input>
+            <expression>
+                <div>
+                    <difference>
+                        <property>engines/engine[0]/itt_degf</property>
+                        <value>32</value>
+                    </difference>
+                    <value>1.8</value>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[0]/t5-temp-degc</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <property>engines/engine[0]/t5-temp-degc</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <property>engines/engine[0]/t5</property>
+        </input>
+        <output>
+            <property>instrumentation/engine-instruments/t5[0]/indicated-t5-degc</property>
+        </output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <type>gain</type>
+        <input>
+            <expression>
+                <div>
+                    <difference>
+                        <property>engines/engine[1]/itt_degf</property>
+                        <value>32</value>
+                    </difference>
+                    <value>1.8</value>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[1]/t5-temp-degc</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <property>engines/engine[1]/t5-temp-degc</property>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <property>engines/engine[1]/t5</property>
+        </input>
+        <output>
+            <property>instrumentation/engine-instruments/t5[1]/indicated-t5-degc</property>
+        </output>
+    </filter>
+
+    <!-- Oil pressure -->
+    <!-- That's not a real simulation of the oil pressure, instead it depends directly on the turbine speed (based on youtube videos) -->
+    <!-- Left engine -->
+    <filter>
+        <name>Oil pressure</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[0]/n1</property>
+                    <entry><ind>  0</ind><dep> 0</dep></entry>
+                    <entry><ind> 10</ind><dep>40</dep></entry>
+                    <entry><ind> 20</ind><dep>50</dep></entry>
+                    <entry><ind> 30</ind><dep>80</dep></entry>
+                    <entry><ind> 60</ind><dep>85</dep></entry>
+                    <entry><ind>100</ind><dep>95</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[0]/n2</property>
+                    <entry><ind>  0</ind><dep> 0</dep></entry>
+                    <entry><ind> 20</ind><dep>45</dep></entry>
+                    <entry><ind> 53</ind><dep>85</dep></entry>
+                    <entry><ind>102</ind><dep>98</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[0]/oil-pressure-real-psi</property>
+        </output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <name>Oil pressure</name>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>jsb</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[1]/n1</property>
+                    <entry><ind>  0</ind><dep> 0</dep></entry>
+                    <entry><ind> 10</ind><dep>40</dep></entry>
+                    <entry><ind> 20</ind><dep>50</dep></entry>
+                    <entry><ind> 30</ind><dep>80</dep></entry>
+                    <entry><ind> 60</ind><dep>85</dep></entry>
+                    <entry><ind>100</ind><dep>95</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <input>
+            <condition>
+                <equals>
+                    <property>sim/flight-model</property>
+                    <value>yasim</value>
+                </equals>
+            </condition>
+            <expression>
+                <table>
+                    <property>engines/engine[1]/n2</property>
+                    <entry><ind>  0</ind><dep> 0</dep></entry>
+                    <entry><ind> 20</ind><dep>45</dep></entry>
+                    <entry><ind> 53</ind><dep>85</dep></entry>
+                    <entry><ind>102</ind><dep>98</dep></entry>
+                </table>
+            </expression>
+        </input>
+        <output>
+            <property>engines/engine[1]/oil-pressure-real-psi</property>
+        </output>
+    </filter>
+
+    <!-- Indicated oil pressure -->
+    <!-- Powered from 26V AC bus, will stick in position when power is lost -->
+    <!-- Left engine -->
+    <filter>
+        <name>Indicated oil pressure</name>
+        <enable>
+            <condition>
+                <property>instrumentation/engine-instruments/oil-press[0]/serviceable</property>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>engines/engine[0]/oil-pressure-real-psi</input>
+        <output>instrumentation/engine-instruments/oil-press[0]/pressure-psi</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated oil pressure filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <input>instrumentation/engine-instruments/oil-press[0]/pressure-psi</input>
+        <output>instrumentation/engine-instruments/oil-press[0]/indicated-pressure-psi</output>
+    </filter>
+
+    <!-- Right engine -->
+    <filter>
+        <name>Indicated oil pressure</name>
+        <enable>
+            <condition>
+                <property>instrumentation/engine-instruments/oil-press[1]/serviceable</property>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>engines/engine[1]/oil-pressure-real-psi</input>
+        <output>instrumentation/engine-instruments/oil-press[1]/pressure-psi</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated oil pressure filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>5</max-rate-of-change>
+        <input>instrumentation/engine-instruments/oil-press[1]/pressure-psi</input>
+        <output>instrumentation/engine-instruments/oil-press[1]/indicated-pressure-psi</output>
+    </filter>
+
+    <!-- Fuel quantity -->
+    <!-- Powered from 115V AC bus, will stick in position when power is lost -->
+    <!-- 'IND TEST' button will move needles to 0 -->
+    <!-- Left gauge (AFT tank) -->
+    <filter>
+        <name>Indicated fuel quantity</name>
+        <enable>
+            <condition>
+                <!-- Make the fuel quantity indicators show current fuel level at startup -->
+                <or>
+                    <less-than>
+                        <property>sim/time/elapsed-sec</property>
+                        <value>5.0</value>
+                    </less-than>
+                    <property>instrumentation/engine-instruments/fuel-qty-aft/serviceable</property>
+                </or>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>consumables/fuel/tank[1]/level-lbs</input>
+        <output>instrumentation/engine-instruments/fuel-qty-aft/level-lbs</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated fuel quantity filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>500</max-rate-of-change>
+        <input>
+            <condition>
+                <property>controls/fuel/ind-test</property>
+            </condition>
+            <value>0.0</value>
+        </input>
+        <input>instrumentation/engine-instruments/fuel-qty-aft/level-lbs</input>
+        <output>instrumentation/engine-instruments/fuel-qty-aft/indicated-fuelqty-lbs</output>
+    </filter>
+
+    <!-- Right gauge (FWD tank) -->
+    <filter>
+        <name>Indicated fuel quantity</name>
+        <enable>
+            <condition>
+                <!-- Make the fuel quantity indicators show current fuel level at startup -->
+                <or>
+                    <less-than>
+                        <property>sim/time/elapsed-sec</property>
+                        <value>5.0</value>
+                    </less-than>
+                    <property>instrumentation/engine-instruments/fuel-qty-fwd/serviceable</property>
+                </or>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>consumables/fuel/tank[0]/level-lbs</input>
+        <output>instrumentation/engine-instruments/fuel-qty-fwd/level-lbs</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated fuel quantity filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>500</max-rate-of-change>
+        <input>
+            <condition>
+                <property>controls/fuel/ind-test</property>
+            </condition>
+            <value>0.0</value>
+        </input>
+        <input>instrumentation/engine-instruments/fuel-qty-fwd/level-lbs</input>
+        <output>instrumentation/engine-instruments/fuel-qty-fwd/indicated-fuelqty-lbs</output>
+    </filter>
+
+    <!-- Boost pump pressure -->
+    <filter>
+        <name>Primary boost pump AFT</name>
+        <type>exponential</type>
+        <filter-time>1.0</filter-time>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>/systems/electrical/outputs/boost-pump-main-aft</property>
+                    <value>5.0</value>
+                </greater-than>
+            </condition>
+            <value>22.0</value>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>consumables/fuel/tank[1]/boost-pump-main-aft-psi</property>
+        </output>
+    </filter>
+
+    <filter>
+        <name>Primary boost pump FWD</name>
+        <type>exponential</type>
+        <filter-time>1.0</filter-time>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>/systems/electrical/outputs/boost-pump-main-fwd</property>
+                    <value>5.0</value>
+                </greater-than>
+            </condition>
+            <value>22.0</value>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>
+            <property>consumables/fuel/tank[0]/boost-pump-main-fwd-psi</property>
+        </output>
+    </filter>
+
+    <!-- Aileron trim indicator -->
+    <!-- Needs electrical power from R 28V DC bus. Falls to 0 if no power available -->
+    <filter>
+        <name>Indicated aileron trim</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>2</max-rate-of-change>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>systems/electrical/outputs/ail-trim-ind</property>
+                    <value>0.1</value>
+                </greater-than>
+            </condition>
+            <property>controls/flight/aileron-trim</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>controls/flight/indicated-aileron-trim</output>
+    </filter>
+
+    <!-- Radar altimeter -->
+    <!-- Powered from 26V AC bus, will stick in position when power is lost -->
+    <filter>
+        <name>Indicated altitude</name>
+        <enable>
+            <condition>
+                <property>instrumentation/radar-altimeter/serviceable</property>
+            </condition>
+        </enable>
+        <type>gain</type>
+        <gain>1.0</gain>
+        <input>position/altitude-agl-ft</input>
+        <output>instrumentation/radar-altimeter/alt</output>
+    </filter>
+    <!-- Smooth needle movement -->
+    <filter>
+        <name>Indicated altitude filtered</name>
+        <type>noise-spike</type>
+        <max-rate-of-change>500</max-rate-of-change>
+        <input>instrumentation/radar-altimeter/alt</input>
+        <output>instrumentation/radar-altimeter/indicated-agl-ft</output>
+    </filter>
+
+    <!-- Volt/Amperemeter -->
+    <!-- Powered from Left 28V DC bus, falls to 0 if no power available -->
+    <!-- Volts -->
+    <filter>
+        <name>Indicated volts</name>
+        <type>exponential</type>
+        <filter-time>0.5</filter-time>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>-1</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>engines/engine[0]/amp-v</property>
+        </input>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>systems/electrical/batt-volts</property>
+        </input>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>engines/engine[1]/amp-v</property>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>instrumentation/volt-amp-meter/indicated-volts</output>
+    </filter>
+
+    <!-- Amps -->
+    <filter>
+        <name>Indicated amps</name>
+        <type>exponential</type>
+        <filter-time>0.5</filter-time>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>-1</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>systems/electrical/gen-load[0]</property>
+            <scale>0.5</scale>
+        </input>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>0</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>systems/electrical/amps</property>
+        </input>
+        <input>
+            <condition>
+                <and>
+                    <property>instrumentation/volt-amp-meter/serviceable</property>
+                    <equals>
+                        <property>controls/electric/ammeter-switch</property>
+                        <value>1</value>
+                    </equals>
+                </and>
+            </condition>
+            <property>systems/electrical/gen-load[1]</property>
+            <scale>0.5</scale>
+        </input>
+        <input>
+            <value>0.0</value>
+        </input>
+        <output>instrumentation/volt-amp-meter/indicated-amps</output>
+    </filter>
+
+</PropertyList>

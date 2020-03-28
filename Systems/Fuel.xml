@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<system name="fuel">
+
+    <property type="float" value="0">/consumables/fuel/tank[0]/boost-pump-main-aft-psi</property>
+    <property type="float" value="0">propulsion/engine[0]/fuel-consumption-pps</property>
+    <property type="float" value="0">propulsion/engine[1]/fuel-consumption-pps</property>
+    <property type="float" value="0">/systems/electrical/outputs/fuel-crossfeed</property>
+
+    <channel name="Calculate fuel burn">
+
+        <fcs_function name="Left engine fuel burn dependent on Ng and altitude">
+            <function>
+                <product>
+                    <table>
+                        <independentVar lookup="row">propulsion/engine[0]/n1</independentVar>
+                        <independentVar lookup="column">atmosphere/density-altitude</independentVar>
+                        <tableData>
+                                 0        30000
+                        0        0        0
+                        12       0        0
+                        52       0.00863  0.00526
+                        101.5    0.12778  0.11712
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+            <output>propulsion/engine[0]/fuel-consumption-pps</output>
+        </fcs_function>
+
+        <fcs_function name="Right engine fuel burn dependent on Ng and altitude">
+            <function>
+                <product>
+                    <table>
+                        <independentVar lookup="row">propulsion/engine[1]/n1</independentVar>
+                        <independentVar lookup="column">atmosphere/density-altitude</independentVar>
+                        <tableData>
+                                 0        30000
+                        0        0        0
+                        12       0        0
+                        52       0.00863  0.00526
+                        101.5    0.12778  0.11712
+                        </tableData>
+                    </table>
+                </product>
+            </function>
+            <output>propulsion/engine[1]/fuel-consumption-pps</output>
+        </fcs_function>
+
+        <pure_gain name="Lff">
+            <input>propulsion/engine[0]/fuel-consumption-pps</input>
+            <gain>3600.0</gain>
+            <output>propulsion/engine[0]/fuel_pph</output>
+        </pure_gain>
+
+        <pure_gain name="Rff">
+            <input>propulsion/engine[1]/fuel-consumption-pps</input>
+            <gain>3600.0</gain>
+            <output>propulsion/engine[1]/fuel_pph</output>
+        </pure_gain>
+
+    </channel>
+
+    <channel name="Tank selector logic for left engine">
+
+        <!-- Tank 2 level maintenance -->
+        <!-- Collector Tank 2 works like a constant-level carburetor for left engine -->
+
+        <!-- When fuel selector at NORM,        feed collector tank from tank[1] -->
+        <!-- When fuel selector at BOTH ON AFT, feed collector tank from tank[1] -->
+        <!-- When fuel selector at BOTH ON FWD, feed collector tank from tank[0] -->
+        <switch name="fuel/tank2-flow-rate">
+            <default value="0"/>
+            <!-- When fuel selector NORM, feed collector tank from tank[1] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ 0                      <!-- Fuel selector at NORM -->
+                propulsion/tank[1]/contents-lbs GT 0                   <!-- Tank[1] not empty -->
+                /consumables/fuel/tank[2]/level-lbs LT 0.1
+                /consumables/fuel/tank[1]/boost-pump-main-aft-psi GT 5 <!-- Tank[1] boost pump pressure higher than 5 psi -->
+            </test>
+            <!-- When fuel selector at BOTH ON AFT, feed collector tank from tank[1] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ -1                     <!-- Fuel selector at BOTH ON AFT -->
+                /systems/electrical/outputs/fuel-crossfeed GT 8        <!-- Crossfeed valve needs electrical power -->
+                propulsion/tank[1]/contents-lbs GT 0                   <!-- Tank[1] not empty -->
+                /consumables/fuel/tank[2]/level-lbs LT 0.1
+                /consumables/fuel/tank[1]/boost-pump-main-aft-psi GT 5 <!-- Tank[1] boost pump pressure higher than 5 psi -->
+            </test>
+            <!-- When fuel selector at BOTH ON FWD, feed collector tank from tank[0] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ 1                      <!-- Fuel selector at BOTH ON FWD -->
+                /systems/electrical/outputs/fuel-crossfeed GT 8        <!-- Crossfeed valve needs electrical power -->
+                propulsion/tank[0]/contents-lbs GT 0                   <!-- Tank [0] not empty -->
+                /consumables/fuel/tank[2]/level-lbs LT 0.1
+                /consumables/fuel/tank[0]/boost-pump-main-fwd-psi GT 5 <!-- Tank [0] boost pump pressure higher than 5 psi -->
+            </test>
+            <output>propulsion/tank[2]/external-flow-rate-pps</output> <!-- Tank 2 filling -->
+        </switch>
+
+        <!-- When fuel selector at NORM or BOTH ON AFT, feed tank 2 from tank 1 -->
+        <switch name="fuel/from-tank1-to-tank2">
+            <default value="0"/>
+            <test logic="OR" value="-fuel/tank2-flow-rate">
+                /controls/fuel/tank-selector EQ 0
+                /controls/fuel/tank-selector EQ -1
+            </test>
+        </switch>
+
+        <!-- When fuel selector at BOTH ON FWD, feed tank 2 from tank 0 -->
+        <switch name="fuel/from-tank0-to-tank2">
+            <default value="0"/>
+            <test logic="AND" value="-fuel/tank2-flow-rate">
+                /controls/fuel/tank-selector EQ 1
+                /systems/electrical/outputs/fuel-crossfeed GT 8
+            </test>
+        </switch>
+
+    </channel>
+
+    <channel name="Tank selector logic for right engine">
+
+        <!-- Tank 3 level maintenance -->
+        <!-- Collector Tank 3 works like a constant-level carburetor for right engine -->
+
+        <!-- When fuel selector at NORM,        feed collector tank 3 from tank[0] -->
+        <!-- When fuel selector at BOTH ON AFT, feed collector tank 3 from tank[1] -->
+        <!-- When fuel selector at BOTH ON FWD, feed collector tank 3 from tank[0] -->
+        <switch name="fuel/tank3-flow-rate">
+            <default value="0"/>
+            <!-- When fuel selector NORM, feed collector tank 3 from tank[0] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ 0                      <!-- Fuel selector at NORM -->
+                propulsion/tank[0]/contents-lbs GT 0                   <!-- Tank[0] not empty -->
+                /consumables/fuel/tank[3]/level-lbs LT 0.1
+                /consumables/fuel/tank[0]/boost-pump-main-fwd-psi GT 5 <!-- Tank[0] boost pump pressure higher than 5 psi -->
+            </test>
+            <!-- When fuel selector at BOTH ON AFT, feed collector tank 3 from tank[1] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ -1                     <!-- Fuel selector at BOTH ON AFT -->
+                /systems/electrical/outputs/fuel-crossfeed GT 8        <!-- Crossfeed valve needs electrical power -->
+                propulsion/tank[1]/contents-lbs GT 0                   <!-- Tank[1] not empty -->
+                /consumables/fuel/tank[3]/level-lbs LT 0.1
+                /consumables/fuel/tank[1]/boost-pump-main-aft-psi GT 5 <!-- Tank[1] boost pump pressure higher than 5 psi -->
+            </test>
+            <!-- When fuel selector at BOTH ON FWD, feed collector tank 3 from tank[0] -->
+            <test logic="AND" value="0.5">
+                /controls/fuel/tank-selector EQ 1                      <!-- Fuel selector at BOTH ON FWD -->
+                /systems/electrical/outputs/fuel-crossfeed GT 8        <!-- Crossfeed valve needs electrical power -->
+                propulsion/tank[0]/contents-lbs GT 0                   <!-- Tank [0] not empty -->
+                /consumables/fuel/tank[3]/level-lbs LT 0.1
+                /consumables/fuel/tank[0]/boost-pump-main-fwd-psi GT 5 <!-- Tank [0] boost pump pressure higher than 5 psi -->
+            </test>
+            <output>propulsion/tank[3]/external-flow-rate-pps</output> <!-- Tank 3 filling -->
+        </switch>
+
+        <!-- When fuel selector at NORM or BOTH ON FWD, feed collector tank 3 from main tank 0 -->
+        <switch name="fuel/from-tank0-to-tank3">
+            <default value="0"/>
+            <test logic="OR" value="-fuel/tank3-flow-rate">
+                /controls/fuel/tank-selector EQ 0
+                /controls/fuel/tank-selector EQ 1
+            </test>
+        </switch>      
+
+        <!-- When fuel selector at BOTH ON AFT and electrical power available, feed collector tank 3 from main tank 1 -->           
+        <switch name="fuel/from-tank1-to-tank3">
+            <default value="0"/>
+            <test logic="AND" value="-fuel/tank3-flow-rate">
+                /controls/fuel/tank-selector EQ -1
+                /systems/electrical/outputs/fuel-crossfeed GT 8
+            </test>
+        </switch>
+
+    </channel>
+
+    <!-- Total flow rate per tank -->
+    <channel name="Total flow rates">
+
+        <!-- When fuel selector at BOTH ON FWD and electrical power available, calculate fuel flow for engine 0 from tank 0 -->
+        <switch name="fuel/engine0-from-tank0">
+            <default value="0"/>
+            <test logic="AND" value="-propulsion/engine[0]/fuel-consumption-pps">
+                /controls/fuel/tank-selector EQ 1
+                /systems/electrical/outputs/fuel-crossfeed GT 8
+            </test>
+        </switch>
+
+        <!-- When fuel selector at NORM or BOTH ON AFT, calculate fuel flow for engine 0 from tank 1 -->
+        <switch name="fuel/engine0-from-tank1">
+            <default value="0"/>
+            <test logic="OR" value="-propulsion/engine[0]/fuel-consumption-pps">
+                /controls/fuel/tank-selector EQ 0
+                /controls/fuel/tank-selector EQ -1
+            </test>
+        </switch>
+
+        <!-- When fuel selector at BOTH ON AFT and electrical power available, calculate fuel flow for engine 1 from tank 1 -->
+        <switch name="fuel/engine1-from-tank1">
+            <default value="0"/>
+            <test logic="AND" value="-propulsion/engine[1]/fuel-consumption-pps">
+                /controls/fuel/tank-selector EQ -1
+                /systems/electrical/outputs/fuel-crossfeed GT 8
+            </test>
+        </switch>
+
+        <!-- When fuel selector at NORM or BOTH ON FWD, calculate fuel flow for engine 1 from tank 0 -->
+        <switch name="fuel/engine1-from-tank0">
+            <default value="0"/>
+            <test logic="OR" value="-propulsion/engine[1]/fuel-consumption-pps">
+                /controls/fuel/tank-selector EQ 0
+                /controls/fuel/tank-selector EQ 1
+            </test>
+        </switch>
+
+        <!-- Sum up fuel flow for tank 0 (FWD) -->
+        <summer name="fuel/tank0-flow-rate">
+            <input>fuel/from-tank0-to-tank2</input>
+            <input>fuel/from-tank0-to-tank3</input>
+            <input>fuel/engine0-from-tank0</input>
+            <input>fuel/engine1-from-tank0</input>
+            <output>propulsion/tank[0]/external-flow-rate-pps</output>
+        </summer>
+
+        <!-- Sum up fuel flow for tank 1 (AFT) -->
+        <summer name="fuel/tank1-flow-rate">
+            <input>fuel/from-tank1-to-tank2</input>
+            <input>fuel/from-tank1-to-tank3</input>
+            <input>fuel/engine0-from-tank1</input>
+            <input>fuel/engine1-from-tank1</input>
+            <output>propulsion/tank[1]/external-flow-rate-pps</output>
+        </summer>
+
+    </channel>
+
+</system>

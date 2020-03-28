@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>After engines start</name>
+
+    <description>Now we have started the engines, but there are still some things left to do, before we can fly this wonderful aircraft. After this tutorial we are ready to taxi!</description>
+
+    <init>
+        <set>
+            <property>/sim/current-view/view-number</property>
+            <value>0</value>
+        </set>
+    </init>
+
+    <step>
+        <message>Let's go through the after engine start checks, and after that, we can fly away</message>
+        <wait>5</wait>
+    </step>
+
+    <step>
+        <message>Select the power source to battery</message>
+        <view>
+            <heading-offset-deg>329</heading-offset-deg>
+            <pitch-offset-deg>20</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>40</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.5636</x-m>
+            <y-m>-0.2132</y-m>
+            <z-m>0.9190</z-m>
+            <scale>1.9917</scale>
+        </marker>
+        <error>
+            <message>Click RMB on the External/Battery switch to battery as power source</message>
+            <condition>
+                <not-equals>
+                    <property>/controls/electric/power-source</property>
+                    <value>1</value>
+                </not-equals>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <equals>
+                    <property>/controls/electric/power-source</property>
+                    <value>1</value>
+                </equals>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Disable external power</message>
+        <view>
+            <heading-offset-deg>292.1</heading-offset-deg>
+            <pitch-offset-deg>-9.7</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-10.6</x-offset-m>
+            <y-offset-m>-0.0</y-offset-m>
+            <z-offset-m>7.4</z-offset-m>
+            <field-of-view>60.7</field-of-view>
+        </view>
+        <marker>
+            <x-m>5.8802</x-m>
+            <y-m>-5.3000</y-m>
+            <z-m>-1.5083</z-m>
+            <scale>57.0331</scale>
+        </marker>
+        <error>
+            <message>Disable the external power via the menu</message>
+            <condition>
+                    <property>/sim/model/equipment/ground-services/external-power/enable</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/ground-services/external-power/enable</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn the POSN light</message>
+        <view>
+            <heading-offset-deg>242.4</heading-offset-deg>
+            <pitch-offset-deg>32.2</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-0.36</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>30</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.9818</x-m>
+            <y-m>-0.0463</y-m>
+            <z-m>0.9496</z-m>
+            <scale>1.4298</scale>
+        </marker>
+        <error>
+            <message>Now you have to switch on the POSN light</message>
+            <condition>
+                <not>
+                    <property>/controls/lighting/nav-lights</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/lighting/nav-lights</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Turn on both generators</message>
+        <view>
+            <heading-offset-deg>246</heading-offset-deg>
+            <pitch-offset-deg>45.4</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-0.38</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>50</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.0620</x-m>
+            <y-m>-0.1281</y-m>
+            <z-m>0.9479</z-m>
+            <scale>2.4876</scale>
+        </marker>
+        <error>
+            <message>To provide the aircraft with power from the engines, you have to turn on the generators</message>
+            <condition>
+                <or>
+                    <and>
+                        <not>
+                            <property>/controls/electric/engine/generator</property>
+                        </not>
+                        <not>
+                            <property>/controls/electric/engine[1]/generator</property>
+                        </not>
+                    </and>
+                    <or>
+                        <not>
+                            <property>/controls/electric/engine/generator</property>
+                        </not>
+                        <not>
+                            <property>/controls/electric/engine[1]/generator</property>
+                        </not>
+                    </or>
+                </or>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <property>/controls/electric/engine/generator</property>
+                    <property>/controls/electric/engine[1]/generator</property>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Switch the IND selector to R GEN</message>
+        <view>
+            <heading-offset-deg>320</heading-offset-deg>
+            <pitch-offset-deg>-10.79</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>19</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.9223</x-m>
+            <y-m>0.2008</y-m>
+            <z-m>0.5289</z-m>
+            <scale>1.4793</scale>
+        </marker>
+        <error>
+            <message>Click LMB on the IND SELECT switch to get voltage from the engine's generators instead of the battery</message>
+            <condition>
+                <not>
+                    <property>/controls/electric/ammeter-switch</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/electric/ammeter-switch</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Check the engine instruments: All values have to be stable and within their limits</message>
+        <view>
+            <heading-offset-deg>335</heading-offset-deg>
+            <pitch-offset-deg>-24.12</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>43</field-of-view>
+        </view>
+        <wait>15</wait>
+    </step>
+
+    <step>
+        <message>Switch on the window heating.</message>
+        <view>
+        <heading-offset-deg>309.7</heading-offset-deg>
+        <pitch-offset-deg>33.3</pitch-offset-deg>
+        <roll-offset-deg>0.0</roll-offset-deg>
+        <x-offset-m>0.0</x-offset-m>
+        <y-offset-m>0.7</y-offset-m>
+        <z-offset-m>-3.4</z-offset-m>
+        <field-of-view>90.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.5793</x-m>
+            <y-m>0.2421</y-m>
+            <z-m>0.8653</z-m>
+            <scale>1.2810</scale>
+        </marker>
+        <error>
+            <message>Under certain circumstances the windows can get frosty or foggy. To prevent this, switch on the heating!</message>
+            <condition>
+                <not>
+                    <property>/controls/anti-ice/window-heat</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/anti-ice/window-heat</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Check warning lights: They all have to be off</message>
+        <view>
+            <heading-offset-deg>330</heading-offset-deg>
+            <pitch-offset-deg>-4.1</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>45</field-of-view>
+        </view>
+        <wait>5</wait>
+    </step>
+
+    <step>
+        <message>Press pause. Then set radios to required frequencies. Also check ATIS, if available. Then resume.</message>
+        <view>
+            <heading-offset-deg>321</heading-offset-deg>
+            <pitch-offset-deg>-18.86</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>30</field-of-view>
+        </view>
+        <wait>5</wait>
+    </step>
+
+    <step>
+        <message>Check ADF Indicator, Heading Indicator, RMI, and Magnetic Compass for same heading indications</message>
+        <view>
+            <heading-offset-deg>341.77</heading-offset-deg>
+            <pitch-offset-deg>-20.09</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>62.5</field-of-view>
+        </view>
+        <wait>10</wait>
+    </step>
+
+    <step>
+        <message>Press pause. Then set altimeter to QNH respectively to the airfield's elevation. Then resume</message>
+        <view>
+            <heading-offset-deg>355.49</heading-offset-deg>
+            <pitch-offset-deg>-25.18</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>25</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.9248</x-m>
+            <y-m>-0.4331</y-m>
+            <z-m>0.3595</z-m>
+            <scale>3.0826</scale>
+        </marker>
+        <wait>5</wait>
+    </step>
+
+    <step>
+        <message>Set the elevator trim for take off (a bit nose up)</message>
+        <view>
+            <heading-offset-deg>320.3</heading-offset-deg>
+            <pitch-offset-deg>-89.7</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.2</x-offset-m>
+            <y-offset-m>0.3</y-offset-m>
+            <z-offset-m>-3.1</z-offset-m>
+            <field-of-view>56.1</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.0810</x-m>
+            <y-m>-0.1926</y-m>
+            <z-m>-0.0157</z-m>
+            <scale>0.4380</scale>
+        </marker>
+        <error>
+            <message>That's too less. Use the "END"-key to adjust the elevator trim more nose up</message>
+            <condition>
+                <greater-than>
+                    <property>/controls/flight/elevator-trim</property>
+                    <value>-0.19</value>
+                </greater-than>
+            </condition>
+        </error>
+        <error>
+            <message>That's too much. Use the "HOME"-key to adjust the elevator trim more nose down</message>
+            <condition>
+                <less-than>
+                    <property>/controls/flight/elevator-trim</property>
+                    <value>-0.21</value>
+                </less-than>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <less-than-equals>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.19</value>
+                    </less-than-equals>
+                    <greater-than-equals>
+                        <property>/controls/flight/elevator-trim</property>
+                        <value>-0.21</value>
+                    </greater-than-equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Set the rudder trim for take off (a bit right)</message>
+        <view>
+            <heading-offset-deg>320.3</heading-offset-deg>
+            <pitch-offset-deg>-89.7</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.2</x-offset-m>
+            <y-offset-m>0.3</y-offset-m>
+            <z-offset-m>-3.1</z-offset-m>
+            <field-of-view>56.1</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.0405</x-m>
+            <y-m>-0.2041</y-m>
+            <z-m>-0.0157</z-m>
+            <scale>0.4380</scale>
+        </marker>
+        <error>
+            <message>That's too less. Use "F8" to adjust the rudder trim more right</message>
+            <condition>
+                <less-than>
+                    <property>/controls/flight/rudder-trim</property>
+                    <value>0.11</value>
+                </less-than>
+            </condition>
+        </error>
+        <error>
+            <message>That's too much. Use "F7" to adjust the rudder trim more left</message>
+            <condition>
+                <greater-than>
+                    <property>/controls/flight/rudder-trim</property>
+                    <value>0.13</value>
+                </greater-than>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <greater-than-equals>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>0.11</value>
+                    </greater-than-equals>
+                    <less-than-equals>
+                        <property>/controls/flight/rudder-trim</property>
+                        <value>0.13</value>
+                    </less-than-equals>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Nailed it! Now you're ready to taxi to the runway, take off, and enjoy your flight! Have fun :) (For additional help, see Help->Checklists!)</message>
+        <view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>85</field-of-view>
+        </view>
+        <wait>10</wait>
+    </step>
+
+    <end>
+    </end>
+
+</PropertyList>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!-- Swiss Federal Office of Topography -->
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Swisstopo R</name>
+            <texture>Liveries/T-741-R.png</texture>
+        </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

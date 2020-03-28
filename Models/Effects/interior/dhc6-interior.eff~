@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+  <name>dhc6-interior</name>
+  <inherits-from>Effects/model-interior</inherits-from>
+  <parameters>
+	<texture n="4">
+	  <type>cubemap</type>
+	  <images>
+		 <positive-x>Aircraft/dhc6/Models/Effects/interior/black_px.png</positive-x>
+		 <negative-x>Aircraft/dhc6/Models/Effects/interior/black_nx.png</negative-x>
+		 <positive-y>Aircraft/dhc6/Models/Effects/interior/black_py.png</positive-y>
+		 <negative-y>Aircraft/dhc6/Models/Effects/interior/black_ny.png</negative-y>
+		 <positive-z>Aircraft/dhc6/Models/Effects/interior/black_pz.png</positive-z>
+		 <negative-z>Aircraft/dhc6/Models/Effects/interior/black_nz.png</negative-z>
+	  </images>
+	</texture>
+	<opacity-cube-center type="vec3d" n="0"> 0.5 0.0 0.3</opacity-cube-center>
+	<opacity-cube-scale type="vec3d" n="0"> 1.5 0.5 0.7</opacity-cube-scale>
+	<opacity-cube-angle type="float">0.0</opacity-cube-angle>
+	<light-filter-one type="vec3d">0.8 0.8 0.8</light-filter-one>
+	<light-filter-two type="vec3d">0.5 0.1 0.0</light-filter-two>
+	<light-radius type="float">15</light-radius>
+	<irradiance-map-type type="int">2</irradiance-map-type>
+	<irradiance-map-strength type="float">0.5</irradiance-map-strength>
+  </parameters>
+</PropertyList>

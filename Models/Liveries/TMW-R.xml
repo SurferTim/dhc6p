@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">Trans Maldivian Airways R</name>
+            <texture>Liveries/TMW-R.png</texture>
+        </livery>
+        <floats>
+		<texture>floats.png</texture>
+        </floats>   
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

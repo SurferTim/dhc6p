@@ -1,0 +1,576 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <name>Preflight inspection</name>
+
+    <description>Before your flight, you have to make sure, that your Twin Otter is in a good condition. You will go around the aircraft and check gears, engines, wings and the tail for any kind of damage.</description>
+
+    <init>
+        <set>
+            <property>/sim/current-view/view-number</property>
+            <value>0</value>
+        </set>
+    </init>
+
+    <step>
+        <message>Welcome onboard of this DHC-6-300 Twin Otter. In this tutorial we'll make sure that our aircraft is in a good condition</message>
+        <wait>8</wait>
+    </step>
+
+    <step>
+        <message>Open the door.</message>
+        <view>
+            <heading-offset-deg>75.9</heading-offset-deg>
+            <pitch-offset-deg>-39.3</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.4</x-offset-m>
+            <y-offset-m>0.7</y-offset-m>
+            <z-offset-m>-3.1</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.1306</x-m>
+            <y-m>-0.8207</y-m>
+            <z-m>0.3066</z-m>
+            <scale>3.0000</scale>
+        </marker>
+        <error>
+            <message>Open the door!</message>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Close the door.</message>
+        <view>
+            <heading-offset-deg>318.2</heading-offset-deg>
+            <pitch-offset-deg>9.7</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-1.7</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>-3.2</z-offset-m>
+            <field-of-view>78.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2496</x-m>
+            <y-m>-1.4628</y-m>
+            <z-m>0.2711</z-m>
+            <scale>3.5124</scale>
+        </marker>
+        <error>
+            <message>Close the door!</message>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Remove the left pitot tube cover.</message>
+        <view>
+            <heading-offset-deg>222.8</heading-offset-deg>
+            <pitch-offset-deg>10.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-1.4</x-offset-m>
+            <y-offset-m>-0.0</y-offset-m>
+            <z-offset-m>-4.8</z-offset-m>
+            <field-of-view>67.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2347</x-m>
+            <y-m>-0.9207</y-m>
+            <z-m>0.1405</z-m>
+            <scale>2.8512</scale>
+        </marker>
+        <error>
+            <message>You have to remove the pitot tube cover; otherwise the Airspeed indicator won't show anything.</message>
+            <condition>
+                <property>/sim/model/equipment/left-pitot-cover</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-pitot-cover</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Left engine: Remove engine cover</message>
+        <view>
+            <heading-offset-deg>220.5</heading-offset-deg>
+            <pitch-offset-deg>15.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-3.8</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>-3.7</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.6000</x-m>
+            <y-m>-2.9182</y-m>
+            <z-m>0.5678</z-m>
+            <scale>6.1901</scale>
+        </marker>
+        <error>
+            <message>With the cover placed, you can't start the engine, so remove it!</message>
+            <condition>
+                <property>/sim/model/equipment/left-engine-cover</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-engine-cover</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Blades ok. No oil leak. Air intake free.</message>
+        <view>
+            <heading-offset-deg>210</heading-offset-deg>
+            <pitch-offset-deg>1</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-5</x-offset-m>
+            <y-offset-m>1</y-offset-m>
+            <z-offset-m>-6</z-offset-m>
+            <field-of-view>60</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Remove the left tiedown.</message>
+        <view>
+            <heading-offset-deg>209.5</heading-offset-deg>
+            <pitch-offset-deg>18.0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-5.5</x-offset-m>
+            <y-offset-m>0.5</y-offset-m>
+            <z-offset-m>-1.8</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.6603</x-m>
+            <y-m>-4.9099</y-m>
+            <z-m>0.9851</z-m>
+            <scale>5.2314</scale>
+        </marker>
+        <error>
+            <message>You have to remove the tiedown, or you can't fly away!</message>
+            <condition>
+                <property>/sim/model/equipment/left-tiedown-wheels</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/left-tiedown-wheels</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Left wing: No dents in leading edge. Wing tip ok. Lamps ok. Hinges for aileron/flaps ok.</message>
+        <view>
+            <heading-offset-deg>260</heading-offset-deg>
+            <pitch-offset-deg>15</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-12</x-offset-m>
+            <y-offset-m>0</y-offset-m>
+            <z-offset-m>-1.2</z-offset-m>
+            <field-of-view>65</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Left landing gear: Remove both wheel chocks.</message>
+        <view>
+            <heading-offset-deg>281.8</heading-offset-deg>
+            <pitch-offset-deg>-17.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-6.1</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>0.9</z-offset-m>
+            <field-of-view>55.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>0.1537</x-m>
+            <y-m>-2.3727</y-m>
+            <z-m>-1.4207</z-m>
+            <scale>33.5620</scale>
+        </marker>
+        <error>
+            <message>Remove the forward chock!</message>
+            <condition>
+                <property>/sim/model/equipment/left-chock-fwd</property>
+            </condition>
+        </error>
+        <error>
+            <message>Remove the rear chock!</message>
+            <condition>
+                <property>/sim/model/equipment/left-chock-aft</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <not>
+                        <property>/sim/model/equipment/left-chock-fwd</property>
+                    </not>
+                    <not>
+                        <property>/sim/model/equipment/left-chock-aft</property>
+                    </not>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Tyre ok. Brakes ok. No leaking hydraulic fluid.</message>
+        <view>
+            <heading-offset-deg>308</heading-offset-deg>
+            <pitch-offset-deg>-18</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-4.2</x-offset-m>
+            <y-offset-m>0</y-offset-m>
+            <z-offset-m>2</z-offset-m>
+            <field-of-view>55</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Tail: Not warped. Hinges ok. Beacon lamp ok. Antenna ok. Trim rudder ok.</message>
+        <view>
+            <heading-offset-deg>325</heading-offset-deg>
+            <pitch-offset-deg>14</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-4</x-offset-m>
+            <y-offset-m>0.75</y-offset-m>
+            <z-offset-m>12.5</z-offset-m>
+            <field-of-view>72</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Remove the rear tiedown.</message>
+        <view>
+            <heading-offset-deg>34.1</heading-offset-deg>
+            <pitch-offset-deg>-5.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>0.7</x-offset-m>
+            <y-offset-m>-0.3</y-offset-m>
+            <z-offset-m>6.5</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>5.5802</x-m>
+            <y-m>0.1190</y-m>
+            <z-m>-0.4248</z-m>
+            <scale>4.4876</scale>
+        </marker>
+        <error>
+            <message>You have to remove the tiedown, or you can't fly away!</message>
+            <condition>
+                <property>/sim/model/equipment/rear-tiedown-wheels</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/rear-tiedown-wheels</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Right landing gear: Remove both wheel chocks.</message>
+        <view>
+            <heading-offset-deg>-281.8</heading-offset-deg>
+            <pitch-offset-deg>-17.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>6.1</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>0.9</z-offset-m>
+            <field-of-view>55.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>0.1537</x-m>
+            <y-m>2.3727</y-m>
+            <z-m>-1.4207</z-m>
+            <scale>33.5620</scale>
+        </marker>
+        <error>
+            <message>Remove the forward chock!</message>
+            <condition>
+                <property>/sim/model/equipment/right-chock-fwd</property>
+            </condition>
+        </error>
+        <error>
+            <message>Remove the rear chock!</message>
+            <condition>
+                <property>/sim/model/equipment/right-chock-aft</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <and>
+                    <not>
+                        <property>/sim/model/equipment/right-chock-fwd</property>
+                    </not>
+                    <not>
+                        <property>/sim/model/equipment/left-chock-aft</property>
+                    </not>
+                </and>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Tyre ok. Brakes ok. No leaking hydraulic fluid.</message>
+        <view>
+            <heading-offset-deg>52</heading-offset-deg>
+            <pitch-offset-deg>-18</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>4.2</x-offset-m>
+            <y-offset-m>0</y-offset-m>
+            <z-offset-m>2</z-offset-m>
+            <field-of-view>55</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Right wing: No dents in leading edge. Wing tip ok. Lamps ok. Hinges for aileron/flaps ok.</message>
+        <view>
+            <heading-offset-deg>100</heading-offset-deg>
+            <pitch-offset-deg>15</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>12</x-offset-m>
+            <y-offset-m>0</y-offset-m>
+            <z-offset-m>-1.2</z-offset-m>
+            <field-of-view>65</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Remove the right tiedown.</message>
+        <view>
+            <heading-offset-deg>-209.5</heading-offset-deg>
+            <pitch-offset-deg>18.0</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>5.5</x-offset-m>
+            <y-offset-m>0.5</y-offset-m>
+            <z-offset-m>-1.8</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-0.6603</x-m>
+            <y-m>4.9099</y-m>
+            <z-m>0.9851</z-m>
+            <scale>5.2314</scale>
+        </marker>
+        <error>
+            <message>You have to remove the tiedown, or you can't fly away!</message>
+            <condition>
+                <property>/sim/model/equipment/right-tiedown-wheels</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-tiedown-wheels</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Right engine: Remove engine cover</message>
+        <view>
+            <heading-offset-deg>139.5</heading-offset-deg>
+            <pitch-offset-deg>5.6</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>4.6</x-offset-m>
+            <y-offset-m>0.6</y-offset-m>
+            <z-offset-m>-4.0</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-2.6768</x-m>
+            <y-m>3.0628</y-m>
+            <z-m>0.6190</z-m>
+            <scale>7.2314</scale>
+        </marker>
+        <error>
+            <message>With the cover placed, you can't start the engine, so remove it!</message>
+            <condition>
+                <property>/sim/model/equipment/right-engine-cover</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-engine-cover</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Blades ok. No oil leak. Air intake free.</message>
+        <view>
+            <heading-offset-deg>150</heading-offset-deg>
+            <pitch-offset-deg>1</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>5</x-offset-m>
+            <y-offset-m>1</y-offset-m>
+            <z-offset-m>-6</z-offset-m>
+            <field-of-view>60</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Remove the right pitot tube cover.</message>
+        <view>
+            <heading-offset-deg>-222.8</heading-offset-deg>
+            <pitch-offset-deg>10.4</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>1.4</x-offset-m>
+            <y-offset-m>-0.0</y-offset-m>
+            <z-offset-m>-4.8</z-offset-m>
+            <field-of-view>67.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.2347</x-m>
+            <y-m>0.9207</y-m>
+            <z-m>0.1405</z-m>
+            <scale>2.8512</scale>
+        </marker>
+        <error>
+            <message>You have to remove the pitot tube cover; otherwise the Airspeed indicator won't show anything.</message>
+            <condition>
+                <property>/sim/model/equipment/right-pitot-cover</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/sim/model/equipment/right-pitot-cover</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Nose wheel: Tyre ok. Taxi lamp ok. Damper ok.</message>
+        <view>
+            <heading-offset-deg>215</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <roll-offset-deg>0</roll-offset-deg>
+            <x-offset-m>-2.5</x-offset-m>
+            <y-offset-m>0</y-offset-m>
+            <z-offset-m>-7.5</z-offset-m>
+            <field-of-view>60</field-of-view>
+        </view>
+    </step>
+
+    <step>
+        <message>Now let's get back into the cockpit. Open the door.</message>
+        <view>
+            <heading-offset-deg>278.5</heading-offset-deg>
+            <pitch-offset-deg>13.8</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-1.7</x-offset-m>
+            <y-offset-m>0.0</y-offset-m>
+            <z-offset-m>-3.2</z-offset-m>
+            <field-of-view>78.8</field-of-view>
+        </view>
+        <marker>
+            <x-m>-3.1901</x-m>
+            <y-m>-0.9281</y-m>
+            <z-m>0.2669</z-m>
+            <scale>3.0000</scale>
+        </marker>
+        <error>
+            <message>Open the door!</message>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>Close the door.</message>
+        <view>
+            <heading-offset-deg>42.4</heading-offset-deg>
+            <pitch-offset-deg>-25.2</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.7</x-offset-m>
+            <y-offset-m>0.6</y-offset-m>
+            <z-offset-m>-3.3</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+        <marker>
+            <x-m>-4.0421</x-m>
+            <y-m>-1.2769</y-m>
+            <z-m>0.3446</z-m>
+            <scale>3.7438</scale>
+        </marker>
+        <error>
+            <message>Close the door!</message>
+            <condition>
+                    <property>/controls/doors/LF-door/open</property>
+            </condition>
+        </error>
+        <exit>
+            <condition>
+                <not>
+                    <property>/controls/doors/LF-door/open</property>
+                </not>
+            </condition>
+        </exit>
+    </step>
+
+    <step>
+        <message>The preflight inspection is finished. Now let's continue with the Pre-startup checklist (the next tutorial).</message>
+        <view>
+            <heading-offset-deg>0</heading-offset-deg>
+            <pitch-offset-deg>-15</pitch-offset-deg>
+            <roll-offset-deg>0.0</roll-offset-deg>
+            <x-offset-m>-0.48</x-offset-m>
+            <y-offset-m>0.72</y-offset-m>
+            <z-offset-m>-3.15</z-offset-m>
+            <field-of-view>85.0</field-of-view>
+        </view>
+    </step>
+
+</PropertyList>

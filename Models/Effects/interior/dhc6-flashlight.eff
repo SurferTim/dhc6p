@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PropertyList>
+  <name>dhc6-flashlight</name>
+  <inherits-from>Effects/model-interior</inherits-from>
+  <parameters>
+	<light-filter-one type="vec3d">0.8 0.8 0.8</light-filter-one>
+	<light-filter-two type="vec3d">0.5 0.1 0.0</light-filter-two>
+	<light-radius type="float">15</light-radius>
+  </parameters>
+</PropertyList>

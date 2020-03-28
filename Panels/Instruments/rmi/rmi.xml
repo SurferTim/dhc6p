@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 2D Radio Magnetic Indicator (RMI) for the DHC-6 Twin Otter
+
+Copyright (c) 2015 Jonathan Schellhase (DG-505) -->
+
+<PropertyList>
+
+    <name>RMI</name>
+    <w-base>512</w-base>
+    <h-base>512</h-base>
+
+    <layers>
+
+        <layer>
+            <name>Background</name>
+            <w>455</w>
+            <h>455</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/rmi-background.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1.0</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Fixture</name>
+            <w>512</w>
+            <h>512</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/fixture.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+        </layer>
+
+        <layer>
+            <name>ADF needle</name>
+            <w>37.4</w>
+            <h>306.9</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/needle-adf.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/adf/indicated-bearing-deg</property>
+                    <scale>1</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>BRG1</name>
+            <condition>
+                <property>/controls/armament/station[5]/release-all</property>
+            </condition>
+            <w>23.1</w>
+            <h>302.5</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/needle-brg.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1</scale>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/nav[0]/radials/reciprocal-radial-deg</property>
+                    <scale>1</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>BRG2</name>
+            <condition>
+                <property>/controls/armament/station[6]/release-all</property>
+            </condition>
+            <w>23.1</w>
+            <h>302.5</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/needle-brg.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1</scale>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/nav[1]/radials/reciprocal-radial-deg</property>
+                    <scale>1</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>RMI-bug</name>
+            <w>455</w>
+            <h>455</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/rmi-bug.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>/instrumentation/heading-indicator-real-dg/indicated-heading-deg</property>
+                    <scale>-1</scale>
+                    <offset>0</offset>
+                </transformation>
+                <transformation>
+                    <type>rotation</type>
+                    <property>instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                    <scale>1</scale>
+                    <offset>0</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+        <layer>
+            <name>Plane</name>
+            <w>390</w>
+            <h>390</h>
+            <texture>
+                <path>Aircraft/dhc6p/Panels/Instruments/rmi/plane.png</path>
+                <x1>0.0</x1>
+                <x2>1.0</x2>
+                <y1>0.0</y1>
+                <y2>1.0</y2>
+            </texture>
+            <transformations>
+                <transformation>
+                    <type>y-shift</type>
+                    <offset>10</offset>
+                </transformation>
+            </transformations>
+        </layer>
+
+    </layers>
+
+    <actions>
+
+        <action>
+            <name>increase RMI bug coarse</name>
+            <button>1</button>
+            <x>210</x>
+            <y>-225</y>
+            <w>45</w>
+            <h>80</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>increase RMI bug fine</name>
+            <button>0</button>
+            <x>210</x>
+            <y>-225</y>
+            <w>45</w>
+            <h>80</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease RMI bug fine</name>
+            <button>0</button>
+            <x>165</x>
+            <y>-225</y>
+            <w>45</w>
+            <h>80</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-1</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+        <action>
+            <name>decrease RMI bug coarse</name>
+            <button>1</button>
+            <x>165</x>
+            <y>-225</y>
+            <w>45</w>
+            <h>80</h>
+            <binding>
+                <command>property-adjust</command>
+                <property>/instrumentation/heading-indicator-real-dg/heading-bug-deg</property>
+                <step>-5</step>
+                <min>000</min>
+                <max>359</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+
+    </actions>
+
+</PropertyList>

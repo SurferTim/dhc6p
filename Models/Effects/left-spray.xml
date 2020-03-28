@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <particlesystem>
+        <name>left-float</name>
+        <texture>spray.png</texture>
+        <emissive>false</emissive>
+        <lighting>false</lighting>
+
+        <offsets>
+            <x-m>0</x-m>
+            <y-m>0</y-m>
+            <z-m>0</z-m>
+        </offsets>
+
+        <condition>
+            <and>
+                <not>
+                    <property>gear/gear[2]/ground-is-solid</property>
+                </not>
+                <greater-than>
+                    <property>velocities/airspeed-kt</property>
+                    <value>15</value>
+                </greater-than>
+                <less-than>
+                    <property>position/altitude-agl-ft</property>
+                    <value>8</value>
+                </less-than>
+                <not>
+                    <property>sim/crashed</property>
+                </not>
+            </and>
+        </condition>
+
+        <attach>world</attach>
+
+        <placer>
+            <type>point</type>
+        </placer>
+
+        <shooter>
+            <theta-min-deg>60</theta-min-deg>
+            <theta-max-deg>80</theta-max-deg>
+            <phi-min-deg>-100</phi-min-deg>
+            <phi-max-deg>100</phi-max-deg>
+            <speed-mps>
+                <property>velocities/airspeed-kt</property>
+                <factor>0.5</factor>
+            </speed-mps>
+            <rotation-speed>
+                <x-max-deg-sec>15</x-max-deg-sec>
+                <x-min-deg-sec>-15</x-min-deg-sec>
+                <y-max-deg-sec>15</y-max-deg-sec>
+                <y-min-deg-sec>-15</y-min-deg-sec>
+                <z-max-deg-sec>15</z-max-deg-sec>
+                <z-min-deg-sec>-15</z-min-deg-sec>
+            </rotation-speed>
+        </shooter>
+
+        <counter>
+            <particles-per-sec>
+                <property>velocities/airspeed-kt</property>
+                <factor>5</factor>
+            </particles-per-sec>
+        </counter>
+
+        <align>billboard</align>
+
+        <particle>
+            <start>
+                <color>
+                    <red>
+                        <value>0.95</value>
+                    </red>
+                    <green>
+                        <value>0.95</value>
+                    </green>
+                    <blue>
+                        <value>0.95</value>
+                    </blue>
+                    <alpha>
+                        <value>0.5</value>
+                    </alpha>
+                </color>
+                <size>
+                    <value>0.5</value>
+                </size>
+            </start>
+            <end>
+                <color>
+                    <red>
+                        <value>1</value>
+                    </red>
+                    <green>
+                        <value>1</value>
+                    </green>
+                    <blue>
+                        <value>1</value>
+                    </blue>
+                    <alpha>
+                        <value>0.001</value>
+                    </alpha>
+                </color>
+                <size>
+                    <value>5</value>
+                </size>
+            </end>
+            <life-sec>
+                <value>2</value>
+            </life-sec>
+            <mass-kg>0.1</mass-kg>
+            <radius-m>0.175</radius-m>
+        </particle>
+
+        <program>
+            <fluid>water</fluid>
+            <gravity>true</gravity>
+            <wind>false</wind>
+        </program>
+
+    </particlesystem>
+
+</PropertyList>

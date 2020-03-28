@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- Controls configuration for the DHC-6 Twin Otter -->
+
+<PropertyList>
+
+    <anti-ice>
+        <pitot-heat-pos type="double">0</pitot-heat-pos>
+        <prop-heat-pos type="double">0</prop-heat-pos>
+        <window-heat-pos type="double">0</window-heat-pos>
+    </anti-ice>
+
+    <armament>
+        <station n="5">
+            <release-all-pos type="double">0</release-all-pos>
+        </station>
+        <station n="6">
+            <release-all-pos type="double">0</release-all-pos>
+        </station>
+    </armament>
+
+    <electric>
+        <aft-boost-pump-pos type="double">0</aft-boost-pump-pos>
+        <fwd-boost-pump-pos type="double">0</fwd-boost-pump-pos>
+        <battery-switch type = "bool">0</battery-switch>
+        <battery-switch-pos type = "double">0</battery-switch-pos>
+        <ammeter-switch type="int">0</ammeter-switch>
+        <ammeter-switch-pos type="double">0</ammeter-switch-pos>
+        <avionics-switch type = "bool">0</avionics-switch>
+        <dc-master type="bool">0</dc-master>
+        <bus-tie type="bool">0</bus-tie>
+        <bus-tie-pos type="double">0.0</bus-tie-pos>
+        <dc-master-pos type="double">0</dc-master-pos>
+        <external-power type = "bool">0</external-power>
+        <power-source type = "int">0</power-source>
+        <power-source-pos type = "double">0</power-source-pos>
+        <caution-test type="bool">0</caution-test>
+        <caution-test-pos type="double">0</caution-test-pos>
+        <circuit-breakers>
+            <main>
+                <invr-cont type="bool">true</invr-cont>
+                <va type="bool">true</va>
+                <wing-insp-lt type="bool">true</wing-insp-lt>
+                <c400-fail type="bool">true</c400-fail>
+                <beta-sys type="bool">true</beta-sys>
+                <start-l type="bool">true</start-l>
+                <start-r type="bool">true</start-r>
+                <r-gen-fail type="bool">true</r-gen-fail>
+                <l-gen-fail type="bool">true</l-gen-fail>
+                <ign-l type="bool">true</ign-l>
+                <ign-r type="bool">true</ign-r>
+                <l-t5-temp type="bool">true</l-t5-temp>
+                <r-t5-temp type="bool">true</r-t5-temp>
+                <bleed-air-l type="bool">true</bleed-air-l>
+                <bleed-air-r type="bool">true</bleed-air-r>
+                <ws-wiper type="bool">true</ws-wiper>
+                <int-defl type="bool">true</int-defl>
+                <prop-deice type="bool">true</prop-deice>
+                <over-speed-gov type="bool">true</over-speed-gov>
+                <pitot-htr-l type="bool">true</pitot-htr-l>
+                <pitot-htr-r type="bool">true</pitot-htr-r>
+                <hyd-oil-pump type="bool">true</hyd-oil-pump>
+                <fuel-xfeed type="bool">true</fuel-xfeed>
+                <temp-comp-htr-l type="bool">true</temp-comp-htr-l>
+                <temp-comp-htr-r type="bool">true</temp-comp-htr-r>
+                <prop-auto-feath type="bool">true</prop-auto-feath>
+                <bst-pump-fwd-1 type="bool">true</bst-pump-fwd-1>
+                <bst-pump-fwd-2 type="bool">true</bst-pump-fwd-2>
+                <fuel-sov-l type="bool">true</fuel-sov-l>
+                <fuel-sov-r type="bool">true</fuel-sov-r>
+                <bst-pump-aft-1 type="bool">true</bst-pump-aft-1>
+                <bst-pump-aft-2 type="bool">true</bst-pump-aft-2>
+                <fuel-l-level-aft type="bool">true</fuel-l-level-aft>
+                <fuel-l-level-fwd type="bool">true</fuel-l-level-fwd>
+                <bst-pump-press-l type="bool">true</bst-pump-press-l>
+                <bst-pump-press-r type="bool">true</bst-pump-press-r>
+                <fire-ext-l type="bool">true</fire-ext-l>
+                <fire-ext-r type="bool">true</fire-ext-r>
+                <oil-temp-l type="bool">true</oil-temp-l>
+                <oil-temp-r type="bool">true</oil-temp-r>
+                <fire-det-l type="bool">true</fire-det-l>
+                <fire-det-r type="bool">true</fire-det-r>
+                <oil-low-press-l type="bool">true</oil-low-press-l>
+                <oil-low-press-r type="bool">true</oil-low-press-r>
+                <stall-warn type="bool">true</stall-warn>
+                <fire-det-fault-ind-l type="bool">true</fire-det-fault-ind-l>
+                <fire-det-fault-ind-r type="bool">true</fire-det-fault-ind-r>
+                <posn-lt type="bool">true</posn-lt>
+                <caut-lt-dim type="bool">true</caut-lt-dim>
+                <anti-coll-lt type="bool">true</anti-coll-lt>
+                <flt-comp-lt type="bool">true</flt-comp-lt>
+                <pilot-eng-cons-trim-pnl-lt type="bool">true</pilot-eng-cons-trim-pnl-lt>
+                <copilot-rad-va-pnl-lt type="bool">true</copilot-rad-va-pnl-lt>
+                <cabin-ht-vent type="bool">true</cabin-ht-vent>
+                <ldg-lt-l type="bool">true</ldg-lt-l>
+                <ldg-lt-r type="bool">true</ldg-lt-r>
+                <ail-trim-ind type="bool">true</ail-trim-ind>
+                <ail-trim-act type="bool">true</ail-trim-act>
+
+                <invr-cont-pos type="double">1</invr-cont-pos>
+                <va-pos type="double">1</va-pos>
+                <wing-insp-lt-pos type="double">1</wing-insp-lt-pos>
+                <c400-fail-pos type="double">1</c400-fail-pos>
+                <beta-sys-pos type="double">1</beta-sys-pos>
+                <start-l-pos type="double">1</start-l-pos>
+                <start-r-pos type="double">1</start-r-pos>
+                <r-gen-fail-pos type="double">1</r-gen-fail-pos>
+                <l-gen-fail-pos type="double">1</l-gen-fail-pos>
+                <ign-l-pos type="double">1</ign-l-pos>
+                <ign-r-pos type="double">1</ign-r-pos>
+                <l-t5-temp-pos type="double">1</l-t5-temp-pos>
+                <r-t5-temp-pos type="double">1</r-t5-temp-pos>
+                <bleed-air-l-pos type="double">1</bleed-air-l-pos>
+                <bleed-air-r-pos type="double">1</bleed-air-r-pos>
+                <ws-wiper-pos type="double">1</ws-wiper-pos>
+                <int-defl-pos type="double">1</int-defl-pos>
+                <prop-deice-pos type="double">1</prop-deice-pos>
+                <over-speed-gov-pos type="double">1</over-speed-gov-pos>
+                <pitot-htr-l-pos type="double">1</pitot-htr-l-pos>
+                <pitot-htr-r-pos type="double">1</pitot-htr-r-pos>
+                <hyd-oil-pump-pos type="double">1</hyd-oil-pump-pos>
+                <fuel-xfeed-pos type="double">1</fuel-xfeed-pos>
+                <temp-comp-htr-l-pos type="double">1</temp-comp-htr-l-pos>
+                <temp-comp-htr-r-pos type="double">1</temp-comp-htr-r-pos>
+                <prop-auto-feath-pos type="double">1</prop-auto-feath-pos>
+                <bst-pump-fwd-1-pos type="double">1</bst-pump-fwd-1-pos>
+                <bst-pump-fwd-2-pos type="double">1</bst-pump-fwd-2-pos>
+                <fuel-sov-l-pos type="double">1</fuel-sov-l-pos>
+                <fuel-sov-r-pos type="double">1</fuel-sov-r-pos>
+                <bst-pump-aft-1-pos type="double">1</bst-pump-aft-1-pos>
+                <bst-pump-aft-2-pos type="double">1</bst-pump-aft-2-pos>
+                <fuel-l-level-aft-pos type="double">1</fuel-l-level-aft-pos>
+                <fuel-l-level-fwd-pos type="double">1</fuel-l-level-fwd-pos>
+                <bst-pump-press-l-pos type="double">1</bst-pump-press-l-pos>
+                <bst-pump-press-r-pos type="double">1</bst-pump-press-r-pos>
+                <fire-ext-l-pos type="double">1</fire-ext-l-pos>
+                <fire-ext-r-pos type="double">1</fire-ext-r-pos>
+                <oil-temp-l-pos type="double">1</oil-temp-l-pos>
+                <oil-temp-r-pos type="double">1</oil-temp-r-pos>
+                <fire-det-l-pos type="double">1</fire-det-l-pos>
+                <fire-det-r-pos type="double">1</fire-det-r-pos>
+                <oil-low-press-l-pos type="double">1</oil-low-press-l-pos>
+                <oil-low-press-r-pos type="double">1</oil-low-press-r-pos>
+                <stall-warn-pos type="double">1</stall-warn-pos>
+                <fire-det-fault-ind-l-pos type="double">1</fire-det-fault-ind-l-pos>
+                <fire-det-fault-ind-r-pos type="double">1</fire-det-fault-ind-r-pos>
+                <posn-lt-pos type="double">1</posn-lt-pos>
+                <caut-lt-dim-pos type="double">1</caut-lt-dim-pos>
+                <anti-coll-lt-pos type="double">1</anti-coll-lt-pos>
+                <flt-comp-lt-pos type="double">1</flt-comp-lt-pos>
+                <pilot-eng-cons-trim-pnl-lt-pos type="double">1</pilot-eng-cons-trim-pnl-lt-pos>
+                <copilot-rad-va-pnl-lt-pos type="double">1</copilot-rad-va-pnl-lt-pos>
+                <cabin-ht-vent-pos type="double">1</cabin-ht-vent-pos>
+                <ldg-lt-l-pos type="double">1</ldg-lt-l-pos>
+                <ldg-lt-r-pos type="double">1</ldg-lt-r-pos>
+                <ail-trim-ind-pos type="double">1</ail-trim-ind-pos>
+                <ail-trim-act-pos type="double">1</ail-trim-act-pos>
+            </main>
+            <center>
+                <lh-audio type="bool">true</lh-audio>
+                <lh-com1 type="bool">true</lh-com1>
+                <lh-nav1 type="bool">true</lh-nav1>
+                <lh-adf1 type="bool">true</lh-adf1>
+                <lh-vor1 type="bool">true</lh-vor1>
+                <lh-rmi1 type="bool">true</lh-rmi1>
+                <lh-hsi1 type="bool">true</lh-hsi1>
+                <rh-audio type="bool">true</rh-audio>
+                <rh-com2 type="bool">true</rh-com2>
+                <rh-nav2 type="bool">true</rh-nav2>
+                <rh-adf2 type="bool">true</rh-adf2>
+                <rh-vor2 type="bool">true</rh-vor2>
+                <rh-rmi2 type="bool">true</rh-rmi2>
+                <rh-hsi2 type="bool">true</rh-hsi2>
+                <xpdr type="bool">true</xpdr>
+                <tc1 type="bool">true</tc1>
+                <tc2 type="bool">true</tc2>
+                <dme type="bool">true</dme>
+                <ralt type="bool">true</ralt>
+                <gps type="bool">true</gps>
+                <ap type="bool">true</ap>
+                <unused1 type="bool">true</unused1>
+                <unused2 type="bool">true</unused2>
+                <unused3 type="bool">true</unused3>
+                <unused4 type="bool">true</unused4>
+                <unused5 type="bool">true</unused5>
+                <unused6 type="bool">true</unused6>
+                <unused7 type="bool">true</unused7>
+
+                <lh-audio-pos type="double">1</lh-audio-pos>
+                <lh-com1-pos type="double">1</lh-com1-pos>
+                <lh-nav1-pos type="double">1</lh-nav1-pos>
+                <lh-adf1-pos type="double">1</lh-adf1-pos>
+                <lh-vor1-pos type="double">1</lh-vor1-pos>
+                <lh-rmi1-pos type="double">1</lh-rmi1-pos>
+                <lh-hsi1-pos type="double">1</lh-hsi1-pos>
+                <rh-audio-pos type="double">1</rh-audio-pos>
+                <rh-com2-pos type="double">1</rh-com2-pos>
+                <rh-nav2-pos type="double">1</rh-nav2-pos>
+                <rh-adf2-pos type="double">1</rh-adf2-pos>
+                <rh-vor2-pos type="double">1</rh-vor2-pos>
+                <rh-rmi2-pos type="double">1</rh-rmi2-pos>
+                <rh-hsi2-pos type="double">1</rh-hsi2-pos>
+                <xpdr-pos type="double">1</xpdr-pos>
+                <tc1-pos type="double">1</tc1-pos>
+                <tc2-pos type="double">1</tc2-pos>
+                <dme-pos type="double">1</dme-pos>
+                <ralt-pos type="double">1</ralt-pos>
+                <gps-pos type="double">1</gps-pos>
+                <ap-pos type="double">1</ap-pos>
+                <unused1-pos type="double">1</unused1-pos>
+                <unused2-pos type="double">1</unused2-pos>
+                <unused3-pos type="double">1</unused3-pos>
+                <unused4-pos type="double">1</unused4-pos>
+                <unused5-pos type="double">1</unused5-pos>
+                <unused6-pos type="double">1</unused6-pos>
+                <unused7-pos type="double">1</unused7-pos>
+            </center>
+            <overhead>
+                <gen-control-l type="bool">true</gen-control-l>
+                <gen-control-r type="bool">true</gen-control-r>
+                <inverter-1 type="bool">true</inverter-1>
+                <inverter-2 type="bool">true</inverter-2>
+                <unused type="bool">true</unused>
+                <ws-heat-l type="bool">true</ws-heat-l>
+                <ws-heat-r type="bool">true</ws-heat-r>
+                <flt-compt-fans type="bool">true</flt-compt-fans>
+                <doors-unlocked type="bool">true</doors-unlocked>
+                <reading type="bool">true</reading>
+                <cabin-lts type="bool">true</cabin-lts>
+                <general type="bool">true</general>
+                <emer-lts type="bool">true</emer-lts>
+                <cabin-vent-fan type="bool">true</cabin-vent-fan>
+                <pneumatic-press type="bool">true</pneumatic-press>
+                <cockpit-fans type="bool">true</cockpit-fans>
+
+                <gen-control-l-pos type="double">1</gen-control-l-pos>
+                <gen-control-r-pos type="double">1</gen-control-r-pos>
+                <inverter-1-pos type="double">1</inverter-1-pos>
+                <inverter-2-pos type="double">1</inverter-2-pos>
+                <unused-pos type="double">1</unused-pos>
+                <ws-heat-l-pos type="double">1</ws-heat-l-pos>
+                <ws-heat-r-pos type="double">1</ws-heat-r-pos>
+                <flt-compt-fans-pos type="double">1</flt-compt-fans-pos>
+                <doors-unlocked-pos type="double">1</doors-unlocked-pos>
+                <reading-pos type="double">1</reading-pos>
+                <cabin-lts-pos type="double">1</cabin-lts-pos>
+                <general-pos type="double">1</general-pos>
+                <emer-lts-pos type="double">1</emer-lts-pos>
+                <cabin-vent-fan-pos type="double">1</cabin-vent-fan-pos>
+                <pneumatic-press-pos type="double">1</pneumatic-press-pos>
+                <cockpit-fans-pos type="double">1</cockpit-fans-pos>
+            </overhead>
+        </circuit-breakers>
+        <engine n="0">
+            <generator type="bool">0</generator>
+            <generator-pos type="double">0</generator-pos>
+            <generator-active type="bool">0</generator-active>
+            <generator-active-pos type="double">0</generator-active-pos>
+            <intake-deflector-extend type="bool">0</intake-deflector-extend>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+        <engine n="1">
+            <generator type="bool">0</generator>
+            <generator-pos type="double">0</generator-pos>
+            <generator-active type="bool">0</generator-active>
+            <generator-active-pos type="double">0</generator-active-pos>
+            <intake-deflector-extend type="bool">0</intake-deflector-extend>
+            <propeller-pitch>0</propeller-pitch>
+        </engine>
+        <inverter type="int">1</inverter>
+        <inverter-pos type="double">0</inverter-pos>
+        <master-avionics type="bool">0</master-avionics>
+        <master-avionics-pos type="double">0</master-avionics-pos>
+        <wipers>
+            <switch-pos type="double">0</switch-pos>
+            <delay-sec-pos type="double">0</delay-sec-pos>
+        </wipers>
+    </electric>
+
+    <lighting>
+        <beacon-pos type="double">0</beacon-pos>
+        <cabin-lights-pos type="double">0</cabin-lights-pos>
+        <coplt-radio-va-pnl-lts type="double">0</coplt-radio-va-pnl-lts>
+        <entrance-lights-pos type="double">0</entrance-lights-pos>
+        <flap-cons-trim-pnl-lts type="double">0</flap-cons-trim-pnl-lts>
+        <flight-comp type="bool">0</flight-comp>
+        <flight-comp-pos type="double">0</flight-comp-pos>
+        <instrument-lights>0</instrument-lights>
+        <instrument-lights-pos type="double">0</instrument-lights-pos>
+        <landing-light-pos n="0" type="double">0</landing-light-pos>
+        <landing-light-pos n="1" type="double">0</landing-light-pos>
+        <nav-lights-pos type="double">0</nav-lights-pos>
+        <no-smoking type="bool">0</no-smoking>
+        <no-smoking-pos type="double">0</no-smoking-pos>
+        <overhead-light type="bool">false</overhead-light>
+        <overhead-light-pos type="double">0</overhead-light-pos>
+        <plt-eng-inst-emer-pnl-lts type="double">0</plt-eng-inst-emer-pnl-lts>
+        <seat-belt type="bool">0</seat-belt>
+        <seat-belt-pos type="double">0</seat-belt-pos>
+        <strobe-pos type="double">0</strobe-pos>
+        <taxi-lights-pos type="double">0</taxi-lights-pos>
+    </lighting>
+
+    <engines>
+        <auto-feather-pos type="double">0</auto-feather-pos>
+        <internal-engine-starter-pos type="double">0</internal-engine-starter-pos>
+        <fire-test type="bool">0</fire-test>
+        <fire-test-pos type="double">0</fire-test-pos>
+        <engine n="0">
+            <condition type="double">0</condition>
+            <cutoff>0</cutoff>
+            <cutoff-pos type="double">0</cutoff-pos>
+            <emerg-cutoff>0</emerg-cutoff>
+            <emerg-cutoff-pos type="double">0</emerg-cutoff-pos>
+            <intake-deflector-extend type="double">0</intake-deflector-extend>
+            <intake-deflector-extend-pos type="double">0</intake-deflector-extend-pos>
+            <mixture>0</mixture>
+            <propeller-pitch>0</propeller-pitch>
+            <throttle-fwd type="double">0</throttle-fwd>
+            <throttle-rvrs type="double">0</throttle-rvrs>
+        </engine>
+        <engine n="1">
+            <condition type="double">0</condition>
+            <cutoff>0</cutoff>
+            <cutoff-pos type="double">0</cutoff-pos>
+            <emerg-cutoff>0</emerg-cutoff>
+            <emerg-cutoff-pos type="double">0</emerg-cutoff-pos>
+            <intake-deflector-extend type="double">0</intake-deflector-extend>
+            <intake-deflector-extend-pos type="double">0</intake-deflector-extend-pos>
+            <mixture>0</mixture>
+            <propeller-pitch>0</propeller-pitch>
+            <throttle-fwd type="double">0</throttle-fwd>
+            <throttle-rvrs type="double">0</throttle-rvrs>  
+        </engine>
+    </engines>
+
+    <throttle-coupled type="bool">1</throttle-coupled>
+    <mixture-coupled type="bool">1</mixture-coupled>
+    <prop-coupled type="bool">1</prop-coupled>
+    <movement-scale>0.025</movement-scale>
+
+    <doors>
+        <LF-door>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </LF-door>
+        <RF-door>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </RF-door>
+        <RR-door>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </RR-door>
+        <LR-door-F>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </LR-door-F>
+        <LR-door-R>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </LR-door-R>
+        <Baggage-door>
+            <open type="bool">0</open>
+            <position-norm type="double">0</position-norm>
+        </Baggage-door>        
+    </doors>
+
+    <flight>
+        <aileron-trim-actuated type="int">0</aileron-trim-actuated>
+        <flaps type="double">0</flaps>
+        <flaplever type="double">0</flaplever>
+        <flaplever-pos type="double">0</flaplever-pos>
+    </flight>
+
+    <fuel>
+        <tank-selector type="int">0</tank-selector>
+        <tank-selector-pos type="double">0</tank-selector-pos>
+        <ind-test type="bool">0</ind-test>
+        <ind-test-pos type="double">0</ind-test-pos>
+    </fuel>
+
+    <gear>
+        <parkingbrake-lever type="bool">1</parkingbrake-lever>
+        <parkingbrake-lever-pos type="double">1</parkingbrake-lever-pos>
+        <tiller type="double">0</tiller>
+        <tiller-enabled type="bool">1</tiller-enabled>
+    </gear>
+
+    <pneumatic>
+        <engine n="0">
+            <bleed type="bool">0</bleed>
+            <bleed-pos type="double">0</bleed-pos>
+        </engine>
+        <engine n="1">
+            <bleed type="bool">0</bleed>
+            <bleed-pos type="double">0</bleed-pos>
+        </engine>
+    </pneumatic>
+
+    <switches>
+        <firebell-switch type="bool">0</firebell-switch>
+        <firebell-switch-pos type="double">0</firebell-switch-pos>
+        <firebell-switch-cover type="bool">0</firebell-switch-cover>
+        <firebell-switch-cover-pos type="double">0</firebell-switch-cover-pos>
+    </switches>
+
+</PropertyList>

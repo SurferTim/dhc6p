@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+    <tutorial include="Preflight inspection.xml"/>
+    <tutorial include="Before engines start.xml"/>
+    <tutorial include="Starting the engines.xml"/>
+    <tutorial include="After engines start.xml"/>
+    <tutorial include="Securing aircraft.xml"/>
+</PropertyList>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!-- Ostfriesische Lufttransport GmbH -->
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+            <name type="string">OLT R</name>
+            <texture>Liveries/OLT-R.png</texture>
+        </livery>
+        <blunt-nose>0</blunt-nose>
+        <display-callsign>0</display-callsign>
+    </model>
+</sim>
+</PropertyList>

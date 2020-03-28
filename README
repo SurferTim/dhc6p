@@ -1,0 +1,13 @@
+The DHC6-300+ mods:
+More powerful engines. PT6A-34 @750shp.
+Autopilot target altitude goes down to 100'.
+More accurate sound.
+Added ADF volume control.
+Fixed thrust reverse.
+Added landing and taxi lights (requires ALS).
+Fixed intake deflectors.
+
+Seaplane:
+Fixed autostart when in water.
+Fixed manual start. Added "Remove tiedowns" selection in Menu -> DHC-6
+

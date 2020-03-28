@@ -1,0 +1,555 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    ##########################################
+    # 
+    # August 2013 create by PAF team
+    # http://equipe-flightgear.forumactif.com
+    # 
+    ##########################################
+-->
+
+<PropertyList>
+
+    <path>gtx320a.ac</path>
+
+    <params>
+        <serviceable>instrumentation/transponder/serviceable</serviceable>
+        <knob-mode>instrumentation/transponder/inputs/knob-mode</knob-mode>
+        <ident-btn>instrumentation/transponder/inputs/ident-btn</ident-btn>
+        <ident-btn-pos>instrumentation/transponder/inputs/ident-btn-pos</ident-btn-pos>
+        <digit0>instrumentation/transponder/inputs/digit[0]</digit0>
+        <digit1>instrumentation/transponder/inputs/digit[1]</digit1>
+        <digit2>instrumentation/transponder/inputs/digit[2]</digit2>
+        <digit3>instrumentation/transponder/inputs/digit[3]</digit3>
+        <dimming>instrumentation/transponder/dimming-norm</dimming>
+    </params>
+
+    <animation>
+        <object-name>KnobMode</object-name>
+        <object-name>Ident</object-name>
+        <object-name>Dial1</object-name>
+        <object-name>Knob1</object-name>
+        <object-name>Dial10</object-name>
+        <object-name>Knob10</object-name>
+        <object-name>Dial100</object-name>
+        <object-name>Knob100</object-name>
+        <object-name>Dial1000</object-name>
+        <object-name>Knob1000</object-name>
+        <object-name>face</object-name>
+        <object-name>face-int</object-name>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>range</type>
+        <min-m>  0 </min-m>
+        <max-m> 45 </max-m>
+    </animation>
+
+    <animation>
+        <type>shader</type>
+        <shader>chrome</shader>
+        <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>vitre</object-name>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Ident</object-name>
+        <object-name>face</object-name>
+        <object-name>face-int</object-name>
+        <object-name>Knob1</object-name>
+        <object-name>Knob10</object-name>
+        <object-name>Knob100</object-name>
+        <object-name>Knob1000</object-name>
+        <object-name>KnobMode</object-name>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>controls/electric/battery-switch-pos</factor-prop>
+        </emission>
+    </animation>
+
+    <animation>
+        <type>material</type>
+        <object-name>Dial1</object-name>
+        <object-name>Dial10</object-name>
+        <object-name>Dial100</object-name>
+        <object-name>Dial1000</object-name>
+        <condition>
+            <less-than>
+                <property>controls/lighting/coplt-radio-va-pnl-lts</property>
+                <value>0.05</value>
+            </less-than>
+        </condition>
+        <emission>
+            <red>0.381924</red>
+            <green>0.30935844</green>
+            <blue>0.161171928</blue>
+            <factor-prop>controls/electric/battery-switch-pos</factor-prop>
+        </emission>
+    </animation>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>
+        <object-name>Dial1</object-name>
+        <object-name>Dial10</object-name>
+        <object-name>Dial100</object-name>
+        <object-name>Dial1000</object-name>
+        <object-name>Ident</object-name>
+        <object-name>Knob1</object-name>
+        <object-name>Knob10</object-name>
+        <object-name>Knob100</object-name>
+        <object-name>Knob1000</object-name>
+        <object-name>KnobMode</object-name>
+        <object-name>face</object-name>
+        <object-name>face-int</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <effect>
+        <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-flashlight</inherits-from>
+        <object-name>Dial1</object-name>
+        <object-name>Dial10</object-name>
+        <object-name>Dial100</object-name>
+        <object-name>Dial1000</object-name>
+        <object-name>Ident</object-name>
+        <object-name>Knob1</object-name>
+        <object-name>Knob10</object-name>
+        <object-name>Knob100</object-name>
+        <object-name>Knob1000</object-name>
+        <object-name>KnobMode</object-name>
+        <object-name>face</object-name>
+        <object-name>face-int</object-name>
+        <!--object-name>vitre</object-name-->
+    </effect>
+
+    <!--effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>vitre</object-name>
+        <condition>
+            <property>sim/rendering/rembrandt/enabled</property>
+        </condition>
+    </effect--> 
+
+    <animation>
+        <type>material</type>
+        <object-name>Dial1</object-name>
+        <object-name>Dial10</object-name>
+        <object-name>Dial100</object-name>
+        <object-name>Dial1000</object-name>
+        <condition>
+        <not>
+            <property>/sim/rendering/rembrandt/enabled</property>
+        </not>
+        </condition>
+        <emission>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
+            <factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
+        </emission>
+    </animation>
+
+    <animation> 
+        <type>rotate</type>
+        <object-name>Dial1</object-name>
+        <property alias="../../params/digit3"/>
+        <factor>-45</factor>
+        <offset-deg>-45</offset-deg>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.06267 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <!-- animation> 
+        <type>rotate</type>
+        <object-name>Knob1000</object-name>
+        <property alias="../../params/digit3"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.0185 </y-m>
+            <z-m>  0.000655 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Knob1000</object-name>
+        <property alias="../../params/digit3"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.06267 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property alias="../../../../params/digit3"/>
+                <factor>1</factor>
+                <min>0</min>
+                <max>8</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-sqwak</tooltip-id>
+                <label>Sqwak: %s</label>
+                <property>instrumentation/transponder/id-code</property>
+                <mapping>nasal</mapping>
+                <script>return sprintf("%04d", arg[0]);</script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation> 
+        <type>rotate</type>
+        <object-name>Dial10</object-name>
+        <property alias="../../params/digit2"/>
+        <factor>-45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.0355 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <!--animation> 
+        <type>rotate</type>
+        <object-name>Knob100</object-name>
+        <property alias="../../params/digit2"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m>  0.0085 </y-m>
+            <z-m>  0.000655 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Knob100</object-name>
+        <property alias="../../params/digit2"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.0355 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-adjust</command>        
+                <property alias="../../../../params/digit2"/>
+                <factor>1</factor>
+                <min>0</min>
+                <max>8</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-sqwak</tooltip-id>
+                <label>Sqwak: %s</label>
+                <property>instrumentation/transponder/id-code</property>
+                <mapping>nasal</mapping>
+                <script>return sprintf("%04d", arg[0]);</script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation> 
+        <type>rotate</type>
+        <object-name>Dial100</object-name>
+        <property alias="../../params/digit1"/>
+        <factor>-45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.0085 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <!--animation> 
+        <type>rotate</type>
+        <object-name>Knob10</object-name>
+        <property alias="../../params/digit1"/>
+        <factor>45</factor>
+        <center>
+        <x-m>  0.01453 </x-m>
+        <y-m> -0.0085 </y-m>
+        <z-m>  0.000655 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Knob10</object-name>
+        <property alias="../../params/digit1"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m> -0.0085 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property alias="../../../../params/digit1"/>
+                <factor>1</factor>
+                <min>0</min>
+                <max>8</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-sqwak</tooltip-id>
+                <label>Sqwak: %s</label>
+                <property>instrumentation/transponder/id-code</property>
+                <mapping>nasal</mapping>
+                <script>return sprintf("%04d", arg[0]);</script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation> 
+        <type>rotate</type>
+        <object-name>Dial1000</object-name>
+        <property alias="../../params/digit0"/>
+        <factor>-45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m>  0.0185 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <!--animation> 
+        <type>rotate</type>
+        <object-name>Knob1</object-name>
+        <property alias="../../params/digit0"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m>  0.0185 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation-->
+
+    <animation>
+        <type>knob</type>
+        <object-name>Knob1</object-name>
+        <property alias="../../params/digit0"/>
+        <factor>45</factor>
+        <center>
+            <x-m>  0.01453 </x-m>
+            <y-m>  0.0185 </y-m>
+            <z-m> -0.004312 </z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-adjust</command>
+                <property alias="../../../../params/digit0"/>
+                <factor>1</factor>
+                <min>0</min>
+                <max>8</max>
+                <wrap>true</wrap>
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-sqwak</tooltip-id>
+                <label>Sqwak: %s</label>
+                <property>instrumentation/transponder/id-code</property>
+                <mapping>nasal</mapping>
+                <script>return sprintf("%04d", arg[0]);</script>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation> 
+        <type>rotate</type>
+        <object-name>KnobMode</object-name>
+        <property alias="../../params/knob-mode"/>
+        <factor>1</factor>
+        <interpolation>
+            <entry><ind>0</ind><dep>  0</dep></entry>
+            <entry><ind>1</ind><dep> 45</dep></entry>
+            <entry><ind>4</ind><dep> 90</dep></entry>
+            <entry><ind>5</ind><dep>135</dep></entry>
+            <entry><ind>2</ind><dep>180</dep></entry>
+        </interpolation>
+        <center>
+            <x-m>  0.01168 </x-m>
+            <y-m>  0.05766 </y-m>
+            <z-m> -0.005701</z-m>
+        </center>
+        <axis> 
+            <x> -1 </x>
+            <y>  0 </y>
+            <z>  0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>pick</type>
+        <visible>true</visible>
+        <object-name>Ident</object-name>
+        <action>
+            <button>0</button>
+            <repeatable>false</repeatable>
+            <binding>
+                <command>property-assign</command>
+                <property alias="../../../../params/ident-btn"/>
+                <value type="bool">true</value>
+            </binding>          
+            <mod-up>
+                <binding>
+                    <command>property-assign</command>
+                    <property alias="../../../../../params/ident-btn"/>
+                    <value type="bool">false</value>
+                </binding>
+            </mod-up>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-ident</tooltip-id>
+                <label>Identify to ATC</label>
+            </binding>
+        </hovered>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>Ident</object-name>
+        <property alias="../../params/ident-btn-pos"/>
+        <factor> 0.0018 </factor>
+        <axis>
+            <x> -1 </x>
+            <y> 0 </y>
+            <z> 0 </z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>knob</type>
+        <object-name>KnobMode</object-name>
+        <visible>true</visible>
+        <drag-scale-px>20</drag-scale-px>
+        <action>
+            <binding>
+                <command>property-cycle</command>
+                <property alias="../../../../params/knob-mode"/>
+                <wrap>0</wrap>
+                <value>0</value> <!-- OFF -->
+                <value>1</value> <!-- SBY -->
+                <value>4</value> <!-- ON  -->
+                <value>5</value> <!-- ALT -->
+                <value>2</value> <!-- TST -->
+            </binding>
+        </action>
+        <hovered>
+            <binding>
+                <command>set-tooltip</command>
+                <tooltip-id>transponder-mode-btn</tooltip-id>
+                <label>Mode: %s</label>
+                <property alias="../../../../params/knob-mode"/>
+                <mapping>nasal</mapping>
+                <script>
+                    var m = arg[0];
+                    if(m == 1) return 'STANDBY';
+                    if(m == 4) return 'ON';
+                    if(m == 5) return 'ALTITUDE';
+                    if(m == 2) return 'TEST';
+                    return 'OFF';
+                </script>
+            </binding>
+        </hovered>
+    </animation>
+
+</PropertyList>

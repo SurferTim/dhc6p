@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+<sim>
+    <model>
+        <livery>
+          <name type="string">Blue2</name>
+          <texture>paint2-R.png</texture>
+        </livery>
+        <floats>
+          <texture>floats.png</texture>
+        </floats>
+        <blunt-nose>1</blunt-nose>
+        <display-callsign>1</display-callsign>
+    </model>
+</sim>
+</PropertyList>
