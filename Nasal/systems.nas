@@ -8,6 +8,13 @@ var E1_pitch = props.globals.initNode("sim/sound/engine[0]",0.0);
 var E2_pitch = props.globals.initNode("sim/sound/engine[1]",0.0);
 var E1_volume = props.globals.initNode("sim/sound/enginevol[0]",0.5);
 var E2_volume = props.globals.initNode("sim/sound/enginevol[1]",0.5);
+
+# SurferTim
+var T1_pitch = props.globals.initNode("sim/sound/turbine[0]",0.0);
+var T2_pitch = props.globals.initNode("sim/sound/turbine[1]",0.0);
+var T1_volume = props.globals.initNode("sim/sound/turbinevol[0]",0.5);
+var T2_volume = props.globals.initNode("sim/sound/turbinevol[1]",0.5);
+
 var stall_volume = props.globals.initNode("sim/sound/stall-warning",0.0);
 var hyd_pump_volume = props.globals.initNode("sim/sound/hyd-pump",0.0);
 var ctn_counter=0;
@@ -614,16 +621,24 @@ var update_eng_sound = func {
     var tst1 = (getprop("instrumentation/engine-instruments/propeller/indicated-rpm") * 0.0004);
     var tst2 = (getprop("instrumentation/engine-instruments/propeller[1]/indicated-rpm") * 0.0004);
 
-    tst1+=getprop("engines/engine[0]/reverse") * 0.25;
-    tst2+=getprop("engines/engine[1]/reverse") * 0.25;
+    tst1+=getprop("engines/engine[0]/reverse") * 0.3;
+    tst2+=getprop("engines/engine[1]/reverse") * 0.3;
+    tsv1+=getprop("engines/engine[0]/reverse") * 0.3;
+    tsv2+=getprop("engines/engine[1]/reverse") * 0.3;
 
     if(tst1 > 1.0) tst1 = 1.0;
     if(tst2 > 1.0) tst2 = 1.0;
+    if(tsv1 > 1.0) tsv1 = 1.0;
+    if(tsv2 > 1.0) tsv2 = 1.0;
 
     E1_pitch.setValue(tst1);
     E2_pitch.setValue(tst2);
     E1_volume.setValue(tsvt1);
     E2_volume.setValue(tsvt2);
+    T1_pitch.setValue(tsv1);
+    T2_pitch.setValue(tsv2);
+    T1_volume.setValue(tsvt1);
+    T2_volume.setValue(tsvt2);
 }
 
 var update_stall_sound = func {
