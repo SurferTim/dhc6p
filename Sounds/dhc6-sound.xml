@@ -852,12 +852,12 @@
             <path>Sounds/squeal2.wav</path>
             <condition>
                 <and>
-                    <property>gear/gear[6]/wow</property>
-                    <property>gear/gear[6]/ground-is-solid</property>
+                    <property>gear/gear[1]/wow</property>
+                    <property>gear/gear[1]/ground-is-solid</property>
                 </and>
             </condition>
             <volume>
-                <property>gear/gear[6]/wow</property>
+                <property>gear/gear[1]/wow</property>
             </volume>
             <volume>
                 <property>sim/sound/cabin</property>
@@ -881,17 +881,18 @@
             <path>Sounds/squeal2.wav</path>
             <condition>
                 <and>
-                    <property>gear/gear[7]/wow</property>
-                    <property>gear/gear[7]/ground-is-solid</property>
+                    <property>gear/gear[2]/wow</property>
+                    <property>gear/gear[2]/ground-is-solid</property>
                 </and>
             </condition>
             <volume>
-                <property>gear/gear[7]/wow</property>
+                <property>gear/gear[2]/wow</property>
             </volume>
             <volume>
                 <property>sim/sound/cabin</property>
             </volume>
             <volume>
+                <!--property>instrumentation/airspeed-indicator/true-speed-kt</property-->
                 <property>velocities/airspeed-kt</property>
                 <factor>0.02</factor>
             </volume>

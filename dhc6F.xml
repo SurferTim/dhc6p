@@ -21,7 +21,7 @@
     O Flaps = 74 kt
 -->
 
-<airplane mass="7500">
+<airplane mass="7500" version="YASIM_VERSION_CURRENT">
 
     <approach speed="78" aoa="6.0" fuel="0.5">
         <control-setting axis="/controls/engines/engine[0]/internal-throttle-fwd" value="0.30"/>
