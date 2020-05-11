@@ -852,6 +852,11 @@
             <path>Sounds/squeal2.wav</path>
             <condition>
                 <and>
+                    <equals>
+                    <property>sim/aircraft</property>
+                    <value type="string">dhc6</value>
+                    </equals>
+
                     <property>gear/gear[1]/wow</property>
                     <property>gear/gear[1]/ground-is-solid</property>
                 </and>
@@ -881,6 +886,11 @@
             <path>Sounds/squeal2.wav</path>
             <condition>
                 <and>
+                    <equals>
+                    <property>sim/aircraft</property>
+                    <value type="string">dhc6</value>
+                    </equals>
+
                     <property>gear/gear[2]/wow</property>
                     <property>gear/gear[2]/ground-is-solid</property>
                 </and>
@@ -892,7 +902,6 @@
                 <property>sim/sound/cabin</property>
             </volume>
             <volume>
-                <!--property>instrumentation/airspeed-indicator/true-speed-kt</property-->
                 <property>velocities/airspeed-kt</property>
                 <factor>0.02</factor>
             </volume>

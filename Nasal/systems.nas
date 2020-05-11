@@ -945,7 +945,7 @@ props.globals.initNode("/instrumentation/radar-altimeter/alarm-alt", 0.0,"DOUBLE
 
 setlistener("/instrumentation/radar-altimeter/indicated-agl-ft", func(test){
      thisalt = test.getValue();
-     targetalt = getprop("/instrumentation/altimeter/decision-height");
+     targetalt = getprop("/instrumentation/altimeter/decision-height") or 0;
      alarm = thisalt - targetalt;
      setprop("/instrumentation/radar-altimeter/alarm-alt",alarm);
 },0,0);
