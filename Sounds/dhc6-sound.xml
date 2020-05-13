@@ -568,7 +568,7 @@
             </condition>
             <volume>
                 <property>sim/sound/turbinevol[0]</property>
-                <factor>0.5</factor>
+                <factor>0.4</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
@@ -760,7 +760,7 @@
             </condition>
             <volume>
                 <property>sim/sound/turbinevol[1]</property>
-                <factor>0.5</factor>
+                <factor>0.4</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
