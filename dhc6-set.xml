@@ -22,7 +22,10 @@
         <author>Syd Adams (Initial model), Christian Thiriot (3D, Textures), Bo Lan (Nasal, FDM, Systems), Jonathan Schellhase (3D, Nasal, Systems, Sound, misc), Tim Dicus (Engine upgrade)</author>
         <flight-model>yasim</flight-model>
         <aero>dhc6p</aero>
+
+<!-- SurferTim -->
         <fuel-fraction>0.6</fuel-fraction>
+
         <previews>
             <preview>
                 <type>exterior</type>
@@ -109,7 +112,7 @@
             <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6-splash5.png</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/dhc6p/Models/DHC6.xml</path>
+            <path>Aircraft/dhc6p/Models/DHC6P.xml</path>
             <blunt-nose type="bool">0</blunt-nose>
             <equipment>
                 <left-tiedown-wheels type="bool">1</left-tiedown-wheels>

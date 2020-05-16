@@ -108,7 +108,7 @@
             <splash-texture>Aircraft/dhc6p/Splash_screens/dhc6S-splash5.png</splash-texture>
         </startup>
         <model>
-            <path>Aircraft/dhc6p/Models/DHC6S.xml</path>
+            <path>Aircraft/dhc6p/Models/DHC6PS.xml</path>
             <blunt-nose type="bool">0</blunt-nose>
             <equipment>
                 <left-tiedown-wheels type="bool">1</left-tiedown-wheels>

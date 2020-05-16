@@ -7,7 +7,10 @@
     <path>/consumables/fuel/tank[0]/level-lbs</path>
     <path>/consumables/fuel/tank[1]/level-lbs</path>
 
-    <path>/controls/anti-ice/window-heat</path>
+    <path>/consumables/fuel/tank[0]/level-norm</path>
+    <path>/consumables/fuel/tank[1]/level-norm</path>
+
+    <!--path>/controls/anti-ice/window-heat</path>
     <path>/controls/anti-ice/window-heat-pos</path>
     <path>/controls/armament/station[5]/release-all</path>
     <path>/controls/armament/station[5]/release-all-pos</path>
@@ -222,7 +225,7 @@
     <path>/controls/electric/circuit-breakers/overhead/emer-lts-pos</path>
     <path>/controls/electric/circuit-breakers/overhead/cabin-vent-fan-pos</path>
     <path>/controls/electric/circuit-breakers/overhead/pneumatic-press-pos</path>
-    <path>/controls/electric/circuit-breakers/overhead/cockpit-fans-pos</path>
+    <path>/controls/electric/circuit-breakers/overhead/cockpit-fans-pos</path-->
 
     <path>/controls/electric/bus-tie</path>
     <path>/controls/electric/bus-tie-pos</path>
@@ -255,8 +258,8 @@
     <path>/instrumentation/dme[0]/switch-min-kts-pos</path>
     <path>/instrumentation/dme[0]/switch-position</path>
     <path>/instrumentation/dme[0]/switch-position-pos</path>
-    <path>/instrumentation/engine-instruments/fuel-qty-aft/indicated-fuelqty-lbs</path>
-    <path>/instrumentation/engine-instruments/fuel-qty-fwd/indicated-fuelqty-lbs</path>
+    <!--path>/instrumentation/engine-instruments/fuel-qty-aft/indicated-fuelqty-lbs</path>
+    <path>/instrumentation/engine-instruments/fuel-qty-fwd/indicated-fuelqty-lbs</path-->
     <path>/instrumentation/heading-indicator-real-dg/heading-bug-deg</path>
     <path>/instrumentation/heading-indicator-real-dg/offsetdeg</path>
     <path>/instrumentation/nav[0]/radials/selected-deg</path>
