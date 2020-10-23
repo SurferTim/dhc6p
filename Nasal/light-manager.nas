@@ -54,9 +54,9 @@ var light_manager = {
 
         # light 1 ########
         # offsets to aircraft center
-        me.light1_xpos = 50.0;
+        me.light1_xpos = 40.0;
         me.light1_ypos =  6.0;
-        me.light1_zpos =  2.0;
+        me.light1_zpos =  0.0;
 
         # color values
         me.light1_r = 0.7;
@@ -64,14 +64,14 @@ var light_manager = {
         me.light1_b = 0.8;
 
         # spot size
-        me.light1_size = 12.0;
-        me.light1_stretch = 4.0;
+        me.light1_size = 10.0;
+        me.light1_stretch = 2.0;
 
         # light 2 ########
         # offsets to aircraft center
-        me.light2_xpos = 50.0;
+        me.light2_xpos = 40.0;
         me.light2_ypos = -6.0;
-        me.light2_zpos =  2.0;
+        me.light2_zpos =  0.0;
 
         # color values
         me.light2_r = 0.7;
@@ -79,23 +79,23 @@ var light_manager = {
         me.light2_b = 0.8;
 
         # spot size
-        me.light2_size = 12.0;
-        me.light2_stretch = 4.0;
+        me.light2_size = 10.0;
+        me.light2_stretch = 2.0;
 
         # light 3 ########
         # offsets to aircraft center
-        me.light3_xpos = 20;
+        me.light3_xpos = 25;
         me.light3_ypos = 0;
         me.light3_zpos = 1.0;
 
         # color values
-        me.light3_r = 0.5;
-        me.light3_g = 0.5;
-        me.light3_b = 0.6;
+        me.light3_r = 0.4;
+        me.light3_g = 0.4;
+        me.light3_b = 0.5;
 
         # spot size
-        me.light3_size = 15.0;
-        me.light3_stretch = 3.0;
+        me.light3_size = 12.0;
+        me.light3_stretch = 1.5;
 
         # light 4 ########
         # offsets to aircraft center
@@ -171,9 +171,9 @@ var light_manager = {
         var nsh = math.sin(noseheading);
         var nch = math.cos(noseheading);
 
-        var alt_agl_t = getprop("/position/altitude-agl-ft");
+        var alt_agl = getprop("/position/gear-agl-ft");
 
-        var alt_agl = alt_agl_t + pitchangle * (alt_agl_t + 24.0) / 12.0;
+#        var alt_agl = alt_agl_t + pitchangle * (alt_agl_t + 24.0) / 12.0;
 
         if(alt_agl < 0.0) {
               alt_agl = 0.0;
@@ -184,13 +184,13 @@ var light_manager = {
 
 # SurferTim
 
-        var lightscale = 12.00;
+        var lightscale = 10.00;
 
-        if(alt_agl < 110) {
+        if(alt_agl < 100) {
             lightscale = alt_agl / 10.00 + 1.00;
         }
 
-        var light_bright = (12 - lightscale) / 12.0;
+        var light_bright = (10 - lightscale) / 10.0;
 
         # light 1 position
 

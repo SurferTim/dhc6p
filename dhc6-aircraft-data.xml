@@ -14,7 +14,7 @@
     <path>/controls/armament/station[6]/release-all</path>
     <path>/controls/armament/station[6]/release-all-pos</path>
 
-    <path>/controls/electric/circuit-breakers/center/lh-audio</path>
+    <!--path>/controls/electric/circuit-breakers/center/lh-audio</path>
     <path>/controls/electric/circuit-breakers/center/lh-com1</path>
     <path>/controls/electric/circuit-breakers/center/lh-nav1</path>
     <path>/controls/electric/circuit-breakers/center/lh-adf1</path>
@@ -222,7 +222,7 @@
     <path>/controls/electric/circuit-breakers/overhead/emer-lts-pos</path>
     <path>/controls/electric/circuit-breakers/overhead/cabin-vent-fan-pos</path>
     <path>/controls/electric/circuit-breakers/overhead/pneumatic-press-pos</path>
-    <path>/controls/electric/circuit-breakers/overhead/cockpit-fans-pos</path>
+    <path>/controls/electric/circuit-breakers/overhead/cockpit-fans-pos</path-->
 
     <path>/controls/electric/bus-tie</path>
     <path>/controls/electric/bus-tie-pos</path>
