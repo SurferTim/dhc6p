@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+Config for Collins CTL-22
+Copyright © 2021 Sascha Reißner <reiszner@novaplan.at>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+
+<PropertyList>
+
+        <new-radio type="bool">true</new-radio>      <!-- if this radio use the new FG-radio -->
+        <new-spacing type="bool">true</new-spacing>  <!-- if this radio use 8.333 kHz spacing -->
+        <power-knob type="int">1</power-knob>        <!-- Collins CTL-22: 0=OFF / 1=ON / 2=SQ-OFF -->
+        <selected type="int">0</selected>
+        <selected-mhz type="int">0</selected-mhz>
+        <selected-khz type="int">0</selected-khz>
+        <selected-trigger type="double">0.0</selected-trigger>
+        <standby type="int">0</standby>
+        <standby-mhz type="int">0</standby-mhz>
+        <standby-khz type="int">0</standby-khz>
+        <standby-trigger type="double">0.0</standby-trigger>
+        <mode type="int">0</mode>                    <!-- 0=preselect / 1=act / 2=test -->
+        <toggle type="int">0</toggle>                <!-- 0=neutral / 1=swap / 2=mem -->
+        <toggle-run type="double">0.0</toggle-run>
+        <mem-mode type="int">0</mem-mode>            <!-- 0=not act / 1=store -->
+        <mem-pos type="int">0</mem-pos>
+        <mem-run type="double">0.0</mem-run>
+        <mem-khz n="0" type="int">0</mem-khz>
+        <mem-mhz n="0" type="int">0</mem-mhz>
+        <mem-khz n="1" type="int">0</mem-khz>
+        <mem-mhz n="1" type="int">0</mem-mhz>
+        <mem-khz n="2" type="int">0</mem-khz>
+        <mem-mhz n="2" type="int">0</mem-mhz>
+        <mem-khz n="3" type="int">0</mem-khz>
+        <mem-mhz n="3" type="int">0</mem-mhz>
+        <mem-khz n="4" type="int">0</mem-khz>
+        <mem-mhz n="4" type="int">0</mem-mhz>
+        <mem-khz n="5" type="int">0</mem-khz>
+        <mem-mhz n="5" type="int">0</mem-mhz>
+
+</PropertyList>

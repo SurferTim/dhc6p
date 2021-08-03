@@ -261,7 +261,7 @@
     <!--path>/instrumentation/engine-instruments/fuel-qty-aft/indicated-fuelqty-lbs</path>
     <path>/instrumentation/engine-instruments/fuel-qty-fwd/indicated-fuelqty-lbs</path-->
     <path>/instrumentation/heading-indicator-real-dg/heading-bug-deg</path>
-    <path>/instrumentation/heading-indicator-real-dg/offsetdeg</path>
+    <path>/instrumentation/heading-indicator-real-dg/offset-deg</path>
     <path>/instrumentation/nav[0]/radials/selected-deg</path>
     <path>/instrumentation/nav[0]/volume</path>
     <path>/instrumentation/nav[1]/radials/selected-deg</path>

@@ -26,17 +26,8 @@ props.globals.initNode("/systems/electrical/buses/AC-26V-volts",0.0,"DOUBLE");
 props.globals.initNode("/systems/electrical/buses/AC-115V-servicable",0,"BOOL");
 props.globals.initNode("/systems/electrical/buses/AC-115V-volts",0.0,"DOUBLE");
 
-#strobe_switch = props.globals.getNode("controls/lighting/strobe", 1);
-#aircraft.light.new("controls/lighting/strobe-state", [0.05, 1.30], strobe_switch);
-#beacon_switch = props.globals.getNode("controls/lighting/beacon", 1);
-#aircraft.light.new("controls/lighting/beacon-state", [1.0, 1.0], beacon_switch);
-
-var navLight = aircraft.light.new("/sim/model/lights/nav-lights", [0], "/controls/lighting/nav-lights");
-var landingLightL = aircraft.light.new("/sim/model/lights/landing-light[0]", [0], "/controls/lighting/landing-light[0]");
-var landingLightR = aircraft.light.new("/sim/model/lights/landing-light[1]", [0], "/controls/lighting/landing-light[1]");
-var taxiLight = aircraft.light.new("/sim/model/lights/taxi-lights", [0], "/controls/lighting/taxi-lights");
-var strobeLight = aircraft.light.new("/sim/model/lights/strobe", [0.08, 2.5], "/controls/lighting/strobe");
-var beaconLight = aircraft.light.new("/sim/model/lights/beacon", [0.08, 0.08, 0.08, 2.5], "/controls/lighting/beacon");
+var strobeLight = aircraft.light.new("controls/lighting/strobe", [0.1, 1.1], "/controls/lighting/strobe-light");
+var beaconLight = aircraft.light.new("controls/lighting/beacon", [0.3, 0.8], "controls/lighting/beacon-light");
 
 # var battery = Battery.new(switch-prop,volts,amps,amp_hours,charge_percent,charge_amps);
 Battery = {
@@ -618,10 +609,10 @@ Left_28V_DC_bus = func(dt) {
 
     # Left landing light
     if (getprop("controls/electric/circuit-breakers/main/ldg-lt-l") and getprop("controls/lighting/landing-light[0]")) {
-        setprop(outPut~"landing-light-left", bus_volts);
+        setprop(outPut~"landing-light[0]", bus_volts);
         load += bus_volts / 5;
     } else {
-        setprop(outPut~"landing-light-left", 0);
+        setprop(outPut~"landing-light[0]", 0);
     }
 
     # Rear tank low fuel level caution light
@@ -731,7 +722,7 @@ Left_28V_DC_bus = func(dt) {
     }
 
     # Position lights
-    if (getprop("controls/electric/circuit-breakers/main/posn-lt") and getprop("sim/model/lights/nav-lights/state")) {
+    if (getprop("controls/electric/circuit-breakers/main/posn-lt") and getprop("controls/lighting/nav-lights")) {
         setprop(outPut~"nav-lights", bus_volts);
         load += bus_volts / 35;
     } else {
@@ -739,19 +730,19 @@ Left_28V_DC_bus = func(dt) {
     }
 
     # Beacon
-    if (getprop("controls/electric/circuit-breakers/main/anti-coll-lt") and getprop("sim/model/lights/beacon/state")) {
-        setprop(outPut~"beacon", bus_volts);
+    if (getprop("controls/electric/circuit-breakers/main/anti-coll-lt") and getprop("controls/lighting/beacon-light")) {
+        setprop(outPut~"beacon-light", bus_volts);
         load += bus_volts / 40;
     } else {
-        setprop(outPut~"beacon", 0);
+        setprop(outPut~"beacon-light", 0);
     }
 
     # Strobe lights
-    if (getprop("controls/electric/circuit-breakers/main/anti-coll-lt") and getprop("sim/model/lights/strobe/state")) {
-        setprop(outPut~"strobe", bus_volts);
+    if (getprop("controls/electric/circuit-breakers/main/anti-coll-lt") and getprop("controls/lighting/strobe-light")) {
+        setprop(outPut~"strobe-light", bus_volts);
         load += bus_volts / 30;
     } else {
-        setprop(outPut~"strobe", 0);
+        setprop(outPut~"strobe-light", 0);
     }
 
     # Windshield wipers
@@ -879,7 +870,7 @@ Right_28V_DC_bus = func(dt) {
     # Wing inspection lights (currently not simulated)
 
     # Taxi light (uses the right landing light circuit breaker)
-    if (getprop("controls/electric/circuit-breakers/main/ldg-lt-r") and getprop("controls/lighting/taxi-lights")) {
+    if (getprop("controls/electric/circuit-breakers/main/ldg-lt-r") and getprop("controls/lighting/taxi-light")) {
         setprop(outPut~"taxi-light", bus_volts);
         load += bus_volts / 10;
     } else {
@@ -914,10 +905,10 @@ Right_28V_DC_bus = func(dt) {
 
     # Right landing light
     if (getprop("controls/electric/circuit-breakers/main/ldg-lt-r") and getprop("controls/lighting/landing-light[1]")) {
-        setprop(outPut~"landing-light-right", bus_volts);
+        setprop(outPut~"landing-light[1]", bus_volts);
         load += bus_volts / 5;
     } else {
-        setprop(outPut~"landing-light-right", 0);
+        setprop(outPut~"landing-light[1]", 0);
     }
 
     # Copilot's instruments, radios and volt/amperemeter lighting

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>Lights.ac</path>
+    <nopreview/>
+
+    <animation>
+        <type>select</type>
+        <object-name>light-volume</object-name>
+        <object-name>red-light-plate</object-name>
+        <object-name>green-light-plate</object-name>
+        <object-name>white-light-plate</object-name>
+        <object-name>blue-light-plate</object-name>
+        <!--object-name>lnd-light-plate</object-name-->
+    </animation>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>lnd-light-plate</object-name>
+    </effect>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>lnd-light-plate</object-name>
+    </animation>
+
+    <animation>
+        <type>alpha-test</type>
+        <alpha-factor>0.01</alpha-factor>
+    </animation>
+
+<!-- default glance -->
+
+    <animation>
+        <type>scale</type>
+        <object-name>lnd-light-plate</object-name>
+        <property>sim/multiplay/generic/float[4]</property>
+        <center>
+            <x-m>-1.020</x-m>
+            <y-m>-3.740</y-m>
+            <z-m> 1.130</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>lnd-light-plate</object-name>
+        <offset-m>4.037933</offset-m>
+        <axis>
+            <x>-1.020</x>
+            <y>-3.740</y>
+            <z> 1.130</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>flash</type>
+        <object-name>lnd-light-plate</object-name>
+        <center>
+            <x-m>0.0</x-m>
+            <y-m>0.0</y-m>
+            <z-m>0.0</z-m>
+        </center>
+        <axis>
+            <x>-1</x>
+            <y>0</y>
+            <z>0</z>
+        </axis>
+        <power>2</power>
+        <factor>2</factor>
+        <offset>0</offset>
+        <two-sides type="bool">false</two-sides>
+        <min>0.5</min>
+        <max>2</max>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>lnd-light-plate</object-name>
+        <min>1</min>
+        <interpolation>
+            <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
+            <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
+            <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>lnd-light-plate</object-name>
+        <condition>
+            <and>
+                <not><property>sim/rendering/shaders/skydome</property></not>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[4]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- procetural glance -->
+
+    <model>
+        <name>landing-light-left-p</name>
+        <path>landing-light-left-p.xml</path>
+        <offsets>
+            <x-m>-1.020</x-m>
+            <y-m>-3.740</y-m>
+            <z-m> 1.130</z-m>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>landing-light-left-p</object-name>
+        <factor>0.005</factor>
+        <min>2.0</min>
+        <max>10.0</max>
+        <center>
+            <x-m>-1.020</x-m>
+            <y-m>-3.740</y-m>
+            <z-m> 1.130</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>landing-light-left-p</object-name>
+        <condition>
+            <and>
+                <property>sim/rendering/shaders/skydome</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[4]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Rembrandt light -->
+
+    <model>
+        <path>landing-light-cone.ac</path>
+        <nopreview/>
+    </model>
+
+    <animation>
+        <type>select</type>
+        <object-name>landing-light-right-cone</object-name>
+        <object-name>taxi-light-cone</object-name>
+    </animation>
+
+    <animation>
+        <type>light</type>
+        <light-type>spot</light-type>
+        <name>landing-light-left-r</name>
+        <object-name>landing-light-left-cone</object-name>
+        <nopreview/>
+        <position>
+            <x>-1.020</x>
+            <y>-3.740</y>
+            <z> 1.130</z>
+        </position>
+        <direction>
+            <x> -27.0 </x>
+            <y>  -3.0 </y>
+            <z>  -3.6 </z>
+        </direction>
+        <ambient>
+            <r> 0.25 </r>
+            <g> 0.25 </g>
+            <b> 0.25 </b>
+            <a> 1.00 </a>
+        </ambient>
+        <diffuse>
+            <r> 0.7 </r>
+            <g> 0.7 </g>
+            <b> 0.6 </b>
+            <a> 1.0 </a>
+        </diffuse>
+        <specular>
+            <r> 0.8 </r>
+            <g> 0.8 </g>
+            <b> 0.8 </b>
+            <a> 1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[4]</property>
+            <factor>1.0</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+        </dim-factor>
+        <attenuation>
+            <c> 1.000 </c>
+            <l> 0.002 </l>
+            <q> 0.00005 </q>
+        </attenuation>
+        <exponent> 40.0 </exponent>
+        <cutoff>   30.0 </cutoff>
+        <near-m>    0.1 </near-m>
+        <far-m>   500.0 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>landing-light-left-r</object-name>
+        <condition>
+            <and>
+                <property>/sim/rendering/rembrandt/enabled</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[4]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Compositor light -->
+
+    <light>
+        <name>landing-light-left-c</name>
+        <type>spot</type>
+        <position>
+            <x-m>-1.020</x-m>
+            <y-m>-3.740</y-m>
+            <z-m> 1.130</z-m>
+        </position>
+        <direction>
+            <x>-0.996194698092</x>
+            <y> 0.00</y>
+            <z>-0.0871557427477</z>
+        </direction>
+        <ambient>
+            <r>1.00</r>
+            <g>0.95</g>
+            <b>0.95</b>
+            <a>0</a>
+        </ambient>
+        <diffuse>
+            <r>1.00</r>
+            <g>0.95</g>
+            <b>0.95</b>
+            <a>0</a>
+        </diffuse>
+        <specular>
+            <r>1.00</r>
+            <g>0.95</g>
+            <b>0.95</b>
+            <a>0</a>
+        </specular>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[4]</property>
+        </dim-factor>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.0225</l>
+            <q>0.000001875</q>
+        </attenuation>
+        <spot-cutoff>30</spot-cutoff>
+        <spot-exponent>40</spot-exponent>
+        <range-m>500</range-m>
+    </light>
+
+    <animation>
+        <type>select</type>
+        <object-name>landing-light-left-c</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/float[4]</property>
+                <value>0.01</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+</PropertyList>

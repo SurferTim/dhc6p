@@ -849,7 +849,7 @@
 
     <model>
         <name>Pilot Comm1</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/radio/ctl22-com1.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VHF-22/ctl22-comm0.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
@@ -860,7 +860,7 @@
 
     <model>
         <name>Pilot Comm2</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/radio/ctl22-com2.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VHF-22/ctl22-comm1.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.194</y-m>
@@ -871,10 +871,21 @@
 
     <model>
         <name>Pilot Nav1</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/radio/ctl32-nav1.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VIR-32/ctl32-nav0.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
+            <z-m>0.367</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Pilot Nav2</name>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VIR-32/ctl32-nav1.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.194</y-m>
             <z-m>0.367</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
@@ -882,22 +893,11 @@
 
     <model>
         <name>Pilot ADF1</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/radio/ctl62.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/ADF-462/ctl62-adf0.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.089</y-m>
             <z-m>0.287</z-m>
-            <pitch-deg>0</pitch-deg>
-        </offsets>
-    </model>
-
-    <model>
-        <name>Pilot Nav2</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/radio/ctl32-nav2.xml</path>
-        <offsets>
-            <x-m>-3.936</x-m>
-            <y-m>0.194</y-m>
-            <z-m>0.367</z-m>
             <pitch-deg>0</pitch-deg>
         </offsets>
     </model>
@@ -2833,7 +2833,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/taxi-lights</property>
+                <property>controls/lighting/taxi-light</property>
             </binding>
             <binding>
                 <command>property-toggle</command>
@@ -2846,7 +2846,7 @@
                 <tooltip-id>taxi light</tooltip-id>
                 <label>Taxi light: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/lighting/taxi-lights</property>
+                <property>controls/lighting/taxi-light</property>
             </binding>
         </hovered>
     </animation>
@@ -3214,7 +3214,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/beacon</property>
+                <property>controls/lighting/beacon-light</property>
             </binding>
             <binding>
                 <command>property-toggle</command>
@@ -3227,7 +3227,7 @@
                 <tooltip-id>beacon</tooltip-id>
                 <label>Beacon: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/lighting/beacon</property>
+                <property>controls/lighting/beacon-light</property>
             </binding>
         </hovered>
     </animation>
@@ -3453,7 +3453,7 @@
             <repeatable>false</repeatable>
             <binding>
                 <command>property-toggle</command>
-                <property>controls/lighting/strobe</property>
+                <property>controls/lighting/strobe-light</property>
             </binding>
             <binding>
                 <command>property-toggle</command>
@@ -3466,7 +3466,7 @@
                 <tooltip-id>strobe</tooltip-id>
                 <label>Strobe: %s</label>
                 <mapping>on-off</mapping>
-                <property>controls/lighting/strobe</property>
+                <property>controls/lighting/strobe-light</property>
             </binding>
         </hovered>
     </animation>
@@ -3636,7 +3636,7 @@
     <animation>
         <type>rotate</type>
         <object-name>taxi.sw</object-name>
-        <property>controls/lighting/taxi-lights-pos</property>
+        <property>controls/lighting/taxi-light-pos</property>
         <factor>35.0</factor>
         <center>
             <x-m>-3.020</x-m>

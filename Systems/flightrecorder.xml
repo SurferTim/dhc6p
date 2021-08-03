@@ -30,12 +30,12 @@
         <!-- Custom properties -->
         <signal>
             <type>float</type>
-            <property type="string">/controls/doors/Baggage.door/open</property>
+            <property type="string">/controls/doors/Baggage-door/open</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>
             <type>float</type>
-            <property type="string">/controls/doors/Baggage.door/position-norm</property>
+            <property type="string">/controls/doors/Baggage-door/position-norm</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>
@@ -330,7 +330,7 @@
         </signal>
         <signal>
             <type>float</type>
-            <property type="string">/controls/lighting/taxi-lights</property>
+            <property type="string">/controls/lighting/taxi-light</property>
             <interpolation>linear</interpolation>
         </signal>
         <signal>

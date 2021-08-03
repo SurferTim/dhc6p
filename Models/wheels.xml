@@ -19,16 +19,8 @@
     </animation>
 
     <model>
-        <name>TaxiLight</name>
-        <path>Aircraft/dhc6p/Models/Lights/TaxiLight-rembrandt.xml</path>
-        <offsets>
-           <x-m>-4.4422</x-m>
-           <y-m>-0.2040</y-m>
-           <z-m>-1.0681</z-m>
-           <roll-deg>0</roll-deg>
-           <pitch-deg>-8</pitch-deg>
-           <heading-deg>0</heading-deg>
-        </offsets>
+        <name>taxi-light</name>
+        <path>Lights/taxi-light.xml</path>
     </model>
 
     <model>
@@ -61,14 +53,6 @@
         </offsets>
     </model>
 
-    <effect>
-       <inherits-from>Effects/model-transparent</inherits-from>
-            <object-name>taxilight.flare</object-name>
-       <condition>
-            <property>sim/rendering/rembrandt/enabled</property>
-      </condition>
-   </effect>
-
    <effect>
         <inherits-from>Aircraft/dhc6p/Models/Effects/skin-reflect</inherits-from>
         <object-name>FrtSki</object-name>
@@ -79,36 +63,10 @@
         <object-name>FrtStrut</object-name>
     </effect>
 
+<!-- not used -->
     <animation>
         <type>select</type>
         <object-name>taxilight.flare</object-name>
-        <condition>
-            <greater-than>
-                <property>sim/multiplay/generic/float[6]</property>
-                <value>9</value>
-            </greater-than>
-        </condition>
-    </animation>
-
-    <animation>
-        <type>flash</type>
-        <object-name>taxilight.flare</object-name>
-        <center>
-          <x-m>-4.4422</x-m>
-          <y-m>-0.2040</y-m>
-          <z-m>-1.0681</z-m>
-        </center>
-        <axis>
-            <x>-1</x>
-            <y>0</y>
-            <z>0</z>
-        </axis>
-        <power>2</power>
-        <factor>2</factor>
-        <offset>0</offset>
-        <two-sides type="bool">false</two-sides>
-        <min>0.5</min>
-        <max>2</max>
     </animation>
 
     <!-- FRONT GEAR -->
@@ -118,8 +76,8 @@
         <object-name>FrtWheel</object-name>
         <object-name>FrtSki</object-name>
         <object-name>frt.d1</object-name>
-        <object-name>taxilight.flare</object-name>
-        <object-name>Cone</object-name>
+        <object-name>frt.d2</object-name>
+        <object-name>taxi-light</object-name>
         <property>gear/gear[0]/compression-m</property>
         <factor>1.0</factor>
         <axis>
@@ -170,9 +128,7 @@
         <object-name>frt.d1</object-name>
         <object-name>frt.d2</object-name>
         <object-name>FrtSki</object-name>
-        <object-name>taxilight.flare</object-name>
-        <object-name>Cone</object-name>
-        <object-name>TaxiLight</object-name>
+        <object-name>taxi-light</object-name>
         <property>controls/gear/tiller</property>
         <factor>30.0</factor>
         <center>

@@ -110,7 +110,7 @@ setlistener("/controls/electric/inverter", func(v) {
     interpolate("/controls/electric/inverter-pos", v.getValue()-1, 0.1);
 });
 
-setlistener("/controls/lighting/strobe", func(v) {
+setlistener("/controls/lighting/strobe-light", func(v) {
     if(v.getValue()){
         interpolate("/controls/lighting/strobe-pos", 1, 0.1);
     }else{
@@ -134,7 +134,7 @@ setlistener("/controls/lighting/seat-belt", func(v) {
     interpolate("/controls/lighting/seat-belt-pos", v.getValue(), 0.1);
 });
 
-setlistener("/controls/lighting/beacon", func(v) {
+setlistener("/controls/lighting/beacon-light", func(v) {
     if(v.getValue()){
         interpolate("/controls/lighting/beacon-pos", 1, 0.1);
     }else{
@@ -182,11 +182,11 @@ setlistener("/controls/electric/caution-test", func(v) {
     }
 });
 
-setlistener("/controls/lighting/taxi-lights", func(v) {
+setlistener("/controls/lighting/taxi-light", func(v) {
     if(v.getValue()){
-        interpolate("/controls/lighting/taxi-lights-pos", 1, 0.1);
+        interpolate("/controls/lighting/taxi-light-pos", 1, 0.1);
     }else{
-        interpolate("/controls/lighting/taxi-lights-pos", 0, 0.1);
+        interpolate("/controls/lighting/taxi-light-pos", 0, 0.1);
     }
 });
 

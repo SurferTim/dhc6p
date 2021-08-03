@@ -124,8 +124,8 @@
         <control-input axis="/controls/doors/LR-door-R/open" control="FLAP0"/>
         <control-output control="FLAP0" prop="/controls/doors/LR-door-R/position-norm"/>
         <control-speed control="FLAP0" transition-time="2"/>
-        <control-input axis="/controls/doors/Baggage.door/open" control="FLAP1"/>
-        <control-output control="FLAP1" prop="/controls/doors/Baggage.door/position-norm"/>
+        <control-input axis="/controls/doors/Baggage-door/open" control="FLAP1"/>
+        <control-output control="FLAP1" prop="/controls/doors/Baggage-door/position-norm"/>
         <control-speed control="FLAP1" transition-time="2"/>
     </vstab>
 

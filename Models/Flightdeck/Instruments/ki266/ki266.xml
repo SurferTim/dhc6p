@@ -120,38 +120,6 @@
         <object-name>Right.100</object-name>
         <object-name>Right.10</object-name>
         <object-name>Right.1</object-name>
-        <condition>
-            <less-than>
-                <property>systems/electrical/outputs/coplt-radio-va-pnl-lts</property>
-                <value>0.05</value>
-            </less-than>
-        </condition>
-        <ambient>
-            <red>0.0</red>
-            <green>0.0</green>
-            <blue>0.0</blue>
-        </ambient>
-        <diffuse>
-            <red>0.0</red>
-            <green>0.0</green>
-            <blue>0.0</blue>
-        </diffuse>
-        <emission>
-            <red>0.0</red>
-            <green>0.0</green>
-            <blue>0.0</blue>
-        </emission>
-    </animation>
-
-    <animation>
-        <type>material</type>
-        <object-name>Left.100</object-name>
-        <object-name>Left.10</object-name>
-        <object-name>Left.Dot1</object-name>
-        <object-name>Left.1</object-name>
-        <object-name>Right.100</object-name>
-        <object-name>Right.10</object-name>
-        <object-name>Right.1</object-name>
         <object-name>Miles</object-name>
         <object-name>Min</object-name>
         <object-name>Kts</object-name>

@@ -65,7 +65,7 @@ var light_manager = {
 
         # spot size
         me.light1_size = 10.0;
-        me.light1_stretch = 2.0;
+        me.light1_stretch = 3.0;
 
         # light 2 ########
         # offsets to aircraft center
@@ -80,7 +80,7 @@ var light_manager = {
 
         # spot size
         me.light2_size = 10.0;
-        me.light2_stretch = 2.0;
+        me.light2_stretch = 3.0;
 
         # light 3 ########
         # offsets to aircraft center
@@ -94,7 +94,7 @@ var light_manager = {
         me.light3_b = 0.5;
 
         # spot size
-        me.light3_size = 12.0;
+        me.light3_size = 15.0;
         me.light3_stretch = 1.5;
 
         # light 4 ########
@@ -126,7 +126,7 @@ var light_manager = {
         me.light5_size = 20.0;
 
         me.light_manager_timer = maketimer(0.0, func{me.update()});
-        
+
         me.start();
     },
 
@@ -176,9 +176,9 @@ var light_manager = {
 #        var alt_agl = alt_agl_t + pitchangle * (alt_agl_t + 24.0) / 12.0;
 
         if(alt_agl < 0.0) {
-              alt_agl = 0.0;
+            alt_agl = 0.0;
         }
-     
+
         var proj_x = alt_agl;
         var proj_z = alt_agl/10.0;
 
@@ -192,10 +192,7 @@ var light_manager = {
 
         var light_bright = (10 - lightscale) / 10.0;
 
-        # light 1 position
-
-    if(getprop("controls/lighting/landing-light")) {
-
+# light 1 position
         var new1_xpos = me.light1_xpos * lightscale;
         var new1_ypos = me.light1_ypos * lightscale;
         var new1_size = me.light1_size * lightscale;
@@ -213,14 +210,11 @@ var light_manager = {
         setprop("/sim/rendering/als-secondary-lights/lightspot/dir", heading);
         setprop("/sim/rendering/als-secondary-lights/lightspot/size", new1_size);
 
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r", me.light1_r * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g", me.light1_g * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b", me.light1_b * light_bright);
-    }
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r", me.light1_r * light_bright * getprop("sim/multiplay/generic/float[4]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g", me.light1_g * light_bright * getprop("sim/multiplay/generic/float[4]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b", me.light1_b * light_bright * getprop("sim/multiplay/generic/float[4]"));
 
-        # light 2 position
-    if(getprop("controls/lighting/landing-light[1]")) {
-
+# light 2 position
         var new2_xpos = me.light2_xpos * lightscale;
         var new2_ypos = me.light2_ypos * lightscale;
         var new2_size = me.light2_size * lightscale;
@@ -238,14 +232,11 @@ var light_manager = {
         setprop("/sim/rendering/als-secondary-lights/lightspot/dir[1]", heading);
         setprop("/sim/rendering/als-secondary-lights/lightspot/size[1]", new2_size);
 
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r[1]", me.light2_r * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g[1]", me.light2_g * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b[1]", me.light2_b * light_bright);
-    }
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r[1]", me.light2_r * light_bright * getprop("sim/multiplay/generic/float[5]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g[1]", me.light2_g * light_bright * getprop("sim/multiplay/generic/float[5]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b[1]", me.light2_b * light_bright * getprop("sim/multiplay/generic/float[5]"));
 
-        # light 3 position
-    if(getprop("controls/lighting/taxi-lights")) {
-
+# light 3 position
         var new3_xpos = me.light3_xpos * lightscale;
         var new3_ypos = me.light3_ypos * lightscale;
         var new3_size = me.light3_size * lightscale;
@@ -264,35 +255,34 @@ var light_manager = {
         setprop("/sim/rendering/als-secondary-lights/lightspot/dir[2]", heading);
         setprop("/sim/rendering/als-secondary-lights/lightspot/size[2]", new3_size);
 
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r[2]", me.light3_r * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g[2]", me.light3_g * light_bright);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b[2]", me.light3_b * light_bright);
-    }
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r[2]", me.light3_r * light_bright * getprop("sim/multiplay/generic/float[6]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g[2]", me.light3_g * light_bright * getprop("sim/multiplay/generic/float[6]"));
+        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b[2]", me.light3_b * light_bright * getprop("sim/multiplay/generic/float[6]"));
 
-    },   
-
-    switch_position: func(light, lightr, lightg, lightb) {
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r["~light~"]", lightr);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g["~light~"]", lightg);
-        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b["~light~"]", lightb);
     },
 
-    enable_or_disable: func (enable, light_num) {
-        if (enable) {
-            if (light_num == 0)
-                me.switch_position(light_num, me.light1_r, me.light1_g, me.light1_b);
-            if (light_num == 1)
-                me.switch_position(light_num, me.light2_r, me.light2_g, me.light2_b);
-            if (light_num == 2)
-                me.switch_position(light_num, me.light3_r, me.light3_g, me.light3_b);
-            if (light_num == 3)
-                me.switch_position(light_num, me.light4_r, me.light4_g, me.light4_b);
-            if (light_num == 4)
-                me.switch_position(light_num, me.light5_r, me.light5_g, me.light5_b);
-        } else {
-            me.switch_position(light_num, 0.0, 0.0, 0.0);
-        }
-    },
+#    switch_position: func(light, lightr, lightg, lightb) {
+#        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-r["~light~"]", lightr);
+#        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-g["~light~"]", lightg);
+#        setprop("/sim/rendering/als-secondary-lights/lightspot/lightspot-b["~light~"]", lightb);
+#    },
+
+#    enable_or_disable: func (enable, light_num) {
+#        if (enable) {
+#            if (light_num == 0)
+#                me.switch_position(light_num, me.light1_r, me.light1_g, me.light1_b);
+#            if (light_num == 1)
+#                me.switch_position(light_num, me.light2_r, me.light2_g, me.light2_b);
+#            if (light_num == 2)
+#                me.switch_position(light_num, me.light3_r, me.light3_g, me.light3_b);
+#            if (light_num == 3)
+#                me.switch_position(light_num, me.light4_r, me.light4_g, me.light4_b);
+#            if (light_num == 4)
+#                me.switch_position(light_num, me.light5_r, me.light5_g, me.light5_b);
+#        } else {
+#            me.switch_position(light_num, 0.0, 0.0, 0.0);
+#        }
+#    },
 
 };
 
@@ -300,53 +290,27 @@ setlistener("/sim/signals/fdm-initialized", func {
 
     light_manager.init();
 
-#    setlistener("/sim/rendering/als-secondary-lights/use-landing-light-ext", func (node) {
-#        light_manager.enable_or_disable(node.getValue(), 0);
-#    }, 1, 0);
-
-#	light_manager.enable_or_disable(1,0);
-
-#    setlistener("/sim/rendering/als-secondary-lights/use-taxi-light-ext", func (node) {
-#        light_manager.enable_or_disable(node.getValue(), 1);
-#    }, 1, 0);
-
-
 # SurferTim added
-setlistener("/controls/lighting/landing-light", func(bp){
-    if(bp.getBoolValue()){
-	setprop("/controls/lighting/landlight","LANDING LIGHT");
-	light_manager.enable_or_disable(1,0);
-    }else{
-	light_manager.enable_or_disable(0,0);
-	if(getprop("/controls/lighting/landing-light[1]") == 0) {
-          setprop("/controls/lighting/landlight","");
-	}
-    }
-},0,0);
-
-# SurferTim added
-setlistener("/controls/lighting/landing-light[1]", func(bp1){
-    if(bp1.getBoolValue()){
-	setprop("/controls/lighting/landlight","LANDING LIGHT");
-	light_manager.enable_or_disable(1,1);
-    }else{
-	light_manager.enable_or_disable(0,1);
-	if(getprop("/controls/lighting/landing-light") == 0) {
-          setprop("/controls/lighting/landlight","");
+    setlistener("/controls/lighting/landing-light", func(bp){
+        if(bp.getBoolValue()){
+            setprop("/controls/lighting/landlight","LANDING LIGHT");
+        }else{
+            if(getprop("/controls/lighting/landing-light[1]") == 0) {
+                setprop("/controls/lighting/landlight","");
+            }
         }
-    }
-},0,0);
+    },0,0);
 
 # SurferTim added
-setlistener("/controls/lighting/taxi-lights", func(bp2){
-    if(bp2.getBoolValue()){
-	light_manager.enable_or_disable(1,2);
-    }else{
-	light_manager.enable_or_disable(0,2);
-    }
-},0,0);
-
-
+    setlistener("/controls/lighting/landing-light[1]", func(bp1){
+        if(bp1.getBoolValue()){
+            setprop("/controls/lighting/landlight","LANDING LIGHT");
+        }else{
+            if(getprop("/controls/lighting/landing-light") == 0) {
+                setprop("/controls/lighting/landlight","");
+            }
+        }
+    },0,0);
 });
 
 

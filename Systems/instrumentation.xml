@@ -11,6 +11,8 @@
     <adf>
         <name>adf</name>
         <number>0</number>
+        <power-supply>systems/electrical/outputs/adf[0]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </adf>
 
     <airspeed-indicator>
@@ -68,10 +70,10 @@
         <number>0</number>
     </heading-indicator-dg>
 
-    <heading-indicator-real-dg>
+    <!--heading-indicator-real-dg>
         <name>heading-indicator-real-dg</name>
         <number>0</number>
-    </heading-indicator-real-dg>
+    </heading-indicator-real-dg-->
 
     <magnetic-compass>
         <name>magnetic-compass</name>
@@ -81,11 +83,15 @@
     <nav-radio>
         <name>nav</name>
         <number>0</number>
+        <power-supply>systems/electrical/outputs/nav[0]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </nav-radio>
 
     <nav-radio>
         <name>nav</name>
         <number>1</number>
+        <power-supply>systems/electrical/outputs/nav[1]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </nav-radio>
 
     <slip-skid-ball>
@@ -135,16 +141,24 @@
     <dme>
         <name>dme</name>
         <number>0</number>
+        <power-supply>systems/electrical/outputs/dme[0]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </dme>
-    
+
     <comm-radio>
         <name>comm</name>
         <number>0</number>
+        <eight-point-three>1</eight-point-three>
+        <power-supply>systems/electrical/outputs/comm[0]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </comm-radio>
 
     <comm-radio>
         <name>comm</name>
         <number>1</number>
+        <eight-point-three>1</eight-point-three>
+        <power-supply>systems/electrical/outputs/comm[1]</power-supply>
+        <minimum-supply-volts>18.0</minimum-supply-volts>
     </comm-radio>
 
     <transponder>

@@ -84,7 +84,7 @@
             <value>false</value>
         </set>
         <set>
-            <property>/controls/lighting/taxi-lights</property>
+            <property>/controls/lighting/taxi-light</property>
             <value>false</value>
         </set>
         <set>

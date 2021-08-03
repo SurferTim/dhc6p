@@ -212,7 +212,7 @@
                 <condition>
                     <and>
                         <not>
-                            <property>/controls/doors/Baggage.door/open</property>
+                            <property>/controls/doors/Baggage-door/open</property>
                         </not>
                         <not>
                             <property>/controls/doors/LF-door/open</property>
@@ -590,7 +590,7 @@
                             <property>/controls/lighting/strobe</property>
                         </not>
                         <not>
-                            <property>/controls/lighting/taxi-lights</property>
+                            <property>/controls/lighting/taxi-light</property>
                         </not>
                         <not>
                             <property>/controls/electric/caution-test</property>
@@ -1523,7 +1523,7 @@
                 <scale>1.4298</scale>
             </marker>
             <condition>
-                <property>/controls/lighting/taxi-lights</property>
+                <property>/controls/lighting/taxi-light</property>
             </condition>
         </item>
 
@@ -1754,7 +1754,7 @@
             </marker>
             <condition>
                 <not>
-                    <property>/controls/lighting/taxi-lights</property>
+                    <property>/controls/lighting/taxi-light</property>
                 </not>
             </condition>
         </item>
@@ -2519,7 +2519,7 @@
                 <scale>1.4298</scale>
             </marker>
             <condition>
-                <property>/controls/lighting/taxi-lights</property>
+                <property>/controls/lighting/taxi-light</property>
             </condition>
         </item>
 
@@ -2706,7 +2706,7 @@
                 </marker>
                 <condition>
                     <not>
-                        <property>/controls/lighting/taxi-lights</property>
+                        <property>/controls/lighting/taxi-light</property>
                     </not>
                 </condition>
             </item>

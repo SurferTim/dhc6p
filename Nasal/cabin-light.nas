@@ -1,5 +1,5 @@
-props.globals.initNode("/systems/electrical/outputs/cabin-lights-dim-factor", 0.0);
-props.globals.initNode("/systems/electrical/outputs/cabin-lights", 0.0);
+props.globals.initNode("/systems/electrical/outputs/cabin-lights-dim-factor", 0.0, "DOUBLE");
+props.globals.initNode("/systems/electrical/outputs/cabin-lights", 0, "BOOL");
 
 var cabinLight = func {   
     var cab_lgt_output = getprop("/systems/electrical/outputs/cabin-lights") /

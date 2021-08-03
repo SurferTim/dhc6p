@@ -287,6 +287,8 @@
         <flight-comp-pos type="double">0</flight-comp-pos>
         <instrument-lights>0</instrument-lights>
         <instrument-lights-pos type="double">0</instrument-lights-pos>
+        <landing-light n="0" type="bool">0</landing-light>
+        <landing-light n="1" type="bool">0</landing-light>
         <landing-light-pos n="0" type="double">0</landing-light-pos>
         <landing-light-pos n="1" type="double">0</landing-light-pos>
         <nav-lights-pos type="double">0</nav-lights-pos>
@@ -298,7 +300,8 @@
         <seat-belt type="bool">0</seat-belt>
         <seat-belt-pos type="double">0</seat-belt-pos>
         <strobe-pos type="double">0</strobe-pos>
-        <taxi-lights-pos type="double">0</taxi-lights-pos>
+        <taxi-light type="bool">0</taxi-light>
+        <taxi-light-pos type="double">0</taxi-light-pos>
     </lighting>
 
     <engines>
@@ -363,7 +366,7 @@
         <Baggage-door>
             <open type="bool">0</open>
             <position-norm type="double">0</position-norm>
-        </Baggage-door>        
+        </Baggage-door>
     </doors>
 
     <flight>

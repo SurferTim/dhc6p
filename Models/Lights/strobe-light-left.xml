@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>Lights.ac</path>
+    <nopreview/>
+
+    <animation>
+        <type>select</type>
+        <!--object-name>light-volume</object-name-->
+        <object-name>red-light-plate</object-name>
+        <object-name>green-light-plate</object-name>
+        <!--object-name>white-light-plate</object-name-->
+        <object-name>blue-light-plate</object-name>
+        <object-name>lnd-light-plate</object-name>
+    </animation>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>white-light-plate</object-name>
+    </effect>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>white-light-plate</object-name>
+    </animation>
+
+    <animation>
+        <type>alpha-test</type>
+        <alpha-factor>0.01</alpha-factor>
+    </animation>
+
+<!-- default glance -->
+
+    <animation>
+        <type>scale</type>
+        <object-name>white-light-plate</object-name>
+        <property>sim/multiplay/generic/float[7]</property>
+        <center>
+            <x-m>-0.530</x-m>
+            <y-m>-9.790</y-m>
+            <z-m> 1.455</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>white-light-plate</object-name>
+        <object-name>light-volume</object-name>
+        <offset-m>9.911712</offset-m>
+        <axis>
+            <x>-0.530</x>
+            <y>-9.790</y>
+            <z> 1.455</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>white-light-plate</object-name>
+        <spherical type="bool">true</spherical>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>white-light-plate</object-name>
+        <interpolation>
+            <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
+            <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
+            <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>white-light-plate</object-name>
+        <condition>
+            <and>
+                <not><property>sim/rendering/shaders/skydome</property></not>
+                <property>sim/multiplay/generic/int[6]</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[7]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- procetural glance -->
+
+    <model>
+        <name>strobe-light-left-p</name>
+        <path>strobe-light-left-p.xml</path>
+        <offsets>
+            <x-m>-0.530</x-m>
+            <y-m>-9.790</y-m>
+            <z-m> 1.455</z-m>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>strobe-light-left-p</object-name>
+        <factor>0.005</factor>
+        <min>1.0</min>
+        <max>10.0</max>
+        <center>
+            <x-m>-0.620</x-m>
+            <y-m>-9.790</y-m>
+            <z-m> 1.455</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-light-left-p</object-name>
+        <condition>
+            <and>
+                <property>sim/rendering/shaders/skydome</property>
+                <property>sim/multiplay/generic/int[6]</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[7]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Rembrandt light -->
+
+    <animation>
+        <type>light</type>
+        <name>strobe-light-left-r</name>
+        <light-type>spot</light-type>
+        <object-name>light-volume</object-name>
+        <position>
+            <x> 0.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </position>
+        <direction>
+            <x>  0.0 </x>
+            <y> -1.0 </y>
+            <z>  0.0 </z>
+        </direction>
+        <ambient>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </ambient>
+        <diffuse>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </diffuse>
+        <specular>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[7]</property>
+            <factor>0.75</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+        </dim-factor>
+        <attenuation>
+            <c>  0.8 </c>
+            <l>  0.6 </l>
+            <q>  0.4 </q>
+        </attenuation>
+        <exponent>  1.0 </exponent>
+        <cutoff>   90.0 </cutoff>
+        <near-m>    0.0 </near-m>
+        <far-m>   100.0 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-light-left-r</object-name>
+        <condition>
+            <and>
+                <property>/sim/rendering/rembrandt/enabled</property>
+                <property>sim/multiplay/generic/int[6]</property>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Compositor light -->
+
+    <light>
+        <name>strobe-light-left-c</name>
+        <type>spot</type>
+        <position>
+            <x-m>-0.530</x-m>
+            <y-m>-9.790</y-m>
+            <z-m> 1.455</z-m>
+        </position>
+        <direction>
+            <x> 0.0</x>
+            <y>-1.0</y>
+            <z> 0.0</z>
+        </direction>
+        <ambient>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </specular>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[7]</property>
+        </dim-factor>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.225</l>
+            <q>0.1875</q>
+        </attenuation>
+        <spot-cutoff>89</spot-cutoff>
+        <spot-exponent>1</spot-exponent>
+        <range-m>100</range-m>
+    </light>
+
+    <animation>
+        <type>select</type>
+        <object-name>strobe-light-left-c</object-name>
+        <condition>
+            <property>sim/multiplay/generic/int[6]</property>
+        </condition>
+    </animation>
+
+</PropertyList>

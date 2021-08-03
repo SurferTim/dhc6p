@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PropertyList>
+
+    <path>Lights.ac</path>
+    <nopreview/>
+
+    <animation>
+        <type>select</type>
+        <!--object-name>light-volume</object-name-->
+        <object-name>red-light-plate</object-name>
+        <object-name>green-light-plate</object-name>
+        <!--object-name>white-light-plate</object-name-->
+        <object-name>blue-light-plate</object-name>
+        <object-name>lnd-light-plate</object-name>
+    </animation>
+
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>white-light-plate</object-name>
+    </effect>
+
+    <animation>
+        <type>noshadow</type>
+        <object-name>white-light-plate</object-name>
+    </animation>
+
+    <animation>
+        <type>alpha-test</type>
+        <alpha-factor>0.01</alpha-factor>
+    </animation>
+
+<!-- default glance -->
+
+    <animation>
+        <type>scale</type>
+        <object-name>white-light-plate</object-name>
+        <property>sim/multiplay/generic/float[3]</property>
+        <center>
+            <x-m> 8.830</x-m>
+            <y-m> 0.000</y-m>
+            <z-m> 0.260</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>translate</type>
+        <object-name>white-light-plate</object-name>
+        <object-name>light-volume</object-name>
+        <offset-m>8.833827</offset-m>
+        <axis>
+            <x> 8.830</x>
+            <y> 0.000</y>
+            <z> 0.260</z>
+        </axis>
+    </animation>
+
+    <animation>
+        <type>billboard</type>
+        <object-name>white-light-plate</object-name>
+        <spherical type="bool">true</spherical>
+    </animation>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>white-light-plate</object-name>
+        <interpolation>
+            <entry><ind>    0 </ind><dep> 0.25 </dep></entry>
+            <entry><ind>   20 </ind><dep> 0.50 </dep></entry>
+            <entry><ind> 1500 </ind><dep> 5.00 </dep></entry>
+        </interpolation>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>white-light-plate</object-name>
+        <condition>
+            <and>
+                <not><property>sim/rendering/shaders/skydome</property></not>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[3]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- procetural glance -->
+
+    <model>
+        <name>nav-light-tail-p</name>
+        <path>nav-light-tail-p.xml</path>
+        <offsets>
+            <x-m> 8.830</x-m>
+            <y-m> 0.000</y-m>
+            <z-m> 0.260</z-m>
+        </offsets>
+    </model>
+
+    <animation>
+        <type>dist-scale</type>
+        <object-name>nav-light-tail-p</object-name>
+        <factor>0.005</factor>
+        <min>1.0</min>
+        <max>10.0</max>
+        <center>
+            <x-m> 8.830</x-m>
+            <y-m> 0.000</y-m>
+            <z-m> 0.260</z-m>
+        </center>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-tail-p</object-name>
+        <condition>
+            <and>
+                <property>sim/rendering/shaders/skydome</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[3]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Rembrandt light -->
+
+    <animation>
+        <type>light</type>
+        <name>nav-light-tail-r</name>
+        <light-type>spot</light-type>
+        <object-name>light-volume</object-name>
+        <position>
+            <x> 0.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+            <!--x> 8.830</x>
+            <y> 0.000</y>
+            <z> 0.260</z-->
+        </position>
+        <direction>
+            <x>  1.0 </x>
+            <y>  0.0 </y>
+            <z>  0.0 </z>
+        </direction>
+        <ambient>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </ambient>
+        <diffuse>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </diffuse>
+        <specular>
+            <r>  1.0 </r>
+            <g>  1.0 </g>
+            <b>  1.0 </b>
+            <a>  1.0 </a>
+        </specular>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[3]</property>
+            <factor>0.75</factor>
+            <offset>0</offset>
+            <min>0</min>
+            <max>1</max>
+        </dim-factor>
+        <attenuation>
+            <c>  0.8 </c>
+            <l>  0.6 </l>
+            <q>  0.4 </q>
+        </attenuation>
+        <exponent>  2.0 </exponent>
+        <cutoff>   70.0 </cutoff>
+        <near-m>    0.0 </near-m>
+        <far-m>    50.0 </far-m>
+    </animation>
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-tail-r</object-name>
+        <condition>
+            <and>
+                <property>/sim/rendering/rembrandt/enabled</property>
+                <greater-than>
+                    <property>sim/multiplay/generic/float[3]</property>
+                    <value>0.01</value>
+                </greater-than>
+            </and>
+        </condition>
+    </animation>
+
+<!-- Compositor light -->
+
+    <light>
+        <name>nav-light-tail-c</name>
+        <type>spot</type>
+        <position>
+            <x-m> 8.830</x-m>
+            <y-m> 0.000</y-m>
+            <z-m> 0.260</z-m>
+        </position>
+        <direction>
+            <x> 1.0</x>
+            <y> 0.0</y>
+            <z> 0.0</z>
+        </direction>
+        <ambient>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </ambient>
+        <diffuse>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </diffuse>
+        <specular>
+            <r>1.0</r>
+            <g>1.0</g>
+            <b>1.0</b>
+            <a>0.0</a>
+        </specular>
+        <attenuation>
+            <c>1.0</c>
+            <l>0.225</l>
+            <q>0.1875</q>
+        </attenuation>
+        <dim-factor>
+            <property>sim/multiplay/generic/float[3]</property>
+        </dim-factor>
+        <spot-cutoff>89</spot-cutoff>
+        <spot-exponent>3</spot-exponent>
+        <range-m>20</range-m>
+    </light>
+
+    <animation>
+        <type>select</type>
+        <object-name>nav-light-tail-c</object-name>
+        <condition>
+            <greater-than>
+                <property>sim/multiplay/generic/float[3]</property>
+                <value>0.01</value>
+            </greater-than>
+        </condition>
+    </animation>
+
+</PropertyList>

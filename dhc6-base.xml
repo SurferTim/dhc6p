@@ -93,6 +93,21 @@
             <property-rule n="107">
                 <path>Aircraft/dhc6p/Systems/pneumatic.xml</path>
             </property-rule>
+            <property-rule n="108">
+                <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VHF-22/ctl22-comm0-filters.xml</path>
+            </property-rule>
+            <property-rule n="109">
+                <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VHF-22/ctl22-comm1-filters.xml</path>
+            </property-rule>
+            <property-rule n="110">
+                <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VIR-32/ctl32-nav0-filters.xml</path>
+            </property-rule>
+            <property-rule n="111">
+                <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/VIR-32/ctl32-nav1-filters.xml</path>
+            </property-rule>
+            <property-rule n="112">
+                <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/ADF-462/ctl62-adf0-filters.xml</path>
+            </property-rule>
         </systems>
 
         <instrumentation>
@@ -158,12 +173,12 @@
                 <int n="0" alias="/sim/model/blunt-nose"/>
                 <int n="1" alias="/sim/model/display-callsign"/>
 
-                <int n="2" alias="/sim/model/lights/nav-lights/state"/>
-                <int n="3" alias="/sim/model/lights/landing-light[0]/state"/>
-                <int n="4" alias="/sim/model/lights/landing-light[1]/state"/>
-                <int n="5" alias="/sim/model/lights/taxi-lights/state"/>
-                <int n="6" alias="/sim/model/lights/strobe/state"/>
-                <int n="7" alias="/sim/model/lights/beacon/state"/>
+                <int n="2" alias="/controls/lighting/nav-lights"/>
+                <int n="3" alias="/controls/lighting/landing-light[0]"/>
+                <int n="4" alias="/controls/lighting/landing-light[1]"/>
+                <int n="5" alias="/controls/lighting/taxi-light"/>
+                <int n="6" alias="/controls/lighting/strobe/state"/>
+                <int n="7" alias="/controls/lighting/beacon/state"/>
 
                 <int n="8" alias="/sim/model/equipment/left-pitot-cover"/>
                 <int n="9" alias="/sim/model/equipment/left-engine-cover"/>
@@ -183,16 +198,16 @@
                 <float n="1" alias="/controls/flight/elevator">                              0 </float>
                 <float n="2" alias="/controls/flight/rudder">                                0 </float>
 
-                <float n="3" alias="/systems/electrical/outputs/nav-lights">                 0 </float>
-                <float n="4" alias="/systems/electrical/outputs/landing-light[0]">           0 </float>
-                <float n="5" alias="/systems/electrical/outputs/landing-light[1]">           0 </float>
-                <float n="6" alias="/systems/electrical/outputs/taxi-lights">                0 </float>
-                <float n="7" alias="/systems/electrical/outputs/strobe">                     0 </float>
-                <float n="8" alias="/systems/electrical/outputs/beacon">                     0 </float>
-                <float n="9" alias="/systems/electrical/volts">                              0 </float>
+                <float n="3" alias="/sim/model/lights/nav-light-intens">                     0 </float>
+                <float n="4" alias="/sim/model/lights/landing-light-intens[0]">              0 </float>
+                <float n="5" alias="/sim/model/lights/landing-light-intens[1]">              0 </float>
+                <float n="6" alias="/sim/model/lights/taxi-light-intens">                    0 </float>
+                <float n="7" alias="/sim/model/lights/strobe-light-intens">                  0 </float>
+                <float n="8" alias="/sim/model/lights/beacon-light-intens">                  0 </float>
+                <float n="9" alias="/systems/electrical/volts">                              0 </float> <!-- unused -->
                 <float n="10" alias="/systems/electrical/outputs/fltcomp-lights-dim-factor"> 0 </float>
 
-                <float n="11" alias="/controls/doors/Baggage.door/position-norm">            0 </float>
+                <float n="11" alias="/controls/doors/Baggage-door/position-norm">            0 </float>
                 <float n="12" alias="/controls/doors/LF-door/position-norm">                 0 </float>
                 <float n="13" alias="/controls/doors/LR-door-F/position-norm">               0 </float>
                 <float n="14" alias="/controls/doors/LR-door-R/position-norm">               0 </float>
@@ -447,18 +462,32 @@
                 <ident-btn-pos type="double">0</ident-btn-pos>
             </inputs>
         </transponder>
-        <nav n="0">
-            <serviceable type="bool">1</serviceable>
-        </nav>
-        <nav n="1">
-            <serviceable type="bool">1</serviceable>
-        </nav>
+        <ctl22 n="0" include="Models/Flightdeck/Instruments/VHF-22/ctl22-comm0-config.xml" />
+        <ctl22 n="1" include="Models/Flightdeck/Instruments/VHF-22/ctl22-comm1-config.xml" />
+        <ctl32 n="0" include="Models/Flightdeck/Instruments/VIR-32/ctl32-nav0-config.xml" />
+        <ctl32 n="1" include="Models/Flightdeck/Instruments/VIR-32/ctl32-nav1-config.xml" />
+        <ctl62 n="0" include="Models/Flightdeck/Instruments/ADF-462/ctl62-adf0-config.xml" />
         <comm n="0">
             <serviceable type="bool">1</serviceable>
         </comm>
         <comm n="1">
             <serviceable type="bool">1</serviceable>
         </comm>
+        <nav n="0">
+            <ident type="bool">0</ident>
+            <serviceable type="bool">1</serviceable>
+            <volume type="double">1.0</volume>
+        </nav>
+        <nav n="1">
+            <ident type="bool">0</ident>
+            <serviceable type="bool">1</serviceable>
+            <volume type="double">1.0</volume>
+        </nav>
+        <adf n="0">
+            <ident-audible type="bool">0</ident-audible>
+            <serviceable type="bool">1</serviceable>
+            <volume-norm type="double">1.0</volume-norm>
+        </adf>
         <elt>
             <armed type="bool">false</armed>
             <on type="bool">true</on>
@@ -466,6 +495,7 @@
             <test type="bool">false</test>
         </elt>
         <dme>
+            <ident type="bool">0</ident>
             <power-btn-pos type="double">1</power-btn-pos>
             <switch-min-kts-pos type="double">1</switch-min-kts-pos>
             <switch-position-pos type="double">1</switch-position-pos>

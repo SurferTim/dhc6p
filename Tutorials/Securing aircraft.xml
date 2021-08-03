@@ -170,13 +170,13 @@
         <error>
             <message>Now you have to switch the off Taxi light</message>
             <condition>
-                <property>/controls/lighting/taxi-lights</property>
+                <property>/controls/lighting/taxi-light</property>
             </condition>
         </error>
         <exit>
             <condition>
                 <not>
-                    <property>/controls/lighting/taxi-lights</property>
+                    <property>/controls/lighting/taxi-light</property>
                 </not>
             </condition>
         </exit>

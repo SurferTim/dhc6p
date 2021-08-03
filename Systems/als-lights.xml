@@ -18,7 +18,7 @@
 -->
 
 <PropertyList>
-
+<!--
     <logic>
         <name>ALS Lighting Landing</name>
         <input>
@@ -37,11 +37,11 @@
                 <and>
                     <property>/sim/current-view/internal</property>
                     <less-than>
-                        <property>/systems/electrical/outputs/taxi-lights</property>
+                        <property>/systems/electrical/outputs/taxi-light</property>
                         <value>31.5</value>
                     </less-than>
                     <greater-than>
-                        <property>/systems/electrical/outputs/taxi-lights</property>
+                        <property>/systems/electrical/outputs/taxi-light</property>
                         <value>20.0</value>
                     </greater-than>
                 </and>
@@ -71,5 +71,53 @@
             <property>/sim/rendering/als-secondary-lights/use-alt-landing-light</property>
         </output>
     </logic>
+-->
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/nav-lights</input>
+        <output>sim/model/lights/nav-light-intens</output>
+        <max>1.0</max>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/landing-light[0]</input>
+        <output>sim/model/lights/landing-light-intens[0]</output>
+        <max>1.0</max>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/landing-light[1]</input>
+        <output>sim/model/lights/landing-light-intens[1]</output>
+        <max>1.0</max>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/taxi-light</input>
+        <output>sim/model/lights/taxi-light-intens</output>
+        <max>1.0</max>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/strobe-light</input>
+        <output>sim/model/lights/strobe-light-intens</output>
+        <max>1.0</max>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <gain>0.036</gain>
+        <input>systems/electrical/outputs/beacon-light</input>
+        <output>sim/model/lights/beacon-light-intens</output>
+        <max>1.0</max>
+    </filter>
 
 </PropertyList>

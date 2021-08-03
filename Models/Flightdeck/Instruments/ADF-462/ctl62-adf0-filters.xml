@@ -1,0 +1,325 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!--
+Filters for Collins CTL-62
+Copyright © 2018 Sascha Reißner <reiszner@novaplan.at>
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+-->
+
+<PropertyList>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-power</name>
+        <input>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/ctl62[0]/power-knob</property>
+                    <value>0</value>
+                </greater-than>
+            </condition>
+            <value>1</value>
+        </input>
+        <input>0</input>
+        <output>instrumentation/adf[0]/power-btn</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-reset</name>
+        <enable>
+            <condition>
+                <not><property>instrumentation/adf[0]/operable</property></not>
+            </condition>
+        </enable>
+        <input>0</input>
+        <output>
+            <property>instrumentation/ctl62[0]/mode</property>
+            <property>instrumentation/ctl62[0]/mem-mode</property>
+            <property>instrumentation/ctl62[0]/mem-pos</property>
+            <property>instrumentation/ctl62[0]/mem-run</property>
+            <property>instrumentation/ctl62[0]/mem-khz[0]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[1]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[2]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[3]</property>
+            <property>instrumentation/ctl62[0]/standby-khz</property>
+            <property>instrumentation/ctl62[0]/standby-trigger</property>
+            <property>instrumentation/ctl62[0]/selected-khz</property>
+            <property>instrumentation/ctl62[0]/selected-trigger</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-standby-khz</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <less-than>
+                    <property>instrumentation/ctl62[0]/standby-khz</property>
+                    <value>190</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>190</input>
+        <output>
+            <property>instrumentation/ctl62[0]/standby-khz</property>
+            <property>instrumentation/ctl62[0]/mem-khz[0]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[1]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[2]</property>
+            <property>instrumentation/ctl62[0]/mem-khz[3]</property>
+        </output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-standby</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+            </condition>
+        </enable>
+        <input>instrumentation/ctl62[0]/standby-khz</input>
+        <output>instrumentation/ctl62[0]/standby</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-standby-push</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <greater-than>
+                    <property>instrumentation/ctl62[0]/standby-trigger</property>
+                    <value>1.0</value>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>instrumentation/ctl62[0]/standby</input>
+        <output>instrumentation/adf[0]/frequencies/standby-khz</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-standby-trigger</name>
+        <enable>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/ctl62[0]/standby-trigger</property>
+                    <value>1.0</value>
+                </greater-than>
+                <greater-than>
+                    <property>sim/time/elapsed-sec</property>
+                    <expression>
+                        <sum>
+                            <property>instrumentation/ctl62[0]/standby-trigger</property>
+                            <value>0.5</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>0.0</input>
+        <output>instrumentation/ctl62[0]/standby-trigger</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-standby-pull-khz</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <not-equals>
+                    <property>instrumentation/adf[0]/frequencies/standby-khz</property>
+                    <property>instrumentation/ctl62[0]/standby</property>
+                </not-equals>
+                <less-than>
+                    <property>instrumentation/ctl62[0]/standby-trigger</property>
+                    <value>1.0</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>instrumentation/adf[0]/frequencies/standby-khz</input>
+        <output>instrumentation/ctl62[0]/standby-khz</output>
+    </filter>
+
+
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-selected-khz</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <less-than>
+                    <property>instrumentation/ctl62[0]/selected-khz</property>
+                    <value>190</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>190</input>
+        <output>instrumentation/ctl62[0]/selected-khz</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-selected</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+            </condition>
+        </enable>
+        <input>instrumentation/ctl62[0]/selected-khz</input>
+        <output>instrumentation/ctl62[0]/selected</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-selected-push</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <greater-than>
+                    <property>instrumentation/ctl62[0]/selected-trigger</property>
+                    <value>1.0</value>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>instrumentation/ctl62[0]/selected</input>
+        <output>instrumentation/adf[0]/frequencies/selected-khz</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-selected-trigger</name>
+        <enable>
+            <condition>
+                <greater-than>
+                    <property>instrumentation/ctl62[0]/selected-trigger</property>
+                    <value>1.0</value>
+                </greater-than>
+                <greater-than>
+                    <property>sim/time/elapsed-sec</property>
+                    <expression>
+                        <sum>
+                            <property>instrumentation/ctl62[0]/selected-trigger</property>
+                            <value>0.5</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>0.0</input>
+        <output>instrumentation/ctl62[0]/selected-trigger</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-selected-pull-khz</name>
+        <enable>
+            <condition>
+                <property>instrumentation/adf[0]/operable</property>
+                <not-equals>
+                    <property>instrumentation/adf[0]/frequencies/selected-khz</property>
+                    <property>instrumentation/ctl62[0]/selected</property>
+                </not-equals>
+                <less-than>
+                    <property>instrumentation/ctl62[0]/selected-trigger</property>
+                    <value>1.0</value>
+                </less-than>
+            </condition>
+        </enable>
+        <input>instrumentation/adf[0]/frequencies/selected-khz</input>
+        <output>instrumentation/ctl62[0]/selected-khz</output>
+    </filter>
+
+<!-- toggle -->
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-toggle-run-start</name>
+        <enable>
+            <condition>
+                <property>instrumentation/ctl62[0]/toggle</property>
+                <equals>
+                    <property>instrumentation/ctl62[0]/toggle-run</property>
+                    <value>0.0</value>
+                </equals>
+            </condition>
+        </enable>
+        <input>
+            <expression>
+                <sum>
+                    <property>sim/time/elapsed-sec</property>
+                    <value>0.3</value>
+                </sum>
+            </expression>
+        </input>
+        <output>instrumentation/ctl62[0]/toggle-run</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-toggle-run-stop</name>
+        <enable>
+            <condition>
+                <property>instrumentation/ctl62[0]/toggle</property>
+                <greater-than>
+                    <property>sim/time/elapsed-sec</property>
+                    <property>instrumentation/ctl62[0]/toggle-run</property>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>0.0</input>
+        <output>instrumentation/ctl62[0]/toggle</output>
+        <output>instrumentation/ctl62[0]/toggle-run</output>
+    </filter>
+
+<!-- memory  -->
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-memory-run-start</name>
+        <enable>
+            <condition>
+                <property>instrumentation/ctl62[0]/mem-mode</property>
+                <equals>
+                    <property>instrumentation/ctl62[0]/mem-run</property>
+                    <value>0.0</value>
+                </equals>
+            </condition>
+        </enable>
+        <input>sim/time/elapsed-sec</input>
+        <output>instrumentation/ctl62[0]/mem-run</output>
+    </filter>
+
+    <filter>
+        <type>gain</type>
+        <name>ctl62-adf0-mem-clear</name>
+        <enable>
+            <condition>
+                <greater-than>
+                    <property>sim/time/elapsed-sec</property>
+                    <expression>
+                        <sum>
+                            <property>instrumentation/ctl62[0]/mem-run</property>
+                            <value>5.0</value>
+                        </sum>
+                    </expression>
+                </greater-than>
+            </condition>
+        </enable>
+        <input>0</input>
+        <output>instrumentation/ctl62[0]/mem-mode</output>
+        <output>instrumentation/ctl62[0]/mem-run</output>
+    </filter>
+
+</PropertyList>

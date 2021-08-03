@@ -1271,7 +1271,7 @@
             <path>Aircraft/dhc6p/Sounds/dhc6-door_close.wav</path>
             <condition>
                 <not>
-                    <property>/controls/doors/Baggage.door/open</property>
+                    <property>/controls/doors/Baggage-door/open</property>
                     <value>1</value>
                 </not>
             </condition>
@@ -1293,7 +1293,7 @@
             <mode>once</mode>
             <path>Aircraft/dhc6p/Sounds/dhc6-door_open.wav</path>
             <condition>
-                <property>/controls/doors/Baggage.door/open</property>
+                <property>/controls/doors/Baggage-door/open</property>
                 <value>1</value>
             </condition>
             <volume>

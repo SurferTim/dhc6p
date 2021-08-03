@@ -88,7 +88,7 @@
             <label>999.999</label>
             <halign>center</halign>
             <format>%3.3f</format>
-            <property>instrumentation/comm/frequencies/selected-mhz</property>
+            <property>instrumentation/comm[0]/frequencies/selected-mhz</property>
             <live>1</live>
         </text>
 
@@ -116,7 +116,8 @@
             <row>0</row>
             <col>3</col>
             <name>comm1</name>
-            <property>instrumentation/comm/frequencies/standby-mhz</property>
+            <property>instrumentation/comm[0]/frequencies/standby-mhz</property>
+            <live>1</live>
             <binding>
                 <command>dialog-apply</command>
             </binding>
@@ -127,7 +128,8 @@
             <col>4</col>
             <pref-width>30</pref-width>
             <pref-height>30</pref-height>
-            <property>instrumentation/comm/volume</property>
+            <property>instrumentation/comm[0]/volume</property>
+            <live>1</live>
             <min>0.0</min>
             <max>1.0</max>
             <wrap>false</wrap>
@@ -178,6 +180,10 @@
             <col>3</col>
             <name>comm2</name>
             <property>instrumentation/comm[1]/frequencies/standby-mhz</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </input>
 
         <dial>
@@ -186,6 +192,7 @@
             <pref-width>30</pref-width>
             <pref-height>30</pref-height>
             <property>instrumentation/comm[1]/volume</property>
+            <live>1</live>
             <min>0.0</min>
             <max>1.0</max>
             <wrap>false</wrap>
@@ -207,7 +214,7 @@
             <label>999.999</label>
             <halign>center</halign>
             <format>%3.3f</format>
-            <property>instrumentation/nav/frequencies/selected-mhz</property>
+            <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
             <live>1</live>
         </text>
 
@@ -223,8 +230,8 @@
             </binding>
             <binding>
                 <command>property-swap</command>
-                <property>instrumentation/nav/frequencies/selected-mhz</property>
-                <property>instrumentation/nav/frequencies/standby-mhz</property>
+                <property>instrumentation/nav[0]/frequencies/selected-mhz</property>
+                <property>instrumentation/nav[0]/frequencies/standby-mhz</property>
             </binding>
             <binding>
                 <command>dialog-update</command>
@@ -235,7 +242,11 @@
             <row>2</row>
             <col>3</col>
             <name>nav1</name>
-            <property>instrumentation/nav/frequencies/standby-mhz</property>
+            <property>instrumentation/nav[0]/frequencies/standby-mhz</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </input>
 
         <dial>
@@ -243,7 +254,8 @@
             <col>4</col>
             <pref-width>30</pref-width>
             <pref-height>30</pref-height>
-            <property>instrumentation/nav/volume</property>
+            <property>instrumentation/nav[0]/volume</property>
+            <live>1</live>
             <min>0.0</min>
             <max>1.0</max>
             <wrap>false</wrap>
@@ -255,18 +267,20 @@
         <checkbox>
             <row>2</row>
             <col>5</col>
-            <property>instrumentation/nav/ident</property>
+            <property>instrumentation/nav[0]/ident</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </checkbox>
 
         <input>
             <row>2</row>
             <col>6</col>
             <property>instrumentation/nav[0]/radials/selected-deg</property>
+            <live>1</live>
             <binding>
                 <command>dialog-apply</command>
-            </binding>
-            <binding>
-                <command>dialog-update</command>
             </binding>
         </input>
 
@@ -312,6 +326,10 @@
             <col>3</col>
             <name>nav2</name>
             <property>instrumentation/nav[1]/frequencies/standby-mhz</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </input>
 
         <dial>
@@ -320,6 +338,7 @@
             <pref-width>30</pref-width>
             <pref-height>30</pref-height>
             <property>instrumentation/nav[1]/volume</property>
+            <live>1</live>
             <min>0.0</min>
             <max>1.0</max>
             <wrap>false</wrap>
@@ -332,17 +351,19 @@
             <row>3</row>
             <col>5</col>
             <property>instrumentation/nav[1]/ident</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </checkbox>
 
         <input>
             <row>3</row>
             <col>6</col>
             <property>instrumentation/nav[1]/radials/selected-deg</property>
+            <live>1</live>
             <binding>
                 <command>dialog-apply</command>
-            </binding>
-            <binding>
-                <command>dialog-update</command>
             </binding>
         </input>
 
@@ -387,6 +408,10 @@
             <col>3</col>
             <name>adf1</name>
             <property>instrumentation/adf/frequencies/standby-khz</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </input>
 
         <dial>
@@ -395,6 +420,7 @@
             <pref-width>30</pref-width>
             <pref-height>30</pref-height>
             <property>instrumentation/adf/volume-norm</property>
+            <live>1</live>
             <min>0.0</min>
             <max>1.0</max>
             <wrap>false</wrap>
@@ -407,6 +433,7 @@
             <row>4</row>
             <col>5</col>
             <property>instrumentation/adf/ident-audible</property>
+            <live>1</live>
             <binding>
                 <command>dialog-apply</command>
             </binding>
@@ -520,6 +547,10 @@
             <col>3</col>
             <name>transponder</name>
             <property>instrumentation/transponder/standby-id-code</property>
+            <live>1</live>
+            <binding>
+                <command>dialog-apply</command>
+            </binding>
         </input>
 
     </group>

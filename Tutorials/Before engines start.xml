@@ -997,7 +997,7 @@
         <error>
             <message>Turn off Taxi light</message>
             <condition>
-                <property>/controls/lighting/taxi-lights</property>
+                <property>/controls/lighting/taxi-light</property>
             </condition>
         </error>
         <error>
@@ -1035,7 +1035,7 @@
                         <property>/controls/lighting/strobe</property>
                     </not>
                     <not>
-                        <property>/controls/lighting/taxi-lights</property>
+                        <property>/controls/lighting/taxi-light</property>
                     </not>
                     <not>
                         <property>/controls/electric/caution-test</property>
