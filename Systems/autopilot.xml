@@ -157,14 +157,17 @@
         <reference>
             <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
-        <output>
+
+<!-- SurferTim -->
+        <!--output>
             <prop>controls/flight/elevator</prop>
-        </output>
+        </output-->
+
         <output>
           <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
-            <Kp>-0.1</Kp>
+            <Kp>-0.2</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -238,14 +241,16 @@
         <reference>
             <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
-        <output>
+
+<!-- SurferTim -->
+        <!--output>
             <prop>controls/flight/elevator</prop>
-        </output>
+        </output-->
         <output>
             <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
-            <Kp>-0.02</Kp>
+            <Kp>-0.04</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -274,7 +279,7 @@
             <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
-            <Kp>0.5</Kp>
+            <Kp>0.4</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -297,14 +302,15 @@
         <reference>
             <prop>autopilot/settings/target-pitch-deg</prop>
         </reference>
-        <output>
+<!-- SurferTim --> 
+        <!--output>
             <prop>controls/flight/elevator</prop>
-        </output>
+        </output-->
         <output>
             <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
-            <Kp>-0.02</Kp>
+            <Kp>-0.04</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
@@ -329,14 +335,16 @@
             <prop>autopilot/settings/vertical-speed-fpm</prop>
             <scale>0.01667</scale>
         </reference>
-        <output>
+
+<!-- SurferTim -->
+        <!--output>
             <prop>controls/flight/elevator</prop>
-        </output>
+        </output-->
         <output>
             <prop>controls/flight/elevator-trim</prop>
         </output>
         <config>
-            <Kp>-0.01</Kp>
+            <Kp>-0.025</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
