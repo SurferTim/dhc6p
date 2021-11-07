@@ -218,12 +218,12 @@
             <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
-            <Kp>0.10</Kp>
+            <Kp>0.1</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
-            <Td>0.00001</Td>
+            <Ti>1.0</Ti>
+            <Td>0.001</Td>
             <u_min>-5.0</u_min>
             <u_max>5.0</u_max>
         </config>
@@ -255,9 +255,9 @@
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>1.0</Ti>
-            <Td>0.00001</Td>
-            <u_min>-0.5</u_min>
-            <u_max>0.5</u_max> 
+            <Td>0.001</Td>
+            <u_min>-5.0</u_min>
+            <u_max>5.0</u_max> 
         </config>
     </pid-controller>
 
@@ -279,14 +279,14 @@
             <prop>autopilot/settings/target-pitch-deg</prop>
         </output>
         <config>
-            <Kp>0.4</Kp>
+            <Kp>0.32</Kp>
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
             <Ti>10.0</Ti>
             <Td>0.00001</Td>
-            <u_min>-25.0</u_min>
-            <u_max>25.0</u_max>
+            <u_min>-5.0</u_min>
+            <u_max>5.0</u_max>
         </config>
     </pid-controller>
 
