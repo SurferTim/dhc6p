@@ -283,9 +283,9 @@
             <beta>1.0</beta>
             <alpha>0.1</alpha>
             <gamma>0.0</gamma>
-            <Ti>10.0</Ti>
-            <Td>0.00001</Td>
-            <u_min>-5.0</u_min>
+            <Ti>1.0</Ti>
+            <Td>0.001</Td>
+            <u_min>-10.0</u_min>
             <u_max>5.0</u_max>
         </config>
     </pid-controller>
