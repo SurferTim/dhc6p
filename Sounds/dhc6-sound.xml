@@ -511,7 +511,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/turbine[0]</property>
-                <factor>1.1</factor>
+                <factor>0.3</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -573,7 +573,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/turbine[0]</property>
-                <factor>1.0</factor>
+                <factor>0.3</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -703,7 +703,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/turbine[1]</property>
-                <factor>1.1</factor>
+                <factor>0.3</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -765,7 +765,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/turbine[1]</property>
-                <factor>1.0</factor>
+                <factor>0.3</factor>
                 <offset>0</offset>
             </pitch>
             <position>
