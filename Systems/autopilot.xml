@@ -273,7 +273,21 @@
             <prop>velocities/vertical-speed-fps</prop>
         </input>
         <reference>
-            <prop>instrumentation/nav[0]/gs-rate-of-climb</prop>
+            <expression>
+                <sum>
+                    <product>
+                        <property>/instrumentation/nav[0]/gs-rate-of-climb</property>
+                        <property>/autopilot/internal/pitch-filter-gain</property>
+                    </product>
+                    <product>
+                        <property>/velocities/vertical-speed-fps</property>                      
+                        <dif>
+                            <value>1.0</value>
+                            <property>/autopilot/internal/pitch-filter-gain</property>
+                        </dif>
+                    </product>
+                </sum>
+            </expression>
         </reference>
         <output>
             <prop>autopilot/settings/target-pitch-deg</prop>

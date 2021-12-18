@@ -18,10 +18,14 @@ var catch = func {
     }
 
     if ((gs_ndl < 0.07 and gs_ndl > -0.07) and gsflag == 1) {
-        setprop("instrumentation/nav[0]/gs-catched", 1);
-	setprop("controls/autopilot/settings/iasflag", 0);
-	setprop("controls/autopilot/settings/vssetflag", 0);
-	setprop("controls/autopilot/settings/altsetflag", 0);
+        if(getprop("instrumentation/nav[0]/gs-catched") == 0) {
+            setprop("autopilot/internal/pitch-filter-gain",0.0);
+            interpolate("autopilot/internal/pitch-filter-gain",1.0,2);
+            setprop("instrumentation/nav[0]/gs-catched", 1);
+	    setprop("controls/autopilot/settings/iasflag", 0);
+	    setprop("controls/autopilot/settings/vssetflag", 0);
+	    setprop("controls/autopilot/settings/altsetflag", 0);
+        }
     }
 
     if (gsflag != 1) {

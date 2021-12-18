@@ -392,7 +392,7 @@
             </volume>
         </prop>
 
-        <!-- Engine 1 exterior-->
+<!-- Engine 1 -->
         <prop>
             <name>propeller1</name>
             <mode>looped</mode>
@@ -474,7 +474,7 @@
             <volume>
                 <property>sim/sound/enginevol[0]</property>
                 <factor>1</factor>
-                <offset>0</offset>
+                <offset>0.1</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
@@ -507,11 +507,11 @@
             <volume>
                 <property>sim/sound/turbinevol[0]</property>
                 <factor>5</factor>
-                <offset>0</offset>
+                <offset>0.2</offset>
             </volume>
             <pitch>
                 <property>sim/sound/turbine[0]</property>
-                <factor>0.3</factor>
+                <factor>0.005</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -569,11 +569,11 @@
             <volume>
                 <property>sim/sound/turbinevol[0]</property>
                 <factor>0.3</factor>
-                <offset>0</offset>
+                <offset>0.2</offset>
             </volume>
             <pitch>
                 <property>sim/sound/turbine[0]</property>
-                <factor>0.3</factor>
+                <factor>0.005</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -584,7 +584,7 @@
         </prop>
 
 
-        <!-- Engine 2 -->
+<!-- Engine 2 -->
         <prop>
             <name>propeller2</name>
             <reference-dist>20.0</reference-dist>
@@ -606,7 +606,7 @@
             <volume>
                 <property>sim/sound/engine[1]</property>
                 <factor>5</factor>
-                <offset>0</offset>
+                <offset>0.1</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
@@ -666,7 +666,7 @@
             <volume>
                 <property>sim/sound/enginevol[1]</property>
                 <factor>1</factor>
-                <offset>0</offset>
+                <offset>0.1</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
@@ -699,11 +699,11 @@
             <volume>
                 <property>sim/sound/turbinevol[1]</property>
                 <factor>5</factor>
-                <offset>0</offset>
+                <offset>0.2</offset>
             </volume>
             <pitch>
                 <property>sim/sound/turbine[1]</property>
-                <factor>0.3</factor>
+                <factor>0.005</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -761,11 +761,11 @@
             <volume>
                 <property>sim/sound/turbinevol[1]</property>
                 <factor>0.3</factor>
-                <offset>0</offset>
+                <offset>0.2</offset>
             </volume>
             <pitch>
                 <property>sim/sound/turbine[1]</property>
-                <factor>0.3</factor>
+                <factor>0.005</factor>
                 <offset>0</offset>
             </pitch>
             <position>
