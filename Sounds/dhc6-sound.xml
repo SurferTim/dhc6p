@@ -416,7 +416,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
-                <factor>1.1</factor>
+                <factor>1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -472,13 +472,13 @@
                 </or>
             </condition>
             <volume>
-                <property>sim/sound/enginevol[0]</property>
-                <factor>1</factor>
-                <offset>0.1</offset>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.01</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
-                <factor>1.1</factor>
+                <factor>1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -505,13 +505,13 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/turbinevol[0]</property>
-                <factor>5</factor>
-                <offset>0.2</offset>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.5</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
-                <property>sim/sound/turbine[0]</property>
-                <factor>0.005</factor>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.004</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -567,13 +567,13 @@
                 </or>
             </condition>
             <volume>
-                <property>sim/sound/turbinevol[0]</property>
-                <factor>0.3</factor>
-                <offset>0.2</offset>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.005</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
-                <property>sim/sound/turbine[0]</property>
-                <factor>0.005</factor>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.004</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -610,7 +610,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1.1</factor>
+                <factor>1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -664,13 +664,13 @@
                 </or>
             </condition>
             <volume>
-                <property>sim/sound/enginevol[1]</property>
-                <factor>1</factor>
-                <offset>0.1</offset>
+                <property>engines/engine[1]/turbine-rpm</property>
+                <factor>0.01</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1.1</factor>
+                <factor>1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -697,13 +697,13 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/turbinevol[1]</property>
-                <factor>5</factor>
-                <offset>0.2</offset>
+                <property>engines/engine[1]/turbine-rpm</property>
+                <factor>0.5</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
-                <property>sim/sound/turbine[1]</property>
-                <factor>0.005</factor>
+                <property>engines/engine[1]/turbine-rpm</property>
+                <factor>0.004</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -759,13 +759,13 @@
                 </or>
             </condition>
             <volume>
-                <property>sim/sound/turbinevol[1]</property>
-                <factor>0.3</factor>
-                <offset>0.2</offset>
+                <property>engines/engine[1]/turbine-rpm</property>
+                <factor>0.005</factor>
+                <offset>0</offset>
             </volume>
             <pitch>
-                <property>sim/sound/turbine[1]</property>
-                <factor>0.005</factor>
+                <property>engines/engine[1]/turbine-rpm</property>
+                <factor>0.004</factor>
                 <offset>0</offset>
             </pitch>
             <position>
