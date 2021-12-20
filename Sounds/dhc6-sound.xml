@@ -396,7 +396,7 @@
         <prop>
             <name>propeller1</name>
             <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/fullpower.wav</path>
+            <path>Aircraft/dhc6p/Sounds/running.wav</path>
             <property>sim/sound/engine[0]</property>
             <condition>
                 <and>
@@ -410,13 +410,13 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[0]</property>
+                <property>engines/engine[0]/turbine-rpm</property>
                 <factor>5</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -433,103 +433,8 @@
             <reference-dist>2.0</reference-dist>
             <max-dist>10.0</max-dist>
             <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/fullpower-int.wav</path>
+            <path>Aircraft/dhc6p/Sounds/running.wav</path>
             <property>sim/sound/engine[0]</property>
-            <condition>
-                <or>
-                    <and>
-                        <equals>
-                            <property>sim/flight-model</property>
-                            <value>jsb</value>
-                        </equals>
-                        <greater-than>
-                            <property>controls/engines/engine[0]/condition</property>
-                            <value>0.001</value>
-                        </greater-than>
-                        <not>
-                            <property>controls/engines/engine[0]/cutoff</property>
-                        </not>
-                        <property>sim/current-view/internal</property>
-                    </and>
-                    <and>
-                        <equals>
-                            <property>sim/flight-model</property>
-                            <value>yasim</value>
-                        </equals>
-                        <greater-than>
-                            <property>controls/engines/engine[0]/condition</property>
-                            <value>0.001</value>
-                        </greater-than>
-                        <greater-than>
-                            <property>engines/engine[0]/n2</property>
-                            <value>10</value>
-                        </greater-than>
-                        <not>
-                            <property>controls/engines/engine[0]/cutoff</property>
-                        </not>
-                        <property>sim/current-view/internal</property>
-                    </and>
-                </or>
-            </condition>
-            <volume>
-                <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.01</factor>
-                <offset>0</offset>
-            </volume>
-            <pitch>
-                <property>sim/sound/engine[0]</property>
-                <factor>1</factor>
-                <offset>0</offset>
-            </pitch>
-            <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
-            </position>
-        </prop>
-
-        <prop>
-            <name>turbine1</name>
-            <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/turbine.wav</path>
-            <property>sim/sound/turbine[0]</property>
-            <condition>
-                <and>
-                    <greater-than>
-                        <property>controls/engines/engine[0]/condition</property>
-                        <value>0.001</value>
-                    </greater-than>
-                    <not>
-                        <property>sim/current-view/internal</property>
-                    </not>
-                </and>
-            </condition>
-            <volume>
-                <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.5</factor>
-                <offset>0</offset>
-            </volume>
-            <pitch>
-                <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.004</factor>
-                <offset>0</offset>
-            </pitch>
-            <position>
-                <x>-1.5</x>
-                <y>2.6</y>
-                <z>-0.33</z>
-            </position>
-            <reference-dist>20.0</reference-dist>
-            <max-dist>5000.0</max-dist>
-        </prop>
-
-        <prop>
-            <name>turbine1-int</name>
-            <reference-dist>2.0</reference-dist>
-            <max-dist>10.0</max-dist>
-            <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/turbine.wav</path>
-            <property>sim/sound/turbine[0]</property>
             <condition>
                 <or>
                     <and>
@@ -572,8 +477,8 @@
                 <offset>0</offset>
             </volume>
             <pitch>
-                <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.004</factor>
+                <property>sim/sound/engine[0]</property>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -583,6 +488,178 @@
             </position>
         </prop>
 
+        <prop>
+            <name>turbine1</name>
+            <mode>looped</mode>
+            <path>Aircraft/dhc6p/Sounds/turbine.wav</path>
+            <property>sim/sound/turbine[0]</property>
+            <condition>
+                <and>
+                    <greater-than>
+                        <property>controls/engines/engine[0]/condition</property>
+                        <value>0.001</value>
+                    </greater-than>
+                    <not>
+                        <property>sim/current-view/internal</property>
+                    </not>
+                </and>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.2</factor>
+                <offset>0</offset>
+            </volume>
+            <pitch>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.01</factor>
+                <offset>0</offset>
+            </pitch>
+            <position>
+                <x>-1.5</x>
+                <y>2.6</y>
+                <z>-0.33</z>
+            </position>
+            <reference-dist>20.0</reference-dist>
+            <max-dist>5000.0</max-dist>
+        </prop>
+
+        <prop>
+            <name>turbine1-int</name>
+            <reference-dist>2.0</reference-dist>
+            <max-dist>10.0</max-dist>
+            <mode>looped</mode>
+            <path>Aircraft/dhc6p/Sounds/turbine.wav</path>
+            <property>sim/sound/turbine[0]</property>
+            <condition>
+                <or>
+                    <and>
+                        <equals>
+                            <property>sim/flight-model</property>
+                            <value>jsb</value>
+                        </equals>
+                        <greater-than>
+                            <property>controls/engines/engine[0]/condition</property>
+                            <value>0.001</value>
+                        </greater-than>
+                        <not>
+                            <property>controls/engines/engine[0]/cutoff</property>
+                        </not>
+                        <property>sim/current-view/internal</property>
+                    </and>
+                    <and>
+                        <equals>
+                            <property>sim/flight-model</property>
+                            <value>yasim</value>
+                        </equals>
+                        <greater-than>
+                            <property>controls/engines/engine[0]/cutoff-pos</property>
+                            <value>0.9</value>
+                        </greater-than>
+                        <greater-than>
+                            <property>engines/engine[0]/n2</property>
+                            <value>10</value>
+                        </greater-than>
+                        <not>
+                            <property>controls/engines/engine[0]/cutoff</property>
+                        </not>
+                        <property>sim/current-view/internal</property>
+                    </and>
+                </or>
+            </condition>
+            <volume>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.005</factor>
+                <offset>0</offset>
+            </volume>
+            <pitch>
+                <property>engines/engine[0]/turbine-rpm</property>
+                <factor>0.01</factor>
+                <offset>0</offset>
+            </pitch>
+            <position>
+                <x>-1.5</x>
+                <y>2.6</y>
+                <z>-0.33</z>
+            </position>
+        </prop>
+
+    <engine>
+        <name>left engine ext start</name>
+        <path>Aircraft/CitationX/Sounds/turbine.wav</path>
+        <condition>
+            <and>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
+                <not>
+                    <property>controls/engines/engine[0]/condition</property>
+                </not>
+                <property>controls/engines/engine[0]/ignition</property>
+                <greater-than>                  
+                    <property>engines/engine[0]/turbine-rpm</property>
+                    <value>2</value>
+                </greater-than>
+                <less-than>                  
+                    <property>engines/engine[0]/turbine-rpm</property>
+                    <value>20</value>
+                </less-than>
+            </and>
+        </condition>
+        <mode>looped</mode>
+        <volume>
+            <factor>0.2</factor>
+        </volume>
+        <pitch>
+            <property>engines/engine[0]/turbine-rpm</property>
+            <offset>0.0</offset>
+            <factor>0.1</factor>
+        </pitch>
+        <position>
+            <x>4.5</x>
+            <y>1.7</y>
+            <z>0.6</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>2000.0</max-dist>
+    </engine>
+
+    <engine>
+        <name>left engine int start</name>
+        <path>Aircraft/CitationX/Sounds/turbine.wav</path>
+        <condition>
+            <and>
+                <property>sim/current-view/internal</property>
+                <not>
+                    <property>controls/engines/engine[0]/condition</property>
+                </not>
+                <property>controls/engines/engine[0]/ignition</property>
+                <greater-than>                  
+                    <property>engines/engine[0]/turbine-rpm</property>
+                    <value>2</value>
+                </greater-than>
+                <less-than>                  
+                    <property>engines/engine[0]/turbine-rpm</property>
+                    <value>20</value>
+                </less-than>
+            </and>
+        </condition>
+        <mode>looped</mode>
+        <volume>
+            <factor>0.02</factor>
+        </volume>
+        <pitch>
+            <property>engines/engine[0]/turbine-rpm</property>
+            <offset>0</offset>
+            <factor>0.1</factor>
+        </pitch>
+        <position>
+            <x>3</x>
+            <y>1.7</y>
+            <z>0.6</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>150.0</max-dist>
+    </engine>
 
 <!-- Engine 2 -->
         <prop>
@@ -590,7 +667,7 @@
             <reference-dist>20.0</reference-dist>
             <max-dist>5000.0</max-dist>
             <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/fullpower.wav</path>
+            <path>Aircraft/dhc6p/Sounds/running.wav</path>
             <property>sim/sound/engine[1]</property>
             <condition>
                 <and>
@@ -604,13 +681,13 @@
                 </and>
             </condition>
             <volume>
-                <property>sim/sound/engine[1]</property>
+                <property>engines/engine[1]/turbine-rpm</property>
                 <factor>5</factor>
                 <offset>0.1</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -625,7 +702,7 @@
             <reference-dist>2.0</reference-dist>
             <max-dist>10.0</max-dist>
             <mode>looped</mode>
-            <path>Aircraft/dhc6p/Sounds/fullpower-int.wav</path>
+            <path>Aircraft/dhc6p/Sounds/running.wav</path>
             <property>sim/sound/engine[1]</property>
             <condition>
                 <or>
@@ -665,12 +742,12 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.01</factor>
+                <factor>0.005</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -698,12 +775,12 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.5</factor>
+                <factor>0.2</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.004</factor>
+                <factor>0.01</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -765,7 +842,7 @@
             </volume>
             <pitch>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.004</factor>
+                <factor>0.01</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -774,6 +851,84 @@
                 <z>-0.33</z>
             </position>
         </prop>
+
+    <engine>
+        <name>right engine ext start</name>
+        <path>Aircraft/CitationX/Sounds/turbine.wav</path>
+        <condition>
+            <and>
+                <not>
+                    <property>sim/current-view/internal</property>
+                </not>
+                <not>
+                    <property>controls/engines/engine[1]/condition</property>
+                </not>
+                <property>controls/engines/engine[1]/ignition</property>
+                <greater-than>                  
+                    <property>engines/engine[1]/turbine-rpm</property>
+                    <value>2</value>
+                </greater-than>
+                <less-than>                  
+                    <property>engines/engine[1]/turbine-rpm</property>
+                    <value>20</value>
+                </less-than>
+            </and>
+        </condition>
+        <mode>looped</mode>
+        <volume>
+            <factor>0.2</factor>
+        </volume>
+        <pitch>
+            <property>engines/engine[1]/turbine-rpm</property>
+            <offset>0.0</offset>
+            <factor>0.1</factor>
+        </pitch>
+        <position>
+            <x>4.5</x>
+            <y>1.7</y>
+            <z>0.6</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>2000.0</max-dist>
+    </engine>
+
+    <engine>
+        <name>right engine int start</name>
+        <path>Aircraft/CitationX/Sounds/turbine.wav</path>
+        <condition>
+            <and>
+                <property>sim/current-view/internal</property>
+                <not>
+                    <property>controls/engines/engine[1]/condition</property>
+                </not>
+                <property>controls/engines/engine[1]/ignition</property>
+                <greater-than>                  
+                    <property>engines/engine[1]/turbine-rpm</property>
+                    <value>2</value>
+                </greater-than>
+                <less-than>                  
+                    <property>engines/engine[1]/turbine-rpm</property>
+                    <value>20</value>
+                </less-than>
+            </and>
+        </condition>
+        <mode>looped</mode>
+        <volume>
+            <factor>0.02</factor>
+        </volume>
+        <pitch>
+            <property>engines/engine[1]/turbine-rpm</property>
+            <offset>0</offset>
+            <factor>0.1</factor>
+        </pitch>
+        <position>
+            <x>3</x>
+            <y>1.7</y>
+            <z>0.6</z>
+        </position>
+        <reference-dist>10.0</reference-dist>
+        <max-dist>150.0</max-dist>
+    </engine>
 
 
         <rumble>

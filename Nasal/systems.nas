@@ -131,6 +131,8 @@ var Startup_yasim = func{
     setprop("controls/electric/fwd-boost-pump",1);
     setprop("controls/engines/engine[0]/cutoff",0);
     setprop("controls/engines/engine[1]/cutoff",0);
+    setprop("controls/engines/engine[0]/ignition",1);
+    setprop("controls/engines/engine[1]/ignition",1);
     setprop("controls/engines/engine[0]/intake-deflector",1.00);
     setprop("controls/engines/engine[1]/intake-deflector",1.00);
     setprop("controls/engines/internal-engine-starter",1);
@@ -307,6 +309,8 @@ var Shutdown = func{
     setprop("controls/engines/engine[1]/condition",0);
     setprop("controls/engines/engine[0]/internal-condition",0);
     setprop("controls/engines/engine[1]/internal-condition",0);
+    setprop("controls/engines/engine[0]/ignition",0);
+    setprop("controls/engines/engine[1]/ignition",0);
     setprop("controls/engines/engine[0]/cutoff",0);
     setprop("controls/engines/engine[1]/cutoff",0);
     setprop("engines/engine[0]/running",0);
