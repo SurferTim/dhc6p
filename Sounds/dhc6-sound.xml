@@ -506,7 +506,7 @@
             </condition>
             <volume>
                 <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.2</factor>
+                <factor>0.1</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
@@ -607,7 +607,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.2</factor>
+            <factor>0.15</factor>
         </volume>
         <pitch>
             <property>engines/engine[0]/turbine-rpm</property>
@@ -645,7 +645,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.02</factor>
+            <factor>0.01</factor>
         </volume>
         <pitch>
             <property>engines/engine[0]/turbine-rpm</property>
@@ -775,7 +775,7 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.2</factor>
+                <factor>0.1</factor>
                 <offset>0</offset>
             </volume>
             <pitch>
@@ -876,7 +876,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.2</factor>
+            <factor>0.15</factor>
         </volume>
         <pitch>
             <property>engines/engine[1]/turbine-rpm</property>
@@ -914,7 +914,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.02</factor>
+            <factor>0.01</factor>
         </volume>
         <pitch>
             <property>engines/engine[1]/turbine-rpm</property>
