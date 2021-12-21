@@ -416,7 +416,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -473,12 +473,12 @@
             </condition>
             <volume>
                 <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.005</factor>
-                <offset>0</offset>
+                <factor>0.002</factor>
+                <offset>0.3</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[0]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -552,8 +552,8 @@
                             <value>yasim</value>
                         </equals>
                         <greater-than>
-                            <property>controls/engines/engine[0]/cutoff-pos</property>
-                            <value>0.9</value>
+                            <property>controls/engines/engine[0]/condition</property>
+                            <value>0.001</value>
                         </greater-than>
                         <greater-than>
                             <property>engines/engine[0]/n2</property>
@@ -568,8 +568,8 @@
             </condition>
             <volume>
                 <property>engines/engine[0]/turbine-rpm</property>
-                <factor>0.005</factor>
-                <offset>0</offset>
+                <factor>0.004</factor>
+                <offset>0.3</offset>
             </volume>
             <pitch>
                 <property>engines/engine[0]/turbine-rpm</property>
@@ -607,7 +607,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.15</factor>
+            <factor>0.3</factor>
         </volume>
         <pitch>
             <property>engines/engine[0]/turbine-rpm</property>
@@ -645,7 +645,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.01</factor>
+            <factor>0.3</factor>
         </volume>
         <pitch>
             <property>engines/engine[0]/turbine-rpm</property>
@@ -687,7 +687,7 @@
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -742,12 +742,12 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.005</factor>
-                <offset>0</offset>
+                <factor>0.002</factor>
+                <offset>0.3</offset>
             </volume>
             <pitch>
                 <property>sim/sound/engine[1]</property>
-                <factor>1</factor>
+                <factor>1.1</factor>
                 <offset>0</offset>
             </pitch>
             <position>
@@ -837,8 +837,8 @@
             </condition>
             <volume>
                 <property>engines/engine[1]/turbine-rpm</property>
-                <factor>0.005</factor>
-                <offset>0</offset>
+                <factor>0.004</factor>
+                <offset>0.3</offset>
             </volume>
             <pitch>
                 <property>engines/engine[1]/turbine-rpm</property>
@@ -876,7 +876,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.15</factor>
+            <factor>0.3</factor>
         </volume>
         <pitch>
             <property>engines/engine[1]/turbine-rpm</property>
@@ -914,7 +914,7 @@
         </condition>
         <mode>looped</mode>
         <volume>
-            <factor>0.01</factor>
+            <factor>0.3</factor>
         </volume>
         <pitch>
             <property>engines/engine[1]/turbine-rpm</property>
