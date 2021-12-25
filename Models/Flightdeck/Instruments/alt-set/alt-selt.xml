@@ -371,6 +371,17 @@
                 <max>30000</max>
                 <wrap>false</wrap>
             </binding>
+            <binding>
+                <condition>
+                    <equals>
+                        <property>autopilot/internal/pitch-filter-gain</property>
+                        <value>1</value>
+                    </equals>
+                </condition>
+                <command>property-assign</command>
+                <property>autopilot/internal/pitch-filter-gain</property>
+                <value>0</value>
+            </binding>
         </action>
         <hovered>
             <binding>

@@ -189,13 +189,13 @@
             <prop>instrumentation/altimeter/indicated-altitude-ft</prop>
         </input>
         <reference>
-            <prop>autopilot/settings/target-altitude-ft</prop>
+            <property>autopilot/settings/target-altitude-ft</property>
         </reference>
         <output>
             <prop>autopilot/internal/target-climb-rate-fps</prop>
         </output>
         <config>
-            <Kp>0.2</Kp>
+            <Kp>0.15</Kp>
             <Ki>0.0</Ki>
             <u_min>-33.3</u_min>
             <u_max>33.3</u_max>

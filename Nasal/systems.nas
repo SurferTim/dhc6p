@@ -60,7 +60,7 @@ props.globals.initNode("controls/engines/internal-engine-starter", 0.0);
 props.globals.initNode("controls/electric/power-source",0);
 props.globals.initNode("controls/switches/dme", 0);
 props.globals.initNode("controls/switches/dme-gps-slave", 0);
-props.globals.initNode("autopilot/internal/pitch-filter-gain",0.0,"DOUBLE");
+props.globals.initNode("autopilot/internal/pitch-filter-gain",1.0,"DOUBLE");
 
 ###################################
 
