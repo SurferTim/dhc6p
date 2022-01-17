@@ -297,6 +297,7 @@ var Shutdown = func{
     setprop("controls/lighting/instrument-lights",0);
     setprop("controls/lighting/nav-lights",0);
     setprop("controls/lighting/beacon",0);
+    setprop("controls/lighting/beacon-pos",0);
     setprop("controls/lighting/strobe",0);
     setprop("controls/lighting/flight-comp",0);
     setprop("controls/engines/engine[0]/throttle",0);
