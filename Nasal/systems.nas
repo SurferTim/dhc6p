@@ -200,6 +200,7 @@ var Startup_yasim = func{
             setprop("sim/model/equipment/ground-services/external-power/enable",0);
             screen.log.write("Startup procedure finished", 1, 1, 1);
             print("YASIM Startup complete");
+
         }
         settimer(check_loop1, 0.1);
         }
@@ -615,6 +616,7 @@ var annunciators = func {
 }
 
 var update_eng_sound = func {
+
     var tsv1 = getprop("instrumentation/engine-instruments/turbine[0]/indicated-speed");
     var tsv2 = getprop("instrumentation/engine-instruments/turbine[1]/indicated-speed");
     tsv1 *= 0.01;
