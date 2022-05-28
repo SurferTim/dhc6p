@@ -22,6 +22,8 @@ var FDM ="";
 Wiper=[];
 props.globals.initNode("/controls/engines/engine[0]/condition", 0.0, "DOUBLE");
 props.globals.initNode("/controls/engines/engine[1]/condition", 0.0, "DOUBLE");
+props.globals.initNode("controls/engines/engine[0]/reverser",0);
+props.globals.initNode("controls/engines/engine[1]/reverser",0);
 props.globals.initNode("/systems/electrical/outputs/fuel-sov-l", 0.0, "DOUBLE");
 props.globals.initNode("/systems/electrical/outputs/fuel-sov-r", 0.0, "DOUBLE");
 props.globals.initNode("/systems/electrical/outputs/torque-left", 0.0, "DOUBLE");
@@ -971,23 +973,23 @@ setlistener("/sim/signals/fdm-initialized", func(){
      setprop("/autopilot/settings/heading-bug-deg",getprop("/instrumentation/heading-indicator-real-dg/heading-bug-deg"));
 },0,0);
 
-setlistener("controls/engines/engine[0]/reverser", func(bpe0){
-    if(bpe0.getBoolValue()) {
+#setlistener("controls/engines/engine[0]/reverser", func(bpe0){
+#    if(bpe0.getBoolValue()) {
 #        print("0 rev on");
-        setprop("controls/engines/engine[0]/throttle-rvrs",1)
-    } else {
+#        setprop("controls/engines/engine[0]/throttle-rvrs",1)
+#    } else {
 #        print("0 rev off");
-        setprop("controls/engines/engine[0]/throttle-rvrs",0)
-    }
-},0,0);
+#        setprop("controls/engines/engine[0]/throttle-rvrs",0)
+#    }
+#},0,0);
 
-setlistener("controls/engines/engine[1]/reverser", func(bpe1){
-    if(bpe1.getBoolValue()) {
+#setlistener("controls/engines/engine[1]/reverser", func(bpe1){
+#    if(bpe1.getBoolValue()) {
 #        print("1 rev on");
-        setprop("controls/engines/engine[1]/throttle-rvrs",1)
-    } else {
+#        setprop("controls/engines/engine[1]/throttle-rvrs",1)
+#    } else {
 #        print("1 rev off");
-        setprop("controls/engines/engine[1]/throttle-rvrs",0)
-    }
-},0,0);
+#        setprop("controls/engines/engine[1]/throttle-rvrs",0)
+#    }
+#},0,0);
 
