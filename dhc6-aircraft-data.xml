@@ -231,8 +231,6 @@
     <path>/controls/electric/master-avionics</path>
     <path>/controls/electric/master-avionics-pos</path>
     <path>/controls/gear/tiller-enabled</path>
-    <path>/engines/engine[0]/beta-range-nut-l</path>
-    <path>/engines/engine[1]/beta-range-nut-r</path>
     <path>/controls/flight/aileron-trim</path>
     <path>/controls/flight/elevator-trim</path>
     <path>/controls/flight/rudder-trim</path>

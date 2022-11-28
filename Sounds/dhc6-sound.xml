@@ -329,7 +329,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>0.16</factor>
+                <factor>0.002</factor>
             </volume>
         </prop>
 
@@ -352,7 +352,7 @@
                 </and>
             </condition>
             <volume>
-                <factor>0.16</factor>
+                <factor>0.002</factor>
             </volume>
         </prop>
     
@@ -421,7 +421,7 @@
             </pitch>
             <position>
                 <x>-1.5</x>
-                <y>2.6</y>
+                <y>-2.6</y>
                 <z>-0.33</z>
             </position>
             <reference-dist>20.0</reference-dist>
@@ -483,7 +483,7 @@
             </pitch>
             <position>
                 <x>-1.5</x>
-                <y>2.6</y>
+                <y>-2.6</y>
                 <z>-0.33</z>
             </position>
         </prop>
@@ -516,7 +516,7 @@
             </pitch>
             <position>
                 <x>-1.5</x>
-                <y>2.6</y>
+                <y>-2.6</y>
                 <z>-0.33</z>
             </position>
             <reference-dist>20.0</reference-dist>
@@ -578,7 +578,7 @@
             </pitch>
             <position>
                 <x>-1.5</x>
-                <y>2.6</y>
+                <y>-2.6</y>
                 <z>-0.33</z>
             </position>
         </prop>
@@ -616,7 +616,7 @@
         </pitch>
         <position>
             <x>4.5</x>
-            <y>1.7</y>
+            <y>-1.7</y>
             <z>0.6</z>
         </position>
         <reference-dist>10.0</reference-dist>
@@ -654,7 +654,7 @@
         </pitch>
         <position>
             <x>3</x>
-            <y>1.7</y>
+            <y>-1.7</y>
             <z>0.6</z>
         </position>
         <reference-dist>10.0</reference-dist>
@@ -692,7 +692,7 @@
             </pitch>
             <position>
                 <x>-1.5</x>
-                <y>-2.6</y>
+                <y>2.6</y>
                 <z>-0.33</z>
             </position>
         </prop>
@@ -1850,7 +1850,7 @@
             <mode>looped</mode>
             <volume>
                 <property>sim/sound/hyd-pump</property>
-                <factor>0.0007</factor>
+                <factor>0.0004</factor>
             </volume>
             <pitch>
                 <property>sim/sound/hyd-pump</property>

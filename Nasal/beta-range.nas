@@ -4,8 +4,10 @@ props.globals.initNode("/controls/engines/engine[0]/internal-throttle-rvrs",0.0)
 props.globals.initNode("/controls/engines/engine[1]/internal-throttle-rvrs",0.0);
 props.globals.initNode("engines/engine[0]/fuel-flow-gph",0.0);
 props.globals.initNode("engines/engine[1]/fuel-flow-gph",0.0);
-props.globals.initNode("engines/engine[0]/beta-range-nut-l",0.5);
-props.globals.initNode("engines/engine[1]/beta-range-nut-r",0.5);
+
+# SurferTim changed
+props.globals.initNode("engines/engine[0]/beta-range-nut-l",1.0);
+props.globals.initNode("engines/engine[1]/beta-range-nut-r",1.0);
 
 var betaRange = func {
 

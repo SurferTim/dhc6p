@@ -636,10 +636,10 @@ var update_eng_sound = func {
     tsv1+=getprop("engines/engine[0]/reverse") * 0.3;
     tsv2+=getprop("engines/engine[1]/reverse") * 0.3;
 
-    if(tst1 > 1.0) tst1 = 1.0;
-    if(tst2 > 1.0) tst2 = 1.0;
-    if(tsv1 > 1.0) tsv1 = 1.0;
-    if(tsv2 > 1.0) tsv2 = 1.0;
+#    if(tst1 > 1.0) tst1 = 1.0;
+#    if(tst2 > 1.0) tst2 = 1.0;
+#    if(tsv1 > 1.0) tsv1 = 1.0;
+#    if(tsv2 > 1.0) tsv2 = 1.0;
 
     E1_pitch.setValue(tst1);
     E2_pitch.setValue(tst2);
