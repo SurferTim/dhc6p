@@ -1,0 +1,207 @@
+<?xml version="1.0"?>
+
+<!--
+##############################################
+# Copyright (c) Joshua Davidson (it0uchpods) #
+##############################################
+-->
+
+<PropertyList>
+    <checklist>
+		<title>PRESTART</title>
+		<page>
+			<item>
+				<name>Battery L + R switches</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Generator L + R switches</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Avionics switch</name>
+				<value>ON</value>
+			</item>
+
+			<item>
+				<name>Fuel Boost L + R switches</name>
+				<value>ON</value>
+			</item>
+
+			<item>
+				<name>Ignition L + R switches</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Gnd/Rec anticollision (copilot side)</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Taxi lights (copilot near flaps)</name>
+				<value>ON</value>
+			</item>
+		</page>
+		<page>
+		</page>
+    </checklist>
+	<checklist>
+		<title>ENGINE START</title>
+		<page>
+			<item>
+				<name>Throttle</name>
+				<value>IDLE</value>
+			</item>
+			<item>
+				<name>Engine starter L + R button</name>
+				<value>ON</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>AFTER START</title>
+		<page>
+			<item>
+				<name>Nav Lights</name>
+				<value>ON</value>
+			</item>
+			<item>
+				<name>Parking brake</name>
+				<value>Release</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>AFTER TAKEOFF</title>
+		<page>
+			<item>
+				<name>GEAR AND GEAR LIGHTS</name>
+				<value>UP, OFF</value>
+			</item>
+			<item>
+				<name>SPOILERS</name>
+				<value>DISARMED</value>
+			</item>
+			<item>
+				<name>LANDING LIGHTS</name>
+				<value>OFF</value>
+			</item>
+
+			<item>
+				<name>FLAPS / SLATS</name>
+				<value>RETRACTED</value>
+			</item>
+			<item>
+				<name>ALTIMETER</name>
+				<value>SET / CROSSCHECKED</value>
+			</item>
+			<item>
+				<name>AUTOPILOT</name>
+				<value>ENGAGED / SET</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>APPROACH / DESCENT</title>
+		<page>
+			<item>
+				<name>AUTOPILOT LANDING DATA</name>
+				<value>CHECKED, SET</value>
+			</item>
+			<item>
+				<name>FLAPS</name>
+				<value>AS REQ</value>
+			</item>
+			<item>
+				<name>LANDING GEAR</name>
+				<value>DOWN / GREEN</value>
+			</item>
+			<item>
+				<name>SEATBELTS</name>
+				<value>CHECKED, SET</value>
+			</item>
+			<item>
+				<name>ALTIMETER</name>
+				<value>SET / CROSSCHECKED</value>
+			</item>
+			<item>
+				<name>LANDING LIGHTS</name>
+				<value>ON</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>AFTER LANDING</title>
+		<page>
+			<item>
+				<name>SPOILERS</name>
+				<value>RETRACTED</value>
+			</item>
+			<item>
+				<name>FLAPS / SLATS</name>
+				<value>UP, RETRACTED</value>
+			</item>
+			<item>
+				<name>TRANSPONDER</name>
+				<value>AS REQ</value>
+			</item>
+			<item>
+				<name>EXTERIOR LIGHTS</name>
+				<value>LANDING LIGHTS OFF, HI-INT OFF, TAXI LIGHTS ON, SET</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>PARKING</title>
+		<page>
+			<item>
+				<name>ANTI-ICE</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>HYD PANEL</name>
+				<value>AUTO / MAN SET</value>
+			</item>
+			<item>
+				<name>FUEL SWITCHES</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>SEATBELTS</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>FUEL PANEL</name>
+				<value>AUTO / MAN SET</value>
+			</item>
+			<item>
+				<name>EXTERIOR LIGHTS</name>
+				<value>BEACON OFF</value>
+			</item>
+			<item>
+				<name>PARK BRK, CHOCKS</name>
+				<value>OFF, SET</value>
+			</item>
+		</page>
+    </checklist>
+	<checklist>
+		<title>LEAVING A/C</title>
+		<page>
+			<item>
+				<name>EMER LIGHT</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>EVAC CMD</name>
+				<value>AUTO / MAN SET</value>
+			</item>
+			<item>
+				<name>APU</name>
+				<value>OFF</value>
+			</item>
+			<item>
+				<name>BAT</name>
+				<value>OFF</value>
+			</item>
+		</page>
+    </checklist>
+</PropertyList>

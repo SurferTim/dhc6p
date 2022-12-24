@@ -1759,6 +1759,11 @@
             </condition>
         </item>
 
+        <item>
+            <name>Float version bogey wheels</name>
+            <value>RETRACT</value>
+        </item>
+
     </checklist>
 
     <checklist>
@@ -2491,6 +2496,11 @@
                     <value>0</value>
                 </equals>
             </condition>
+        </item>
+
+        <item>
+            <name>Float version bogey wheels</name>
+            <value>EXTEND</value>
         </item>
 
         <item>
