@@ -1,0 +1,200 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+	<path>tacan.ac</path>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-1</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[1]</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-2</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[2]</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>textranslate</type>
+		<object-name>drum-3</object-name>
+		<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+		<factor>0.1</factor>
+		<offset>-1</offset>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>Y-sign</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>Y</value>
+			</equals>
+		</condition>
+	</animation>
+
+	<animation>
+		<type>select</type>
+		<object-name>X-sign</object-name>
+		<condition>
+			<equals>
+				<property>instrumentation/tacan/frequencies/selected-channel[4]</property>
+				<value>X</value>
+			</equals>
+		</condition>
+	</animation>
+
+
+	<animation>
+		<name>xysign-toogle</name>
+		<object-name>xysign-toogle-knob</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>dhc6.tacan_XYtoggle()</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>channel-units-up</name>
+		<object-name>unit-knob</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+				<step>1</step>
+				<min>0</min>
+				<max>10</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>channel-units-down</name>
+		<object-name>unit-knob</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>1</button>
+			<binding>
+				<command>property-adjust</command>
+				<property>instrumentation/tacan/frequencies/selected-channel[3]</property>
+				<step>-1</step>
+				<min>0</min>
+				<max>10</max>
+				<wrap>true</wrap>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>channel-tenth-up</name>
+		<object-name>tenth-knob</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>0</button>
+			<binding>
+				<command>nasal</command>
+				<script>dhc6.tacan_tenth_adjust(10)</script>
+			</binding>
+		</action>
+	</animation>
+
+	<animation>
+		<name>channel-tenth-down</name>
+		<object-name>tenth-knob</object-name>
+		<type>pick</type>
+		<visible>true</visible>
+		<action>
+			<button>1</button>
+			<binding>
+				<command>nasal</command>
+				<script>dhc6.tacan_tenth_adjust(-10)</script>
+			</binding>
+		</action>
+	</animation>
+
+
+	<!-- lighting -->
+	<animation>
+		<object-name>panel</object-name>
+		<type>material</type>
+		<condition>
+			<and>
+				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/dc-master</property>
+				<property>controls/electric/master-avionics</property>
+			</and>
+		</condition>
+		<emission>
+			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
+			<red>0.363</red>
+			<green>0.158</green>
+			<blue>0.066</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>material</type>
+		<object-name>test-lamp</object-name>
+		<emission>
+			<red>1</red>
+			<green>1</green>
+			<blue>1</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<object-name>drums</object-name>
+		<type>material</type>
+		<condition>
+			<and>
+				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/dc-master</property>
+				<property>controls/electric/master-avionics</property>
+			</and>
+		</condition>
+		<emission>
+			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
+			<red>0.55</red>
+			<green>0.24</green>
+			<blue>0.10</blue>
+		</emission>
+	</animation>
+
+	<animation>
+		<type>range</type>
+		<min-m>0</min-m>
+		<max-m>15</max-m>
+	</animation>
+
+</PropertyList>

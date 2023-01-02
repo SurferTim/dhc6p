@@ -63,9 +63,6 @@ props.globals.initNode("controls/electric/power-source",0);
 props.globals.initNode("controls/switches/dme", 0);
 props.globals.initNode("controls/switches/dme-gps-slave", 0);
 props.globals.initNode("autopilot/internal/pitch-filter-gain",1.0,"DOUBLE");
-props.globals.initNode("ai/control/object-selected","","STRING");
-props.globals.initNode("ai/control/heading",0.00,"DOUBLE");
-props.globals.initNode("ai/control/activecarrier",0,"INT");
 
 ###################################
 
@@ -113,12 +110,10 @@ var Startup_yasim = func{
 
     if (getprop("sim/aircraft") == "dhc6F") {
         setprop("sim/model/equipment/ground-services/external-power/enable",0);
-    }
-
-    if (getprop("sim/model/equipment/ground-services/external-power/enable") == 1) {
-        setprop("controls/electric/power-source",-1);
-    } else {
         setprop("controls/electric/power-source",1);
+    } else {
+        setprop("sim/model/equipment/ground-services/external-power/enable",1);
+        setprop("controls/electric/power-source",-1);
     }
 
     if (getprop("controls/electric/inverter") == 1) {
@@ -209,8 +204,6 @@ var Startup_yasim = func{
             print("YASIM Startup complete");
 
         }
-
-
         settimer(check_loop1, 0.1);
         }
     }
@@ -783,36 +776,6 @@ var update_instruments = func {
     } else {
         setprop("instrumentation/volt-amp-meter/serviceable", 0);
     }
-
-
-    if(getprop("instrumentation/tacan/in-range") == 1)
-    {
-#        print("in range");
-        var numcarriers = getprop("ai/models/count");
-  
-        for(var x=0;x<numcarriers;x=x+1)
-        {
-            var cpath = sprintf("ai/models/carrier[%u]/dlg-name",x);
-
-            var carriername = getprop(cpath);
-            if(carriername) {
-#                print(carriername);
-                setprop("ai/control/activecarrier",x);
-                var hdgpath = sprintf("ai/models/carrier[%u]/orientation/true-heading-deg",x);
-                var chdg = getprop(hdgpath);
-                var coffset = getprop("orientation/heading-magnetic-deg");
-                cmvar = getprop("environment/magnetic-variation-deg");
-
-                chdg = coffset - chdg + cmvar;
-                if(chdg < 0.00) chdg = chdg + 360.00;
-
-#                print(chdg);
-
-                setprop("ai/control/heading",chdg);
-            } 
-       }
-    } 
-
 }
 
 var update_systems = func {
@@ -1008,12 +971,6 @@ setlistener("/autopilot/settings/heading-bug-deg", func(test){
 setlistener("/sim/signals/fdm-initialized", func(){
      setprop("/instrumentation/adf/volume-norm",0.0);
      setprop("/autopilot/settings/heading-bug-deg",getprop("/instrumentation/heading-indicator-real-dg/heading-bug-deg"));
-},0,0);
-
-setlistener("/controls/electric/master-avionics", func(test){
-#     if(getprop("/controls/electric/power-source") != 0) (
-         setprop("/systems/electrical/outputs/tacan",test.getValue());
-#     )
 },0,0);
 
 #setlistener("controls/engines/engine[0]/reverser", func(bpe0){

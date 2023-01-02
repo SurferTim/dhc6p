@@ -902,6 +902,29 @@
         </offsets>
     </model>
 
+<!-- SurferTim -->
+    <model>
+        <name>Pilot TACAN</name>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/tacan/tacan.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.194</y-m>
+            <z-m>0.287</z-m>
+            <pitch-deg>90</pitch-deg>
+        </offsets>
+    </model>
+
+    <model>
+        <name>Pilot TACAN Display</name>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/tacan/bdhi.xml</path>
+        <offsets>
+            <x-m>-3.936</x-m>
+            <y-m>0.421</y-m>
+            <z-m>0.457</z-m>
+            <pitch-deg>0</pitch-deg>
+        </offsets>
+    </model>
+
     <model>
         <name>airtemp</name>
         <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/airtemp/airtemp.xml</path>

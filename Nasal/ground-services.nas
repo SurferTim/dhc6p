@@ -11,7 +11,11 @@ var ground_services = {
 	me.loopid = 0;
 
 	# External power
-	setprop("/sim/model/equipment/ground-services/external-power/enable", 1);
+	if (getprop("sim/aircraft") == "dhc6F") {
+        	setprop("/sim/model/equipment/ground-services/external-power/enable",0);
+   	} else {
+		setprop("/sim/model/equipment/ground-services/external-power/enable", 1);
+	}
 
 	# Fuel Truck
 	setprop("/sim/model/equipment/ground-services/fuel-truck/enable", 0);

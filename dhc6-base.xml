@@ -558,6 +558,9 @@
             <file>Aircraft/dhc6p/Nasal/vor-ils-catch.nas</file>
             <file>Aircraft/dhc6p/Nasal/tooltips.nas</file>
             <file>Aircraft/dhc6p/Nasal/interpolate.nas</file>
+            <file>Aircraft/dhc6p/Nasal/controls.nas</file>
+            <file>Aircraft/dhc6p/Nasal/tacan.nas</file>
+
             <!--file>Aircraft/dhc6p/Nasal/light-manager.nas</file-->
         </dhc6>
         <dialogs>

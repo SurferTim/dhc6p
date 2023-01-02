@@ -169,5 +169,10 @@
         <encoder-path type="string">/instrumentation/altimeter</encoder-path>
         <kt70-compatibility type="bool">0</kt70-compatibility>
     </transponder>
-    
+
+    <tacan>
+        <name type="string">tacan</name>
+        <number type="int">0</number>
+    </tacan>
+
 </PropertyList>
