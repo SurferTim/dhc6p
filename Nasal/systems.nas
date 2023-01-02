@@ -803,12 +803,13 @@ var update_instruments = func {
                 var coffset = getprop("orientation/heading-magnetic-deg");
                 cmvar = getprop("environment/magnetic-variation-deg");
 
-                chdg = coffset - chdg + cmvar;
-                if(chdg < 0.00) chdg = chdg + 360.00;
+                var chdg2 = coffset - chdg;
 
-#                print(chdg);
+                if(chdg2 < 0.00) chdg2 = chdg2 + 360.00;
 
-                setprop("ai/control/heading",chdg);
+#                print(chdg2);
+
+                setprop("ai/control/heading",chdg2);
             } 
        }
     } 

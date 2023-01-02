@@ -138,7 +138,7 @@
     <line>The maximum speed is 170 knots, up to 6700 ft. Above that it decreases by 3 knots each 1000 ft.</line>
     <line>____________________________________________________</line>
     <line/>
-    <line>Technical data (DHC-6-300):</line>
+    <line>Technical data (DHC-6-300P):</line>
     <line>Length: 15.77 m/51 ft 9 in</line>
     <line>Wingspan: 19.81 m/65 ft 0 in</line>
     <line>Height: 5.91 m/19 ft 4 in</line>
@@ -146,8 +146,8 @@
     <line>Range with max fuel, no payload: aprox. 1430 km/775 nm</line>
     <line>MTOW: 5,670 kg/12,500 lb</line>
     <line>Maximum landing weight: 5,579 kg/12300 lb</line>
-    <line>Powerplant: 2x Pratt and Whitney Canada PT6A-27</line>
-    <line>Power: 2x 463 kW</line>
+    <line>Powerplant: 2x Pratt and Whitney Canada PT6A-34</line>
+    <line>Power: 2x 563 kW</line>
     <line>Stall speed in landing config (Vs0): 58 KIAS</line>
     <line>Stall speed in cruise config (Vs1): 80 KIAS</line>
     <line>Maximum Operating Speed (Vmo) up to 6,700 ft: 170 KIAS</line>
