@@ -2889,6 +2889,10 @@
                 <command>property-toggle</command>
                 <property>sim/sound/click</property>
             </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Hold 5 seconds"));</script>
+            </binding>
             <mod-up>
                 <binding>
                     <command>property-assign</command>
@@ -2952,6 +2956,10 @@
                 <command>property-assign</command>
                 <property>controls/engines/engine[1]/intake-deflector-extend</property>
                 <value type="int">1</value>
+            </binding>
+            <binding>
+                <command>nasal</command>
+                <script>gui.popupTip(sprintf("Hold 5 seconds"));</script>
             </binding>
             <binding>
                 <command>property-toggle</command>

@@ -352,22 +352,6 @@ setlistener("/controls/gear/parkingbrake-lever", func(v) {
     }
 });
 
-setlistener("/controls/armament/station[5]/release-all", func(v) {
-    if(v.getValue()){
-        interpolate("/controls/armament/station[5]/release-all-pos", 1, 0.1);
-    }else{
-        interpolate("/controls/armament/station[5]/release-all-pos", 0, 0.1);
-    }
-});
-
-setlistener("/controls/armament/station[6]/release-all", func(v) {
-    if(v.getValue()){
-        interpolate("/controls/armament/station[6]/release-all-pos", 1, 0.1);
-    }else{
-        interpolate("/controls/armament/station[6]/release-all-pos", 0, 0.1);
-    }
-});
-
 setlistener("/instrumentation/dme/switch-position", func(v) {
     interpolate("/instrumentation/dme/switch-position-pos", v.getValue(), 0.1);
 });

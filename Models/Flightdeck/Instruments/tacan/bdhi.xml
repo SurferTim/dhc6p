@@ -162,7 +162,7 @@
 	</animation>
 
 	<!-- lighting -->
-	<animation>
+	<!--animation>
 		<object-name>mount</object-name>
 		<type>material</type>
 		<condition>
@@ -177,7 +177,7 @@
 			<green>0.24</green>
 			<blue>0.10</blue>
 		</emission>
-	</animation>
+	</animation-->
 
 	<animation>
 		<object-name>central-mask</object-name>
@@ -254,7 +254,7 @@
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>
-		<max-m>15</max-m>
+		<max-m>50</max-m>
 	</animation>
 
 </PropertyList>
