@@ -152,10 +152,9 @@
         <object-name>RHthrottle</object-name>
         <object-name>flaplever</object-name>
         <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+            <red>0.1</red>
+            <green>0.1</green>
+            <blue>0.1</blue>
         </emission>
     </animation>
 
@@ -216,11 +215,14 @@
         <object-name>coplt_radio_va_pnl_lts.knob</object-name>
         <object-name>flap_cons_trim_pnl_lts.knob</object-name>
         <object-name>plt_inst_eng_pnl_lts.knob</object-name>
+        <condition>
+		<property>controls/electric/power-source</property>
+        </condition>
         <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>controls/electric/battery-switch-pos</factor-prop>
+            <red>0.8</red>
+            <green>0.5</green>
+            <blue>0.4</blue>
+            <factor-prop>controls/lighting/flap-cons-trim-pnl-lts</factor-prop>
         </emission>
     </animation>
 
@@ -3345,7 +3347,7 @@
         <type>knob</type>
         <object-name>plt_inst_eng_pnl_lts.knob</object-name>
         <property>controls/lighting/plt-eng-inst-emer-pnl-lts</property>
-        <factor>270</factor>
+        <factor>140</factor>
         <center>
             <x-m>-2.88662</x-m>
             <y-m>-0.20641</y-m>
@@ -3381,7 +3383,7 @@
         <type>knob</type>
         <object-name>flap_cons_trim_pnl_lts.knob</object-name>
         <property>controls/lighting/flap-cons-trim-pnl-lts</property>
-        <factor>270</factor>
+        <factor>140</factor>
         <center>
             <x-m>-2.88662</x-m>
             <y-m>-0.26791</y-m>
@@ -3417,7 +3419,7 @@
         <type>knob</type>
         <object-name>coplt_radio_va_pnl_lts.knob</object-name>
         <property>controls/lighting/coplt-radio-va-pnl-lts</property>
-        <factor>270</factor>
+        <factor>140</factor>
         <center>
             <x-m>-2.90462</x-m>
             <y-m>0.21018</y-m>

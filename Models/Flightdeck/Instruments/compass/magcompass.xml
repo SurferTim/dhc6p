@@ -41,15 +41,12 @@
 		<object-name>Compass.ball</object-name>
 		<type>material</type>
 		<condition>
-			<and>
-				<property>controls/electric/battery-switch</property>
-				<property>controls/electric/dc-master</property>
-			</and>
+			<property>controls/electric/power-source</property>
 		</condition>
 
 		<emission>
 			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>1.2</red>
+			<red>1.0</red>
 			<green>.80</green>
 			<blue>0.60</blue>
 		</emission>

@@ -184,7 +184,7 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/power-source</property>
 				<property>controls/electric/dc-master</property>
 			</and>
 		</condition>
@@ -201,7 +201,7 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/power-source</property>
 				<property>controls/electric/dc-master</property>
 			</and>
 		</condition>
@@ -219,7 +219,7 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/power-source</property>
 				<property>controls/electric/dc-master</property>
 			</and>
 		</condition>
@@ -237,7 +237,7 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/power-source</property>
 				<property>controls/electric/dc-master</property>
 			</and>
 		</condition>

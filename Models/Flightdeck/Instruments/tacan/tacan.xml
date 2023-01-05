@@ -150,7 +150,10 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<not>
+				<property>controls/electric/power-source</property>
+				<value>0</value>
+				</not>
 				<property>controls/electric/dc-master</property>
 				<property>controls/electric/master-avionics</property>
 			</and>
@@ -166,6 +169,13 @@
 	<animation>
 		<type>material</type>
 		<object-name>test-lamp</object-name>
+		<condition>
+			<and>
+				<property>controls/electric/power-source</property>
+				<property>controls/electric/dc-master</property>
+				<property>controls/electric/master-avionics</property>
+			</and>
+		</condition>
 		<emission>
 			<red>1</red>
 			<green>1</green>
@@ -178,7 +188,7 @@
 		<type>material</type>
 		<condition>
 			<and>
-				<property>controls/electric/battery-switch</property>
+				<property>controls/electric/power-source</property>
 				<property>controls/electric/dc-master</property>
 				<property>controls/electric/master-avionics</property>
 			</and>
