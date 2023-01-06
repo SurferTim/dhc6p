@@ -42,13 +42,14 @@
 		<type>material</type>
 		<condition>
 			<property>controls/electric/power-source</property>
+			<property>controls/electric/dc-master</property>
 		</condition>
 
 		<emission>
-			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>1.0</red>
-			<green>.80</green>
-			<blue>0.60</blue>
+			<factor-prop>controls/lighting/plt-eng-inst-emer-pnl-lts</factor-prop>
+			<red>1.8</red>
+			<green>0.5</green>
+			<blue>0.2</blue>
 		</emission>
 	</animation>
    <animation>

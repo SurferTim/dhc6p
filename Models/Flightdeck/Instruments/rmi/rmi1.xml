@@ -66,9 +66,9 @@
         <object-name>mount</object-name>
         <object-name>switchbox</object-name>
         <emission>
-            <red>0.1</red>
-            <green>0.1</green>
-            <blue>0.1</blue>
+            <red>0.2</red>
+            <green>0.2</green>
+            <blue>0.2</blue>
         </emission>
     </animation>
 
@@ -95,7 +95,7 @@
             <red>2</red>
             <green>1.5</green>
             <blue>1</blue>
-            <factor-prop>controls/lighting/plt-eng-inst-emer-pnl-lts</factor-prop>
+            <factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
         </emission>
     </animation>
 
@@ -171,9 +171,9 @@
             </not>
         </condition>
         <emission>
-            <red>   0.9 </red>
-            <green> 0.4 </green>
-            <blue>  0.4 </blue>
+            <red>   0.07 </red>
+            <green> 0.04 </green>
+            <blue>  0.04 </blue>
             <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
     </animation>
@@ -188,9 +188,9 @@
             </not>
         </condition>
         <emission>
-            <red>   0.2 </red>
-            <green> 0.2 </green>
-            <blue>  0.2 </blue>
+            <red>   0.01 </red>
+            <green> 0.01 </green>
+            <blue>  0.01 </blue>
             <factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
         </emission>
     </animation>

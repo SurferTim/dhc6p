@@ -217,7 +217,8 @@
         <object-name>plt_inst_eng_pnl_lts.knob</object-name>
         <condition>
 		<property>controls/electric/power-source</property>
-        </condition>
+		<property>controls/electric/dc-master</property>
+	</condition>
         <emission>
             <red>0.8</red>
             <green>0.5</green>
@@ -909,8 +910,8 @@
         <name>Pilot TACAN</name>
         <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/tacan/tacan.xml</path>
         <offsets>
-            <x-m>-3.936</x-m>
-            <y-m>0.194</y-m>
+            <x-m>-3.94</x-m>
+            <y-m>0.20</y-m>
             <z-m>0.287</z-m>
             <pitch-deg>90</pitch-deg>
         </offsets>
@@ -962,7 +963,7 @@
 
     <model>
         <name>CoPilot RMI</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/rmi/rmi.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/rmi/rmi1.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.321</y-m>
@@ -1006,7 +1007,7 @@
 
     <model>
         <name>CoPilot VSI</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/vsi/vsi.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/vsi/vsi1.xml</path>
         <offsets>
             <x-m>-3.929</x-m>
             <y-m>0.622</y-m>
@@ -1028,7 +1029,7 @@
 
     <model>
         <name>CoPilot HSI</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/hi/hi.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/hi/hi1.xml</path>
         <offsets>
             <x-m>-3.936</x-m>
             <y-m>0.521</y-m>
@@ -1039,7 +1040,7 @@
 
     <model>
         <name>CoPilot TC</name>
-        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/tc/tc.xml</path>
+        <path>Aircraft/dhc6p/Models/Flightdeck/Instruments/tc/tc1.xml</path>
         <offsets>
             <x-m>-3.933</x-m>
             <y-m>0.421</y-m>

@@ -60,7 +60,7 @@
             <red>1.5</red>
             <green>1</green>
             <blue>0.7</blue>
-            <factor-prop>controls/lighting/plt-eng-inst-emer-pnl-lts</factor-prop>
+            <factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
         </emission>
     </animation>
 

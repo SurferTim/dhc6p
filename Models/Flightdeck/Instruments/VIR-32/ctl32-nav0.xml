@@ -1140,7 +1140,7 @@ the centers are:
             <red>0.8</red>
             <green>0.8</green>
             <blue>0.7</blue>
-            <factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
+            <!--factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop-->
         </emission>
     </animation>
 
