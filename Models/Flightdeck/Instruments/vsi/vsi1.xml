@@ -34,7 +34,7 @@
         <object-name>vitre</object-name>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>backlight</object-name>
         <object-name>mount</object-name>
@@ -43,24 +43,18 @@
             <green>0.1</green>
             <blue>0.1</blue>
         </emission>
-    </animation>
+    </animation-->
 
     <animation>
         <type>material</type>
         <object-name>Face</object-name>
         <object-name>PointerCentre</object-name>
         <object-name>PointerTip</object-name>
-	<condition>
-		<and>
-			<property>controls/electric/power-source</property>
-			<property>controls/electric/dc-master</property>
-		</and>
-	</condition>
         <emission>
-            <red>1.5</red>
-            <green>1</green>
-            <blue>0.7</blue>
-            <factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
+            <red>0.04</red>
+            <green>0.03</green>
+            <blue>0.03</blue>
+            <factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
         </emission>
     </animation>
 
@@ -106,7 +100,7 @@
         </hovered>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>PointerCentre</object-name>
         <object-name>PointerTip</object-name>
@@ -122,7 +116,7 @@
             <blue>  0.04 </blue>
             <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <animation> 
         <type>rotate</type>
@@ -191,71 +185,6 @@
         <object-name>textosg</object-name>
         <condition>
             <property>sim/panel-hotspots</property>
-        </condition>
-    </animation>
-
-    <!--########## Cone de lumière Rembrandt #############-->
-    <animation>
-        <name>BackLightAnimation</name>
-        <type>light</type>
-        <light-type>spot</light-type>
-        <object-name>backlight</object-name>
-        <position>
-            <x> 0.02 </x>
-            <y> 0.00 </y>
-            <z>-0.05 </z>
-        </position>
-        <direction>
-            <x> -1.0 </x>
-            <y>  0.0 </y>
-            <z>  1.0 </z>
-        </direction>
-        <ambient>
-            <r>  0.0 </r>
-            <g>  0.0 </g>
-            <b>  0.0 </b>
-            <a>  1.0 </a>
-        </ambient>
-        <diffuse>
-            <r>  0.5 </r>
-            <g>  0.404 </g>
-            <b>  0.2 </b>
-            <a>  1.0 </a>
-        </diffuse>
-        <specular>
-            <r>  0.0 </r>
-            <g>  0.0 </g>
-            <b>  0.0 </b>
-            <a>  1.0 </a>
-        </specular>
-        <dim-factor>
-            <property>systems/electrical/outputs/instrument-lights</property>
-            <!-- optional begin -->
-            <factor>0.04</factor>
-            <offset>0</offset>
-            <min>0</min>
-            <max>1</max>
-            <!-- optional end -->
-        </dim-factor>
-        <attenuation>
-            <c>  0.2 </c>
-            <l>  0.2 </l>
-            <q>  0.4 </q>
-        </attenuation>
-        <exponent>  8.0 </exponent>
-        <cutoff>   48.0   </cutoff>
-        <near-m>    0.0   </near-m>
-        <far-m>     0.09 </far-m>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>BackLightAnimation</object-name>
-        <condition>
-            <and>
-                <property>controls/electric/battery-switch</property>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </and>
         </condition>
     </animation>
 

@@ -40,19 +40,15 @@
 	<animation>
 		<object-name>Compass.ball</object-name>
 		<type>material</type>
-		<condition>
-			<property>controls/electric/power-source</property>
-			<property>controls/electric/dc-master</property>
-		</condition>
-
-		<emission>
-			<factor-prop>controls/lighting/plt-eng-inst-emer-pnl-lts</factor-prop>
-			<red>1.8</red>
-			<green>0.5</green>
-			<blue>0.2</blue>
-		</emission>
+	        <emission>
+        	    <red>0.05</red>
+       		     <green>0.04</green>
+                     <blue>0.04</blue>
+                     <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
+                </emission>
 	</animation>
    <animation>
+
         <type>pick</type>
         <object-name>Compass</object-name>
         <object-name>Compass.ball</object-name>            

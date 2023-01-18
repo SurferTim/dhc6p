@@ -203,7 +203,9 @@
         <object-name>sw.015</object-name>
         <object-name>sw.016</object-name>
         <object-name>taxi.sw</object-name>
+
         <object-name>throttleQ</object-name>
+
         <object-name>windshield-heat</object-name>
         <object-name>wiper.park</object-name>
         <object-name>wiper.speed</object-name>
@@ -211,6 +213,7 @@
         <object-name>master-avionics.label</object-name>
         <object-name>master-avionics.on</object-name>
         <object-name>master-avionics.off</object-name>
+
         <object-name>instr-lights.panel</object-name>
         <object-name>coplt_radio_va_pnl_lts.knob</object-name>
         <object-name>flap_cons_trim_pnl_lts.knob</object-name>
@@ -220,9 +223,9 @@
 		<property>controls/electric/dc-master</property>
 	</condition>
         <emission>
-            <red>0.8</red>
-            <green>0.5</green>
-            <blue>0.4</blue>
+            <red>0.6</red>
+            <green>0.6</green>
+            <blue>0.6</blue>
             <factor-prop>controls/lighting/flap-cons-trim-pnl-lts</factor-prop>
         </emission>
     </animation>

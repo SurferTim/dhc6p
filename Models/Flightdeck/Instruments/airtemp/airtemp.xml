@@ -23,7 +23,7 @@
         <object-name>vitre</object-name>
     </animation>
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>backlight</object-name>
         <object-name>mount</object-name>
@@ -33,23 +33,17 @@
             <blue>0.161171928</blue>
             <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <animation>
         <type>material</type>
         <object-name>Airtemp.face</object-name>
         <object-name>Airtemp.needle</object-name>
-        <condition>
-            <less-than>
-                <property>controls/lighting/coplt-radio-va-pnl-lts</property>
-                <value>0.05</value>
-            </less-than>
-        </condition>
         <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+            <red>0.04</red>
+            <green>0.03</green>
+            <blue>0.03</blue>
+           <factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
         </emission>
     </animation>
 
@@ -85,7 +79,7 @@
         </hovered>
     </animation> 
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>Airtemp.face</object-name>
         <object-name>Airtemp.needle</object-name>
@@ -100,7 +94,7 @@
             <blue>  0.04 </blue>
             <factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <animation>
         <type>rotate</type>
@@ -159,70 +153,6 @@
         <object-name>textosg</object-name>
         <condition>
             <property>sim/panel-hotspots</property>
-        </condition>
-    </animation>
-
-    <animation>
-        <name>BackLightAnimation</name>
-        <type>light</type>
-        <light-type>spot</light-type>
-        <object-name>backlight</object-name>
-        <position>
-            <x> 0.025 </x>
-            <y> 0.00 </y>
-            <z>-0.05 </z>
-        </position>
-        <direction>
-            <x> -1.0 </x>
-            <y>  0.0 </y>
-            <z>  1.0 </z>
-        </direction>
-        <ambient>
-            <r>  0.0 </r>
-            <g>  0.0 </g>
-            <b>  0.0 </b>
-            <a>  1.0 </a>
-        </ambient>
-        <diffuse>
-            <r>  0.5 </r>
-            <g>  0.404 </g>
-            <b>  0.2 </b>
-            <a>  1.0 </a>
-        </diffuse>
-        <specular>
-            <r>  0.0 </r>
-            <g>  0.0 </g>
-            <b>  0.0 </b>
-            <a>  1.0 </a>
-        </specular>
-        <dim-factor>
-            <property>systems/electrical/outputs/instrument-lights</property>
-            <!-- optional begin -->
-            <factor>0.04</factor>
-            <offset>0</offset>
-            <min>0</min>
-            <max>1</max>
-          <!-- optional end -->
-        </dim-factor>
-        <attenuation>
-            <c>  0.2 </c>
-            <l>  0.2 </l>
-            <q>  0.4 </q>
-        </attenuation>
-        <exponent>  8.0 </exponent>
-        <cutoff>   48.0   </cutoff>
-        <near-m>    0.0   </near-m>
-        <far-m>     0.09 </far-m>
-    </animation>
-
-    <animation>
-        <type>select</type>
-        <object-name>BackLightAnimation</object-name>
-        <condition>
-            <and>
-                <property>controls/electric/battery-switch</property>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </and>
         </condition>
     </animation>
 

@@ -1363,9 +1363,9 @@ the centers are:
         <object-name>ctl22.annun.tx.5</object-name>
         <object-name>ctl22.annun.tx.6</object-name>
         <emission>
-            <red>0.8</red>
-            <green>0.8</green>
-            <blue>0.7</blue>
+            <red>0.7</red>
+            <green>0.5</green>
+            <blue>0.4</blue>
             <!--factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop-->
         </emission>
     </animation>

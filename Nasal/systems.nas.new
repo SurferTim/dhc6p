@@ -457,12 +457,8 @@ var Caution_panel = {
     right_bank: func{
         # Left column
         if(getprop("systems/electrical/outputs/caution-lights/r-cycle-400")>0.1)me.r_cycle400.setValue(me.volts) else me.r_cycle400.setValue(0);
-
-
-        if(getprop("systems/electrical/outputs/caution-lights/low-press")>0.0)me.low_press.setValue(me.volts) else me.low_press.setValue(0);
-        if(getprop("systems/electrical/outputs/caution-lights/reset-props")>0.0)me.prop_reset.setValue(me.volts) else me.prop_reset.setValue(0);
-
-
+        if(getprop("systems/electrical/outputs/caution-lights/low-press")>0.1)me.low_press.setValue(me.volts) else me.low_press.setValue(0);
+        if(getprop("systems/electrical/outputs/caution-lights/reset-props")>0.1)me.prop_reset.setValue(me.volts) else me.prop_reset.setValue(0);
         # Center column
         if(getprop("systems/electrical/outputs/caution-lights/low-fuel-aft")>0.1)me.aft_fuel.setValue(me.volts) else me.aft_fuel.setValue(0);
         if(getprop("systems/electrical/outputs/caution-lights/boost-pump-secondary-fwd-low-press")>0.1)me.fwd_boost2.setValue(me.volts) else me.fwd_boost2.setValue(0);
@@ -852,9 +848,9 @@ var update_instruments = func {
                 setprop("ai/control/heading",chdg2);
             } 
        }
+
+
        }
-
-
     } 
 
 }

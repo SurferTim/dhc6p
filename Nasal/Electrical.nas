@@ -774,7 +774,7 @@ Left_28V_DC_bus = func(dt) {
     }
 
     # Reset props caution light
-    if (getprop("controls/electric/caution-test") or (getprop("controls/engines/engine[0]/throttle")<75 and getprop("controls/engines/engine[0]/propeller-pitch")<0.95) or (getprop("controls/engines/engine[1]/throttle")<75 and getprop("controls/engines/engine[1]/propeller-pitch")<0.95)) {
+    if (getprop("controls/electric/caution-test") or (getprop("controls/engines/engine[0]/throttle") > 0.70 and getprop("controls/engines/engine[0]/propeller-pitch") < 0.50) or (getprop("controls/engines/engine[1]/throttle") > 0.70 and getprop("controls/engines/engine[1]/propeller-pitch") < 0.50)) {
         setprop(outPut~"caution-lights/reset-props", bus_volts);
         load += bus_volts / 60;
     } else {

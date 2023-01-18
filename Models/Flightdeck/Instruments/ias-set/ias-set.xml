@@ -4,19 +4,19 @@
 
     <path>ias-set.ac</path>
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>cadre-sel_board</object-name>
         <object-name>ias.dwn</object-name>
         <object-name>ias.fond</object-name>
         <object-name>ias.up</object-name>
         <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <animation>
         <type>material</type>
@@ -24,17 +24,11 @@
         <object-name>ias.10</object-name>
         <object-name>ias.100</object-name>
         <object-name>ias.knob</object-name>
-        <condition>
-            <less-than>
-                <property>controls/lighting/plt-eng-inst-emer-pnl-lts</property>
-                <value>0.05</value>
-            </less-than>
-        </condition>
         <emission>
-            <red>0.381924</red>
-            <green>0.30935844</green>
-            <blue>0.161171928</blue>
-            <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
+            <red>0.05</red>
+            <green>0.04</green>
+            <blue>0.04</blue>
+            <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
     </animation>
 
@@ -45,14 +39,14 @@
         <object-name>ias.10</object-name>
         <object-name>ias.1</object-name>
         <emission>
-            <red>0.07</red>
+            <red>0.05</red>
             <green>0.04</green>
             <blue>0.04</blue>
             <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
     </animation>
 
-     <animation>
+     <!--animation>
         <type>material</type>
         <object-name>ias.knob</object-name>
         <condition>
@@ -67,7 +61,7 @@
             <blue>0.8</blue>
             <factor-prop>systems/electrical/outputs/plt-eng-inst-emer-pnl-lts</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <effect>
         <inherits-from>Aircraft/dhc6p/Models/Effects/interior/dhc6-interior</inherits-from>

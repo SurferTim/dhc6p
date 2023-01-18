@@ -4,7 +4,7 @@
 
     <path>flap-gauge.ac</path>
 
-    <animation>
+    <!--animation>
         <type>material</type>
         <object-name>FlapLever</object-name>
         <object-name>Flapgauge</object-name>
@@ -20,21 +20,16 @@
             <blue>0.161171928</blue>
             <factor-prop>sim/multiplay/generic/float[10]</factor-prop>
         </emission>
-    </animation>
+    </animation-->
 
     <animation>
         <type>material</type>
         <object-name>FlapLever</object-name>
         <object-name>Flapgauge</object-name>
-        <condition>
-            <not>
-                <property>sim/rendering/rembrandt/enabled</property>
-            </not>
-        </condition>
         <emission>
-            <red>   0.07 </red>
-            <green> 0.04 </green>
-            <blue>  0.04 </blue>
+            <red>   0.04 </red>
+            <green> 0.03 </green>
+            <blue>  0.03 </blue>
             <factor-prop>systems/electrical/outputs/flap-cons-trim-pnl-lts</factor-prop>
         </emission>
     </animation>

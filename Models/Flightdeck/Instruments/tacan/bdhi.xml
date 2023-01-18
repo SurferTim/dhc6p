@@ -182,71 +182,45 @@
 	<animation>
 		<object-name>central-mask</object-name>
 		<type>material</type>
-		<condition>
-			<and>
-				<property>controls/electric/power-source</property>
-				<property>controls/electric/dc-master</property>
-			</and>
-		</condition>
 		<emission>
-			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
+			<red>0.03</red>
+			<green>0.02</green>
+			<blue>0.02</blue>
 		</emission>
 	</animation>
 
 	<animation>
 		<object-name>compass-card</object-name>
 		<type>material</type>
-		<condition>
-			<and>
-				<property>controls/electric/power-source</property>
-				<property>controls/electric/dc-master</property>
-			</and>
-		</condition>
-
 		<emission>
-			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
+			<red>0.03</red>
+			<green>0.02</green>
+			<blue>0.02</blue>
 		</emission>
 	</animation>
 
 	<animation>
 		<object-name>indexes</object-name>
 		<type>material</type>
-		<condition>
-			<and>
-				<property>controls/electric/power-source</property>
-				<property>controls/electric/dc-master</property>
-			</and>
-		</condition>
-
 		<emission>
-			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<red>0.03</red>
+			<green>0.02</green>
+			<blue>0.02</blue>
+			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
 		</emission>
 	</animation>
 
 	<animation>
 		<object-name>needles-flags-drums</object-name>
 		<type>material</type>
-		<condition>
-			<and>
-				<property>controls/electric/power-source</property>
-				<property>controls/electric/dc-master</property>
-			</and>
-		</condition>
 
 		<emission>
-			<factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop>
-			<red>0.55</red>
-			<green>0.24</green>
-			<blue>0.10</blue>
+			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
+			<red>0.03</red>
+			<green>0.02</green>
+			<blue>0.02</blue>
 		</emission>
 	</animation>
 
@@ -254,7 +228,7 @@
 	<animation>
 		<type>range</type>
 		<min-m>0</min-m>
-		<max-m>50</max-m>
+		<max-m>20</max-m>
 	</animation>
 
 </PropertyList>
