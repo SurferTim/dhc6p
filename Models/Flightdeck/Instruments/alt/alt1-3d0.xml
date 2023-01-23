@@ -239,8 +239,9 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>alt1-setting</tooltip-id>
-                <label>Altimeter QNH: %.0f hPa</label>
+                <label>Altimeter %.0f %2.2f</label>
                 <property>instrumentation/altimeter[0]/setting-hpa</property>
+                <property>instrumentation/altimeter[0]/setting-inhg</property>
             </binding>
         </hovered>   
     </animation>
@@ -303,8 +304,9 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>alt-setting</tooltip-id>
-                <label>Altimeter QNH: %.0f</label>
+                <label>Altimeter %.0f %2.2f</label>
                 <property>instrumentation/altimeter[0]/setting-hpa</property>
+                <property>instrumentation/altimeter[0]/setting-inhg</property>
             </binding>
         </hovered>   
     </animation>
@@ -340,7 +342,7 @@
         <action>
             <name>increase</name>
             <button>4</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter[0]/setting-hpa</property>
@@ -353,7 +355,7 @@
         <action>
             <name>decrease</name>
             <button>3</button>
-            <repeatable>true</repeatable>
+            <repeatable>false</repeatable>
             <binding>
                 <command>property-adjust</command>
                 <property>instrumentation/altimeter[0]/setting-hpa</property>
@@ -367,8 +369,9 @@
             <binding>
                 <command>set-tooltip</command>
                 <tooltip-id>alt-setting</tooltip-id>
-                <label>Altimeter QNH: %.0f</label>
+                <label>Altimeter %.0f %2.2f</label>
                 <property>instrumentation/altimeter[0]/setting-hpa</property>
+                <property>instrumentation/altimeter[0]/setting-inhg</property>
             </binding>
         </hovered>
     </animation>

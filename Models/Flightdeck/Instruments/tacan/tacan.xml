@@ -193,8 +193,8 @@
 		<emission>
 			<!--factor-prop>controls/lighting/coplt-radio-va-pnl-lts</factor-prop-->
 			<red>0.6</red>
-			<green>0.2</green>
-			<blue>0.1</blue>
+			<green>0.6</green>
+			<blue>0.6</blue>
 		</emission>
 	</animation>
 
