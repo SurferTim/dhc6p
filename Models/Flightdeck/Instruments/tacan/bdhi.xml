@@ -179,7 +179,7 @@
 		</emission>
 	</animation-->
 
-	<animation>
+	<!--animation>
 		<object-name>central-mask</object-name>
 		<type>material</type>
 		<emission>
@@ -188,14 +188,14 @@
 			<blue>0.02</blue>
 			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
 		</emission>
-	</animation>
+	</animation-->
 
 	<animation>
 		<object-name>compass-card</object-name>
 		<type>material</type>
 		<emission>
 			<red>0.02</red>
-			<green>0.01</green>
+			<green>0.02</green>
 			<blue>0.01</blue>
 			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
 		</emission>
@@ -206,7 +206,7 @@
 		<type>material</type>
 		<emission>
 			<red>0.02</red>
-			<green>0.01</green>
+			<green>0.02</green>
 			<blue>0.01</blue>
 			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
 		</emission>
@@ -218,7 +218,7 @@
 
 		<emission>
 			<red>0.02</red>
-			<green>0.01</green>
+			<green>0.02</green>
 			<blue>0.01</blue>
 			<factor-prop>systems/electrical/outputs/coplt-radio-va-pnl-lts</factor-prop>
 		</emission>
