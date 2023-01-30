@@ -1,0 +1,19 @@
+{ 
+    "src":    "TORQUE.svg",
+
+    "animations": [
+      {
+        "element": "#Needle",
+        "type":    "transform",
+        "transforms": [{
+          "type": "rotate",
+          "a": {
+            "property": "torque2",
+            "interpolation": "TORQUEInterpolation.xml"
+           },
+          "x": 256,
+          "y": 256
+        }]
+      }
+    ]
+}

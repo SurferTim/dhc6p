@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<PropertyList>
+   <entry><ind>0</ind><dep>100</dep></entry>
+   <entry><ind>500</ind><dep>160</dep></entry>
+   <entry><ind>1000</ind><dep>225</dep></entry>
+   <entry><ind>1500</ind><dep>285</dep></entry>
+   <entry><ind>2000</ind><dep>345</dep></entry>
+   <entry><ind>2500</ind><dep>385</dep></entry>
+</PropertyList>
