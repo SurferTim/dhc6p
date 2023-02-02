@@ -33,7 +33,7 @@
           "type": "translate",
           "y": {
             "property": "DeflectionGS2",
-            "scale": -20
+            "scale": -30
           },
           "x": 0
         }]

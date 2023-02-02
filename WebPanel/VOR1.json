@@ -22,7 +22,7 @@
           "type": "translate",
           "x": {
             "property": "DeflectionLOC1",
-            "scale": 10
+            "scale": 12
           },
           "y": 0
         }]
@@ -33,7 +33,7 @@
           "type": "translate",
           "y": {
             "property": "DeflectionGS1",
-            "scale": -20
+            "scale": -30
           },
           "x": 0
         }]

@@ -1049,6 +1049,7 @@ setlistener("/autopilot/settings/heading-bug-deg", func(test){
      setprop("/instrumentation/heading-indicator-real-dg/heading-bug-deg",test.getValue());
 },0,0);
 
+
 setlistener("/sim/signals/fdm-initialized", func(){
      setprop("/instrumentation/adf/volume-norm",0.0);
      setprop("/autopilot/settings/heading-bug-deg",getprop("/instrumentation/heading-indicator-real-dg/heading-bug-deg"));
