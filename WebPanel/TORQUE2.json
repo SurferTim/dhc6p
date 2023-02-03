@@ -9,7 +9,7 @@
           "type": "rotate",
           "a": {
             "property": "torque2",
-            "interpolation": "TORQUEInterpolation.xml"
+            "interpolation": "TORQUEInterpolation2.xml"
            },
           "x": 256,
           "y": 256

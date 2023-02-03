@@ -15,7 +15,7 @@
    height="100%"
    id="ASI"
    inkscape:version="0.92.3 (2405546, 2018-03-11)"
-   sodipodi:docname="TORQUE.svg"
+   sodipodi:docname="TORQUE2.svg"
    viewBox="0 0 512 512"
    preserveAspectRatio="xMinYMin meet">
   <title
@@ -165,14 +165,14 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="photo"
-     style="display:none"
+     style="display:inline"
      sodipodi:insensitive="true" />
   <g
      inkscape:label="Face"
      inkscape:groupmode="layer"
      id="Face"
      transform="translate(0,-540.36218)"
-     style="display:inline;opacity:1"
+     style="display:none;opacity:1"
      sodipodi:insensitive="true">
     <ellipse
        style="display:inline;opacity:1;fill:url(#radialGradient12871);fill-opacity:1;stroke:none;stroke-width:20;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -200,11 +200,11 @@
      style="display:inline">
     <g
        style="display:inline;fill:#fffad7"
-       inkscape:transform-center-y="-63.545874"
-       transform="matrix(1.4727538,-2.5179162,2.5179162,1.4727538,-587.34057,438.54537)"
+       inkscape:transform-center-y="-83.066532"
+       transform="matrix(1.9251683,-3.2913938,3.2913938,1.9251683,-847.00861,499.8519)"
        id="Needle"
        inkscape:label="Needle"
-       inkscape:transform-center-x="1.4426864e-05">
+       inkscape:transform-center-x="1.43276e-05">
       <path
          style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
          d="m 254.02228,186.31003 0.39339,0.68137 c 0.0165,0.0287 0.0211,0.0563 0.0105,0.063 l -52.62759,33.71564 c -0.077,0.0491 -0.2412,-0.0875 -0.36316,-0.29873 l -2.89768,-5.01893 c -0.12196,-0.21124 -0.15835,-0.42185 -0.0771,-0.46387 l 55.51239,-28.71901 c 0.0112,-0.006 0.0326,0.0119 0.0492,0.0406 z"

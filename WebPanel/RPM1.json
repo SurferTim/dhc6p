@@ -9,7 +9,7 @@
           "type": "rotate",
           "a": {
             "property": "rpm1",
-            "interpolation": "RPMInterpolation.xml"
+            "interpolation": "RPMInterpolation2.xml"
           },
           "x": 256,
           "y": 256
