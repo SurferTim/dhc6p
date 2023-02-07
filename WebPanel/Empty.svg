@@ -14,12 +14,12 @@
    width="100%"
    height="100%"
    id="ASI"
-   inkscape:version="0.91 r13725"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
    sodipodi:docname="Empty.svg"
    viewBox="0 0 512 512"
    preserveAspectRatio="xMinYMin meet">
   <title
-     id="title5536">Airspeed Indicator</title>
+     id="title138">Empty</title>
   <defs
      id="defs3747">
     <linearGradient
@@ -66,10 +66,10 @@
      inkscape:current-layer="g4535"
      showgrid="false"
      borderlayer="true"
-     inkscape:window-width="1366"
-     inkscape:window-height="704"
-     inkscape:window-x="0"
-     inkscape:window-y="27"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="3840"
+     inkscape:window-y="0"
      inkscape:window-maximized="1"
      inkscape:snap-bbox="true"
      inkscape:snap-bbox-midpoints="true"
@@ -94,7 +94,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title>Airspeed Indicator</dc:title>
+        <dc:title>Empty</dc:title>
         <dc:creator>
           <cc:Agent>
             <dc:title>Torsten Dreyer</dc:title>
