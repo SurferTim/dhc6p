@@ -8,7 +8,7 @@
         "transforms": [{
           "type": "rotate",
           "a": {
-            "property": "adf-rotation-deg",
+            "property": "heading",
             "scale": -1
           },
           "x": 256,
