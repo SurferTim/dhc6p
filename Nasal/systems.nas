@@ -788,6 +788,7 @@ var update_instruments = func {
         setprop("instrumentation/volt-amp-meter/serviceable", 0);
     }
 
+    # TACAN
 
     if(getprop("instrumentation/tacan/in-range") == 1)
     {
