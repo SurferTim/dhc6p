@@ -1,0 +1,18 @@
+{ 
+    "src":    "t5.svg",
+
+    "animations": [
+      {
+        "element": "#Needle",
+        "type":    "transform",
+        "transforms": [{
+          "type": "rotate",
+          "a": {
+            "property": "t51",
+            "interpolation": "T5Interpolation.xml"          },
+          "x": 256,
+          "y": 256
+        }]
+      }
+    ]
+}

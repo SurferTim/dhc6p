@@ -1,0 +1,19 @@
+{ 
+    "src":    "ggrpm.svg",
+
+    "animations": [
+      {
+        "element": "#Needle",
+        "type":    "transform",
+        "transforms": [{
+          "type": "rotate",
+          "a": {
+            "property": "ggrpm2",
+            "interpolation": "GGRPMInterpolation.xml"
+          },
+          "x": 256,
+          "y": 256
+        }]
+      }
+    ]
+}

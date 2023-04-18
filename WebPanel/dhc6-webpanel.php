@@ -13,20 +13,6 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <title>FlightGear - Twin Otter Instrument Panel</title>
-
-
-
-<script type="text/javascript" charset="utf-8"
-    src="/3rdparty/jquery/jquery-1.11.1.min.js"></script>
-
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
-<!-- Latest compiled and minified JavaScript -->
-<script src="bootstrap/bootstrap.min.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="/lib/jquery.fganimate.js"></script>
-<script type="text/javascript" charset="utf-8" src="/lib/fgfs.js"></script>
-
 <style type="text/css" media="screen">
 body,html {
     width: 100%;
@@ -39,44 +25,40 @@ body,html {
 }
 
 .instrument {
-    border: 1px solid #000000;
-    padding: 0px;
-    background-color: #000000;
+    border: 1px solid #131313;
+    padding: 8px;
+    background-color: #111111;
 }
 </style>
 
+<script type="text/javascript" charset="utf-8"
+    src="/3rdparty/jquery/jquery-1.11.1.min.js"></script>
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+<!-- Latest compiled and minified JavaScript -->
+<script src="bootstrap/bootstrap.min.js"></script>
 
+<script type="text/javascript" charset="utf-8" src="/lib/jquery.fganimate.js"></script>
+<script type="text/javascript" charset="utf-8" src="/lib/fgfs.js"></script>
 
 </head>
-<body bgcolor="#000000" data-fgpanel="true" data-fgpanel-props="dhc6-webpanel-properties.json">
+<body data-fgpanel="true" data-fgpanel-props="dhc6-webpanel-properties.json">
   <div class="row">
     <div id="ASI" class="instrument col-xs-2" data-fgpanel-instrument="ASI.json"></div>
     <div id="AI" class="instrument col-xs-2" data-fgpanel-instrument="AI.json"></div>
     <div id="ALT" class="instrument col-xs-2" data-fgpanel-instrument="ALT.json"></div>
     <div id="VOR1" class="instrument col-xs-2" data-fgpanel-instrument="VOR1.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div id="TORQUE1" class="instrument col-xs-1" data-fgpanel-instrument="TORQUE1.json"></div>
-    <div id="TORQUE2" class="instrument col-xs-1" data-fgpanel-instrument="TORQUE2.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div id="RPM1" class="instrument col-xs-1" data-fgpanel-instrument="RPM1.json"></div>
-    <div id="RPM2" class="instrument col-xs-1" data-fgpanel-instrument="RPM2.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
+    <div id="TORQUE1" class="instrument col-xs-2" data-fgpanel-instrument="TORQUE1.json"></div>
+    <div id="TORQUE2" class="instrument col-xs-2" data-fgpanel-instrument="TORQUE2.json"></div>
   </div>
   <div class="row">
     <div id="TC" class="instrument col-xs-2" data-fgpanel-instrument="TC.json"></div>
     <div id="DG" class="instrument col-xs-2" data-fgpanel-instrument="DG.json"></div>
     <div id="VSI" class="instrument col-xs-2" data-fgpanel-instrument="VSI.json"></div>
     <div id="VOR2" class="instrument col-xs-2" data-fgpanel-instrument="VOR2.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div id="TORQUE1" class="instrument col-xs-1" data-fgpanel-instrument="T51.json"></div>
-    <div id="TORQUE2" class="instrument col-xs-1" data-fgpanel-instrument="T52.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
-    <div id="RPM1" class="instrument col-xs-1" data-fgpanel-instrument="GGRPM1.json"></div>
-    <div id="RPM2" class="instrument col-xs-1" data-fgpanel-instrument="GGRPM2.json"></div>
-    <div class="instrument col-xs-1" data-fgpanel-instrument="Empty.json"></div>
+    <div id="RPM1" class="instrument col-xs-2" data-fgpanel-instrument="RPM1.json"></div>
+    <div id="RPM2" class="instrument col-xs-2" data-fgpanel-instrument="RPM2.json"></div>
   </div>
   <div class="row">
     <div class="instrument col-xs-2" data-fgpanel-instrument="Empty.json"></div>

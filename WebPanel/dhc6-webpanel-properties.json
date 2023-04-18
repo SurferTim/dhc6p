@@ -16,6 +16,10 @@
     ["torque2",     "/engines/engine[1]/torque-ftlb"],
     ["rpm1",        "/engines/engine/rpm"],
     ["rpm2",        "/engines/engine[1]/rpm"],
+    ["ggrpm1",      "/engines/engine/n2"],
+    ["ggrpm2",      "/engines/engine[1]/n2"],
+    ["t51",         "/engines/engine/t5"],
+    ["t52",         "/engines/engine[1]/t5"],
 
     ["turn",        "/instrumentation/turn-indicator/indicated-turn-rate"],
     ["slip",        "/instrumentation/slip-skid-ball/indicated-slip-skid"],

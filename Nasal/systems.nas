@@ -964,15 +964,15 @@ var close_reverse_info = func {
 #setlistener("/controls/engines/engine[0]/reverser", reverse_chg);
 #setlistener("/controls/engines/engine[1]/reverser", reverse_chg);
 
-#controls.applyParkingBrake = func (v) {
-#    if (!v) {
-#        return;
-#    }
-#
-#    var p = "/controls/gear/parkingbrake-lever";
-#    setprop(p, var i = !getprop(p));
-#    return i;
-#};
+controls.taxilight = func (v) {
+    setprop("/controls/lighting/taxi-light",v);
+};
+
+controls.landinglight = func (v) {
+    setprop("/controls/lighting/landing-light",v);
+    setprop("/controls/lighting/landing-light[1]",v);
+
+};
 
 controls.flapsDown = func(step) {
     if(step == 0) return;
